@@ -7,7 +7,8 @@ Engine::~Engine() {}
 
 void Engine::run()
 {
-    sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(200, 200), "SFML works!");
+    sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(1920, 1080), "SFML works!");
+    window->setFramerateLimit(60);
 
     ContextSwitcher *contextSwitcher = new ContextSwitcher();
 

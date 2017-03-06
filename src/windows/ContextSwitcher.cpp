@@ -1,8 +1,9 @@
 #include "ContextSwitcher.h"
+#include "../maps/town/Town.h"
 
 ContextSwitcher::ContextSwitcher()
 {
-    context = new MainMenu();
+    context = new Town();
 }
 
 ContextSwitcher::~ContextSwitcher()

@@ -10,6 +10,14 @@
 src/core/Engine.h
 /home/gxo01091/Projects/CLion/src/core/Engine.h
 
+/home/gxo01091/Projects/CLion/src/Characters/Character.cpp
+Character.h
+/home/gxo01091/Projects/CLion/src/Characters/Character.h
+
+/home/gxo01091/Projects/CLion/src/Characters/Character.h
+SFML/Graphics/RenderWindow.hpp
+-
+
 /home/gxo01091/Projects/CLion/src/core/Engine.cpp
 Engine.h
 /home/gxo01091/Projects/CLion/src/core/Engine.h
@@ -19,6 +27,24 @@ Engine.h
 /home/gxo01091/Projects/CLion/src/core/Engine.h
 SFML/Graphics.hpp
 -
+
+/home/gxo01091/Projects/CLion/src/maps/Map.cpp
+Map.h
+/home/gxo01091/Projects/CLion/src/maps/Map.h
+
+/home/gxo01091/Projects/CLion/src/maps/Map.h
+../windows/Context.h
+/home/gxo01091/Projects/CLion/src/windows/Context.h
+
+/home/gxo01091/Projects/CLion/src/maps/town/Town.cpp
+Town.h
+/home/gxo01091/Projects/CLion/src/maps/town/Town.h
+
+/home/gxo01091/Projects/CLion/src/maps/town/Town.h
+SFML/Graphics/CircleShape.hpp
+-
+../Map.h
+/home/gxo01091/Projects/CLion/src/maps/Map.h
 
 /home/gxo01091/Projects/CLion/src/windows/Context.cpp
 Context.h
@@ -31,6 +57,8 @@ SFML/Graphics/RenderWindow.hpp
 /home/gxo01091/Projects/CLion/src/windows/ContextSwitcher.cpp
 ContextSwitcher.h
 /home/gxo01091/Projects/CLion/src/windows/ContextSwitcher.h
+../maps/town/Town.h
+/home/gxo01091/Projects/CLion/src/maps/town/Town.h
 
 /home/gxo01091/Projects/CLion/src/windows/ContextSwitcher.h
 SFML/Graphics/RenderWindow.hpp

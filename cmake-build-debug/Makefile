@@ -150,6 +150,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Characters/Character.o: src/Characters/Character.cpp.o
+
+.PHONY : src/Characters/Character.o
+
+# target to build an object file
+src/Characters/Character.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o
+.PHONY : src/Characters/Character.cpp.o
+
+src/Characters/Character.i: src/Characters/Character.cpp.i
+
+.PHONY : src/Characters/Character.i
+
+# target to preprocess a source file
+src/Characters/Character.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.i
+.PHONY : src/Characters/Character.cpp.i
+
+src/Characters/Character.s: src/Characters/Character.cpp.s
+
+.PHONY : src/Characters/Character.s
+
+# target to generate assembly for a file
+src/Characters/Character.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.s
+.PHONY : src/Characters/Character.cpp.s
+
 src/core/Engine.o: src/core/Engine.cpp.o
 
 .PHONY : src/core/Engine.o
@@ -176,6 +203,60 @@ src/core/Engine.s: src/core/Engine.cpp.s
 src/core/Engine.cpp.s:
 	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.s
 .PHONY : src/core/Engine.cpp.s
+
+src/maps/Map.o: src/maps/Map.cpp.o
+
+.PHONY : src/maps/Map.o
+
+# target to build an object file
+src/maps/Map.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o
+.PHONY : src/maps/Map.cpp.o
+
+src/maps/Map.i: src/maps/Map.cpp.i
+
+.PHONY : src/maps/Map.i
+
+# target to preprocess a source file
+src/maps/Map.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.i
+.PHONY : src/maps/Map.cpp.i
+
+src/maps/Map.s: src/maps/Map.cpp.s
+
+.PHONY : src/maps/Map.s
+
+# target to generate assembly for a file
+src/maps/Map.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.s
+.PHONY : src/maps/Map.cpp.s
+
+src/maps/town/Town.o: src/maps/town/Town.cpp.o
+
+.PHONY : src/maps/town/Town.o
+
+# target to build an object file
+src/maps/town/Town.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o
+.PHONY : src/maps/town/Town.cpp.o
+
+src/maps/town/Town.i: src/maps/town/Town.cpp.i
+
+.PHONY : src/maps/town/Town.i
+
+# target to preprocess a source file
+src/maps/town/Town.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.i
+.PHONY : src/maps/town/Town.cpp.i
+
+src/maps/town/Town.s: src/maps/town/Town.cpp.s
+
+.PHONY : src/maps/town/Town.s
+
+# target to generate assembly for a file
+src/maps/town/Town.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.s
+.PHONY : src/maps/town/Town.cpp.s
 
 src/windows/Context.o: src/windows/Context.cpp.o
 
@@ -270,9 +351,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/Characters/Character.o"
+	@echo "... src/Characters/Character.i"
+	@echo "... src/Characters/Character.s"
 	@echo "... src/core/Engine.o"
 	@echo "... src/core/Engine.i"
 	@echo "... src/core/Engine.s"
+	@echo "... src/maps/Map.o"
+	@echo "... src/maps/Map.i"
+	@echo "... src/maps/Map.s"
+	@echo "... src/maps/town/Town.o"
+	@echo "... src/maps/town/Town.i"
+	@echo "... src/maps/town/Town.s"
 	@echo "... src/windows/Context.o"
 	@echo "... src/windows/Context.i"
 	@echo "... src/windows/Context.s"

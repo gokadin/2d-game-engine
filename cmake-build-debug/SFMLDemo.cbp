@@ -87,10 +87,28 @@
 		<Unit filename="/home/gxo01091/Projects/CLion/main.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>
+		<Unit filename="/home/gxo01091/Projects/CLion/src/Characters/Character.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/gxo01091/Projects/CLion/src/Characters/Character.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
 		<Unit filename="/home/gxo01091/Projects/CLion/src/core/Engine.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/gxo01091/Projects/CLion/src/core/Engine.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/gxo01091/Projects/CLion/src/maps/Map.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/gxo01091/Projects/CLion/src/maps/Map.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/gxo01091/Projects/CLion/src/maps/town/Town.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/gxo01091/Projects/CLion/src/maps/town/Town.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/gxo01091/Projects/CLion/src/windows/Context.cpp">

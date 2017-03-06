@@ -177,13 +177,88 @@ CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.provides: CMakeFiles/S
 CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o
 
 
+CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o: ../src/Characters/Character.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gxo01091/Projects/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o -c /home/gxo01091/Projects/CLion/src/Characters/Character.cpp
+
+CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gxo01091/Projects/CLion/src/Characters/Character.cpp > CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.i
+
+CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gxo01091/Projects/CLion/src/Characters/Character.cpp -o CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.s
+
+CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.requires:
+
+.PHONY : CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.requires
+
+CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.provides
+
+CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o
+
+
+CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: ../src/maps/Map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gxo01091/Projects/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o -c /home/gxo01091/Projects/CLion/src/maps/Map.cpp
+
+CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gxo01091/Projects/CLion/src/maps/Map.cpp > CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.i
+
+CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gxo01091/Projects/CLion/src/maps/Map.cpp -o CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.s
+
+CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.requires:
+
+.PHONY : CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.requires
+
+CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.provides
+
+CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o
+
+
+CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/maps/town/Town.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gxo01091/Projects/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o -c /home/gxo01091/Projects/CLion/src/maps/town/Town.cpp
+
+CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gxo01091/Projects/CLion/src/maps/town/Town.cpp > CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.i
+
+CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gxo01091/Projects/CLion/src/maps/town/Town.cpp -o CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.s
+
+CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.requires:
+
+.PHONY : CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.requires
+
+CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.provides
+
+CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o
+
+
 # Object files for target SFMLDemo
 SFMLDemo_OBJECTS = \
 "CMakeFiles/SFMLDemo.dir/main.cpp.o" \
 "CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o" \
 "CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o" \
 "CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o" \
-"CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o"
+"CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o"
 
 # External object files for target SFMLDemo
 SFMLDemo_EXTERNAL_OBJECTS =
@@ -193,6 +268,9 @@ SFMLDemo: CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/build.make
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-system.so
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-window.so
@@ -200,7 +278,7 @@ SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-network.so
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
 SFMLDemo: CMakeFiles/SFMLDemo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gxo01091/Projects/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable SFMLDemo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gxo01091/Projects/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable SFMLDemo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SFMLDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -213,6 +291,9 @@ CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o.
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o.requires
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o.requires
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.requires
 
 .PHONY : CMakeFiles/SFMLDemo.dir/requires
 
