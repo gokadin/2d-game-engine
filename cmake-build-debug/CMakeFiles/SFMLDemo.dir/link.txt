@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/SFMLDemo.dir/main.cpp.o CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o  -o SFMLDemo -rdynamic -lsfml-system -lsfml-window -lsfml-graphics -lsfml-network -lsfml-audio 
