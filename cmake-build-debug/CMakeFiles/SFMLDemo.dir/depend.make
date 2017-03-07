@@ -22,6 +22,9 @@ CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/maps/town/Town.cpp
 CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/maps/town/Town.h
 CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/windows/Context.h
 
+CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o: ../src/utils/Logger.cpp
+CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o: ../src/utils/Logger.h
+
 CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o: ../src/windows/Context.cpp
 CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o: ../src/windows/Context.h
 

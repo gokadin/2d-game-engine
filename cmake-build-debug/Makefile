@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/gxo01091/Programs/clion-2016.3.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/guiviko/Programs/clion-2016.3.3/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/gxo01091/Programs/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
+RM = /home/guiviko/Programs/clion-2016.3.3/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gxo01091/Projects/CLion
+CMAKE_SOURCE_DIR = /home/guiviko/Projects/chrono
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gxo01091/Projects/CLion/cmake-build-debug
+CMAKE_BINARY_DIR = /home/guiviko/Projects/chrono/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/gxo01091/Projects/CLion/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/gxo01091/Programs/clion-2016.3.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/guiviko/Programs/clion-2016.3.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/gxo01091/Programs/clion-2016.3.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/guiviko/Programs/clion-2016.3.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gxo01091/Projects/CLion/cmake-build-debug/CMakeFiles /home/gxo01091/Projects/CLion/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles /home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gxo01091/Projects/CLion/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -258,6 +258,33 @@ src/maps/town/Town.cpp.s:
 	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.s
 .PHONY : src/maps/town/Town.cpp.s
 
+src/utils/Logger.o: src/utils/Logger.cpp.o
+
+.PHONY : src/utils/Logger.o
+
+# target to build an object file
+src/utils/Logger.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o
+.PHONY : src/utils/Logger.cpp.o
+
+src/utils/Logger.i: src/utils/Logger.cpp.i
+
+.PHONY : src/utils/Logger.i
+
+# target to preprocess a source file
+src/utils/Logger.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.i
+.PHONY : src/utils/Logger.cpp.i
+
+src/utils/Logger.s: src/utils/Logger.cpp.s
+
+.PHONY : src/utils/Logger.s
+
+# target to generate assembly for a file
+src/utils/Logger.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.s
+.PHONY : src/utils/Logger.cpp.s
+
 src/windows/Context.o: src/windows/Context.cpp.o
 
 .PHONY : src/windows/Context.o
@@ -363,6 +390,9 @@ help:
 	@echo "... src/maps/town/Town.o"
 	@echo "... src/maps/town/Town.i"
 	@echo "... src/maps/town/Town.s"
+	@echo "... src/utils/Logger.o"
+	@echo "... src/utils/Logger.i"
+	@echo "... src/utils/Logger.s"
 	@echo "... src/windows/Context.o"
 	@echo "... src/windows/Context.i"
 	@echo "... src/windows/Context.s"

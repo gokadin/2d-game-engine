@@ -6,77 +6,95 @@
 
 #IncludeRegexTransform: 
 
-/home/gxo01091/Projects/CLion/main.cpp
+/home/guiviko/Projects/chrono/main.cpp
 src/core/Engine.h
-/home/gxo01091/Projects/CLion/src/core/Engine.h
+/home/guiviko/Projects/chrono/src/core/Engine.h
 
-/home/gxo01091/Projects/CLion/src/Characters/Character.cpp
+/home/guiviko/Projects/chrono/src/Characters/Character.cpp
 Character.h
-/home/gxo01091/Projects/CLion/src/Characters/Character.h
+/home/guiviko/Projects/chrono/src/Characters/Character.h
 
-/home/gxo01091/Projects/CLion/src/Characters/Character.h
+/home/guiviko/Projects/chrono/src/Characters/Character.h
 SFML/Graphics/RenderWindow.hpp
 -
 
-/home/gxo01091/Projects/CLion/src/core/Engine.cpp
+/home/guiviko/Projects/chrono/src/core/Engine.cpp
 Engine.h
-/home/gxo01091/Projects/CLion/src/core/Engine.h
+/home/guiviko/Projects/chrono/src/core/Engine.h
 ../windows/ContextSwitcher.h
-/home/gxo01091/Projects/CLion/src/windows/ContextSwitcher.h
+/home/guiviko/Projects/chrono/src/windows/ContextSwitcher.h
 
-/home/gxo01091/Projects/CLion/src/core/Engine.h
+/home/guiviko/Projects/chrono/src/core/Engine.h
 SFML/Graphics.hpp
 -
 
-/home/gxo01091/Projects/CLion/src/maps/Map.cpp
+/home/guiviko/Projects/chrono/src/maps/Map.cpp
 Map.h
-/home/gxo01091/Projects/CLion/src/maps/Map.h
+/home/guiviko/Projects/chrono/src/maps/Map.h
 
-/home/gxo01091/Projects/CLion/src/maps/Map.h
+/home/guiviko/Projects/chrono/src/maps/Map.h
 ../windows/Context.h
-/home/gxo01091/Projects/CLion/src/windows/Context.h
+/home/guiviko/Projects/chrono/src/windows/Context.h
 
-/home/gxo01091/Projects/CLion/src/maps/town/Town.cpp
+/home/guiviko/Projects/chrono/src/maps/town/Town.cpp
 Town.h
-/home/gxo01091/Projects/CLion/src/maps/town/Town.h
+/home/guiviko/Projects/chrono/src/maps/town/Town.h
+iostream
+-
 
-/home/gxo01091/Projects/CLion/src/maps/town/Town.h
+/home/guiviko/Projects/chrono/src/maps/town/Town.h
 SFML/Graphics/CircleShape.hpp
+-
+SFML/Graphics/Texture.hpp
+-
+SFML/Graphics/Sprite.hpp
 -
 ../Map.h
-/home/gxo01091/Projects/CLion/src/maps/Map.h
+/home/guiviko/Projects/chrono/src/maps/Map.h
 
-/home/gxo01091/Projects/CLion/src/windows/Context.cpp
+/home/guiviko/Projects/chrono/src/utils/Logger.cpp
+Logger.h
+/home/guiviko/Projects/chrono/src/utils/Logger.h
+
+/home/guiviko/Projects/chrono/src/utils/Logger.h
+
+/home/guiviko/Projects/chrono/src/windows/Context.cpp
 Context.h
-/home/gxo01091/Projects/CLion/src/windows/Context.h
+/home/guiviko/Projects/chrono/src/windows/Context.h
 
-/home/gxo01091/Projects/CLion/src/windows/Context.h
+/home/guiviko/Projects/chrono/src/windows/Context.h
 SFML/Graphics/RenderWindow.hpp
 -
+SFML/Window/Event.hpp
+-
 
-/home/gxo01091/Projects/CLion/src/windows/ContextSwitcher.cpp
+/home/guiviko/Projects/chrono/src/windows/ContextSwitcher.cpp
 ContextSwitcher.h
-/home/gxo01091/Projects/CLion/src/windows/ContextSwitcher.h
+/home/guiviko/Projects/chrono/src/windows/ContextSwitcher.h
 ../maps/town/Town.h
-/home/gxo01091/Projects/CLion/src/maps/town/Town.h
+/home/guiviko/Projects/chrono/src/maps/town/Town.h
+iostream
+-
 
-/home/gxo01091/Projects/CLion/src/windows/ContextSwitcher.h
+/home/guiviko/Projects/chrono/src/windows/ContextSwitcher.h
 SFML/Graphics/RenderWindow.hpp
 -
+SFML/Window/Event.hpp
+-
 Context.h
-/home/gxo01091/Projects/CLion/src/windows/Context.h
+/home/guiviko/Projects/chrono/src/windows/Context.h
 MainMenu.h
-/home/gxo01091/Projects/CLion/src/windows/MainMenu.h
+/home/guiviko/Projects/chrono/src/windows/MainMenu.h
 
-/home/gxo01091/Projects/CLion/src/windows/MainMenu.cpp
+/home/guiviko/Projects/chrono/src/windows/MainMenu.cpp
 MainMenu.h
-/home/gxo01091/Projects/CLion/src/windows/MainMenu.h
+/home/guiviko/Projects/chrono/src/windows/MainMenu.h
 
-/home/gxo01091/Projects/CLion/src/windows/MainMenu.h
+/home/guiviko/Projects/chrono/src/windows/MainMenu.h
 SFML/Graphics/RenderWindow.hpp
 -
 SFML/Graphics/CircleShape.hpp
 -
 Context.h
-/home/gxo01091/Projects/CLion/src/windows/Context.h
+/home/guiviko/Projects/chrono/src/windows/Context.h
 

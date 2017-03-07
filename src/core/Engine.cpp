@@ -7,7 +7,7 @@ Engine::~Engine() {}
 
 void Engine::run()
 {
-    sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(1920, 1080), "SFML works!");
+    sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(1280, 720), "SFML works!");
     window->setFramerateLimit(60);
 
     ContextSwitcher *contextSwitcher = new ContextSwitcher();
@@ -17,10 +17,20 @@ void Engine::run()
         sf::Event event;
         while (window->pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
+            switch (event.type)
             {
-                window->close();
+                case sf::Event::Closed:
+                    window->close();
+                    break;
+                case sf::Event::KeyPressed:
+                    if (event.key.code == sf::Keyboard::Escape)
+                    {
+                        window->close();
+                    }
+                    break;
             }
+
+            contextSwitcher->update(event);
         }
 
         window->clear(sf::Color::Black);
