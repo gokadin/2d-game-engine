@@ -30,7 +30,7 @@ void Town::notify(Event *event)
     }
 }
 
-void Town::update(sf::Event event)
+void Town::update()
 {
     if (move)
     {

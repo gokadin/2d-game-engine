@@ -10,8 +10,8 @@ public:
     Context();
     virtual ~Context();
 
-    virtual void update(sf::Event event);
-    virtual void draw(sf::RenderWindow *window);
+    virtual void update() = 0;
+    virtual void draw(sf::RenderWindow *window) = 0;
 };
 
 #endif //SFMLDEMO_WINDOW_H

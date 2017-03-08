@@ -12,7 +12,7 @@ public:
     Town(Actions *actions);
     ~Town();
 
-    void update(sf::Event event);
+    void update();
     void draw(sf::RenderWindow *window);
 
 private:

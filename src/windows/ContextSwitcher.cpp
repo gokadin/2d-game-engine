@@ -11,9 +11,9 @@ ContextSwitcher::~ContextSwitcher()
     delete context;
 }
 
-void ContextSwitcher::update(sf::Event event)
+void ContextSwitcher::update()
 {
-    context->update(event);
+    context->update();
 }
 
 void ContextSwitcher::draw(sf::RenderWindow *window)
