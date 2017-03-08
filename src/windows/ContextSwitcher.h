@@ -5,11 +5,12 @@
 #include <SFML/Window/Event.hpp>
 #include "Context.h"
 #include "MainMenu.h"
+#include "../core/Actions.h"
 
 class ContextSwitcher
 {
 public:
-    ContextSwitcher();
+    ContextSwitcher(Actions *actions);
     ~ContextSwitcher();
 
     void update(sf::Event event);

@@ -1,5 +1,6 @@
 #include "Engine.h"
 #include "../windows/ContextSwitcher.h"
+#include "Actions.h"
 
 Engine::Engine() {}
 
@@ -8,9 +9,9 @@ Engine::~Engine() {}
 void Engine::run()
 {
     sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(1280, 720), "SFML works!");
-    window->setFramerateLimit(60);
 
-    ContextSwitcher *contextSwitcher = new ContextSwitcher();
+    Actions *actions = new Actions();
+    ContextSwitcher *contextSwitcher = new ContextSwitcher(actions);
 
     while (window->isOpen())
     {
@@ -30,13 +31,21 @@ void Engine::run()
                     break;
             }
 
-            contextSwitcher->update(event);
+            // change update method name for like process event or something
+            actions->update(event);
         }
 
+        // put in a timed loop
+        // remove event argument, cause its invalid if not populated by the poll method
+        contextSwitcher->update(event);
+
+        // add fps counter
         window->clear(sf::Color::Black);
         contextSwitcher->draw(window);
         window->display();
     }
 
+    delete actions;
+    delete contextSwitcher;
     delete window;
 }

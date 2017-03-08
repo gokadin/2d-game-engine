@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-Town::Town()
+Town::Town(Actions *actions) : Map(actions)
 {
     if (!texture.loadFromFile("../assets/images/maps/town/sand.jpg"))
     {
@@ -10,18 +10,31 @@ Town::Town()
     }
 
     sprite.setTexture(texture);
-    sprite.setTextureRect(sf::IntRect(100, 100, 1280, 720));
+    a = 0;
+    b = 0;
+    move = false;
+    sprite.setTextureRect(sf::IntRect(a, 100, 1280, 720));
 }
 
 Town::~Town() {}
 
+void Town::notify(Event *event)
+{
+    if (event->getType() == "mu")
+    {
+        move = true;
+    }
+    else if (event->getType() == "st")
+    {
+        move = false;
+    }
+}
+
 void Town::update(sf::Event event)
 {
-    switch (event.type)
+    if (move)
     {
-        case sf::Event::KeyPressed:
-            handleKeyPressed(event.key.code);
-            break;
+        handleWPressed();
     }
 }
 
@@ -30,17 +43,8 @@ void Town::draw(sf::RenderWindow *window)
     window->draw(sprite);
 }
 
-void Town::handleKeyPressed(sf::Keyboard::Key code)
-{
-    switch (code)
-    {
-        case sf::Keyboard::W:
-            handleWPressed();
-            break;
-    }
-}
-
 void Town::handleWPressed()
 {
-    sprite.setTextureRect(sf::IntRect(110, 120, 1280, 720));
+    b += 10;
+    sprite.setTextureRect(sf::IntRect(a + b, 100, 1280, 720));
 }

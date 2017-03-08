@@ -93,6 +93,12 @@
 		<Unit filename="/home/guiviko/Projects/chrono/src/Characters/Character.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/core/Actions.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/core/Actions.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/core/Engine.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>
@@ -111,10 +117,19 @@
 		<Unit filename="/home/guiviko/Projects/chrono/src/maps/town/Town.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/utils/Event.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/utils/Logger.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/utils/Logger.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/utils/Observable.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/utils/Observer.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/windows/Context.cpp">

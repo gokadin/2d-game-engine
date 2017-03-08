@@ -1,5 +1,8 @@
 #include "Map.h"
 
-Map::Map() {}
+Map::Map(Actions *actions)
+{
+    actions->subscribe(this);
+}
 
 Map::~Map() {}

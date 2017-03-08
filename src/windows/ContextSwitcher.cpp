@@ -1,11 +1,9 @@
 #include "ContextSwitcher.h"
 #include "../maps/town/Town.h"
 
-#include <iostream>
-
-ContextSwitcher::ContextSwitcher()
+ContextSwitcher::ContextSwitcher(Actions *actions)
 {
-    context = new Town();
+    context = new Town(actions);
 }
 
 ContextSwitcher::~ContextSwitcher()

@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/guiviko/Projects/chrono/main.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/main.cpp.o"
   "/home/guiviko/Projects/chrono/src/Characters/Character.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o"
+  "/home/guiviko/Projects/chrono/src/core/Actions.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o"
   "/home/guiviko/Projects/chrono/src/core/Engine.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o"
   "/home/guiviko/Projects/chrono/src/maps/Map.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o"
   "/home/guiviko/Projects/chrono/src/maps/town/Town.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o"

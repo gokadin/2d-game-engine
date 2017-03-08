@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o"
   "CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o"
   "CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o"
+  "CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o"
   "SFMLDemo.pdb"
   "SFMLDemo"
 )

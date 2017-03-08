@@ -2,11 +2,13 @@
 #define SFMLDEMO_MAP_H
 
 #include "../windows/Context.h"
+#include "../utils/Observer.h"
+#include "../core/Actions.h"
 
-class Map : public Context
+class Map : public Context, public Observer
 {
 public:
-    Map();
+    Map(Actions *actions);
     virtual ~Map();
 };
 

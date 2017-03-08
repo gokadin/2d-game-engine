@@ -7,19 +7,37 @@ CMakeFiles/SFMLDemo.dir/main.cpp.o: ../src/core/Engine.h
 CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o: ../src/Characters/Character.cpp
 CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o: ../src/Characters/Character.h
 
+CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o: ../src/core/Actions.cpp
+CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o: ../src/core/Actions.h
+CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o: ../src/utils/Event.h
+CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o: ../src/utils/Observable.h
+CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o: ../src/utils/Observer.h
+
+CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/core/Actions.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/core/Engine.cpp
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/core/Engine.h
+CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/utils/Event.h
+CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/utils/Observable.h
+CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/utils/Observer.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/windows/Context.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/windows/ContextSwitcher.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/windows/MainMenu.h
 
+CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: ../src/core/Actions.h
 CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: ../src/maps/Map.cpp
 CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: ../src/maps/Map.h
+CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: ../src/utils/Event.h
+CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: ../src/utils/Observable.h
+CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: ../src/utils/Observer.h
 CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: ../src/windows/Context.h
 
+CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/core/Actions.h
 CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/maps/Map.h
 CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/maps/town/Town.cpp
 CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/maps/town/Town.h
+CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/utils/Event.h
+CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/utils/Observable.h
+CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/utils/Observer.h
 CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/windows/Context.h
 
 CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o: ../src/utils/Logger.cpp
@@ -28,8 +46,12 @@ CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o: ../src/utils/Logger.h
 CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o: ../src/windows/Context.cpp
 CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o: ../src/windows/Context.h
 
+CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: ../src/core/Actions.h
 CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: ../src/maps/Map.h
 CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: ../src/maps/town/Town.h
+CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: ../src/utils/Event.h
+CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: ../src/utils/Observable.h
+CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: ../src/utils/Observer.h
 CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: ../src/windows/Context.h
 CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: ../src/windows/ContextSwitcher.cpp
 CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: ../src/windows/ContextSwitcher.h

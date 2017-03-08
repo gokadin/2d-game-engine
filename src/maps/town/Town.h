@@ -9,7 +9,7 @@
 class Town : public Map
 {
 public:
-    Town();
+    Town(Actions *actions);
     ~Town();
 
     void update(sf::Event event);
@@ -18,7 +18,11 @@ public:
 private:
     sf::Sprite sprite;
     sf::Texture texture;
+    int a;
+    int b;
+    bool move;
 
+    void notify(Event *event);
     void handleKeyPressed(sf::Keyboard::Key code);
     void handleWPressed();
 };

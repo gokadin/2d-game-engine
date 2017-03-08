@@ -18,11 +18,27 @@ Character.h
 SFML/Graphics/RenderWindow.hpp
 -
 
+/home/guiviko/Projects/chrono/src/core/Actions.cpp
+iostream
+-
+Actions.h
+/home/guiviko/Projects/chrono/src/core/Actions.h
+
+/home/guiviko/Projects/chrono/src/core/Actions.h
+SFML/Window/Event.hpp
+-
+../utils/Observable.h
+/home/guiviko/Projects/chrono/src/utils/Observable.h
+../utils/Event.h
+/home/guiviko/Projects/chrono/src/utils/Event.h
+
 /home/guiviko/Projects/chrono/src/core/Engine.cpp
 Engine.h
 /home/guiviko/Projects/chrono/src/core/Engine.h
 ../windows/ContextSwitcher.h
 /home/guiviko/Projects/chrono/src/windows/ContextSwitcher.h
+Actions.h
+/home/guiviko/Projects/chrono/src/core/Actions.h
 
 /home/guiviko/Projects/chrono/src/core/Engine.h
 SFML/Graphics.hpp
@@ -35,6 +51,10 @@ Map.h
 /home/guiviko/Projects/chrono/src/maps/Map.h
 ../windows/Context.h
 /home/guiviko/Projects/chrono/src/windows/Context.h
+../utils/Observer.h
+/home/guiviko/Projects/chrono/src/utils/Observer.h
+../core/Actions.h
+/home/guiviko/Projects/chrono/src/core/Actions.h
 
 /home/guiviko/Projects/chrono/src/maps/town/Town.cpp
 Town.h
@@ -52,11 +72,27 @@ SFML/Graphics/Sprite.hpp
 ../Map.h
 /home/guiviko/Projects/chrono/src/maps/Map.h
 
+/home/guiviko/Projects/chrono/src/utils/Event.h
+string
+-
+
 /home/guiviko/Projects/chrono/src/utils/Logger.cpp
 Logger.h
 /home/guiviko/Projects/chrono/src/utils/Logger.h
 
 /home/guiviko/Projects/chrono/src/utils/Logger.h
+
+/home/guiviko/Projects/chrono/src/utils/Observable.h
+vector
+-
+iostream
+-
+Observer.h
+/home/guiviko/Projects/chrono/src/utils/Observer.h
+
+/home/guiviko/Projects/chrono/src/utils/Observer.h
+Event.h
+/home/guiviko/Projects/chrono/src/utils/Event.h
 
 /home/guiviko/Projects/chrono/src/windows/Context.cpp
 Context.h
@@ -73,8 +109,6 @@ ContextSwitcher.h
 /home/guiviko/Projects/chrono/src/windows/ContextSwitcher.h
 ../maps/town/Town.h
 /home/guiviko/Projects/chrono/src/maps/town/Town.h
-iostream
--
 
 /home/guiviko/Projects/chrono/src/windows/ContextSwitcher.h
 SFML/Graphics/RenderWindow.hpp
@@ -85,6 +119,8 @@ Context.h
 /home/guiviko/Projects/chrono/src/windows/Context.h
 MainMenu.h
 /home/guiviko/Projects/chrono/src/windows/MainMenu.h
+../core/Actions.h
+/home/guiviko/Projects/chrono/src/core/Actions.h
 
 /home/guiviko/Projects/chrono/src/windows/MainMenu.cpp
 MainMenu.h

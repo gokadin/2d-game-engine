@@ -177,6 +177,33 @@ src/Characters/Character.cpp.s:
 	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.s
 .PHONY : src/Characters/Character.cpp.s
 
+src/core/Actions.o: src/core/Actions.cpp.o
+
+.PHONY : src/core/Actions.o
+
+# target to build an object file
+src/core/Actions.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o
+.PHONY : src/core/Actions.cpp.o
+
+src/core/Actions.i: src/core/Actions.cpp.i
+
+.PHONY : src/core/Actions.i
+
+# target to preprocess a source file
+src/core/Actions.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.i
+.PHONY : src/core/Actions.cpp.i
+
+src/core/Actions.s: src/core/Actions.cpp.s
+
+.PHONY : src/core/Actions.s
+
+# target to generate assembly for a file
+src/core/Actions.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.s
+.PHONY : src/core/Actions.cpp.s
+
 src/core/Engine.o: src/core/Engine.cpp.o
 
 .PHONY : src/core/Engine.o
@@ -381,6 +408,9 @@ help:
 	@echo "... src/Characters/Character.o"
 	@echo "... src/Characters/Character.i"
 	@echo "... src/Characters/Character.s"
+	@echo "... src/core/Actions.o"
+	@echo "... src/core/Actions.i"
+	@echo "... src/core/Actions.s"
 	@echo "... src/core/Engine.o"
 	@echo "... src/core/Engine.i"
 	@echo "... src/core/Engine.s"
