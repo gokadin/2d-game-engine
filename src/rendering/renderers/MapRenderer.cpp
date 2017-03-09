@@ -9,15 +9,20 @@ MapRenderer::MapRenderer(GameState *state):
     }
 
     sprite.setTexture(texture);
-    sprite.setTextureRect(sf::IntRect(state->map.initialX, state->map.initialY, 1280, 720));
+    updateView();
 }
 
 void MapRenderer::draw(sf::RenderWindow *window)
 {
-    sprite.setTextureRect(sf::IntRect(state->map.initialX + state->map.offsetX,
-                                      state->map.initialY + state->map.offsetY,
-                                      1280,
-                                      720));
+    updateView();
 
     window->draw(sprite);
+}
+
+void MapRenderer::updateView()
+{
+    int x = state->map.x - state->config.width / 2;
+    int y = state->map.y - state->config.height / 2;
+
+    sprite.setTextureRect(sf::IntRect(x, y, state->config.width, state->config.height));
 }

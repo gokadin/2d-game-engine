@@ -9,6 +9,9 @@ public:
     MapUpdater(GameState *state);
 
     void update();
+
+private:
+    void move();
 };
 
 #endif //SFMLDEMO_MAPUPDATER_H

@@ -1,8 +1,9 @@
 #include "Game.h"
 
-Game::Game()
+Game::Game(int width, int height)
 {
-    state = new GameState();
+    state = new GameState(width, height);
+    dataProvider = new DataProvider(state);
     actionDispatcher = new ActionDispatcher(state);
     updateDispatcher = new UpdateDispatcher(state);
     renderDispatcher = new RenderDispatcher(state);
@@ -11,6 +12,7 @@ Game::Game()
 
 Game::~Game()
 {
+    delete dataProvider;
     delete inputManager;
     delete actionDispatcher;
     delete updateDispatcher;

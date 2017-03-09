@@ -16,6 +16,8 @@ public:
 private:
     sf::Sprite sprite;
     sf::Texture texture;
+
+    void updateView();
 };
 
 #endif //SFMLDEMO_MAPRENDERER_H

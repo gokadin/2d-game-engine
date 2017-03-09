@@ -4,6 +4,8 @@
 
 const int UPDATE_INTERVAL_MU = 16000;
 const int SECOND_IN_MU = 1000000;
+const int WIDTH = 1280;
+const int HEIGHT = 720;
 
 Engine::Engine() {}
 
@@ -11,7 +13,7 @@ Engine::~Engine() {}
 
 void Engine::run()
 {
-    sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(1280, 720), "Chrono");
+    sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Chrono");
 
     sf::Font font;
     if (!font.loadFromFile("../assets/fonts/Roboto-Regular.ttf"))
@@ -32,11 +34,7 @@ void Engine::run()
     updateText.setPosition(sf::Vector2f(5.0f, 25.0f));
     updateText.setString("UPS --");
 
-//    GameState *gameState = new GameState();
-//    Action *actions = new Action(gameState);
-//    ContextSwitcher *contextSwitcher = new ContextSwitcher(actions, gameState);
-
-    Game *game = new Game();
+    Game *game = new Game(WIDTH, HEIGHT);
 
     long elapsedMu = 0;
     int updateAcc = 0;
@@ -62,7 +60,6 @@ void Engine::run()
                     break;
             }
 
-            //actions->processEvent(event);
             game->processEvent(event);
         }
 
@@ -74,7 +71,6 @@ void Engine::run()
             updateAcc = UPDATE_INTERVAL_MU - updateAcc;
             updateCounter++;
 
-            //contextSwitcher->update();
             game->update();
         }
 
@@ -92,17 +88,15 @@ void Engine::run()
 
         window->clear(sf::Color::Black);
 
-        //contextSwitcher->draw(window);
         game->draw(window);
         window->draw(updateText);
         window->draw(fpsText);
 
         window->display();
+
+        sf::sleep(sf::milliseconds(1));
     }
 
-//    delete actions;
-//    delete contextSwitcher;
-//    delete gameState;
     delete game;
     delete window;
 }

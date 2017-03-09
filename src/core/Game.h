@@ -8,11 +8,12 @@
 #include "../states/GameState.h"
 #include "UpdateDispatcher.h"
 #include "RenderDispatcher.h"
+#include "../data/DataProvider.h"
 
 class Game
 {
 public:
-    Game();
+    Game(int width, int height);
     ~Game();
 
     void processEvent(sf::Event event);
@@ -21,6 +22,7 @@ public:
 
 private:
     GameState *state;
+    DataProvider *dataProvider;
     ActionDispatcher *actionDispatcher;
     UpdateDispatcher *updateDispatcher;
     RenderDispatcher *renderDispatcher;
