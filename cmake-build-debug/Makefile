@@ -312,33 +312,6 @@ src/utils/Logger.cpp.s:
 	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.s
 .PHONY : src/utils/Logger.cpp.s
 
-src/windows/Context.o: src/windows/Context.cpp.o
-
-.PHONY : src/windows/Context.o
-
-# target to build an object file
-src/windows/Context.cpp.o:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o
-.PHONY : src/windows/Context.cpp.o
-
-src/windows/Context.i: src/windows/Context.cpp.i
-
-.PHONY : src/windows/Context.i
-
-# target to preprocess a source file
-src/windows/Context.cpp.i:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.i
-.PHONY : src/windows/Context.cpp.i
-
-src/windows/Context.s: src/windows/Context.cpp.s
-
-.PHONY : src/windows/Context.s
-
-# target to generate assembly for a file
-src/windows/Context.cpp.s:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.s
-.PHONY : src/windows/Context.cpp.s
-
 src/windows/ContextSwitcher.o: src/windows/ContextSwitcher.cpp.o
 
 .PHONY : src/windows/ContextSwitcher.o
@@ -423,9 +396,6 @@ help:
 	@echo "... src/utils/Logger.o"
 	@echo "... src/utils/Logger.i"
 	@echo "... src/utils/Logger.s"
-	@echo "... src/windows/Context.o"
-	@echo "... src/windows/Context.i"
-	@echo "... src/windows/Context.s"
 	@echo "... src/windows/ContextSwitcher.o"
 	@echo "... src/windows/ContextSwitcher.i"
 	@echo "... src/windows/ContextSwitcher.s"

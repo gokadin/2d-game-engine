@@ -2,21 +2,22 @@
 #define SFMLDEMO_EVENT_H
 
 #include <string>
+#include "../core/eventTypes.h"
 
 class Event
 {
 public:
-    Event(std::string type)
+    Event(event_type type)
     {
         this->type = type;
     }
 
     virtual ~Event() {}
 
-    inline std::string getType() { return type; }
+    inline event_type getType() { return type; }
 
 private:
-    std::string type;
+    event_type type;
 };
 
 #endif //SFMLDEMO_EVENT_H

@@ -1,9 +1,10 @@
 #include "ContextSwitcher.h"
 #include "../maps/town/Town.h"
 
-ContextSwitcher::ContextSwitcher(Actions *actions)
+ContextSwitcher::ContextSwitcher(Actions *actions, GameState *gameState):
+        gameState(gameState)
 {
-    context = new Town(actions);
+    context = new Town(actions, gameState->getMapState());
 }
 
 ContextSwitcher::~ContextSwitcher()

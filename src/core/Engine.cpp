@@ -1,6 +1,5 @@
 #include "Engine.h"
 #include "../windows/ContextSwitcher.h"
-#include "Actions.h"
 
 const int UPDATE_INTERVAL_MU = 16000;
 const int SECOND_IN_MU = 1000000;
@@ -11,7 +10,7 @@ Engine::~Engine() {}
 
 void Engine::run()
 {
-    sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(1280, 720), "SFML works!");
+    sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(1280, 720), "Chrono");
 
     sf::Font font;
     if (!font.loadFromFile("../assets/fonts/Roboto-Regular.ttf"))
@@ -24,17 +23,19 @@ void Engine::run()
     fpsText.setCharacterSize(18);
     fpsText.setColor(sf::Color::Red);
     fpsText.setPosition(sf::Vector2f(5.0f, 5.0f));
-    fpsText.setString("FPS 0");
+    fpsText.setString("FPS --");
     sf::Text updateText;
     updateText.setFont(font);
     updateText.setCharacterSize(18);
     updateText.setColor(sf::Color::Red);
     updateText.setPosition(sf::Vector2f(5.0f, 25.0f));
-    updateText.setString("UPS 0");
+    updateText.setString("UPS --");
 
-    Actions *actions = new Actions();
-    ContextSwitcher *contextSwitcher = new ContextSwitcher(actions);
+    GameState *gameState = new GameState();
+    Actions *actions = new Actions(gameState);
+    ContextSwitcher *contextSwitcher = new ContextSwitcher(actions, gameState);
 
+    long elapsedMu = 0;
     int updateAcc = 0;
     int updateCounter = 0;
     int frameRateAcc = 0;
@@ -58,11 +59,10 @@ void Engine::run()
                     break;
             }
 
-            // change update method name for like process event or something
-            actions->update(event);
+            actions->processEvent(event);
         }
 
-        int elapsedMu = clock.restart().asMicroseconds();
+        elapsedMu = clock.restart().asMicroseconds();
 
         updateAcc += elapsedMu;
         if (updateAcc >= UPDATE_INTERVAL_MU)
@@ -86,13 +86,16 @@ void Engine::run()
         }
 
         window->clear(sf::Color::Black);
-        //contextSwitcher->draw(window);
+
+        contextSwitcher->draw(window);
         window->draw(updateText);
         window->draw(fpsText);
+
         window->display();
     }
 
     delete actions;
     delete contextSwitcher;
+    delete gameState;
     delete window;
 }

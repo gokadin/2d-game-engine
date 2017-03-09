@@ -105,33 +105,9 @@ CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o.provides: CMakeFiles/SFMLDemo.dir/
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o
 
 
-CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
-CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o: ../src/windows/Context.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o -c /home/guiviko/Projects/chrono/src/windows/Context.cpp
-
-CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/windows/Context.cpp > CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.i
-
-CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/windows/Context.cpp -o CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.s
-
-CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o.requires:
-
-.PHONY : CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o.requires
-
-CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o.provides.build
-.PHONY : CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o.provides
-
-CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o
-
-
 CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
 CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o: ../src/windows/MainMenu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o -c /home/guiviko/Projects/chrono/src/windows/MainMenu.cpp
 
 CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.i: cmake_force
@@ -155,7 +131,7 @@ CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o.provides.build: CMakeFiles/SF
 
 CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
 CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: ../src/windows/ContextSwitcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o -c /home/guiviko/Projects/chrono/src/windows/ContextSwitcher.cpp
 
 CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.i: cmake_force
@@ -179,7 +155,7 @@ CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.provides.build: CMakeF
 
 CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
 CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o: ../src/Characters/Character.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o -c /home/guiviko/Projects/chrono/src/Characters/Character.cpp
 
 CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.i: cmake_force
@@ -203,7 +179,7 @@ CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.provides.build: CMakeFile
 
 CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
 CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: ../src/maps/Map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o -c /home/guiviko/Projects/chrono/src/maps/Map.cpp
 
 CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.i: cmake_force
@@ -227,7 +203,7 @@ CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.provides.build: CMakeFiles/SFMLDemo.d
 
 CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
 CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/maps/town/Town.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o -c /home/guiviko/Projects/chrono/src/maps/town/Town.cpp
 
 CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.i: cmake_force
@@ -251,7 +227,7 @@ CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.provides.build: CMakeFiles/SFML
 
 CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
 CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o: ../src/utils/Logger.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o -c /home/guiviko/Projects/chrono/src/utils/Logger.cpp
 
 CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.i: cmake_force
@@ -275,7 +251,7 @@ CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o.provides.build: CMakeFiles/SFMLDe
 
 CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
 CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o: ../src/core/Actions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o -c /home/guiviko/Projects/chrono/src/core/Actions.cpp
 
 CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.i: cmake_force
@@ -301,7 +277,6 @@ CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o.provides.build: CMakeFiles/SFMLDe
 SFMLDemo_OBJECTS = \
 "CMakeFiles/SFMLDemo.dir/main.cpp.o" \
 "CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o" \
-"CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o" \
 "CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o" \
 "CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o" \
 "CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o" \
@@ -315,7 +290,6 @@ SFMLDemo_EXTERNAL_OBJECTS =
 
 SFMLDemo: CMakeFiles/SFMLDemo.dir/main.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o
-SFMLDemo: CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o
@@ -330,7 +304,7 @@ SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-network.so
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
 SFMLDemo: CMakeFiles/SFMLDemo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable SFMLDemo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable SFMLDemo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SFMLDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -340,7 +314,6 @@ CMakeFiles/SFMLDemo.dir/build: SFMLDemo
 
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/main.cpp.o.requires
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o.requires
-CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o.requires
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o.requires
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.requires
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.requires

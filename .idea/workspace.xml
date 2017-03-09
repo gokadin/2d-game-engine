@@ -13,16 +13,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f1aeebf-e4de-41f6-b96d-376ec8072e4a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/Actions.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/Actions.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/Event.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/Observable.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/Observer.h" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/eventTypes.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/states/GameState.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/states/MapState.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/rendering/Drawable.h" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/SFMLDemo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/windows/Context.cpp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/SFMLDemo" afterPath="$PROJECT_DIR$/cmake-build-debug/SFMLDemo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
@@ -37,11 +40,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/SFMLDemo.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/SFMLDemo.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Actions.cpp" afterPath="$PROJECT_DIR$/src/core/Actions.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Actions.h" afterPath="$PROJECT_DIR$/src/core/Actions.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Engine.cpp" afterPath="$PROJECT_DIR$/src/core/Engine.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/maps/Map.cpp" afterPath="$PROJECT_DIR$/src/maps/Map.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/maps/Map.h" afterPath="$PROJECT_DIR$/src/maps/Map.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/maps/town/Town.cpp" afterPath="$PROJECT_DIR$/src/maps/town/Town.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/maps/town/Town.h" afterPath="$PROJECT_DIR$/src/maps/town/Town.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/Event.h" afterPath="$PROJECT_DIR$/src/utils/Event.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/Context.h" afterPath="$PROJECT_DIR$/src/windows/Context.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ContextSwitcher.cpp" afterPath="$PROJECT_DIR$/src/windows/ContextSwitcher.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ContextSwitcher.h" afterPath="$PROJECT_DIR$/src/windows/ContextSwitcher.h" />
     </list>
@@ -62,19 +69,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Engine.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/core/Engine.cpp">
+      <file leaf-file-name="Actions.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/core/Actions.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="34" column="35" lean-forward="true" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="484">
+              <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>draw</find>
+      <find>std::c</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -93,22 +104,27 @@
         <option value="$PROJECT_DIR$/src/Characters/Character.cpp" />
         <option value="$PROJECT_DIR$/src/utils/Logger.h" />
         <option value="$PROJECT_DIR$/src/utils/Logger.cpp" />
-        <option value="$PROJECT_DIR$/src/windows/Context.h" />
-        <option value="$PROJECT_DIR$/src/windows/Context.cpp" />
         <option value="$PROJECT_DIR$/src/utils/Input.h" />
-        <option value="$PROJECT_DIR$/src/utils/Event.h" />
-        <option value="$PROJECT_DIR$/src/windows/ContextSwitcher.cpp" />
-        <option value="$PROJECT_DIR$/src/maps/Map.cpp" />
-        <option value="$PROJECT_DIR$/src/maps/Map.h" />
-        <option value="$PROJECT_DIR$/src/windows/ContextSwitcher.h" />
         <option value="$PROJECT_DIR$/src/utils/Observer.h" />
         <option value="$PROJECT_DIR$/src/utils/Observable.h" />
         <option value="$PROJECT_DIR$/src/core/events/MoveEvent.h" />
-        <option value="$PROJECT_DIR$/src/core/Actions.h" />
-        <option value="$PROJECT_DIR$/src/maps/town/Town.h" />
-        <option value="$PROJECT_DIR$/src/core/Actions.cpp" />
-        <option value="$PROJECT_DIR$/src/maps/town/Town.cpp" />
+        <option value="$PROJECT_DIR$/src/rendering/Drawable.h" />
+        <option value="$PROJECT_DIR$/src/windows/Context.cpp" />
+        <option value="$PROJECT_DIR$/src/windows/Context.h" />
+        <option value="$PROJECT_DIR$/src/maps/MapState.h" />
+        <option value="$PROJECT_DIR$/src/core/GameState.h" />
+        <option value="$PROJECT_DIR$/src/core/eventTypes.h" />
+        <option value="$PROJECT_DIR$/src/utils/Event.h" />
         <option value="$PROJECT_DIR$/src/core/Engine.cpp" />
+        <option value="$PROJECT_DIR$/src/core/states/GameState.h" />
+        <option value="$PROJECT_DIR$/src/windows/ContextSwitcher.h" />
+        <option value="$PROJECT_DIR$/src/windows/ContextSwitcher.cpp" />
+        <option value="$PROJECT_DIR$/src/maps/Map.h" />
+        <option value="$PROJECT_DIR$/src/maps/town/Town.cpp" />
+        <option value="$PROJECT_DIR$/src/maps/town/Town.h" />
+        <option value="$PROJECT_DIR$/src/maps/Map.cpp" />
+        <option value="$PROJECT_DIR$/src/core/Actions.h" />
+        <option value="$PROJECT_DIR$/src/core/Actions.cpp" />
       </list>
     </option>
   </component>
@@ -203,6 +219,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="rendering" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SFMLDemo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chrono" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="maps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -261,6 +295,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="states" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SFMLDemo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chrono" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Characters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -277,6 +333,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/core/states" />
+      <recent name="$PROJECT_DIR$/src/core" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -478,12 +536,13 @@
       <updated>1488812789010</updated>
       <workItem from="1488812791192" duration="13117000" />
       <workItem from="1488859082007" duration="3276000" />
-      <workItem from="1488944286772" duration="7805000" />
+      <workItem from="1488944286772" duration="7849000" />
+      <workItem from="1489017933946" duration="6281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24198000" />
+    <option name="totallyTimeSpent" value="30523000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,7 +563,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32768923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32768923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -529,18 +588,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/core/Engine.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="34" column="35" lean-forward="true" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+          <folding>
+            <marker date="1489023990833" expanded="true" signature="9:59" ph="..." />
+            <marker date="1489023990833" expanded="true" signature="196:2677" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/maps/town/Town.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
           <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding>
-            <marker date="1488951879038" expanded="true" signature="9:38" ph="..." />
-            <marker date="1488951879038" expanded="true" signature="84:357" ph="{...}" />
-            <marker date="1488951879038" expanded="true" signature="409:552" ph="{...}" />
-            <marker date="1488951879038" expanded="true" signature="589:644" ph="{...}" />
-            <marker date="1488951879038" expanded="true" signature="688:717" ph="{...}" />
-            <marker date="1488951879038" expanded="true" signature="747:826" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -549,7 +612,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <marker date="1489023990833" expanded="true" signature="9:59" ph="..." />
+            <marker date="1489023990833" expanded="true" signature="196:2677" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -559,11 +623,11 @@
         <state relative-caret-position="90">
           <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
           <folding>
-            <marker date="1488949747358" expanded="true" signature="9:59" ph="..." />
-            <marker date="1488949747358" expanded="true" signature="112:148" ph="{...}" />
-            <marker date="1488949747358" expanded="true" signature="186:209" ph="{...}" />
-            <marker date="1488949747358" expanded="true" signature="257:288" ph="{...}" />
-            <marker date="1488949747358" expanded="true" signature="343:373" ph="{...}" />
+            <marker date="1489024152515" expanded="false" signature="9:59" ph="..." />
+            <marker date="1489024152515" expanded="true" signature="164:226" ph="{...}" />
+            <marker date="1489024152515" expanded="true" signature="264:287" ph="{...}" />
+            <marker date="1489024152515" expanded="true" signature="320:346" ph="{...}" />
+            <marker date="1489024152515" expanded="true" signature="401:431" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -573,8 +637,7 @@
         <state relative-caret-position="180">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <marker date="1488860760054" expanded="true" signature="62:127" ph="..." />
-            <marker date="1488860760054" expanded="true" signature="143:285" ph="{...}" />
+            <marker date="1489018885052" expanded="true" signature="121:125" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -598,7 +661,15 @@
         <state relative-caret-position="72">
           <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
           <folding>
-            <marker date="1488949747366" expanded="true" signature="45:78" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="93:443" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="492:496" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="517:821" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="848:895" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="924:971" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="1001:1048" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="1077:1124" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="1156:1250" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="1293:1322" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -608,8 +679,8 @@
         <state relative-caret-position="90">
           <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding>
-            <marker date="1488949747354" expanded="true" signature="56:138" ph="..." />
-            <marker date="1488949747354" expanded="true" signature="184:242" ph="{...}" />
+            <marker date="1489024175207" expanded="true" signature="56:211" ph="..." />
+            <marker date="1489024175207" expanded="true" signature="257:732" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -618,14 +689,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <marker date="1488951879038" expanded="true" signature="9:38" ph="..." />
-            <marker date="1488951879038" expanded="true" signature="84:357" ph="{...}" />
-            <marker date="1488951879038" expanded="true" signature="409:552" ph="{...}" />
-            <marker date="1488951879038" expanded="true" signature="589:644" ph="{...}" />
-            <marker date="1488951879038" expanded="true" signature="688:717" ph="{...}" />
-            <marker date="1488951879038" expanded="true" signature="747:826" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -634,8 +698,7 @@
         <state relative-caret-position="54">
           <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
           <folding>
-            <marker date="1488951218456" expanded="true" signature="58:182" ph="..." />
-            <marker date="1488951218456" expanded="true" signature="208:541" ph="{...}" />
+            <marker date="1489024210775" expanded="true" signature="94:153" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -710,52 +773,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/Context.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1488860760054" expanded="true" signature="62:127" ph="..." />
-            <marker date="1488860760054" expanded="true" signature="143:285" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Input.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Input.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Observer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/Input.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/utils/Input.h" />
+    <entry file="file://$PROJECT_DIR$/src/utils/Observer.cpp" />
     <entry file="file://$PROJECT_DIR$/src/utils/Logger.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding>
-            <marker date="1488860389925" expanded="true" signature="66:106" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -765,28 +792,6 @@
           <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
           <folding>
             <marker date="1488859055356" expanded="true" signature="96:153" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/maps/Map.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <marker date="1488949747354" expanded="true" signature="56:138" ph="..." />
-            <marker date="1488949747354" expanded="true" signature="184:242" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/ContextSwitcher.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding>
-            <marker date="1488949759474" expanded="true" signature="64:201" ph="..." />
-            <marker date="1488949759474" expanded="true" signature="225:407" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -814,7 +819,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/events/MoveEvent.cpp">
+    <entry file="file://$PROJECT_DIR$/src/core/events/MoveEvent.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/core/events/MoveEvent.h" />
+    <entry file="file://$PROJECT_DIR$/src/windows/Context.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rendering/Drawable.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <marker date="1489018410851" expanded="true" signature="115:210" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/Context.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding>
+            <marker date="1489018885052" expanded="true" signature="121:125" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/GameState.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -822,114 +857,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/events/MoveEvent.h">
+    <entry file="file://$PROJECT_DIR$/src/core/states/MapState.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="48" lean-forward="false" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="572">
+          <caret line="22" column="89" lean-forward="true" selection-start-line="22" selection-start-column="89" selection-end-line="22" selection-end-column="89" />
+          <folding>
+            <marker date="1489021415371" expanded="true" signature="72:922" ph="{...}" />
+            <marker date="1489021415371" expanded="true" signature="101:227" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/eventTypes.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding>
+            <marker date="1489023745895" expanded="true" signature="77:153" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/Event.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding>
-            <marker date="1488945733954" expanded="true" signature="82:268" ph="{...}" />
-            <marker date="1488945733954" expanded="true" signature="124:158" ph="{...}" />
+            <marker date="1489023756527" expanded="true" signature="60:100" ph="..." />
+            <marker date="1489023756527" expanded="true" signature="114:297" ph="{...}" />
+            <marker date="1489023756527" expanded="true" signature="155:189" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Actions.h">
+    <entry file="file://$PROJECT_DIR$/src/core/states/GameState.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        <state relative-caret-position="442">
+          <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
           <folding>
-            <marker date="1488951082793" expanded="true" signature="64:148" ph="..." />
-            <marker date="1488951082793" expanded="true" signature="184:292" ph="{...}" />
-            <marker date="1488951082793" expanded="true" signature="308:323" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/maps/town/Town.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding>
-            <marker date="1488951218456" expanded="true" signature="58:182" ph="..." />
-            <marker date="1488951218456" expanded="true" signature="208:541" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Actions.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding>
-            <marker date="1488951390615" expanded="true" signature="9:40" ph="..." />
-            <marker date="1488951390615" expanded="true" signature="61:88" ph="{...}" />
-            <marker date="1488951390615" expanded="true" signature="152:708" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/ContextSwitcher.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding>
-            <marker date="1488949747358" expanded="true" signature="9:59" ph="..." />
-            <marker date="1488949747358" expanded="true" signature="112:148" ph="{...}" />
-            <marker date="1488949747358" expanded="true" signature="186:209" ph="{...}" />
-            <marker date="1488949747358" expanded="true" signature="257:288" ph="{...}" />
-            <marker date="1488949747358" expanded="true" signature="343:373" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/Context.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/maps/Map.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding>
-            <marker date="1488949747366" expanded="true" signature="45:78" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/maps/town/Town.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-          <folding>
-            <marker date="1488951879038" expanded="true" signature="9:38" ph="..." />
-            <marker date="1488951879038" expanded="true" signature="84:357" ph="{...}" />
-            <marker date="1488951879038" expanded="true" signature="409:552" ph="{...}" />
-            <marker date="1488951879038" expanded="true" signature="589:644" ph="{...}" />
-            <marker date="1488951879038" expanded="true" signature="688:717" ph="{...}" />
-            <marker date="1488951879038" expanded="true" signature="747:826" ph="{...}" />
+            <marker date="1489024075870" expanded="true" signature="98:316" ph="{...}" />
+            <marker date="1489024075870" expanded="true" signature="191:223" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/Engine.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="34" column="35" lean-forward="true" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+        <state relative-caret-position="484">
+          <caret line="35" column="79" lean-forward="true" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="79" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <marker date="1489023990833" expanded="true" signature="9:59" ph="..." />
+            <marker date="1489023990833" expanded="true" signature="196:2677" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/ContextSwitcher.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <folding>
+            <marker date="1489024152519" expanded="false" signature="64:201" ph="..." />
+            <marker date="1489024152519" expanded="true" signature="225:440" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maps/Map.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding>
+            <marker date="1489024175207" expanded="true" signature="56:211" ph="..." />
+            <marker date="1489024175207" expanded="true" signature="257:732" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/ContextSwitcher.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding>
+            <marker date="1489024152515" expanded="false" signature="9:59" ph="..." />
+            <marker date="1489024152515" expanded="true" signature="164:226" ph="{...}" />
+            <marker date="1489024152515" expanded="true" signature="264:287" ph="{...}" />
+            <marker date="1489024152515" expanded="true" signature="320:346" ph="{...}" />
+            <marker date="1489024152515" expanded="true" signature="401:431" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maps/town/Town.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="49" lean-forward="true" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maps/town/Town.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="47" lean-forward="true" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+          <folding>
+            <marker date="1489024210775" expanded="true" signature="94:153" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Actions.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding>
+            <marker date="1489024275552" expanded="true" signature="64:207" ph="..." />
+            <marker date="1489024275552" expanded="true" signature="243:741" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/maps/Map.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <marker date="1489024236540" expanded="true" signature="93:443" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="492:496" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="517:821" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="848:895" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="924:971" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="1001:1048" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="1077:1124" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="1156:1250" ph="{...}" />
+            <marker date="1489024236540" expanded="true" signature="1293:1322" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Actions.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

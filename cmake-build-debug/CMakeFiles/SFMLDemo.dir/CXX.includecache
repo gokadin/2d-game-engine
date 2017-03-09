@@ -19,8 +19,6 @@ SFML/Graphics/RenderWindow.hpp
 -
 
 /home/guiviko/Projects/chrono/src/core/Actions.cpp
-iostream
--
 Actions.h
 /home/guiviko/Projects/chrono/src/core/Actions.h
 
@@ -31,24 +29,38 @@ SFML/Window/Event.hpp
 /home/guiviko/Projects/chrono/src/utils/Observable.h
 ../utils/Event.h
 /home/guiviko/Projects/chrono/src/utils/Event.h
+states/MapState.h
+/home/guiviko/Projects/chrono/src/core/states/MapState.h
+states/GameState.h
+/home/guiviko/Projects/chrono/src/core/states/GameState.h
 
 /home/guiviko/Projects/chrono/src/core/Engine.cpp
 Engine.h
 /home/guiviko/Projects/chrono/src/core/Engine.h
 ../windows/ContextSwitcher.h
 /home/guiviko/Projects/chrono/src/windows/ContextSwitcher.h
-Actions.h
-/home/guiviko/Projects/chrono/src/core/Actions.h
 
 /home/guiviko/Projects/chrono/src/core/Engine.h
 SFML/Graphics.hpp
 -
+
+/home/guiviko/Projects/chrono/src/core/eventTypes.h
+
+/home/guiviko/Projects/chrono/src/core/states/GameState.h
+MapState.h
+/home/guiviko/Projects/chrono/src/core/states/MapState.h
+
+/home/guiviko/Projects/chrono/src/core/states/MapState.h
 
 /home/guiviko/Projects/chrono/src/maps/Map.cpp
 Map.h
 /home/guiviko/Projects/chrono/src/maps/Map.h
 
 /home/guiviko/Projects/chrono/src/maps/Map.h
+SFML/Graphics/Texture.hpp
+-
+SFML/Graphics/Sprite.hpp
+-
 ../windows/Context.h
 /home/guiviko/Projects/chrono/src/windows/Context.h
 ../utils/Observer.h
@@ -59,22 +71,20 @@ Map.h
 /home/guiviko/Projects/chrono/src/maps/town/Town.cpp
 Town.h
 /home/guiviko/Projects/chrono/src/maps/town/Town.h
-iostream
--
 
 /home/guiviko/Projects/chrono/src/maps/town/Town.h
-SFML/Graphics/CircleShape.hpp
--
-SFML/Graphics/Texture.hpp
--
-SFML/Graphics/Sprite.hpp
--
 ../Map.h
 /home/guiviko/Projects/chrono/src/maps/Map.h
+
+/home/guiviko/Projects/chrono/src/rendering/Drawable.h
+SFML/Graphics/RenderWindow.hpp
+-
 
 /home/guiviko/Projects/chrono/src/utils/Event.h
 string
 -
+../core/eventTypes.h
+/home/guiviko/Projects/chrono/src/core/eventTypes.h
 
 /home/guiviko/Projects/chrono/src/utils/Logger.cpp
 Logger.h
@@ -94,15 +104,9 @@ Observer.h
 Event.h
 /home/guiviko/Projects/chrono/src/utils/Event.h
 
-/home/guiviko/Projects/chrono/src/windows/Context.cpp
-Context.h
 /home/guiviko/Projects/chrono/src/windows/Context.h
-
-/home/guiviko/Projects/chrono/src/windows/Context.h
-SFML/Graphics/RenderWindow.hpp
--
-SFML/Window/Event.hpp
--
+../rendering/Drawable.h
+/home/guiviko/Projects/chrono/src/rendering/Drawable.h
 
 /home/guiviko/Projects/chrono/src/windows/ContextSwitcher.cpp
 ContextSwitcher.h

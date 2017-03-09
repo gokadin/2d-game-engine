@@ -10,6 +10,9 @@ CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o
 CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o
  /home/guiviko/Projects/chrono/src/core/Actions.cpp
  /home/guiviko/Projects/chrono/src/core/Actions.h
+ /home/guiviko/Projects/chrono/src/core/eventTypes.h
+ /home/guiviko/Projects/chrono/src/core/states/GameState.h
+ /home/guiviko/Projects/chrono/src/core/states/MapState.h
  /home/guiviko/Projects/chrono/src/utils/Event.h
  /home/guiviko/Projects/chrono/src/utils/Observable.h
  /home/guiviko/Projects/chrono/src/utils/Observer.h
@@ -17,6 +20,10 @@ CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o
  /home/guiviko/Projects/chrono/src/core/Actions.h
  /home/guiviko/Projects/chrono/src/core/Engine.cpp
  /home/guiviko/Projects/chrono/src/core/Engine.h
+ /home/guiviko/Projects/chrono/src/core/eventTypes.h
+ /home/guiviko/Projects/chrono/src/core/states/GameState.h
+ /home/guiviko/Projects/chrono/src/core/states/MapState.h
+ /home/guiviko/Projects/chrono/src/rendering/Drawable.h
  /home/guiviko/Projects/chrono/src/utils/Event.h
  /home/guiviko/Projects/chrono/src/utils/Observable.h
  /home/guiviko/Projects/chrono/src/utils/Observer.h
@@ -25,17 +32,25 @@ CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o
  /home/guiviko/Projects/chrono/src/windows/MainMenu.h
 CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o
  /home/guiviko/Projects/chrono/src/core/Actions.h
+ /home/guiviko/Projects/chrono/src/core/eventTypes.h
+ /home/guiviko/Projects/chrono/src/core/states/GameState.h
+ /home/guiviko/Projects/chrono/src/core/states/MapState.h
  /home/guiviko/Projects/chrono/src/maps/Map.cpp
  /home/guiviko/Projects/chrono/src/maps/Map.h
+ /home/guiviko/Projects/chrono/src/rendering/Drawable.h
  /home/guiviko/Projects/chrono/src/utils/Event.h
  /home/guiviko/Projects/chrono/src/utils/Observable.h
  /home/guiviko/Projects/chrono/src/utils/Observer.h
  /home/guiviko/Projects/chrono/src/windows/Context.h
 CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o
  /home/guiviko/Projects/chrono/src/core/Actions.h
+ /home/guiviko/Projects/chrono/src/core/eventTypes.h
+ /home/guiviko/Projects/chrono/src/core/states/GameState.h
+ /home/guiviko/Projects/chrono/src/core/states/MapState.h
  /home/guiviko/Projects/chrono/src/maps/Map.h
  /home/guiviko/Projects/chrono/src/maps/town/Town.cpp
  /home/guiviko/Projects/chrono/src/maps/town/Town.h
+ /home/guiviko/Projects/chrono/src/rendering/Drawable.h
  /home/guiviko/Projects/chrono/src/utils/Event.h
  /home/guiviko/Projects/chrono/src/utils/Observable.h
  /home/guiviko/Projects/chrono/src/utils/Observer.h
@@ -43,13 +58,14 @@ CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o
 CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o
  /home/guiviko/Projects/chrono/src/utils/Logger.cpp
  /home/guiviko/Projects/chrono/src/utils/Logger.h
-CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o
- /home/guiviko/Projects/chrono/src/windows/Context.cpp
- /home/guiviko/Projects/chrono/src/windows/Context.h
 CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o
  /home/guiviko/Projects/chrono/src/core/Actions.h
+ /home/guiviko/Projects/chrono/src/core/eventTypes.h
+ /home/guiviko/Projects/chrono/src/core/states/GameState.h
+ /home/guiviko/Projects/chrono/src/core/states/MapState.h
  /home/guiviko/Projects/chrono/src/maps/Map.h
  /home/guiviko/Projects/chrono/src/maps/town/Town.h
+ /home/guiviko/Projects/chrono/src/rendering/Drawable.h
  /home/guiviko/Projects/chrono/src/utils/Event.h
  /home/guiviko/Projects/chrono/src/utils/Observable.h
  /home/guiviko/Projects/chrono/src/utils/Observer.h
@@ -58,6 +74,7 @@ CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o
  /home/guiviko/Projects/chrono/src/windows/ContextSwitcher.h
  /home/guiviko/Projects/chrono/src/windows/MainMenu.h
 CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o
+ /home/guiviko/Projects/chrono/src/rendering/Drawable.h
  /home/guiviko/Projects/chrono/src/windows/Context.h
  /home/guiviko/Projects/chrono/src/windows/MainMenu.cpp
  /home/guiviko/Projects/chrono/src/windows/MainMenu.h

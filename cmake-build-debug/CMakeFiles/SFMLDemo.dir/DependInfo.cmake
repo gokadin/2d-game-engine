@@ -11,7 +11,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/guiviko/Projects/chrono/src/maps/Map.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o"
   "/home/guiviko/Projects/chrono/src/maps/town/Town.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o"
   "/home/guiviko/Projects/chrono/src/utils/Logger.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o"
-  "/home/guiviko/Projects/chrono/src/windows/Context.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/windows/Context.cpp.o"
   "/home/guiviko/Projects/chrono/src/windows/ContextSwitcher.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o"
   "/home/guiviko/Projects/chrono/src/windows/MainMenu.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o"
   )

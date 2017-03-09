@@ -10,7 +10,7 @@
 class ContextSwitcher
 {
 public:
-    ContextSwitcher(Actions *actions);
+    ContextSwitcher(Actions *actions, GameState *gameState);
     ~ContextSwitcher();
 
     void update();
@@ -18,6 +18,7 @@ public:
 
 private:
     Context *context;
+    GameState *gameState;
 };
 
 #endif //SFMLDEMO_CONTEXT_H
