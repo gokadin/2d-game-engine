@@ -1,5 +1,6 @@
+#include <iostream>
 #include "Engine.h"
-#include "../windows/ContextSwitcher.h"
+#include "Game.h"
 
 const int UPDATE_INTERVAL_MU = 16000;
 const int SECOND_IN_MU = 1000000;
@@ -31,9 +32,11 @@ void Engine::run()
     updateText.setPosition(sf::Vector2f(5.0f, 25.0f));
     updateText.setString("UPS --");
 
-    GameState *gameState = new GameState();
-    Actions *actions = new Actions(gameState);
-    ContextSwitcher *contextSwitcher = new ContextSwitcher(actions, gameState);
+//    GameState *gameState = new GameState();
+//    Action *actions = new Action(gameState);
+//    ContextSwitcher *contextSwitcher = new ContextSwitcher(actions, gameState);
+
+    Game *game = new Game();
 
     long elapsedMu = 0;
     int updateAcc = 0;
@@ -59,7 +62,8 @@ void Engine::run()
                     break;
             }
 
-            actions->processEvent(event);
+            //actions->processEvent(event);
+            game->processEvent(event);
         }
 
         elapsedMu = clock.restart().asMicroseconds();
@@ -70,7 +74,8 @@ void Engine::run()
             updateAcc = UPDATE_INTERVAL_MU - updateAcc;
             updateCounter++;
 
-            contextSwitcher->update();
+            //contextSwitcher->update();
+            game->update();
         }
 
         frameRateAcc += elapsedMu;
@@ -87,15 +92,17 @@ void Engine::run()
 
         window->clear(sf::Color::Black);
 
-        contextSwitcher->draw(window);
+        //contextSwitcher->draw(window);
+        game->draw(window);
         window->draw(updateText);
         window->draw(fpsText);
 
         window->display();
     }
 
-    delete actions;
-    delete contextSwitcher;
-    delete gameState;
+//    delete actions;
+//    delete contextSwitcher;
+//    delete gameState;
+    delete game;
     delete window;
 }

@@ -150,59 +150,32 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/Characters/Character.o: src/Characters/Character.cpp.o
+src/core/ActionDispatcher.o: src/core/ActionDispatcher.cpp.o
 
-.PHONY : src/Characters/Character.o
-
-# target to build an object file
-src/Characters/Character.cpp.o:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o
-.PHONY : src/Characters/Character.cpp.o
-
-src/Characters/Character.i: src/Characters/Character.cpp.i
-
-.PHONY : src/Characters/Character.i
-
-# target to preprocess a source file
-src/Characters/Character.cpp.i:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.i
-.PHONY : src/Characters/Character.cpp.i
-
-src/Characters/Character.s: src/Characters/Character.cpp.s
-
-.PHONY : src/Characters/Character.s
-
-# target to generate assembly for a file
-src/Characters/Character.cpp.s:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.s
-.PHONY : src/Characters/Character.cpp.s
-
-src/core/Actions.o: src/core/Actions.cpp.o
-
-.PHONY : src/core/Actions.o
+.PHONY : src/core/ActionDispatcher.o
 
 # target to build an object file
-src/core/Actions.cpp.o:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o
-.PHONY : src/core/Actions.cpp.o
+src/core/ActionDispatcher.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o
+.PHONY : src/core/ActionDispatcher.cpp.o
 
-src/core/Actions.i: src/core/Actions.cpp.i
+src/core/ActionDispatcher.i: src/core/ActionDispatcher.cpp.i
 
-.PHONY : src/core/Actions.i
+.PHONY : src/core/ActionDispatcher.i
 
 # target to preprocess a source file
-src/core/Actions.cpp.i:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.i
-.PHONY : src/core/Actions.cpp.i
+src/core/ActionDispatcher.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.i
+.PHONY : src/core/ActionDispatcher.cpp.i
 
-src/core/Actions.s: src/core/Actions.cpp.s
+src/core/ActionDispatcher.s: src/core/ActionDispatcher.cpp.s
 
-.PHONY : src/core/Actions.s
+.PHONY : src/core/ActionDispatcher.s
 
 # target to generate assembly for a file
-src/core/Actions.cpp.s:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.s
-.PHONY : src/core/Actions.cpp.s
+src/core/ActionDispatcher.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.s
+.PHONY : src/core/ActionDispatcher.cpp.s
 
 src/core/Engine.o: src/core/Engine.cpp.o
 
@@ -231,140 +204,140 @@ src/core/Engine.cpp.s:
 	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.s
 .PHONY : src/core/Engine.cpp.s
 
-src/maps/Map.o: src/maps/Map.cpp.o
+src/core/Game.o: src/core/Game.cpp.o
 
-.PHONY : src/maps/Map.o
-
-# target to build an object file
-src/maps/Map.cpp.o:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o
-.PHONY : src/maps/Map.cpp.o
-
-src/maps/Map.i: src/maps/Map.cpp.i
-
-.PHONY : src/maps/Map.i
-
-# target to preprocess a source file
-src/maps/Map.cpp.i:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.i
-.PHONY : src/maps/Map.cpp.i
-
-src/maps/Map.s: src/maps/Map.cpp.s
-
-.PHONY : src/maps/Map.s
-
-# target to generate assembly for a file
-src/maps/Map.cpp.s:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.s
-.PHONY : src/maps/Map.cpp.s
-
-src/maps/town/Town.o: src/maps/town/Town.cpp.o
-
-.PHONY : src/maps/town/Town.o
+.PHONY : src/core/Game.o
 
 # target to build an object file
-src/maps/town/Town.cpp.o:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o
-.PHONY : src/maps/town/Town.cpp.o
+src/core/Game.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o
+.PHONY : src/core/Game.cpp.o
 
-src/maps/town/Town.i: src/maps/town/Town.cpp.i
+src/core/Game.i: src/core/Game.cpp.i
 
-.PHONY : src/maps/town/Town.i
+.PHONY : src/core/Game.i
 
 # target to preprocess a source file
-src/maps/town/Town.cpp.i:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.i
-.PHONY : src/maps/town/Town.cpp.i
+src/core/Game.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.i
+.PHONY : src/core/Game.cpp.i
 
-src/maps/town/Town.s: src/maps/town/Town.cpp.s
+src/core/Game.s: src/core/Game.cpp.s
 
-.PHONY : src/maps/town/Town.s
+.PHONY : src/core/Game.s
 
 # target to generate assembly for a file
-src/maps/town/Town.cpp.s:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.s
-.PHONY : src/maps/town/Town.cpp.s
+src/core/Game.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.s
+.PHONY : src/core/Game.cpp.s
 
-src/utils/Logger.o: src/utils/Logger.cpp.o
+src/input/InputManager.o: src/input/InputManager.cpp.o
 
-.PHONY : src/utils/Logger.o
+.PHONY : src/input/InputManager.o
 
 # target to build an object file
-src/utils/Logger.cpp.o:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o
-.PHONY : src/utils/Logger.cpp.o
+src/input/InputManager.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o
+.PHONY : src/input/InputManager.cpp.o
 
-src/utils/Logger.i: src/utils/Logger.cpp.i
+src/input/InputManager.i: src/input/InputManager.cpp.i
 
-.PHONY : src/utils/Logger.i
+.PHONY : src/input/InputManager.i
 
 # target to preprocess a source file
-src/utils/Logger.cpp.i:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.i
-.PHONY : src/utils/Logger.cpp.i
+src/input/InputManager.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.i
+.PHONY : src/input/InputManager.cpp.i
 
-src/utils/Logger.s: src/utils/Logger.cpp.s
+src/input/InputManager.s: src/input/InputManager.cpp.s
 
-.PHONY : src/utils/Logger.s
+.PHONY : src/input/InputManager.s
 
 # target to generate assembly for a file
-src/utils/Logger.cpp.s:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.s
-.PHONY : src/utils/Logger.cpp.s
+src/input/InputManager.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.s
+.PHONY : src/input/InputManager.cpp.s
 
-src/windows/ContextSwitcher.o: src/windows/ContextSwitcher.cpp.o
+src/reducers/map/MapReducer.o: src/reducers/map/MapReducer.cpp.o
 
-.PHONY : src/windows/ContextSwitcher.o
+.PHONY : src/reducers/map/MapReducer.o
 
 # target to build an object file
-src/windows/ContextSwitcher.cpp.o:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o
-.PHONY : src/windows/ContextSwitcher.cpp.o
+src/reducers/map/MapReducer.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o
+.PHONY : src/reducers/map/MapReducer.cpp.o
 
-src/windows/ContextSwitcher.i: src/windows/ContextSwitcher.cpp.i
+src/reducers/map/MapReducer.i: src/reducers/map/MapReducer.cpp.i
 
-.PHONY : src/windows/ContextSwitcher.i
+.PHONY : src/reducers/map/MapReducer.i
 
 # target to preprocess a source file
-src/windows/ContextSwitcher.cpp.i:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.i
-.PHONY : src/windows/ContextSwitcher.cpp.i
+src/reducers/map/MapReducer.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.i
+.PHONY : src/reducers/map/MapReducer.cpp.i
 
-src/windows/ContextSwitcher.s: src/windows/ContextSwitcher.cpp.s
+src/reducers/map/MapReducer.s: src/reducers/map/MapReducer.cpp.s
 
-.PHONY : src/windows/ContextSwitcher.s
+.PHONY : src/reducers/map/MapReducer.s
 
 # target to generate assembly for a file
-src/windows/ContextSwitcher.cpp.s:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.s
-.PHONY : src/windows/ContextSwitcher.cpp.s
+src/reducers/map/MapReducer.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.s
+.PHONY : src/reducers/map/MapReducer.cpp.s
 
-src/windows/MainMenu.o: src/windows/MainMenu.cpp.o
+src/rendering/renderers/MapRenderer.o: src/rendering/renderers/MapRenderer.cpp.o
 
-.PHONY : src/windows/MainMenu.o
+.PHONY : src/rendering/renderers/MapRenderer.o
 
 # target to build an object file
-src/windows/MainMenu.cpp.o:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o
-.PHONY : src/windows/MainMenu.cpp.o
+src/rendering/renderers/MapRenderer.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o
+.PHONY : src/rendering/renderers/MapRenderer.cpp.o
 
-src/windows/MainMenu.i: src/windows/MainMenu.cpp.i
+src/rendering/renderers/MapRenderer.i: src/rendering/renderers/MapRenderer.cpp.i
 
-.PHONY : src/windows/MainMenu.i
+.PHONY : src/rendering/renderers/MapRenderer.i
 
 # target to preprocess a source file
-src/windows/MainMenu.cpp.i:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.i
-.PHONY : src/windows/MainMenu.cpp.i
+src/rendering/renderers/MapRenderer.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.i
+.PHONY : src/rendering/renderers/MapRenderer.cpp.i
 
-src/windows/MainMenu.s: src/windows/MainMenu.cpp.s
+src/rendering/renderers/MapRenderer.s: src/rendering/renderers/MapRenderer.cpp.s
 
-.PHONY : src/windows/MainMenu.s
+.PHONY : src/rendering/renderers/MapRenderer.s
 
 # target to generate assembly for a file
-src/windows/MainMenu.cpp.s:
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.s
-.PHONY : src/windows/MainMenu.cpp.s
+src/rendering/renderers/MapRenderer.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.s
+.PHONY : src/rendering/renderers/MapRenderer.cpp.s
+
+src/updaters/map/MapUpdater.o: src/updaters/map/MapUpdater.cpp.o
+
+.PHONY : src/updaters/map/MapUpdater.o
+
+# target to build an object file
+src/updaters/map/MapUpdater.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o
+.PHONY : src/updaters/map/MapUpdater.cpp.o
+
+src/updaters/map/MapUpdater.i: src/updaters/map/MapUpdater.cpp.i
+
+.PHONY : src/updaters/map/MapUpdater.i
+
+# target to preprocess a source file
+src/updaters/map/MapUpdater.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.i
+.PHONY : src/updaters/map/MapUpdater.cpp.i
+
+src/updaters/map/MapUpdater.s: src/updaters/map/MapUpdater.cpp.s
+
+.PHONY : src/updaters/map/MapUpdater.s
+
+# target to generate assembly for a file
+src/updaters/map/MapUpdater.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.s
+.PHONY : src/updaters/map/MapUpdater.cpp.s
 
 # Help Target
 help:
@@ -378,30 +351,27 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/Characters/Character.o"
-	@echo "... src/Characters/Character.i"
-	@echo "... src/Characters/Character.s"
-	@echo "... src/core/Actions.o"
-	@echo "... src/core/Actions.i"
-	@echo "... src/core/Actions.s"
+	@echo "... src/core/ActionDispatcher.o"
+	@echo "... src/core/ActionDispatcher.i"
+	@echo "... src/core/ActionDispatcher.s"
 	@echo "... src/core/Engine.o"
 	@echo "... src/core/Engine.i"
 	@echo "... src/core/Engine.s"
-	@echo "... src/maps/Map.o"
-	@echo "... src/maps/Map.i"
-	@echo "... src/maps/Map.s"
-	@echo "... src/maps/town/Town.o"
-	@echo "... src/maps/town/Town.i"
-	@echo "... src/maps/town/Town.s"
-	@echo "... src/utils/Logger.o"
-	@echo "... src/utils/Logger.i"
-	@echo "... src/utils/Logger.s"
-	@echo "... src/windows/ContextSwitcher.o"
-	@echo "... src/windows/ContextSwitcher.i"
-	@echo "... src/windows/ContextSwitcher.s"
-	@echo "... src/windows/MainMenu.o"
-	@echo "... src/windows/MainMenu.i"
-	@echo "... src/windows/MainMenu.s"
+	@echo "... src/core/Game.o"
+	@echo "... src/core/Game.i"
+	@echo "... src/core/Game.s"
+	@echo "... src/input/InputManager.o"
+	@echo "... src/input/InputManager.i"
+	@echo "... src/input/InputManager.s"
+	@echo "... src/reducers/map/MapReducer.o"
+	@echo "... src/reducers/map/MapReducer.i"
+	@echo "... src/reducers/map/MapReducer.s"
+	@echo "... src/rendering/renderers/MapRenderer.o"
+	@echo "... src/rendering/renderers/MapRenderer.i"
+	@echo "... src/rendering/renderers/MapRenderer.s"
+	@echo "... src/updaters/map/MapUpdater.o"
+	@echo "... src/updaters/map/MapUpdater.i"
+	@echo "... src/updaters/map/MapUpdater.s"
 .PHONY : help
 
 

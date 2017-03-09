@@ -105,198 +105,172 @@ CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o.provides: CMakeFiles/SFMLDemo.dir/
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o
 
 
-CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
-CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o: ../src/windows/MainMenu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o -c /home/guiviko/Projects/chrono/src/windows/MainMenu.cpp
+CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o: ../src/rendering/renderers/MapRenderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o -c /home/guiviko/Projects/chrono/src/rendering/renderers/MapRenderer.cpp
 
-CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/windows/MainMenu.cpp > CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.i
+CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/rendering/renderers/MapRenderer.cpp > CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.i
 
-CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/windows/MainMenu.cpp -o CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.s
+CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/rendering/renderers/MapRenderer.cpp -o CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.s
 
-CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o.requires:
+CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o.requires:
 
-.PHONY : CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o.requires
+.PHONY : CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o.requires
 
-CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o.provides.build
-.PHONY : CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o.provides
+CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o.provides
 
-CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o
-
-
-CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
-CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o: ../src/windows/ContextSwitcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o -c /home/guiviko/Projects/chrono/src/windows/ContextSwitcher.cpp
-
-CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/windows/ContextSwitcher.cpp > CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.i
-
-CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/windows/ContextSwitcher.cpp -o CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.s
-
-CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.requires:
-
-.PHONY : CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.requires
-
-CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.provides.build
-.PHONY : CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.provides
-
-CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o
+CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o
 
 
-CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
-CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o: ../src/Characters/Character.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o -c /home/guiviko/Projects/chrono/src/Characters/Character.cpp
+CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o: ../src/reducers/map/MapReducer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o -c /home/guiviko/Projects/chrono/src/reducers/map/MapReducer.cpp
 
-CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/Characters/Character.cpp > CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.i
+CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/reducers/map/MapReducer.cpp > CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.i
 
-CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/Characters/Character.cpp -o CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.s
+CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/reducers/map/MapReducer.cpp -o CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.s
 
-CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.requires:
+CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o.requires:
 
-.PHONY : CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.requires
+.PHONY : CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o.requires
 
-CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.provides.build
-.PHONY : CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.provides
+CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o.provides
 
-CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o
-
-
-CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
-CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o: ../src/maps/Map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o -c /home/guiviko/Projects/chrono/src/maps/Map.cpp
-
-CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/maps/Map.cpp > CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.i
-
-CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/maps/Map.cpp -o CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.s
-
-CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.requires:
-
-.PHONY : CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.requires
-
-CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.provides.build
-.PHONY : CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.provides
-
-CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o
+CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o
 
 
-CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
-CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o: ../src/maps/town/Town.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o -c /home/guiviko/Projects/chrono/src/maps/town/Town.cpp
+CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o: ../src/input/InputManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o -c /home/guiviko/Projects/chrono/src/input/InputManager.cpp
 
-CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/maps/town/Town.cpp > CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.i
+CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/input/InputManager.cpp > CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.i
 
-CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/maps/town/Town.cpp -o CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.s
+CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/input/InputManager.cpp -o CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.s
 
-CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.requires:
+CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o.requires:
 
-.PHONY : CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.requires
+.PHONY : CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o.requires
 
-CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.provides.build
-.PHONY : CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.provides
+CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o.provides
 
-CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o
-
-
-CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
-CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o: ../src/utils/Logger.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o -c /home/guiviko/Projects/chrono/src/utils/Logger.cpp
-
-CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/utils/Logger.cpp > CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.i
-
-CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/utils/Logger.cpp -o CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.s
-
-CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o.requires:
-
-.PHONY : CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o.requires
-
-CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o.provides.build
-.PHONY : CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o.provides
-
-CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o
+CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o
 
 
-CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
-CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o: ../src/core/Actions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o -c /home/guiviko/Projects/chrono/src/core/Actions.cpp
+CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o: ../src/core/ActionDispatcher.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o -c /home/guiviko/Projects/chrono/src/core/ActionDispatcher.cpp
 
-CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/core/Actions.cpp > CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.i
+CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/core/ActionDispatcher.cpp > CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.i
 
-CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/core/Actions.cpp -o CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.s
+CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/core/ActionDispatcher.cpp -o CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.s
 
-CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o.requires:
+CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o.requires:
 
-.PHONY : CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o.requires
+.PHONY : CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o.requires
 
-CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o.provides.build
-.PHONY : CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o.provides
+CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o.provides
 
-CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o
+CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o
+
+
+CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/core/Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o -c /home/guiviko/Projects/chrono/src/core/Game.cpp
+
+CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/core/Game.cpp > CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.i
+
+CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/core/Game.cpp -o CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.s
+
+CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o.requires:
+
+.PHONY : CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o.requires
+
+CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o.provides
+
+CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o
+
+
+CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o: ../src/updaters/map/MapUpdater.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o -c /home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.cpp
+
+CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.cpp > CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.i
+
+CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.cpp -o CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.s
+
+CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o.requires:
+
+.PHONY : CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o.requires
+
+CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o.provides
+
+CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o
 
 
 # Object files for target SFMLDemo
 SFMLDemo_OBJECTS = \
 "CMakeFiles/SFMLDemo.dir/main.cpp.o" \
 "CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o" \
-"CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o" \
-"CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o" \
-"CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o" \
-"CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o" \
-"CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o" \
-"CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o" \
-"CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o"
+"CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o"
 
 # External object files for target SFMLDemo
 SFMLDemo_EXTERNAL_OBJECTS =
 
 SFMLDemo: CMakeFiles/SFMLDemo.dir/main.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o
-SFMLDemo: CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o
-SFMLDemo: CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o
-SFMLDemo: CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o
-SFMLDemo: CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o
-SFMLDemo: CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o
-SFMLDemo: CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o
-SFMLDemo: CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/build.make
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-system.so
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-window.so
@@ -304,7 +278,7 @@ SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-network.so
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
 SFMLDemo: CMakeFiles/SFMLDemo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable SFMLDemo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable SFMLDemo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SFMLDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -314,13 +288,12 @@ CMakeFiles/SFMLDemo.dir/build: SFMLDemo
 
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/main.cpp.o.requires
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o.requires
-CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o.requires
-CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o.requires
-CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o.requires
-CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o.requires
-CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o.requires
-CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o.requires
-CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o.requires
 
 .PHONY : CMakeFiles/SFMLDemo.dir/requires
 

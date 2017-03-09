@@ -87,16 +87,13 @@
 		<Unit filename="/home/guiviko/Projects/chrono/main.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/Characters/Character.cpp">
+		<Unit filename="/home/guiviko/Projects/chrono/src/actions/ActionTypes.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/Characters/Character.h">
+		<Unit filename="/home/guiviko/Projects/chrono/src/core/ActionDispatcher.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/core/Actions.cpp">
-			<Option target="SFMLDemo"/>
-		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/core/Actions.h">
+		<Unit filename="/home/guiviko/Projects/chrono/src/core/ActionDispatcher.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/core/Engine.cpp">
@@ -105,58 +102,64 @@
 		<Unit filename="/home/guiviko/Projects/chrono/src/core/Engine.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/core/eventTypes.h">
+		<Unit filename="/home/guiviko/Projects/chrono/src/core/Game.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/core/states/GameState.h">
+		<Unit filename="/home/guiviko/Projects/chrono/src/core/Game.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/core/states/MapState.h">
+		<Unit filename="/home/guiviko/Projects/chrono/src/core/RenderDispatcher.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/maps/Map.cpp">
+		<Unit filename="/home/guiviko/Projects/chrono/src/core/UpdateDispatcher.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/maps/Map.h">
+		<Unit filename="/home/guiviko/Projects/chrono/src/input/InputManager.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/maps/town/Town.cpp">
+		<Unit filename="/home/guiviko/Projects/chrono/src/input/InputManager.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/maps/town/Town.h">
+		<Unit filename="/home/guiviko/Projects/chrono/src/reducers/Reducer.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/rendering/Drawable.h">
+		<Unit filename="/home/guiviko/Projects/chrono/src/reducers/map/MapReducer.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/utils/Event.h">
+		<Unit filename="/home/guiviko/Projects/chrono/src/reducers/map/MapReducer.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/utils/Logger.cpp">
+		<Unit filename="/home/guiviko/Projects/chrono/src/rendering/Renderer.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/utils/Logger.h">
+		<Unit filename="/home/guiviko/Projects/chrono/src/rendering/renderers/MapRenderer.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/rendering/renderers/MapRenderer.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/states/CharacterState.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/states/GameState.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/states/MapState.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/updaters/Updater.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/utils/Observable.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/utils/Observer.h">
-			<Option target="SFMLDemo"/>
-		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/windows/Context.h">
-			<Option target="SFMLDemo"/>
-		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/windows/ContextSwitcher.cpp">
-			<Option target="SFMLDemo"/>
-		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/windows/ContextSwitcher.h">
-			<Option target="SFMLDemo"/>
-		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/windows/MainMenu.cpp">
-			<Option target="SFMLDemo"/>
-		</Unit>
-		<Unit filename="/home/guiviko/Projects/chrono/src/windows/MainMenu.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/CMakeLists.txt">

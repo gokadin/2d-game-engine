@@ -5,14 +5,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/guiviko/Projects/chrono/main.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/main.cpp.o"
-  "/home/guiviko/Projects/chrono/src/Characters/Character.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/Characters/Character.cpp.o"
-  "/home/guiviko/Projects/chrono/src/core/Actions.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/core/Actions.cpp.o"
+  "/home/guiviko/Projects/chrono/src/core/ActionDispatcher.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o"
   "/home/guiviko/Projects/chrono/src/core/Engine.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o"
-  "/home/guiviko/Projects/chrono/src/maps/Map.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/maps/Map.cpp.o"
-  "/home/guiviko/Projects/chrono/src/maps/town/Town.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/maps/town/Town.cpp.o"
-  "/home/guiviko/Projects/chrono/src/utils/Logger.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/utils/Logger.cpp.o"
-  "/home/guiviko/Projects/chrono/src/windows/ContextSwitcher.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/windows/ContextSwitcher.cpp.o"
-  "/home/guiviko/Projects/chrono/src/windows/MainMenu.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/windows/MainMenu.cpp.o"
+  "/home/guiviko/Projects/chrono/src/core/Game.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o"
+  "/home/guiviko/Projects/chrono/src/input/InputManager.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o"
+  "/home/guiviko/Projects/chrono/src/reducers/map/MapReducer.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o"
+  "/home/guiviko/Projects/chrono/src/rendering/renderers/MapRenderer.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o"
+  "/home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
