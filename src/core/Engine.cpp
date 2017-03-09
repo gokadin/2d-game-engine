@@ -4,8 +4,8 @@
 
 const int UPDATE_INTERVAL_MU = 16000;
 const int SECOND_IN_MU = 1000000;
-const int WIDTH = 1280;
-const int HEIGHT = 720;
+const int SCREEN_WIDTH = 1280;
+const int SCREEN_HEIGHT = 720;
 
 Engine::Engine() {}
 
@@ -13,7 +13,7 @@ Engine::~Engine() {}
 
 void Engine::run()
 {
-    sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Chrono");
+    sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Chrono");
 
     sf::Font font;
     if (!font.loadFromFile("../assets/fonts/Roboto-Regular.ttf"))
@@ -34,7 +34,7 @@ void Engine::run()
     updateText.setPosition(sf::Vector2f(5.0f, 25.0f));
     updateText.setString("UPS --");
 
-    Game *game = new Game(WIDTH, HEIGHT);
+    Game *game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     long elapsedMu = 0;
     int updateAcc = 0;

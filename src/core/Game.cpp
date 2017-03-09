@@ -1,9 +1,9 @@
 #include "Game.h"
 
-Game::Game(int width, int height)
+Game::Game(int screenWidth, int screenHeight)
 {
-    state = new GameState(width, height);
-    dataProvider = new DataProvider(state);
+    state = new GameState();
+    dataProvider = new DataProvider(state, screenWidth, screenHeight);
     actionDispatcher = new ActionDispatcher(state);
     updateDispatcher = new UpdateDispatcher(state);
     renderDispatcher = new RenderDispatcher(state);

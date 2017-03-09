@@ -7,12 +7,6 @@
 
 struct GameState
 {
-    GameState(int width, int height)
-    {
-        config.width = width;
-        config.height = height;
-    }
-
     ConfigState config;
     MapState map;
     CharacterState character;

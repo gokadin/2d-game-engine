@@ -7,6 +7,10 @@ struct CharacterState
     bool isMovingDown;
     bool isMovingRight;
     bool isMovingLeft;
+    int x;
+    int y;
+    int boxWidth;
+    int boxHeight;
 };
 
 #endif //SFMLDEMO_CHARACTERSTATE_H

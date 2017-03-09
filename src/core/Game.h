@@ -13,7 +13,7 @@
 class Game
 {
 public:
-    Game(int width, int height);
+    Game(int screenWidth, int screenHeight);
     ~Game();
 
     void processEvent(sf::Event event);
