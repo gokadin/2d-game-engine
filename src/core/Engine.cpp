@@ -2,7 +2,7 @@
 #include "Engine.h"
 #include "Game.h"
 
-const int UPDATE_INTERVAL_MU = 16000;
+const int UPDATE_INTERVAL_MU = 7000;
 const int SECOND_IN_MU = 1000000;
 const int SCREEN_WIDTH = 1280;
 const int SCREEN_HEIGHT = 720;

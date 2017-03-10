@@ -5,6 +5,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "../states/GameState.h"
 #include "../rendering/renderers/MapRenderer.h"
+#include "../rendering/renderers/CharacterRenderer.h"
 
 class RenderDispatcher
 {
@@ -13,6 +14,7 @@ public:
             state(state)
     {
         renderers.push_back(new MapRenderer(state));
+        renderers.push_back(new CharacterRenderer(state));
     }
 
     ~RenderDispatcher()

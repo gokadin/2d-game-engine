@@ -285,6 +285,33 @@ src/reducers/map/MapReducer.cpp.s:
 	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.s
 .PHONY : src/reducers/map/MapReducer.cpp.s
 
+src/rendering/renderers/CharacterRenderer.o: src/rendering/renderers/CharacterRenderer.cpp.o
+
+.PHONY : src/rendering/renderers/CharacterRenderer.o
+
+# target to build an object file
+src/rendering/renderers/CharacterRenderer.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o
+.PHONY : src/rendering/renderers/CharacterRenderer.cpp.o
+
+src/rendering/renderers/CharacterRenderer.i: src/rendering/renderers/CharacterRenderer.cpp.i
+
+.PHONY : src/rendering/renderers/CharacterRenderer.i
+
+# target to preprocess a source file
+src/rendering/renderers/CharacterRenderer.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.i
+.PHONY : src/rendering/renderers/CharacterRenderer.cpp.i
+
+src/rendering/renderers/CharacterRenderer.s: src/rendering/renderers/CharacterRenderer.cpp.s
+
+.PHONY : src/rendering/renderers/CharacterRenderer.s
+
+# target to generate assembly for a file
+src/rendering/renderers/CharacterRenderer.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.s
+.PHONY : src/rendering/renderers/CharacterRenderer.cpp.s
+
 src/rendering/renderers/MapRenderer.o: src/rendering/renderers/MapRenderer.cpp.o
 
 .PHONY : src/rendering/renderers/MapRenderer.o
@@ -366,6 +393,9 @@ help:
 	@echo "... src/reducers/map/MapReducer.o"
 	@echo "... src/reducers/map/MapReducer.i"
 	@echo "... src/reducers/map/MapReducer.s"
+	@echo "... src/rendering/renderers/CharacterRenderer.o"
+	@echo "... src/rendering/renderers/CharacterRenderer.i"
+	@echo "... src/rendering/renderers/CharacterRenderer.s"
 	@echo "... src/rendering/renderers/MapRenderer.o"
 	@echo "... src/rendering/renderers/MapRenderer.i"
 	@echo "... src/rendering/renderers/MapRenderer.s"

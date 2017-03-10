@@ -12,6 +12,10 @@ public:
 
 private:
     void move();
+    void moveUp();
+    void moveDown();
+    void moveRight();
+    void moveLeft();
 };
 
 #endif //SFMLDEMO_MAPUPDATER_H

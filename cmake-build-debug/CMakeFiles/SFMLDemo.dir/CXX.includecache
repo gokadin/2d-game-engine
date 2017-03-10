@@ -59,6 +59,8 @@ UpdateDispatcher.h
 /home/guiviko/Projects/chrono/src/core/UpdateDispatcher.h
 RenderDispatcher.h
 /home/guiviko/Projects/chrono/src/core/RenderDispatcher.h
+../data/DataProvider.h
+/home/guiviko/Projects/chrono/src/data/DataProvider.h
 
 /home/guiviko/Projects/chrono/src/core/RenderDispatcher.h
 iostream
@@ -69,6 +71,8 @@ SFML/Graphics/RenderWindow.hpp
 /home/guiviko/Projects/chrono/src/states/GameState.h
 ../rendering/renderers/MapRenderer.h
 /home/guiviko/Projects/chrono/src/rendering/renderers/MapRenderer.h
+../rendering/renderers/CharacterRenderer.h
+/home/guiviko/Projects/chrono/src/rendering/renderers/CharacterRenderer.h
 
 /home/guiviko/Projects/chrono/src/core/UpdateDispatcher.h
 vector
@@ -79,6 +83,12 @@ iostream
 /home/guiviko/Projects/chrono/src/updaters/Updater.h
 ../updaters/map/MapUpdater.h
 /home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.h
+
+/home/guiviko/Projects/chrono/src/data/DataProvider.h
+vector
+-
+../states/GameState.h
+/home/guiviko/Projects/chrono/src/states/GameState.h
 
 /home/guiviko/Projects/chrono/src/input/InputManager.cpp
 InputManager.h
@@ -114,6 +124,20 @@ SFML/Graphics/RenderWindow.hpp
 ../states/GameState.h
 /home/guiviko/Projects/chrono/src/states/GameState.h
 
+/home/guiviko/Projects/chrono/src/rendering/renderers/CharacterRenderer.cpp
+SFML/Graphics/CircleShape.hpp
+-
+SFML/Graphics/RectangleShape.hpp
+-
+CharacterRenderer.h
+/home/guiviko/Projects/chrono/src/rendering/renderers/CharacterRenderer.h
+
+/home/guiviko/Projects/chrono/src/rendering/renderers/CharacterRenderer.h
+SFML/Graphics/Shape.hpp
+-
+../Renderer.h
+/home/guiviko/Projects/chrono/src/rendering/Renderer.h
+
 /home/guiviko/Projects/chrono/src/rendering/renderers/MapRenderer.cpp
 MapRenderer.h
 /home/guiviko/Projects/chrono/src/rendering/renderers/MapRenderer.h
@@ -130,19 +154,27 @@ SFML/Graphics/Texture.hpp
 
 /home/guiviko/Projects/chrono/src/states/CharacterState.h
 
+/home/guiviko/Projects/chrono/src/states/ConfigState.h
+
 /home/guiviko/Projects/chrono/src/states/GameState.h
 MapState.h
 /home/guiviko/Projects/chrono/src/states/MapState.h
 CharacterState.h
 /home/guiviko/Projects/chrono/src/states/CharacterState.h
+ConfigState.h
+/home/guiviko/Projects/chrono/src/states/ConfigState.h
 
 /home/guiviko/Projects/chrono/src/states/MapState.h
+vector
+-
 
 /home/guiviko/Projects/chrono/src/updaters/Updater.h
 ../states/GameState.h
 /home/guiviko/Projects/chrono/src/states/GameState.h
 
 /home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.cpp
+iostream
+-
 MapUpdater.h
 /home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.h
 

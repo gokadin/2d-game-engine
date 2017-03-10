@@ -1,3 +1,4 @@
+#include <iostream>
 #include "MapUpdater.h"
 
 MapUpdater::MapUpdater(GameState *state):
@@ -6,28 +7,101 @@ MapUpdater::MapUpdater(GameState *state):
 
 void MapUpdater::update()
 {
+    int oldX = state->map.x;
+    int oldY = state->map.y;
+
     move();
+
+    if (state->map.x != oldX || state->map.y != oldY)
+    {
+        std::cout << "X = " << state->map.x << "   Y = " << state->map.y << std::endl;
+    }
 }
 
 void MapUpdater::move()
 {
-    if (state->character.isMovingUp && !state->character.isMovingDown)
+    moveUp();
+    moveDown();
+    moveRight();
+    moveLeft();
+}
+
+void MapUpdater::moveUp()
+{
+    if (!state->character.isMovingUp || state->character.isMovingDown)
     {
-        state->map.y -= 10 * state->config.yScaleFactor;
+        return;
     }
 
-    if (state->character.isMovingDown && !state->character.isMovingUp)
+    int charLeft = state->map.x - state->character.boxWidth / 2;
+    int charTop = state->map.y - state->character.boxHeight / 2 - state->character.moveSpeed;
+    for (int i = 0; i < state->character.boxWidth; i++)
     {
-        state->map.y += 10 * state->config.yScaleFactor;
+        if (state->map.bounds[charTop][charLeft + i] == 1)
+        {
+            return;
+        }
     }
 
-    if (state->character.isMovingRight && !state->character.isMovingLeft)
+    state->map.y -= state->character.moveSpeed;
+}
+
+void MapUpdater::moveDown()
+{
+    if (!state->character.isMovingDown || state->character.isMovingUp)
     {
-        state->map.x += 10 * state->config.xScaleFactor;
+        return;
     }
 
-    if (state->character.isMovingLeft && !state->character.isMovingRight)
+    int charLeft = state->map.x - state->character.boxWidth / 2;
+    int charBottom = state->map.y + state->character.boxHeight / 2 + state->character.moveSpeed;
+    for (int i = 0; i < state->character.boxWidth; i++)
     {
-        state->map.x -= 10 * state->config.xScaleFactor;
+        if (state->map.bounds[charBottom][charLeft + i] == 1)
+        {
+            return;
+        }
     }
+
+    state->map.y += state->character.moveSpeed;
+}
+
+void MapUpdater::moveRight()
+{
+    if (!state->character.isMovingRight || state->character.isMovingLeft)
+    {
+        return;
+    }
+
+    int charTop = state->map.y - state->character.boxHeight / 2;
+    int charRight = state->map.x + state->character.boxWidth / 2 + state->character.moveSpeed;
+    for (int i = 0; i < state->character.boxHeight; i++)
+    {
+        if (state->map.bounds[charTop + i][charRight] == 1)
+        {
+            return;
+        }
+    }
+
+    state->map.x += state->character.moveSpeed;
+}
+
+void MapUpdater::moveLeft()
+{
+    if (!state->character.isMovingLeft || state->character.isMovingRight)
+    {
+        return;
+    }
+
+    int charTop = state->map.y - state->character.boxHeight / 2;
+    int charLeft = state->map.x - state->character.boxWidth / 2 - state->character.moveSpeed;
+    for (int i = 0; i < state->character.boxHeight; i++)
+    {
+        if (state->map.bounds[charTop + i][charLeft] == 1)
+        {
+            return;
+        }
+    }
+
+    state->map.x -= state->character.moveSpeed;
 }

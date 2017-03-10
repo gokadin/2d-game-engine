@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o"
   "CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o"
   "CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o"
+  "CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o"
   "SFMLDemo.pdb"
   "SFMLDemo"
 )

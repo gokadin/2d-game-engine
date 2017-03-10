@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/guiviko/Projects/chrono/src/core/Game.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o"
   "/home/guiviko/Projects/chrono/src/input/InputManager.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o"
   "/home/guiviko/Projects/chrono/src/reducers/map/MapReducer.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o"
+  "/home/guiviko/Projects/chrono/src/rendering/renderers/CharacterRenderer.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o"
   "/home/guiviko/Projects/chrono/src/rendering/renderers/MapRenderer.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o"
   "/home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.cpp" "/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o"
   )

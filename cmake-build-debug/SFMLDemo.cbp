@@ -114,6 +114,9 @@
 		<Unit filename="/home/guiviko/Projects/chrono/src/core/UpdateDispatcher.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/DataProvider.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/input/InputManager.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>
@@ -132,6 +135,12 @@
 		<Unit filename="/home/guiviko/Projects/chrono/src/rendering/Renderer.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/rendering/renderers/CharacterRenderer.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/rendering/renderers/CharacterRenderer.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/rendering/renderers/MapRenderer.cpp">
 			<Option target="SFMLDemo"/>
 		</Unit>
@@ -139,6 +148,9 @@
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/states/CharacterState.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/states/ConfigState.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/states/GameState.h">

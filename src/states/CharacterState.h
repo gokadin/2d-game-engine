@@ -11,6 +11,7 @@ struct CharacterState
     int y;
     int boxWidth;
     int boxHeight;
+    int moveSpeed;
 };
 
 #endif //SFMLDEMO_CHARACTERSTATE_H
