@@ -9,7 +9,7 @@
 class MapRenderer : public Renderer
 {
 public:
-    MapRenderer(GameState *state);
+    MapRenderer(GameState& state);
 
     void draw(sf::RenderWindow *window);
 

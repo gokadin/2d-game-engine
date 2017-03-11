@@ -7,14 +7,14 @@
 class Reducer
 {
 public:
-    Reducer(GameState *state):
+    Reducer(GameState& state):
             state(state)
     {}
 
     virtual void process(action_types type) = 0;
 
 protected:
-    GameState *state;
+    GameState& state;
 };
 
 #endif //SFMLDEMO_REDUCER_H

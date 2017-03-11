@@ -2,7 +2,7 @@
 #include "ActionDispatcher.h"
 #include "../reducers/map/MapReducer.h"
 
-ActionDispatcher::ActionDispatcher(GameState *state):
+ActionDispatcher::ActionDispatcher(GameState& state):
         state(state)
 {
     reducers.push_back(new MapReducer(state));

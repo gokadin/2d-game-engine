@@ -9,7 +9,7 @@
 class UpdateDispatcher
 {
 public:
-    UpdateDispatcher(GameState *state):
+    UpdateDispatcher(GameState& state):
             state(state)
     {
         updaters.push_back(new MapUpdater(state));
@@ -34,7 +34,7 @@ public:
     }
 
 private:
-    GameState *state;
+    GameState& state;
     std::vector<Updater *> updaters;
 };
 

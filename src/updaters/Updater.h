@@ -6,14 +6,14 @@
 class Updater
 {
 public:
-    Updater(GameState *state):
+    Updater(GameState& state):
             state(state)
     {}
 
     virtual void update() = 0;
 
 protected:
-    GameState *state;
+    GameState& state;
 };
 
 #endif //SFMLDEMO_UPDATER_H

@@ -5,7 +5,8 @@ struct ConfigState
 {
     int width;
     int height;
-    float scaleFactor;
+    int cx;
+    int cy;
 };
 
 #endif //SFMLDEMO_CONFIGSTATE_H

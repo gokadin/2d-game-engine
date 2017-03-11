@@ -114,7 +114,49 @@
 		<Unit filename="/home/guiviko/Projects/chrono/src/core/UpdateDispatcher.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/DataProvider.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/data/DataProvider.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/IO/ArrayReader.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/IO/ArrayReader.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/IO/KeyValueReader.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/IO/KeyValueReader.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/persistence/SaveReader.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/persistence/SaveReader.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/providers/Provider.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/providers/character/CharacterProvider.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/providers/character/CharacterProvider.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/providers/config/ConfigProvider.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/providers/config/ConfigProvider.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/providers/map/MapProvider.cpp">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/data/providers/map/MapProvider.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/input/InputManager.cpp">
@@ -157,6 +199,9 @@
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/states/MapState.h">
+			<Option target="SFMLDemo"/>
+		</Unit>
+		<Unit filename="/home/guiviko/Projects/chrono/src/states/SaveState.h">
 			<Option target="SFMLDemo"/>
 		</Unit>
 		<Unit filename="/home/guiviko/Projects/chrono/src/updaters/Updater.h">

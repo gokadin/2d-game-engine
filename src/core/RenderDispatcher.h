@@ -10,7 +10,7 @@
 class RenderDispatcher
 {
 public:
-    RenderDispatcher(GameState *state):
+    RenderDispatcher(GameState& state):
             state(state)
     {
         renderers.push_back(new MapRenderer(state));
@@ -36,7 +36,7 @@ public:
     }
 
 private:
-    GameState *state;
+    GameState& state;
     std::vector<Renderer *> renderers;
 };
 

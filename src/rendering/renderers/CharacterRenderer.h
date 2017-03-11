@@ -7,7 +7,7 @@
 class CharacterRenderer : public Renderer
 {
 public:
-    CharacterRenderer(GameState *state);
+    CharacterRenderer(GameState& state);
 
     void draw(sf::RenderWindow *window);
 };

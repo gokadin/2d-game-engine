@@ -7,14 +7,14 @@
 class Renderer
 {
 public:
-    Renderer(GameState *state):
+    Renderer(GameState& state):
             state(state)
     {}
 
     virtual void draw(sf::RenderWindow *window) = 0;
 
 protected:
-    GameState *state;
+    GameState& state;
 };
 
 #endif //SFMLDEMO_DRAWABLE_H

@@ -8,7 +8,7 @@
 class MapReducer : public Reducer
 {
 public:
-    MapReducer(GameState *state);
+    MapReducer(GameState& state);
 
     void process(action_types type);
 };

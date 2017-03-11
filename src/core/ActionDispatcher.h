@@ -8,13 +8,13 @@
 class ActionDispatcher
 {
 public:
-    ActionDispatcher(GameState *state);
+    ActionDispatcher(GameState& state);
     ~ActionDispatcher();
 
     void dispatch(action_types type);
 
 private:
-    GameState *state;
+    GameState& state;
     std::vector<Reducer *> reducers;
 };
 

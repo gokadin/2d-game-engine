@@ -6,7 +6,7 @@
 class MapUpdater : public Updater
 {
 public:
-    MapUpdater(GameState *state);
+    MapUpdater(GameState& state);
 
     void update();
 

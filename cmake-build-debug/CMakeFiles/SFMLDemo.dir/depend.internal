@@ -14,6 +14,7 @@ CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o
  /home/guiviko/Projects/chrono/src/states/ConfigState.h
  /home/guiviko/Projects/chrono/src/states/GameState.h
  /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
  /home/guiviko/Projects/chrono/src/updaters/Updater.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o
  /home/guiviko/Projects/chrono/src/actions/ActionTypes.h
@@ -24,6 +25,10 @@ CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o
  /home/guiviko/Projects/chrono/src/core/RenderDispatcher.h
  /home/guiviko/Projects/chrono/src/core/UpdateDispatcher.h
  /home/guiviko/Projects/chrono/src/data/DataProvider.h
+ /home/guiviko/Projects/chrono/src/data/IO/ArrayReader.h
+ /home/guiviko/Projects/chrono/src/data/IO/KeyValueReader.h
+ /home/guiviko/Projects/chrono/src/data/persistence/SaveReader.h
+ /home/guiviko/Projects/chrono/src/data/providers/Provider.h
  /home/guiviko/Projects/chrono/src/input/InputManager.h
  /home/guiviko/Projects/chrono/src/reducers/Reducer.h
  /home/guiviko/Projects/chrono/src/rendering/Renderer.h
@@ -33,6 +38,7 @@ CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o
  /home/guiviko/Projects/chrono/src/states/ConfigState.h
  /home/guiviko/Projects/chrono/src/states/GameState.h
  /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
  /home/guiviko/Projects/chrono/src/updaters/Updater.h
  /home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.h
 CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o
@@ -43,6 +49,8 @@ CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o
  /home/guiviko/Projects/chrono/src/core/RenderDispatcher.h
  /home/guiviko/Projects/chrono/src/core/UpdateDispatcher.h
  /home/guiviko/Projects/chrono/src/data/DataProvider.h
+ /home/guiviko/Projects/chrono/src/data/persistence/SaveReader.h
+ /home/guiviko/Projects/chrono/src/data/providers/Provider.h
  /home/guiviko/Projects/chrono/src/input/InputManager.h
  /home/guiviko/Projects/chrono/src/reducers/Reducer.h
  /home/guiviko/Projects/chrono/src/rendering/Renderer.h
@@ -52,8 +60,69 @@ CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o
  /home/guiviko/Projects/chrono/src/states/ConfigState.h
  /home/guiviko/Projects/chrono/src/states/GameState.h
  /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
  /home/guiviko/Projects/chrono/src/updaters/Updater.h
  /home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.h
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o
+ /home/guiviko/Projects/chrono/src/data/DataProvider.cpp
+ /home/guiviko/Projects/chrono/src/data/DataProvider.h
+ /home/guiviko/Projects/chrono/src/data/persistence/SaveReader.h
+ /home/guiviko/Projects/chrono/src/data/providers/Provider.h
+ /home/guiviko/Projects/chrono/src/data/providers/character/CharacterProvider.h
+ /home/guiviko/Projects/chrono/src/data/providers/config/ConfigProvider.h
+ /home/guiviko/Projects/chrono/src/data/providers/map/MapProvider.h
+ /home/guiviko/Projects/chrono/src/states/CharacterState.h
+ /home/guiviko/Projects/chrono/src/states/ConfigState.h
+ /home/guiviko/Projects/chrono/src/states/GameState.h
+ /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
+CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o
+ /home/guiviko/Projects/chrono/src/data/IO/ArrayReader.cpp
+ /home/guiviko/Projects/chrono/src/data/IO/ArrayReader.h
+CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o
+ /home/guiviko/Projects/chrono/src/data/IO/KeyValueReader.cpp
+ /home/guiviko/Projects/chrono/src/data/IO/KeyValueReader.h
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o
+ /home/guiviko/Projects/chrono/src/data/IO/KeyValueReader.h
+ /home/guiviko/Projects/chrono/src/data/persistence/SaveReader.cpp
+ /home/guiviko/Projects/chrono/src/data/persistence/SaveReader.h
+ /home/guiviko/Projects/chrono/src/states/CharacterState.h
+ /home/guiviko/Projects/chrono/src/states/ConfigState.h
+ /home/guiviko/Projects/chrono/src/states/GameState.h
+ /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o
+ /home/guiviko/Projects/chrono/src/data/persistence/SaveReader.h
+ /home/guiviko/Projects/chrono/src/data/providers/Provider.h
+ /home/guiviko/Projects/chrono/src/data/providers/character/CharacterProvider.cpp
+ /home/guiviko/Projects/chrono/src/data/providers/character/CharacterProvider.h
+ /home/guiviko/Projects/chrono/src/states/CharacterState.h
+ /home/guiviko/Projects/chrono/src/states/ConfigState.h
+ /home/guiviko/Projects/chrono/src/states/GameState.h
+ /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o
+ /home/guiviko/Projects/chrono/src/data/persistence/SaveReader.h
+ /home/guiviko/Projects/chrono/src/data/providers/Provider.h
+ /home/guiviko/Projects/chrono/src/data/providers/config/ConfigProvider.cpp
+ /home/guiviko/Projects/chrono/src/data/providers/config/ConfigProvider.h
+ /home/guiviko/Projects/chrono/src/states/CharacterState.h
+ /home/guiviko/Projects/chrono/src/states/ConfigState.h
+ /home/guiviko/Projects/chrono/src/states/GameState.h
+ /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o
+ /home/guiviko/Projects/chrono/src/data/IO/ArrayReader.h
+ /home/guiviko/Projects/chrono/src/data/IO/KeyValueReader.h
+ /home/guiviko/Projects/chrono/src/data/persistence/SaveReader.h
+ /home/guiviko/Projects/chrono/src/data/providers/Provider.h
+ /home/guiviko/Projects/chrono/src/data/providers/map/MapProvider.cpp
+ /home/guiviko/Projects/chrono/src/data/providers/map/MapProvider.h
+ /home/guiviko/Projects/chrono/src/states/CharacterState.h
+ /home/guiviko/Projects/chrono/src/states/ConfigState.h
+ /home/guiviko/Projects/chrono/src/states/GameState.h
+ /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
 CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o
  /home/guiviko/Projects/chrono/src/actions/ActionTypes.h
  /home/guiviko/Projects/chrono/src/core/ActionDispatcher.h
@@ -64,6 +133,7 @@ CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o
  /home/guiviko/Projects/chrono/src/states/ConfigState.h
  /home/guiviko/Projects/chrono/src/states/GameState.h
  /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
  /home/guiviko/Projects/chrono/src/updaters/Updater.h
 CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o
  /home/guiviko/Projects/chrono/src/actions/ActionTypes.h
@@ -74,6 +144,7 @@ CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o
  /home/guiviko/Projects/chrono/src/states/ConfigState.h
  /home/guiviko/Projects/chrono/src/states/GameState.h
  /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
  /home/guiviko/Projects/chrono/src/updaters/Updater.h
 CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o
  /home/guiviko/Projects/chrono/src/rendering/Renderer.h
@@ -83,6 +154,7 @@ CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o
  /home/guiviko/Projects/chrono/src/states/ConfigState.h
  /home/guiviko/Projects/chrono/src/states/GameState.h
  /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
 CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o
  /home/guiviko/Projects/chrono/src/rendering/Renderer.h
  /home/guiviko/Projects/chrono/src/rendering/renderers/MapRenderer.cpp
@@ -91,11 +163,13 @@ CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o
  /home/guiviko/Projects/chrono/src/states/ConfigState.h
  /home/guiviko/Projects/chrono/src/states/GameState.h
  /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
 CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o
  /home/guiviko/Projects/chrono/src/states/CharacterState.h
  /home/guiviko/Projects/chrono/src/states/ConfigState.h
  /home/guiviko/Projects/chrono/src/states/GameState.h
  /home/guiviko/Projects/chrono/src/states/MapState.h
+ /home/guiviko/Projects/chrono/src/states/SaveState.h
  /home/guiviko/Projects/chrono/src/updaters/Updater.h
  /home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.cpp
  /home/guiviko/Projects/chrono/src/updaters/map/MapUpdater.h

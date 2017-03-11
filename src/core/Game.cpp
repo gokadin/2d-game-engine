@@ -2,8 +2,8 @@
 
 Game::Game(int screenWidth, int screenHeight)
 {
-    state = new GameState();
     dataProvider = new DataProvider(state, screenWidth, screenHeight);
+    dataProvider->load();
     actionDispatcher = new ActionDispatcher(state);
     updateDispatcher = new UpdateDispatcher(state);
     renderDispatcher = new RenderDispatcher(state);
@@ -17,7 +17,6 @@ Game::~Game()
     delete actionDispatcher;
     delete updateDispatcher;
     delete renderDispatcher;
-    delete state;
 }
 
 void Game::processEvent(sf::Event event)

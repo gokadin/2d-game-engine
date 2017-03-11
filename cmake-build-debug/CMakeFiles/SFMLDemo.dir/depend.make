@@ -13,6 +13,7 @@ CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o: ../src/states/Character
 CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o: ../src/states/ConfigState.h
 CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o: ../src/states/GameState.h
 CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o: ../src/states/SaveState.h
 CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o: ../src/updaters/Updater.h
 
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/actions/ActionTypes.h
@@ -23,6 +24,10 @@ CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/core/Game.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/core/RenderDispatcher.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/core/UpdateDispatcher.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/data/DataProvider.h
+CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/data/IO/ArrayReader.h
+CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/data/IO/KeyValueReader.h
+CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/data/persistence/SaveReader.h
+CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/data/providers/Provider.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/input/InputManager.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/reducers/Reducer.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/rendering/Renderer.h
@@ -32,6 +37,7 @@ CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/states/CharacterState.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/states/ConfigState.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/states/GameState.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/states/SaveState.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/updaters/Updater.h
 CMakeFiles/SFMLDemo.dir/src/core/Engine.cpp.o: ../src/updaters/map/MapUpdater.h
 
@@ -42,6 +48,8 @@ CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/core/Game.h
 CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/core/RenderDispatcher.h
 CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/core/UpdateDispatcher.h
 CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/data/DataProvider.h
+CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/data/persistence/SaveReader.h
+CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/data/providers/Provider.h
 CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/input/InputManager.h
 CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/reducers/Reducer.h
 CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/rendering/Renderer.h
@@ -51,8 +59,69 @@ CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/states/CharacterState.h
 CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/states/ConfigState.h
 CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/states/GameState.h
 CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/states/SaveState.h
 CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/updaters/Updater.h
 CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o: ../src/updaters/map/MapUpdater.h
+
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/data/DataProvider.cpp
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/data/DataProvider.h
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/data/persistence/SaveReader.h
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/data/providers/Provider.h
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/data/providers/character/CharacterProvider.h
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/data/providers/config/ConfigProvider.h
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/data/providers/map/MapProvider.h
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/states/CharacterState.h
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/states/ConfigState.h
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/states/GameState.h
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/states/SaveState.h
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o: ../src/data/IO/ArrayReader.cpp
+CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o: ../src/data/IO/ArrayReader.h
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o: ../src/data/IO/KeyValueReader.cpp
+CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o: ../src/data/IO/KeyValueReader.h
+
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o: ../src/data/IO/KeyValueReader.h
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o: ../src/data/persistence/SaveReader.cpp
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o: ../src/data/persistence/SaveReader.h
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o: ../src/states/CharacterState.h
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o: ../src/states/ConfigState.h
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o: ../src/states/GameState.h
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o: ../src/states/SaveState.h
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o: ../src/data/persistence/SaveReader.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o: ../src/data/providers/Provider.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o: ../src/data/providers/character/CharacterProvider.cpp
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o: ../src/data/providers/character/CharacterProvider.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o: ../src/states/CharacterState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o: ../src/states/ConfigState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o: ../src/states/GameState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o: ../src/states/SaveState.h
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o: ../src/data/persistence/SaveReader.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o: ../src/data/providers/Provider.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o: ../src/data/providers/config/ConfigProvider.cpp
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o: ../src/data/providers/config/ConfigProvider.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o: ../src/states/CharacterState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o: ../src/states/ConfigState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o: ../src/states/GameState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o: ../src/states/SaveState.h
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: ../src/data/IO/ArrayReader.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: ../src/data/IO/KeyValueReader.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: ../src/data/persistence/SaveReader.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: ../src/data/providers/Provider.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: ../src/data/providers/map/MapProvider.cpp
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: ../src/data/providers/map/MapProvider.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: ../src/states/CharacterState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: ../src/states/ConfigState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: ../src/states/GameState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: ../src/states/SaveState.h
 
 CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o: ../src/actions/ActionTypes.h
 CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o: ../src/core/ActionDispatcher.h
@@ -63,6 +132,7 @@ CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o: ../src/states/CharacterSta
 CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o: ../src/states/ConfigState.h
 CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o: ../src/states/GameState.h
 CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o: ../src/states/SaveState.h
 CMakeFiles/SFMLDemo.dir/src/input/InputManager.cpp.o: ../src/updaters/Updater.h
 
 CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o: ../src/actions/ActionTypes.h
@@ -73,6 +143,7 @@ CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o: ../src/states/Charact
 CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o: ../src/states/ConfigState.h
 CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o: ../src/states/GameState.h
 CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o: ../src/states/SaveState.h
 CMakeFiles/SFMLDemo.dir/src/reducers/map/MapReducer.cpp.o: ../src/updaters/Updater.h
 
 CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o: ../src/rendering/Renderer.h
@@ -82,6 +153,7 @@ CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o: ../src/
 CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o: ../src/states/ConfigState.h
 CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o: ../src/states/GameState.h
 CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o: ../src/states/SaveState.h
 
 CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o: ../src/rendering/Renderer.h
 CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o: ../src/rendering/renderers/MapRenderer.cpp
@@ -90,11 +162,13 @@ CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o: ../src/states
 CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o: ../src/states/ConfigState.h
 CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o: ../src/states/GameState.h
 CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/rendering/renderers/MapRenderer.cpp.o: ../src/states/SaveState.h
 
 CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o: ../src/states/CharacterState.h
 CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o: ../src/states/ConfigState.h
 CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o: ../src/states/GameState.h
 CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o: ../src/states/MapState.h
+CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o: ../src/states/SaveState.h
 CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o: ../src/updaters/Updater.h
 CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o: ../src/updaters/map/MapUpdater.cpp
 CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o: ../src/updaters/map/MapUpdater.h

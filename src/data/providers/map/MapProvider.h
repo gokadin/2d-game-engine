@@ -6,7 +6,9 @@
 class MapProvider : public Provider
 {
 public:
+    MapProvider(GameState& state, SaveReader& saveReader);
 
+    void load();
 };
 
 #endif //SFMLDEMO_MAPPROVIDER_H

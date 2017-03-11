@@ -8,6 +8,13 @@ file(REMOVE_RECURSE
   "CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o"
   "CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o"
   "CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o"
+  "CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o"
+  "CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o"
+  "CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o"
+  "CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o"
+  "CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o"
+  "CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o"
+  "CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o"
   "SFMLDemo.pdb"
   "SFMLDemo"
 )

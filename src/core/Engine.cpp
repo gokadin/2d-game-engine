@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Engine.h"
 #include "Game.h"
+#include "../data/IO/KeyValueReader.h"
+#include "../data/IO/ArrayReader.h"
 
 const int UPDATE_INTERVAL_MU = 7000;
 const int SECOND_IN_MU = 1000000;

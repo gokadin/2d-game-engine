@@ -231,6 +231,195 @@ src/core/Game.cpp.s:
 	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.s
 .PHONY : src/core/Game.cpp.s
 
+src/data/DataProvider.o: src/data/DataProvider.cpp.o
+
+.PHONY : src/data/DataProvider.o
+
+# target to build an object file
+src/data/DataProvider.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o
+.PHONY : src/data/DataProvider.cpp.o
+
+src/data/DataProvider.i: src/data/DataProvider.cpp.i
+
+.PHONY : src/data/DataProvider.i
+
+# target to preprocess a source file
+src/data/DataProvider.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.i
+.PHONY : src/data/DataProvider.cpp.i
+
+src/data/DataProvider.s: src/data/DataProvider.cpp.s
+
+.PHONY : src/data/DataProvider.s
+
+# target to generate assembly for a file
+src/data/DataProvider.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.s
+.PHONY : src/data/DataProvider.cpp.s
+
+src/data/IO/ArrayReader.o: src/data/IO/ArrayReader.cpp.o
+
+.PHONY : src/data/IO/ArrayReader.o
+
+# target to build an object file
+src/data/IO/ArrayReader.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o
+.PHONY : src/data/IO/ArrayReader.cpp.o
+
+src/data/IO/ArrayReader.i: src/data/IO/ArrayReader.cpp.i
+
+.PHONY : src/data/IO/ArrayReader.i
+
+# target to preprocess a source file
+src/data/IO/ArrayReader.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.i
+.PHONY : src/data/IO/ArrayReader.cpp.i
+
+src/data/IO/ArrayReader.s: src/data/IO/ArrayReader.cpp.s
+
+.PHONY : src/data/IO/ArrayReader.s
+
+# target to generate assembly for a file
+src/data/IO/ArrayReader.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.s
+.PHONY : src/data/IO/ArrayReader.cpp.s
+
+src/data/IO/KeyValueReader.o: src/data/IO/KeyValueReader.cpp.o
+
+.PHONY : src/data/IO/KeyValueReader.o
+
+# target to build an object file
+src/data/IO/KeyValueReader.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o
+.PHONY : src/data/IO/KeyValueReader.cpp.o
+
+src/data/IO/KeyValueReader.i: src/data/IO/KeyValueReader.cpp.i
+
+.PHONY : src/data/IO/KeyValueReader.i
+
+# target to preprocess a source file
+src/data/IO/KeyValueReader.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.i
+.PHONY : src/data/IO/KeyValueReader.cpp.i
+
+src/data/IO/KeyValueReader.s: src/data/IO/KeyValueReader.cpp.s
+
+.PHONY : src/data/IO/KeyValueReader.s
+
+# target to generate assembly for a file
+src/data/IO/KeyValueReader.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.s
+.PHONY : src/data/IO/KeyValueReader.cpp.s
+
+src/data/persistence/SaveReader.o: src/data/persistence/SaveReader.cpp.o
+
+.PHONY : src/data/persistence/SaveReader.o
+
+# target to build an object file
+src/data/persistence/SaveReader.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o
+.PHONY : src/data/persistence/SaveReader.cpp.o
+
+src/data/persistence/SaveReader.i: src/data/persistence/SaveReader.cpp.i
+
+.PHONY : src/data/persistence/SaveReader.i
+
+# target to preprocess a source file
+src/data/persistence/SaveReader.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.i
+.PHONY : src/data/persistence/SaveReader.cpp.i
+
+src/data/persistence/SaveReader.s: src/data/persistence/SaveReader.cpp.s
+
+.PHONY : src/data/persistence/SaveReader.s
+
+# target to generate assembly for a file
+src/data/persistence/SaveReader.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.s
+.PHONY : src/data/persistence/SaveReader.cpp.s
+
+src/data/providers/character/CharacterProvider.o: src/data/providers/character/CharacterProvider.cpp.o
+
+.PHONY : src/data/providers/character/CharacterProvider.o
+
+# target to build an object file
+src/data/providers/character/CharacterProvider.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o
+.PHONY : src/data/providers/character/CharacterProvider.cpp.o
+
+src/data/providers/character/CharacterProvider.i: src/data/providers/character/CharacterProvider.cpp.i
+
+.PHONY : src/data/providers/character/CharacterProvider.i
+
+# target to preprocess a source file
+src/data/providers/character/CharacterProvider.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.i
+.PHONY : src/data/providers/character/CharacterProvider.cpp.i
+
+src/data/providers/character/CharacterProvider.s: src/data/providers/character/CharacterProvider.cpp.s
+
+.PHONY : src/data/providers/character/CharacterProvider.s
+
+# target to generate assembly for a file
+src/data/providers/character/CharacterProvider.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.s
+.PHONY : src/data/providers/character/CharacterProvider.cpp.s
+
+src/data/providers/config/ConfigProvider.o: src/data/providers/config/ConfigProvider.cpp.o
+
+.PHONY : src/data/providers/config/ConfigProvider.o
+
+# target to build an object file
+src/data/providers/config/ConfigProvider.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o
+.PHONY : src/data/providers/config/ConfigProvider.cpp.o
+
+src/data/providers/config/ConfigProvider.i: src/data/providers/config/ConfigProvider.cpp.i
+
+.PHONY : src/data/providers/config/ConfigProvider.i
+
+# target to preprocess a source file
+src/data/providers/config/ConfigProvider.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.i
+.PHONY : src/data/providers/config/ConfigProvider.cpp.i
+
+src/data/providers/config/ConfigProvider.s: src/data/providers/config/ConfigProvider.cpp.s
+
+.PHONY : src/data/providers/config/ConfigProvider.s
+
+# target to generate assembly for a file
+src/data/providers/config/ConfigProvider.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.s
+.PHONY : src/data/providers/config/ConfigProvider.cpp.s
+
+src/data/providers/map/MapProvider.o: src/data/providers/map/MapProvider.cpp.o
+
+.PHONY : src/data/providers/map/MapProvider.o
+
+# target to build an object file
+src/data/providers/map/MapProvider.cpp.o:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o
+.PHONY : src/data/providers/map/MapProvider.cpp.o
+
+src/data/providers/map/MapProvider.i: src/data/providers/map/MapProvider.cpp.i
+
+.PHONY : src/data/providers/map/MapProvider.i
+
+# target to preprocess a source file
+src/data/providers/map/MapProvider.cpp.i:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.i
+.PHONY : src/data/providers/map/MapProvider.cpp.i
+
+src/data/providers/map/MapProvider.s: src/data/providers/map/MapProvider.cpp.s
+
+.PHONY : src/data/providers/map/MapProvider.s
+
+# target to generate assembly for a file
+src/data/providers/map/MapProvider.cpp.s:
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.s
+.PHONY : src/data/providers/map/MapProvider.cpp.s
+
 src/input/InputManager.o: src/input/InputManager.cpp.o
 
 .PHONY : src/input/InputManager.o
@@ -387,6 +576,27 @@ help:
 	@echo "... src/core/Game.o"
 	@echo "... src/core/Game.i"
 	@echo "... src/core/Game.s"
+	@echo "... src/data/DataProvider.o"
+	@echo "... src/data/DataProvider.i"
+	@echo "... src/data/DataProvider.s"
+	@echo "... src/data/IO/ArrayReader.o"
+	@echo "... src/data/IO/ArrayReader.i"
+	@echo "... src/data/IO/ArrayReader.s"
+	@echo "... src/data/IO/KeyValueReader.o"
+	@echo "... src/data/IO/KeyValueReader.i"
+	@echo "... src/data/IO/KeyValueReader.s"
+	@echo "... src/data/persistence/SaveReader.o"
+	@echo "... src/data/persistence/SaveReader.i"
+	@echo "... src/data/persistence/SaveReader.s"
+	@echo "... src/data/providers/character/CharacterProvider.o"
+	@echo "... src/data/providers/character/CharacterProvider.i"
+	@echo "... src/data/providers/character/CharacterProvider.s"
+	@echo "... src/data/providers/config/ConfigProvider.o"
+	@echo "... src/data/providers/config/ConfigProvider.i"
+	@echo "... src/data/providers/config/ConfigProvider.s"
+	@echo "... src/data/providers/map/MapProvider.o"
+	@echo "... src/data/providers/map/MapProvider.i"
+	@echo "... src/data/providers/map/MapProvider.s"
 	@echo "... src/input/InputManager.o"
 	@echo "... src/input/InputManager.i"
 	@echo "... src/input/InputManager.s"

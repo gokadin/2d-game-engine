@@ -21,7 +21,7 @@ public:
     void draw(sf::RenderWindow *window);
 
 private:
-    GameState *state;
+    GameState state;
     DataProvider *dataProvider;
     ActionDispatcher *actionDispatcher;
     UpdateDispatcher *updateDispatcher;

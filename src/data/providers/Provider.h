@@ -1,14 +1,23 @@
-//
-// Created by gxo01091 on 3/10/17.
-//
-
 #ifndef SFMLDEMO_PROVIDER_H
 #define SFMLDEMO_PROVIDER_H
 
+#include "../../states/GameState.h"
+#include "../persistence/SaveReader.h"
 
-class Provider {
+const std::string GAME_STORAGE_ROOT = "../src/storage/game/";
 
+class Provider
+{
+public:
+    Provider(GameState& state, SaveReader& saveReader):
+            state(state), saveReader(saveReader)
+    {}
+
+    virtual void load() = 0;
+
+protected:
+    GameState& state;
+    SaveReader& saveReader;
 };
-
 
 #endif //SFMLDEMO_PROVIDER_H

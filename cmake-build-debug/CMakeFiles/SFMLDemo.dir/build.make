@@ -273,6 +273,174 @@ CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o.provides
 CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o
 
 
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o: ../src/data/providers/map/MapProvider.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o -c /home/guiviko/Projects/chrono/src/data/providers/map/MapProvider.cpp
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/data/providers/map/MapProvider.cpp > CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.i
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/data/providers/map/MapProvider.cpp -o CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.s
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o.requires:
+
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o.requires
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o.provides
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o
+
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o: ../src/data/IO/ArrayReader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o -c /home/guiviko/Projects/chrono/src/data/IO/ArrayReader.cpp
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/data/IO/ArrayReader.cpp > CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.i
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/data/IO/ArrayReader.cpp -o CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.s
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o.requires:
+
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o.requires
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o.provides
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o
+
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o: ../src/data/IO/KeyValueReader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o -c /home/guiviko/Projects/chrono/src/data/IO/KeyValueReader.cpp
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/data/IO/KeyValueReader.cpp > CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.i
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/data/IO/KeyValueReader.cpp -o CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.s
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o.requires:
+
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o.requires
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o.provides
+
+CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o
+
+
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o: ../src/data/DataProvider.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o -c /home/guiviko/Projects/chrono/src/data/DataProvider.cpp
+
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/data/DataProvider.cpp > CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.i
+
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/data/DataProvider.cpp -o CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.s
+
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o.requires:
+
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o.requires
+
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o.provides
+
+CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o
+
+
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o: ../src/data/persistence/SaveReader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o -c /home/guiviko/Projects/chrono/src/data/persistence/SaveReader.cpp
+
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/data/persistence/SaveReader.cpp > CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.i
+
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/data/persistence/SaveReader.cpp -o CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.s
+
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o.requires:
+
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o.requires
+
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o.provides
+
+CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o
+
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o: ../src/data/providers/character/CharacterProvider.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o -c /home/guiviko/Projects/chrono/src/data/providers/character/CharacterProvider.cpp
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/data/providers/character/CharacterProvider.cpp > CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.i
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/data/providers/character/CharacterProvider.cpp -o CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.s
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o.requires:
+
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o.requires
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o.provides
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o
+
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o: CMakeFiles/SFMLDemo.dir/flags.make
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o: ../src/data/providers/config/ConfigProvider.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o -c /home/guiviko/Projects/chrono/src/data/providers/config/ConfigProvider.cpp
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guiviko/Projects/chrono/src/data/providers/config/ConfigProvider.cpp > CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.i
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guiviko/Projects/chrono/src/data/providers/config/ConfigProvider.cpp -o CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.s
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o.requires:
+
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o.requires
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o.provides: CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SFMLDemo.dir/build.make CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o.provides.build
+.PHONY : CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o.provides
+
+CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o.provides.build: CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o
+
+
 # Object files for target SFMLDemo
 SFMLDemo_OBJECTS = \
 "CMakeFiles/SFMLDemo.dir/main.cpp.o" \
@@ -283,7 +451,14 @@ SFMLDemo_OBJECTS = \
 "CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o" \
 "CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o" \
 "CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o" \
-"CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o"
+"CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o" \
+"CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o"
 
 # External object files for target SFMLDemo
 SFMLDemo_EXTERNAL_OBJECTS =
@@ -297,6 +472,13 @@ SFMLDemo: CMakeFiles/SFMLDemo.dir/src/core/ActionDispatcher.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o
+SFMLDemo: CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o
 SFMLDemo: CMakeFiles/SFMLDemo.dir/build.make
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-system.so
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-window.so
@@ -304,7 +486,7 @@ SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-network.so
 SFMLDemo: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
 SFMLDemo: CMakeFiles/SFMLDemo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable SFMLDemo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/guiviko/Projects/chrono/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable SFMLDemo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SFMLDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -321,6 +503,13 @@ CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/core/ActionDispatc
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/core/Game.cpp.o.requires
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/updaters/map/MapUpdater.cpp.o.requires
 CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/rendering/renderers/CharacterRenderer.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/data/providers/map/MapProvider.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/data/IO/ArrayReader.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/data/IO/KeyValueReader.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/data/DataProvider.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/data/persistence/SaveReader.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/data/providers/character/CharacterProvider.cpp.o.requires
+CMakeFiles/SFMLDemo.dir/requires: CMakeFiles/SFMLDemo.dir/src/data/providers/config/ConfigProvider.cpp.o.requires
 
 .PHONY : CMakeFiles/SFMLDemo.dir/requires
 
