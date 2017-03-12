@@ -3,14 +3,14 @@
 
 struct CharacterState
 {
+    std::string texture;
     bool isMovingUp;
     bool isMovingDown;
     bool isMovingRight;
     bool isMovingLeft;
-    int x;
-    int y;
     int boxWidth;
     int boxHeight;
+    int legRoom;
     int moveSpeed;
 };
 

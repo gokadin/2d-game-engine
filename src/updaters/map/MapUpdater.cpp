@@ -34,7 +34,7 @@ void MapUpdater::moveUp()
     }
 
     int charLeft = state.map.x - state.character.boxWidth / 2;
-    int charTop = state.map.y - state.character.boxHeight / 2 - state.character.moveSpeed;
+    int charTop = state.map.y - state.character.legRoom - state.character.moveSpeed;
     for (int i = 0; i < state.character.boxWidth; i++)
     {
         if (state.map.bounds[charTop][charLeft + i] == 1)
@@ -54,7 +54,7 @@ void MapUpdater::moveDown()
     }
 
     int charLeft = state.map.x - state.character.boxWidth / 2;
-    int charBottom = state.map.y + state.character.boxHeight / 2 + state.character.moveSpeed;
+    int charBottom = state.map.y + state.character.moveSpeed;
     for (int i = 0; i < state.character.boxWidth; i++)
     {
         if (state.map.bounds[charBottom][charLeft + i] == 1)
@@ -73,9 +73,9 @@ void MapUpdater::moveRight()
         return;
     }
 
-    int charTop = state.map.y - state.character.boxHeight / 2;
+    int charTop = state.map.y - state.character.legRoom;
     int charRight = state.map.x + state.character.boxWidth / 2 + state.character.moveSpeed;
-    for (int i = 0; i < state.character.boxHeight; i++)
+    for (int i = 0; i < state.character.legRoom; i++)
     {
         if (state.map.bounds[charTop + i][charRight] == 1)
         {
@@ -93,9 +93,9 @@ void MapUpdater::moveLeft()
         return;
     }
 
-    int charTop = state.map.y - state.character.boxHeight / 2;
+    int charTop = state.map.y - state.character.legRoom;
     int charLeft = state.map.x - state.character.boxWidth / 2 - state.character.moveSpeed;
-    for (int i = 0; i < state.character.boxHeight; i++)
+    for (int i = 0; i < state.character.legRoom; i++)
     {
         if (state.map.bounds[charTop + i][charLeft] == 1)
         {

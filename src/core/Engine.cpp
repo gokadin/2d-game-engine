@@ -1,13 +1,11 @@
 #include <iostream>
 #include "Engine.h"
 #include "Game.h"
-#include "../data/IO/KeyValueReader.h"
-#include "../data/IO/ArrayReader.h"
 
 const int UPDATE_INTERVAL_MU = 7000;
 const int SECOND_IN_MU = 1000000;
-const int SCREEN_WIDTH = 1280;
-const int SCREEN_HEIGHT = 720;
+const int SCREEN_WIDTH = 1920;
+const int SCREEN_HEIGHT = 1080;
 
 Engine::Engine() {}
 
