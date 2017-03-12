@@ -4,7 +4,7 @@ MapReducer::MapReducer(GameState& state):
         Reducer(state)
 {}
 
-void MapReducer::process(action_types type)
+void MapReducer::process(action_types type, int x, int y)
 {
     switch (type)
     {

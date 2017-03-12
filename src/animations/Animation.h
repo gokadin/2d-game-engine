@@ -14,6 +14,7 @@ protected:
     GameState& state;
     int counter;
     bool isActive;
+    int stage;
 };
 
 #endif //SFMLDEMO_ANIMATION_H

@@ -13,7 +13,7 @@ public:
     AnimationManager(GameState& state);
     virtual ~AnimationManager();
 
-    void update();
+    virtual void update();
 
 protected:
     GameState& state;

@@ -25,6 +25,11 @@ private:
     void processKeyReleasedD();
     void processKeyPressedA();
     void processKeyReleasedA();
+
+    void processMouseButtonPressed(sf::Event::MouseButtonEvent mouseButtonEvent);
+
+    void processLeftMousePressed(sf::Event::MouseButtonEvent mouseButtonEvent);
+    void processRightMousePressed(sf::Event::MouseButtonEvent mouseButtonEvent);
 };
 
 #endif //SFMLDEMO_INPUTMANAGER_H

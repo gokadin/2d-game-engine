@@ -10,7 +10,7 @@ class MapReducer : public Reducer
 public:
     MapReducer(GameState& state);
 
-    void process(action_types type);
+    void process(action_types type, int x = 0, int y = 0);
 };
 
 #endif //SFMLDEMO_MAPREDUCER_H

@@ -3,7 +3,8 @@
 
 enum animation_groups
 {
-    CHARACTER
+    CHARACTER,
+    SKILLS
 };
 
 #endif //SFMLDEMO_ANIMATIONGROUPS_H

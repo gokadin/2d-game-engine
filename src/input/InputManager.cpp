@@ -13,6 +13,9 @@ void InputManager::processEvent(sf::Event event){
         case sf::Event::KeyReleased:
             processKeyReleased(event.key.code);
             break;
+        case sf::Event::MouseButtonPressed:
+            processMouseButtonPressed(event.mouseButton);
+            break;
     }
 }
 
@@ -92,4 +95,27 @@ void InputManager::processKeyPressedA()
 void InputManager::processKeyReleasedA()
 {
     dispatcher->dispatch(action_types::CHARACTER_STOP_LEFT);
+}
+
+void InputManager::processMouseButtonPressed(sf::Event::MouseButtonEvent mouseButtonEvent)
+{
+    switch (mouseButtonEvent.button)
+    {
+        case sf::Mouse::Button::Left:
+            processLeftMousePressed(mouseButtonEvent);
+            break;
+        case sf::Mouse::Button::Right:
+            processRightMousePressed(mouseButtonEvent);
+            break;
+    }
+}
+
+void InputManager::processLeftMousePressed(sf::Event::MouseButtonEvent mouseButtonEvent)
+{
+    // ...
+}
+
+void InputManager::processRightMousePressed(sf::Event::MouseButtonEvent mouseButtonEvent)
+{
+    dispatcher->dispatch(action_types::USE_SKILL_0, mouseButtonEvent.x, mouseButtonEvent.y);
 }

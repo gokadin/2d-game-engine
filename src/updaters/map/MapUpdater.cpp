@@ -20,10 +20,13 @@ void MapUpdater::update()
 
 void MapUpdater::move()
 {
-    moveUp();
-    moveDown();
-    moveRight();
-    moveLeft();
+    if (!state.character.pauseMovement)
+    {
+        moveUp();
+        moveDown();
+        moveRight();
+        moveLeft();
+    }
 }
 
 void MapUpdater::moveUp()

@@ -1,0 +1,10 @@
+#ifndef SFMLDEMO_CASTINGTYPES_H
+#define SFMLDEMO_CASTINGTYPES_H
+
+enum casting_types
+{
+    NO_CAST,
+    INSTANT_CAST
+};
+
+#endif //SFMLDEMO_CASTINGTYPES_H

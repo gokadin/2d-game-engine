@@ -15,8 +15,6 @@ private:
     const int SPRITE_POS_Y = 1;
     const int NUM_STAGES = 2;
 
-    int stage;
-
     void animate();
     void updateSprite();
 };

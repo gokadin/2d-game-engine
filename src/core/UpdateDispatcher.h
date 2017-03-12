@@ -5,6 +5,8 @@
 #include <iostream>
 #include "../updaters/Updater.h"
 #include "../updaters/map/MapUpdater.h"
+#include "../updaters/skills/SkillUpdater.h"
+#include "../updaters/character/CharacterUpdater.h"
 
 class UpdateDispatcher
 {
@@ -13,6 +15,8 @@ public:
             state(state)
     {
         updaters.push_back(new MapUpdater(state));
+        updaters.push_back(new CharacterUpdater(state));
+        updaters.push_back(new SkillUpdater(state));
     }
 
     ~UpdateDispatcher()

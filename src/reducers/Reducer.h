@@ -12,7 +12,7 @@ public:
             state(state)
     {}
 
-    virtual void process(action_types type) = 0;
+    virtual void process(action_types type, int x = 0, int y = 0) = 0;
 
 protected:
     GameState& state;

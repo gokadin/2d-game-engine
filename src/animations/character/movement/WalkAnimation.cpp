@@ -1,7 +1,7 @@
 #include "WalkAnimation.h"
 
 WalkAnimation::WalkAnimation(GameState& state):
-        Animation(state), stage(1)
+        Animation(state)
 {}
 
 void WalkAnimation::update()

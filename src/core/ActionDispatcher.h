@@ -11,7 +11,7 @@ public:
     ActionDispatcher(GameState& state);
     ~ActionDispatcher();
 
-    void dispatch(action_types type);
+    void dispatch(action_types type, int x = 0, int y = 0);
 
 private:
     GameState& state;
