@@ -9,6 +9,7 @@
 #include "UpdateDispatcher.h"
 #include "RenderDispatcher.h"
 #include "../data/DataProvider.h"
+#include "../animations/AnimationDispatcher.h"
 
 class Game
 {
@@ -25,6 +26,7 @@ private:
     DataProvider *dataProvider;
     ActionDispatcher *actionDispatcher;
     UpdateDispatcher *updateDispatcher;
+    AnimationDispatcher *animationDispatcher;
     RenderDispatcher *renderDispatcher;
     InputManager *inputManager;
 };

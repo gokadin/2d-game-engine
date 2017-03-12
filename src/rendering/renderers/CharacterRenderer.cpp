@@ -27,6 +27,7 @@ void CharacterRenderer::draw(sf::RenderWindow *window)
 
 void CharacterRenderer::updateSprite()
 {
-    sprite.setTextureRect(sf::IntRect(0, 0, 32, 64));
-    sprite.setPosition(sf::Vector2f(state.config.cx - state.character.boxWidth / 2, state.config.cy - state.character.boxHeight));
+    sprite.setTextureRect(sf::IntRect(state.character.spriteOffsetX, state.character.spriteOffsetY,
+                                      state.character.spriteWidth, state.character.spriteHeight));
+    sprite.setPosition(sf::Vector2f(state.config.cx - state.character.spriteWidth / 2, state.config.cy - state.character.boxHeight));
 }

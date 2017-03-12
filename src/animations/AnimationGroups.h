@@ -1,0 +1,9 @@
+#ifndef SFMLDEMO_ANIMATIONGROUPS_H
+#define SFMLDEMO_ANIMATIONGROUPS_H
+
+enum animation_groups
+{
+    CHARACTER
+};
+
+#endif //SFMLDEMO_ANIMATIONGROUPS_H

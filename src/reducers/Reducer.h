@@ -3,6 +3,7 @@
 
 #include "../updaters/Updater.h"
 #include "../states/GameState.h"
+#include "../actions/ActionTypes.h"
 
 class Reducer
 {

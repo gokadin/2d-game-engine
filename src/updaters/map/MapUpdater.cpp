@@ -33,14 +33,21 @@ void MapUpdater::moveUp()
         return;
     }
 
-    int charLeft = state.map.x - state.character.boxWidth / 2;
     int charTop = state.map.y - state.character.legRoom - state.character.moveSpeed;
-    for (int i = 0; i < state.character.boxWidth; i++)
+    bool leftFree = state.map.bounds[charTop][state.map.x - state.character.boxWidth / 2] == 0;
+    bool rightFree = state.map.bounds[charTop][state.map.x + state.character.boxWidth / 2] == 0;
+    if (!leftFree && !rightFree)
     {
-        if (state.map.bounds[charTop][charLeft + i] == 1)
-        {
-            return;
-        }
+        return;
+    }
+
+    if (leftFree && !rightFree)
+    {
+        state.map.x -= state.character.moveSpeed;
+    }
+    else if (!leftFree)
+    {
+        state.map.x += state.character.moveSpeed;
     }
 
     state.map.y -= state.character.moveSpeed;
@@ -53,14 +60,21 @@ void MapUpdater::moveDown()
         return;
     }
 
-    int charLeft = state.map.x - state.character.boxWidth / 2;
     int charBottom = state.map.y + state.character.moveSpeed;
-    for (int i = 0; i < state.character.boxWidth; i++)
+    bool leftFree = state.map.bounds[charBottom][state.map.x - state.character.boxWidth / 2] == 0;
+    bool rightFree = state.map.bounds[charBottom][state.map.x + state.character.boxWidth / 2] == 0;
+    if (!leftFree && !rightFree)
     {
-        if (state.map.bounds[charBottom][charLeft + i] == 1)
-        {
-            return;
-        }
+        return;
+    }
+
+    if (leftFree && !rightFree)
+    {
+        state.map.x -= state.character.moveSpeed;
+    }
+    else if (!leftFree)
+    {
+        state.map.x += state.character.moveSpeed;
     }
 
     state.map.y += state.character.moveSpeed;
@@ -73,14 +87,21 @@ void MapUpdater::moveRight()
         return;
     }
 
-    int charTop = state.map.y - state.character.legRoom;
     int charRight = state.map.x + state.character.boxWidth / 2 + state.character.moveSpeed;
-    for (int i = 0; i < state.character.legRoom; i++)
+    bool topFree = state.map.bounds[state.map.y - state.character.legRoom][charRight] == 0;
+    bool bottomFree = state.map.bounds[state.map.y][charRight] == 0;
+    if (!topFree && !bottomFree)
     {
-        if (state.map.bounds[charTop + i][charRight] == 1)
-        {
-            return;
-        }
+        return;
+    }
+
+    if (topFree && !bottomFree)
+    {
+        state.map.y -= state.character.moveSpeed;
+    }
+    else if (!topFree)
+    {
+        state.map.y += state.character.moveSpeed;
     }
 
     state.map.x += state.character.moveSpeed;
@@ -93,14 +114,21 @@ void MapUpdater::moveLeft()
         return;
     }
 
-    int charTop = state.map.y - state.character.legRoom;
     int charLeft = state.map.x - state.character.boxWidth / 2 - state.character.moveSpeed;
-    for (int i = 0; i < state.character.legRoom; i++)
+    bool topFree = state.map.bounds[state.map.y - state.character.legRoom][charLeft] == 0;
+    bool bottomFree = state.map.bounds[state.map.y][charLeft] == 0;
+    if (!topFree && !bottomFree)
     {
-        if (state.map.bounds[charTop + i][charLeft] == 1)
-        {
-            return;
-        }
+        return;
+    }
+
+    if (topFree && !bottomFree)
+    {
+        state.map.y -= state.character.moveSpeed;
+    }
+    else if (!topFree)
+    {
+        state.map.y += state.character.moveSpeed;
     }
 
     state.map.x -= state.character.moveSpeed;

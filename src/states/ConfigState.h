@@ -7,6 +7,7 @@ struct ConfigState
     int height;
     int cx;
     int cy;
+    int ups;
 };
 
 #endif //SFMLDEMO_CONFIGSTATE_H

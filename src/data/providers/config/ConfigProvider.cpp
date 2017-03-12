@@ -12,4 +12,5 @@ void ConfigProvider::load()
     state.config.height = screenHeight;
     state.config.cx = state.config.width / 2;
     state.config.cy = state.config.height / 2;
+    state.config.ups = 120;
 }
