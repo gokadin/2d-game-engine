@@ -8,8 +8,8 @@ struct MapState
 {
     int width;
     int height;
-    int x;
-    int y;
+    int cx;
+    int cy;
     std::string texture;
     std::vector<std::vector<int>> bounds;
 };

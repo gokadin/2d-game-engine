@@ -7,14 +7,14 @@ MapUpdater::MapUpdater(GameState& state):
 
 void MapUpdater::update()
 {
-    int oldX = state.map.x;
-    int oldY = state.map.y;
+    int oldX = state.map.cx;
+    int oldY = state.map.cy;
 
     move();
 
-    if (state.map.x != oldX || state.map.y != oldY)
+    if (state.map.cx != oldX || state.map.cy != oldY)
     {
-        std::cout << "X = " << state.map.x << "   Y = " << state.map.y << std::endl;
+        std::cout << "X = " << state.map.cx << "   Y = " << state.map.cy << std::endl;
     }
 }
 
@@ -33,9 +33,9 @@ void MapUpdater::moveUp()
         return;
     }
 
-    int charTop = state.map.y - state.character.legRoom - state.character.moveSpeed;
-    bool leftFree = state.map.bounds[charTop][state.map.x - state.character.boxWidth / 2] == 0;
-    bool rightFree = state.map.bounds[charTop][state.map.x + state.character.boxWidth / 2] == 0;
+    int charTop = state.map.cy - state.character.legRoom - state.character.moveSpeed;
+    bool leftFree = state.map.bounds[charTop][state.map.cx - state.character.boxWidth / 2] == 0;
+    bool rightFree = state.map.bounds[charTop][state.map.cx + state.character.boxWidth / 2] == 0;
     if (!leftFree && !rightFree)
     {
         return;
@@ -43,14 +43,14 @@ void MapUpdater::moveUp()
 
     if (leftFree && !rightFree)
     {
-        state.map.x -= state.character.moveSpeed;
+        state.map.cx -= state.character.moveSpeed;
     }
     else if (!leftFree)
     {
-        state.map.x += state.character.moveSpeed;
+        state.map.cx += state.character.moveSpeed;
     }
 
-    state.map.y -= state.character.moveSpeed;
+    state.map.cy -= state.character.moveSpeed;
 }
 
 void MapUpdater::moveDown()
@@ -60,9 +60,9 @@ void MapUpdater::moveDown()
         return;
     }
 
-    int charBottom = state.map.y + state.character.moveSpeed;
-    bool leftFree = state.map.bounds[charBottom][state.map.x - state.character.boxWidth / 2] == 0;
-    bool rightFree = state.map.bounds[charBottom][state.map.x + state.character.boxWidth / 2] == 0;
+    int charBottom = state.map.cy + state.character.moveSpeed;
+    bool leftFree = state.map.bounds[charBottom][state.map.cx - state.character.boxWidth / 2] == 0;
+    bool rightFree = state.map.bounds[charBottom][state.map.cx + state.character.boxWidth / 2] == 0;
     if (!leftFree && !rightFree)
     {
         return;
@@ -70,14 +70,14 @@ void MapUpdater::moveDown()
 
     if (leftFree && !rightFree)
     {
-        state.map.x -= state.character.moveSpeed;
+        state.map.cx -= state.character.moveSpeed;
     }
     else if (!leftFree)
     {
-        state.map.x += state.character.moveSpeed;
+        state.map.cx += state.character.moveSpeed;
     }
 
-    state.map.y += state.character.moveSpeed;
+    state.map.cy += state.character.moveSpeed;
 }
 
 void MapUpdater::moveRight()
@@ -87,9 +87,9 @@ void MapUpdater::moveRight()
         return;
     }
 
-    int charRight = state.map.x + state.character.boxWidth / 2 + state.character.moveSpeed;
-    bool topFree = state.map.bounds[state.map.y - state.character.legRoom][charRight] == 0;
-    bool bottomFree = state.map.bounds[state.map.y][charRight] == 0;
+    int charRight = state.map.cx + state.character.boxWidth / 2 + state.character.moveSpeed;
+    bool topFree = state.map.bounds[state.map.cy - state.character.legRoom][charRight] == 0;
+    bool bottomFree = state.map.bounds[state.map.cy][charRight] == 0;
     if (!topFree && !bottomFree)
     {
         return;
@@ -97,14 +97,14 @@ void MapUpdater::moveRight()
 
     if (topFree && !bottomFree)
     {
-        state.map.y -= state.character.moveSpeed;
+        state.map.cy -= state.character.moveSpeed;
     }
     else if (!topFree)
     {
-        state.map.y += state.character.moveSpeed;
+        state.map.cy += state.character.moveSpeed;
     }
 
-    state.map.x += state.character.moveSpeed;
+    state.map.cx += state.character.moveSpeed;
 }
 
 void MapUpdater::moveLeft()
@@ -114,9 +114,9 @@ void MapUpdater::moveLeft()
         return;
     }
 
-    int charLeft = state.map.x - state.character.boxWidth / 2 - state.character.moveSpeed;
-    bool topFree = state.map.bounds[state.map.y - state.character.legRoom][charLeft] == 0;
-    bool bottomFree = state.map.bounds[state.map.y][charLeft] == 0;
+    int charLeft = state.map.cx - state.character.boxWidth / 2 - state.character.moveSpeed;
+    bool topFree = state.map.bounds[state.map.cy - state.character.legRoom][charLeft] == 0;
+    bool bottomFree = state.map.bounds[state.map.cy][charLeft] == 0;
     if (!topFree && !bottomFree)
     {
         return;
@@ -124,12 +124,12 @@ void MapUpdater::moveLeft()
 
     if (topFree && !bottomFree)
     {
-        state.map.y -= state.character.moveSpeed;
+        state.map.cy -= state.character.moveSpeed;
     }
     else if (!topFree)
     {
-        state.map.y += state.character.moveSpeed;
+        state.map.cy += state.character.moveSpeed;
     }
 
-    state.map.x -= state.character.moveSpeed;
+    state.map.cx -= state.character.moveSpeed;
 }

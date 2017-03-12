@@ -5,6 +5,7 @@
 #include "CharacterState.h"
 #include "ConfigState.h"
 #include "SaveState.h"
+#include "MonsterState.h"
 
 struct GameState
 {
@@ -12,6 +13,7 @@ struct GameState
     ConfigState config;
     MapState map;
     CharacterState character;
+    std::vector<MonsterState> monsters;
 };
 
 #endif //SFMLDEMO_GAMESTATE_H

@@ -21,8 +21,8 @@ void MapRenderer::draw(sf::RenderWindow *window)
 
 void MapRenderer::updateView()
 {
-    int x = state.map.x - state.config.width / 2;
-    int y = state.map.y - state.config.height / 2;
+    int x = state.map.cx - state.config.width / 2;
+    int y = state.map.cy - state.config.height / 2;
 
     sprite.setTextureRect(sf::IntRect(x, y, state.config.width, state.config.height));
 }

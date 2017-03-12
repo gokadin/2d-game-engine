@@ -6,6 +6,7 @@
 #include "../states/GameState.h"
 #include "../rendering/renderers/MapRenderer.h"
 #include "../rendering/renderers/CharacterRenderer.h"
+#include "../rendering/renderers/monsters/MonsterRenderer.h"
 
 class RenderDispatcher
 {
@@ -15,6 +16,7 @@ public:
     {
         renderers.push_back(new MapRenderer(state));
         renderers.push_back(new CharacterRenderer(state));
+        renderers.push_back(new MonsterRenderer(state));
     }
 
     ~RenderDispatcher()

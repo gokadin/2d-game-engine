@@ -15,8 +15,8 @@ void MapProvider::load()
 
     state.map.width = std::stoi(metadata["WIDTH"]);
     state.map.height = std::stoi(metadata["HEIGHT"]);
-    state.map.x = std::stoi(metadata["INITIAL_X"]);
-    state.map.y = std::stoi(metadata["INITIAL_Y"]);
+    state.map.cx = std::stoi(metadata["INITIAL_X"]);
+    state.map.cy = std::stoi(metadata["INITIAL_Y"]);
     state.map.texture = mapFolder + "texture.png";
     state.map.bounds = ArrayReader::read2D(mapFolder + "bounds");
 }
