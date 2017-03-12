@@ -7,6 +7,8 @@ class SkillAnimations : public AnimationManager
 {
 public:
     SkillAnimations(GameState &state);
+
+    void update();
 };
 
 #endif //SFMLDEMO_SKILLANIMATIONS_H
