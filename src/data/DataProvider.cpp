@@ -32,3 +32,13 @@ void DataProvider::load()
         providers[i]->load();
     }
 }
+
+void DataProvider::loadCharacter(Character *character)
+{
+
+}
+
+void DataProvider::loadSkills(SkillManager *skillManager)
+{
+    skillManager->assign(0, skill_names::FIREBALL);
+}

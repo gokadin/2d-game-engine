@@ -1,0 +1,9 @@
+#ifndef SFMLDEMO_EVENTTYPE_H
+#define SFMLDEMO_EVENTTYPE_H
+
+enum event_type
+{
+    SKILL_ACTIVATED
+};
+
+#endif //SFMLDEMO_EVENTTYPE_H

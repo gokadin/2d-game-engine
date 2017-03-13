@@ -10,6 +10,8 @@
 #include "RenderDispatcher.h"
 #include "../data/DataProvider.h"
 #include "../animations/AnimationDispatcher.h"
+#include "../components/character/Character.h"
+#include "../components/skills/SkillManager.h"
 
 class Game
 {
@@ -29,6 +31,9 @@ private:
     AnimationDispatcher *animationDispatcher;
     RenderDispatcher *renderDispatcher;
     InputManager *inputManager;
+
+    Character *character;
+    SkillManager *skillManager;
 };
 
 #endif //SFMLDEMO_GAME_H
