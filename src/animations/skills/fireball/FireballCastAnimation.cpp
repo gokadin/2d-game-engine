@@ -6,5 +6,5 @@ FireballCastAnimation::FireballCastAnimation(GameState &state):
 
 void FireballCastAnimation::update()
 {
-    if ()
+
 }
