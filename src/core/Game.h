@@ -3,13 +3,10 @@
 
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
-#include "ActionDispatcher.h"
-#include "../input/InputManager.h"
 #include "../states/GameState.h"
 #include "UpdateDispatcher.h"
 #include "RenderDispatcher.h"
 #include "../data/DataProvider.h"
-#include "../animations/AnimationDispatcher.h"
 #include "../components/character/Character.h"
 #include "../components/skills/SkillManager.h"
 
@@ -26,11 +23,8 @@ public:
 private:
     GameState state;
     DataProvider *dataProvider;
-    ActionDispatcher *actionDispatcher;
     UpdateDispatcher *updateDispatcher;
-    AnimationDispatcher *animationDispatcher;
     RenderDispatcher *renderDispatcher;
-    InputManager *inputManager;
 
     Character *character;
     SkillManager *skillManager;

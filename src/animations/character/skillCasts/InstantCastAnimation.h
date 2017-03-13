@@ -6,9 +6,12 @@
 class InstantCastAnimation : public Animation
 {
 public:
-    InstantCastAnimation(GameState &state);
+    InstantCastAnimation();
 
     void update();
+    void start();
+    void stop();
+    void reset();
 
 protected:
     const int SPRITE_POS_Y = 2;

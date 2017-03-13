@@ -6,15 +6,23 @@
 class Animation
 {
 public:
-    Animation(GameState& state);
+    Animation(bool isAlwaysOn);
 
     virtual void update() = 0;
+    virtual void start() = 0;
+    virtual void stop() = 0;
+    virtual void reset() = 0;
+
+    inline bool isActive() { return m_isActive; }
+    inline bool isAlwaysOn() { return m_isAlwaysOn; }
 
 protected:
-    GameState& state;
-    int counter;
-    bool isActive;
-    int stage;
+    int m_counter;
+    bool m_isActive;
+    int m_stage;
+
+private:
+    bool m_isAlwaysOn;
 };
 
 #endif //SFMLDEMO_ANIMATION_H

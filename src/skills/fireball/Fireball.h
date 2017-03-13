@@ -6,6 +6,10 @@
 class Fireball : public Skill
 {
 public:
+    Fireball():
+            Skill(0)
+    {}
+
     void update();
     void draw(sf::RenderWindow *window);
     bool canActivate();

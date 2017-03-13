@@ -4,11 +4,8 @@ Game::Game(int screenWidth, int screenHeight)
 {
     dataProvider = new DataProvider(state, screenWidth, screenHeight);
     dataProvider->load();
-    actionDispatcher = new ActionDispatcher(state);
     updateDispatcher = new UpdateDispatcher(state);
-    animationDispatcher = new AnimationDispatcher(state);
     renderDispatcher = new RenderDispatcher(state);
-    inputManager = new InputManager(actionDispatcher);
 
     character = new Character();
     dataProvider->loadCharacter(character);
@@ -20,10 +17,7 @@ Game::Game(int screenWidth, int screenHeight)
 Game::~Game()
 {
     delete dataProvider;
-    delete inputManager;
-    delete actionDispatcher;
     delete updateDispatcher;
-    delete animationDispatcher;
     delete renderDispatcher;
 
     delete character;
@@ -32,8 +26,6 @@ Game::~Game()
 
 void Game::processEvent(sf::Event event)
 {
-    inputManager->processEvent(event);
-
     switch (event.type)
     {
         case sf::Event::MouseButtonPressed:
@@ -48,7 +40,6 @@ void Game::processEvent(sf::Event event)
 void Game::update()
 {
     updateDispatcher->update();
-    animationDispatcher->update();
 
     character->update();
     skillManager->update();

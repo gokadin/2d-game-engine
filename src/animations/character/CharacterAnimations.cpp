@@ -1,12 +1,33 @@
 #include "CharacterAnimations.h"
-#include "movement/WalkAnimation.h"
-#include "movement/StandAnimation.h"
 #include "skillCasts/InstantCastAnimation.h"
 
-CharacterAnimations::CharacterAnimations(GameState &state):
-        AnimationManager(state)
+CharacterAnimations::CharacterAnimations()
 {
-    animations[animation_types::CHARACTER_STAND] = new StandAnimation(state);
-    animations[animation_types::CHARACTER_WALK] = new WalkAnimation(state);
-    animations[animation_types::CHARACTER_INSTANT_CAST] = new InstantCastAnimation(state);
+    animations[character_animation_type::CHARACTER_INSTANT_CAST] = new InstantCastAnimation();
+}
+
+CharacterAnimations::~CharacterAnimations()
+{
+    for (std::pair<character_animation_type, Animation *> pair : animations)
+    {
+        pair.second = NULL;
+        delete pair.second;
+    }
+    animations.clear();
+}
+
+void CharacterAnimations::update()
+{
+    for (std::pair<character_animation_type, Animation *> pair : animations)
+    {
+        if (pair.second != NULL && pair.second->isActive())
+        {
+            pair.second->update();
+        }
+    }
+}
+
+void CharacterAnimations::trigger(character_animation_type type)
+{
+    animations[type]->start();
 }
