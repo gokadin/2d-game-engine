@@ -29,7 +29,7 @@ void Engine::run()
     updateText.setPosition(sf::Vector2f(5.0f, 25.0f));
     updateText.setString("UPS --");
 
-    Game *game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
+    Game *game = new Game(window);
 
     long elapsedMu = 0;
     int updateAcc = 0;
@@ -83,7 +83,7 @@ void Engine::run()
 
         window->clear(sf::Color::Black);
 
-        game->draw(window);
+        game->draw();
         window->draw(updateText);
         window->draw(fpsText);
 

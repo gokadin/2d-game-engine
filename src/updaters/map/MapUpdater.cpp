@@ -1,12 +1,15 @@
-//#include <iostream>
-//#include "MapUpdater.h"
-//
-//MapUpdater::MapUpdater(GameState& state):
-//        Updater(state)
-//{}
-//
-//void MapUpdater::update()
-//{
+#include <SFML/Window/Mouse.hpp>
+#include "MapUpdater.h"
+#include "../../core/Engine.h"
+
+MapUpdater::MapUpdater(MapGraphics *graphics, MapState *state, sf::RenderWindow *window):
+        m_graphics(graphics), m_state(state), m_window(window)
+{}
+
+void MapUpdater::update()
+{
+    updateMovement();
+
 //    int oldX = state.map.cx;
 //    int oldY = state.map.cy;
 //
@@ -16,8 +19,25 @@
 //    {
 //        std::cout << "X = " << state.map.cx << "   Y = " << state.map.cy << std::endl;
 //    }
-//}
-//
+}
+
+void MapUpdater::updateMovement()
+{
+    if (!m_state->isMoving())
+    {
+        return;
+    }
+
+    sf::Vector2i mousePos = sf::Mouse::getPosition(*m_window);
+
+    int diffX = Engine::CX - mousePos.x;
+    int diffY = Engine::CY - mousePos.y;
+    float ratio = diffX / diffY;
+
+    m_state->setX(m_state->x() + SPEED * ratio); // STOPPED HEREREREERER
+    m_state->setY(m_state->y() + SPEED);
+}
+
 //void MapUpdater::move()
 //{
 //    if (!state.character.pauseMovement)

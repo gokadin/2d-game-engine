@@ -1,8 +1,4 @@
 #include "SaveReader.h"
-#include "../IO/KeyValueReader.h"
-
-SaveReader::SaveReader()
-{}
 
 void SaveReader::read()
 {

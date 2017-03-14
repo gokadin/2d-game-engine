@@ -11,14 +11,15 @@
 class Game
 {
 public:
-    Game(int screenWidth, int screenHeight);
+    Game(sf::RenderWindow *window);
     ~Game();
 
     void processEvent(sf::Event event);
     void update();
-    void draw(sf::RenderWindow *window);
+    void draw();
 
 private:
+    sf::RenderWindow *m_window;
     DataProvider *dataProvider;
     Map *map;
     Character *character;

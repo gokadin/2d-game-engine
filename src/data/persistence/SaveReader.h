@@ -9,12 +9,7 @@ const std::string POSITION = SAVE_ROOT + "position";
 class SaveReader
 {
 public:
-    SaveReader();
-
-    void read();
-
-private:
-
+    static void read();
 };
 
 #endif //SFMLDEMO_READSAVE_H

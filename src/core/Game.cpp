@@ -1,9 +1,10 @@
 #include "Game.h"
 
-Game::Game(int screenWidth, int screenHeight)
+Game::Game(sf::RenderWindow *window):
+        m_window(window)
 {
     dataProvider = new DataProvider();
-    map = new Map();
+    map = new Map(window);
     character = new Character();
     skillManager = new SkillManager();
 
@@ -40,6 +41,17 @@ void Game::processEvent(sf::Event event)
             {
                 skillManager->activate(0, event.mouseButton.x, event.mouseButton.y);
             }
+            else if (event.mouseButton.button == sf::Mouse::Button::Left)
+            {
+                map->startMoving();
+            }
+            break;
+        case sf::Event::MouseButtonReleased:
+            if (event.mouseButton.button == sf::Mouse::Button::Left)
+            {
+                map->state()->setIsMoving(false);
+                //map->stopMovingAt(event.mouseButton.x, event.mouseButton.y);
+            }
             break;
     }
 }
@@ -51,9 +63,9 @@ void Game::update()
     skillManager->update();
 }
 
-void Game::draw(sf::RenderWindow *window)
+void Game::draw()
 {
-    map->draw(window);
-    character->draw(window);
-    skillManager->draw(window);
+    map->draw(m_window);
+    character->draw(m_window);
+    skillManager->draw(m_window);
 }
