@@ -1,69 +1,43 @@
 #include "InstantCastAnimation.h"
+#include "../../../core/Engine.h"
 
-InstantCastAnimation::InstantCastAnimation():
-        Animation(false)
+InstantCastAnimation::InstantCastAnimation(CharacterState *state, CharacterGraphics *graphics):
+        Animation(false), m_state(state), m_graphics(graphics)
 {}
 
 void InstantCastAnimation::update()
 {
-//    if (!state.character.isCasting)
-//    {
-//        return;
-//    }
-//
-//    if (!isActive)
-//    {
-//        isActive = true;
-//        counter = 0;
-//        stage = 0;
-//        animationFrames = state.config.ups * state.character.skills[state.character.castingSkillIndex].castTimeMs / 1000;
-//        stageFrames = animationFrames / NUM_STAGES;
-//        updateSprite();
-//    }
-//
-//    animate();
-}
+    m_counter++;
+    if (m_counter == animationFrames)
+    {
+        stop();
+        return;
+    }
 
-void InstantCastAnimation::animate()
-{
-//    counter++;
-//    if (counter == animationFrames)
-//    {
-//        isActive = false;
-//        state.character.isCasting = false;
-//        state.character.pauseMovement = false;
-//
-//        return;
-//    }
-//
-//    // update sprite NUM_STAGES times
-//
-//    if (counter % stageFrames == 0)
-//    {
-//        stage++;
-//        updateSprite();
-//    }
+    if (m_counter % stageFrames == 0)
+    {
+        m_stage++;
+        updateSprite();
+    }
 }
 
 void InstantCastAnimation::updateSprite()
 {
-//    state.character.spriteOffsetY = SPRITE_POS_Y * state.character.spriteHeight;
-//    state.character.spriteOffsetX = stage * state.character.spriteWidth;
+    m_graphics->setSpriteOffsetY(SPRITE_POS_Y * m_graphics->spriteHeight());
+    m_graphics->setSpriteOffsetX(m_stage * m_graphics->spriteWidth());
 }
 
-void InstantCastAnimation::start()
+void InstantCastAnimation::start(Skill &skill)
 {
     m_isActive = true;
     m_counter = 0;
     m_stage = 0;
+    animationFrames = Engine::UPS * skill.castAnimationTime() / 1000;
+    stageFrames = animationFrames / NUM_STAGES;
+    updateSprite();
 }
 
 void InstantCastAnimation::stop()
 {
     m_isActive = false;
-}
-
-void InstantCastAnimation::reset()
-{
-
 }

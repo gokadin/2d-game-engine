@@ -1,24 +1,25 @@
 #include "CharacterAnimations.h"
 #include "skillCasts/InstantCastAnimation.h"
 
-CharacterAnimations::CharacterAnimations()
+CharacterAnimations::CharacterAnimations(CharacterState *state, CharacterGraphics *graphics):
+        m_state(state), m_graphics(graphics)
 {
-    animations[character_animation_type::CHARACTER_INSTANT_CAST] = new InstantCastAnimation();
+    m_animations[character_animation_type::CHARACTER_INSTANT_CAST] = new InstantCastAnimation(state, graphics);
 }
 
 CharacterAnimations::~CharacterAnimations()
 {
-    for (std::pair<character_animation_type, Animation *> pair : animations)
+    for (std::pair<character_animation_type, Animation *> pair : m_animations)
     {
         pair.second = NULL;
         delete pair.second;
     }
-    animations.clear();
+    m_animations.clear();
 }
 
 void CharacterAnimations::update()
 {
-    for (std::pair<character_animation_type, Animation *> pair : animations)
+    for (std::pair<character_animation_type, Animation *> pair : m_animations)
     {
         if (pair.second != NULL && pair.second->isActive())
         {
@@ -27,7 +28,7 @@ void CharacterAnimations::update()
     }
 }
 
-void CharacterAnimations::trigger(character_animation_type type)
+Animation &CharacterAnimations::get(character_animation_type type)
 {
-    animations[type]->start();
+    return *m_animations[type];
 }

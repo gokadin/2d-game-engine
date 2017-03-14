@@ -6,9 +6,7 @@
 class Fireball : public Skill
 {
 public:
-    Fireball():
-            Skill(0)
-    {}
+    Fireball();
 
     void update();
     void draw(sf::RenderWindow *window);

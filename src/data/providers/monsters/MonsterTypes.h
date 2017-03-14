@@ -1,9 +1,0 @@
-#ifndef SFMLDEMO_MONSTER_TYPES_H
-#define SFMLDEMO_MONSTER_TYPES_H
-
-enum monster_types
-{
-    ZOMBIE
-};
-
-#endif //SFMLDEMO_MONSTER_TYPES_H

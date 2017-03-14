@@ -4,18 +4,18 @@
 #include <SFML/Graphics/Shape.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
-#include "../Renderer.h"
+#include "../../Renderer.h"
+#include "../../../data/definitions/character/CharacterGraphics.h"
 
 class CharacterRenderer : public Renderer
 {
 public:
-    CharacterRenderer(GameState& state);
+    CharacterRenderer(CharacterGraphics *graphics);
 
     void draw(sf::RenderWindow *window);
 
 private:
-    sf::Sprite sprite;
-    sf::Texture texture;
+    CharacterGraphics *m_graphics;
 
     void updateSprite();
 };

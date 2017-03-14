@@ -1,5 +1,9 @@
 #include "Fireball.h"
 
+Fireball::Fireball():
+        Skill(0, 700)
+{}
+
 void Fireball::update()
 {
 

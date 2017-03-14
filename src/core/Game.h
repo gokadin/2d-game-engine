@@ -3,12 +3,10 @@
 
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
-#include "../states/GameState.h"
-#include "UpdateDispatcher.h"
-#include "RenderDispatcher.h"
 #include "../data/DataProvider.h"
 #include "../components/character/Character.h"
 #include "../components/skills/SkillManager.h"
+#include "../components/map/Map.h"
 
 class Game
 {
@@ -21,13 +19,13 @@ public:
     void draw(sf::RenderWindow *window);
 
 private:
-    GameState state;
     DataProvider *dataProvider;
-    UpdateDispatcher *updateDispatcher;
-    RenderDispatcher *renderDispatcher;
-
+    Map *map;
     Character *character;
     SkillManager *skillManager;
+
+    void load();
+    void subscribeComponents();
 };
 
 #endif //SFMLDEMO_GAME_H

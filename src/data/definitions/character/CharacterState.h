@@ -1,7 +1,9 @@
 #ifndef SFMLDEMO_CHARACTERSTATE_H
 #define SFMLDEMO_CHARACTERSTATE_H
 
-class CharacterState
+#include "../State.h"
+
+class CharacterState : public State
 {
 public:
     CharacterState():

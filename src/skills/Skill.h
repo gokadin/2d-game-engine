@@ -6,9 +6,7 @@
 class Skill
 {
 public:
-    Skill(int castTime):
-            m_castTime(castTime)
-    {}
+    Skill(int castTime, int castAnimationTime);
 
     virtual bool canActivate() = 0;
     virtual void activate() {};
@@ -19,10 +17,12 @@ public:
     inline bool isActive() { return m_isActive; }
     inline int castTime() { return m_castTime; }
     inline bool isInstantCast() { return m_castTime == 0; };
+    inline int castAnimationTime() { return m_castAnimationTime; }
 
 protected:
     bool m_isActive;
     int m_castTime;
+    int m_castAnimationTime;
 };
 
 #endif //SFMLDEMO_SKILL_H

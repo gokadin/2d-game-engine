@@ -4,8 +4,8 @@
 #include <iostream>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "../states/GameState.h"
-#include "../rendering/renderers/MapRenderer.h"
-#include "../rendering/renderers/CharacterRenderer.h"
+#include "../rendering/renderers/map/MapRenderer.h"
+#include "../rendering/renderers/character/CharacterRenderer.h"
 #include "../rendering/renderers/monsters/MonsterRenderer.h"
 
 class RenderDispatcher

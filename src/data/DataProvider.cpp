@@ -1,41 +1,26 @@
 #include "DataProvider.h"
-#include "providers/map/MapProvider.h"
-#include "providers/character/CharacterProvider.h"
-#include "providers/config/ConfigProvider.h"
-#include "providers/monsters/MonsterProvider.h"
 
-DataProvider::DataProvider(GameState& state, int screenWidth, int screenHeight):
-        saveReader(state)
+void DataProvider::loadMap(Map *map)
 {
-    providers.push_back(new ConfigProvider(state, saveReader, screenWidth, screenHeight));
-    providers.push_back(new MapProvider(state, saveReader));
-    providers.push_back(new CharacterProvider(state, saveReader));
-    providers.push_back(new MonsterProvider(state, saveReader));
-}
+    map->graphics()->loadTexture("../src/storage/game/maps/act1/town/texture.png");
+    map->graphics()->setSpriteWidth(3200);
+    map->graphics()->setSpriteHeight(3200);
+    map->graphics()->setSpriteOffsetX(0);
+    map->graphics()->setSpriteOffsetY(0);
 
-DataProvider::~DataProvider()
-{
-    for (Provider *provider : providers)
-    {
-        provider = NULL;
-        delete provider;
-    }
-    providers.clear();
-}
-
-void DataProvider::load()
-{
-    saveReader.read();
-
-    for (int i = 0; i < providers.size(); i++)
-    {
-        providers[i]->load();
-    }
+    //map->state().
 }
 
 void DataProvider::loadCharacter(Character *character)
 {
-
+    character->graphics()->loadTexture("../src/storage/game/character/texture.png");
+    character->graphics()->setSpriteOffsetX(0);
+    character->graphics()->setSpriteOffsetY(0);
+    character->graphics()->setSpriteWidth(56);
+    character->graphics()->setSpriteHeight(112);
+    character->graphics()->setBoxWidth(32);
+    character->graphics()->setBoxHeight(128);
+    character->graphics()->setLegRoom(10);
 }
 
 void DataProvider::loadSkills(SkillManager *skillManager)

@@ -2,26 +2,33 @@
 
 Game::Game(int screenWidth, int screenHeight)
 {
-    dataProvider = new DataProvider(state, screenWidth, screenHeight);
-    dataProvider->load();
-    updateDispatcher = new UpdateDispatcher(state);
-    renderDispatcher = new RenderDispatcher(state);
-
+    dataProvider = new DataProvider();
+    map = new Map();
     character = new Character();
-    dataProvider->loadCharacter(character);
     skillManager = new SkillManager();
-    dataProvider->loadSkills(skillManager);
-    skillManager->subscribe(character);
+
+    load();
+    subscribeComponents();
 }
 
 Game::~Game()
 {
     delete dataProvider;
-    delete updateDispatcher;
-    delete renderDispatcher;
-
+    delete map;
     delete character;
     delete skillManager;
+}
+
+void Game::load()
+{
+    dataProvider->loadMap(map);
+    dataProvider->loadCharacter(character);
+    dataProvider->loadSkills(skillManager);
+}
+
+void Game::subscribeComponents()
+{
+    skillManager->subscribe(character);
 }
 
 void Game::processEvent(sf::Event event)
@@ -39,16 +46,14 @@ void Game::processEvent(sf::Event event)
 
 void Game::update()
 {
-    updateDispatcher->update();
-
+    map->update();
     character->update();
     skillManager->update();
 }
 
 void Game::draw(sf::RenderWindow *window)
 {
-    renderDispatcher->render(window);
-
+    map->draw(window);
     character->draw(window);
     skillManager->draw(window);
 }

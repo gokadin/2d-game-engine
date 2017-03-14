@@ -8,6 +8,7 @@
 #include "../../data/definitions/character/CharacterGraphics.h"
 #include "../../animations/character/CharacterAnimations.h"
 #include "../../skills/Skill.h"
+#include "../../rendering/renderers/character/CharacterRenderer.h"
 
 class Character : public GameComponent, public Observer
 {
@@ -19,16 +20,16 @@ public:
     void draw(sf::RenderWindow *window);
     void notify(Event *event);
 
-    inline CharacterStats& stats() { return m_stats; }
-    inline CharacterState& state() { return m_state; }
-    inline CharacterGraphics& graphics() { return m_graphics; }
+    inline CharacterStats *stats() { return m_stats; }
+    inline CharacterState *state() { return m_state; }
+    inline CharacterGraphics *graphics() { return m_graphics; }
 
 private:
-    CharacterStats m_stats;
-    CharacterState m_state;
-    CharacterGraphics m_graphics;
+    CharacterStats *m_stats;
+    CharacterState *m_state;
+    CharacterGraphics *m_graphics;
     CharacterAnimations *m_animations;
-    // renderer
+    CharacterRenderer *m_renderer;
     // updater
 
     void castSpell(Skill *skill);

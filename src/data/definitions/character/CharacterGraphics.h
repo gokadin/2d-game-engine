@@ -1,26 +1,20 @@
 #ifndef SFMLDEMO_CHARACTERGRAPHICS_H
 #define SFMLDEMO_CHARACTERGRAPHICS_H
 
-#include <SFML/Graphics/Texture.hpp>
+#include "../Graphics.h"
 
-class CharacterGraphics
+class CharacterGraphics : public Graphics
 {
 public:
-    inline sf::Texture& texture() { return m_texture; }
-    inline int spriteWidth() { return m_spriteWidth; }
-    inline int spriteHeight() { return m_spriteHeight; }
-    inline int spriteOffsetX() { return m_spriteOffsetX; }
-    inline int spriteOffsetY() { return m_spriteOffsetY; }
     inline int boxWidth() { return m_boxWidth; }
     inline int boxHeight() { return m_boxHeight; }
     inline int legRoom() { return m_legRoom; }
 
+    inline void setBoxWidth(int width) { m_boxWidth = width; }
+    inline void setBoxHeight(int height) { m_boxHeight = height; }
+    inline void setLegRoom(int legRoom) { m_legRoom = legRoom; }
+
 private:
-    sf::Texture m_texture;
-    int m_spriteWidth;
-    int m_spriteHeight;
-    int m_spriteOffsetX;
-    int m_spriteOffsetY;
     int m_boxWidth;
     int m_boxHeight;
     int m_legRoom;

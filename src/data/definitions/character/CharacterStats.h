@@ -1,7 +1,9 @@
 #ifndef SFMLDEMO_CHARACTERSTATS_H
 #define SFMLDEMO_CHARACTERSTATS_H
 
-class CharacterStats
+#include "../Stats.h"
+
+class CharacterStats : public Stats
 {
 public:
     CharacterStats():
