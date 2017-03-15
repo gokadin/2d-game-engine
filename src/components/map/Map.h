@@ -6,16 +6,18 @@
 #include "../../data/definitions/map/MapState.h"
 #include "../../rendering/renderers/map/MapRenderer.h"
 #include "../../updaters/map/MapUpdater.h"
+#include "../../data/definitions/character/CharacterStats.h"
 
 class Map : public GameComponent
 {
 public:
-    Map(sf::RenderWindow *window);
+    Map(sf::RenderWindow *window, CharacterStats *characterStats);
     ~Map();
 
     void update();
     void draw(sf::RenderWindow *window);
     void startMoving();
+    void stopMovingOnPoint(int x, int y);
 
     inline MapGraphics* graphics() { return m_graphics; }
     inline MapState* state() { return m_state; }

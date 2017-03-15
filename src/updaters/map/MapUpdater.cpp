@@ -2,23 +2,13 @@
 #include "MapUpdater.h"
 #include "../../core/Engine.h"
 
-MapUpdater::MapUpdater(MapGraphics *graphics, MapState *state, sf::RenderWindow *window):
-        m_graphics(graphics), m_state(state), m_window(window)
+MapUpdater::MapUpdater(sf::RenderWindow *window, MapGraphics *graphics, MapState *state, CharacterStats *characterStats):
+        m_window(window), m_graphics(graphics), m_state(state), m_characterStats(characterStats), m_lastAngle(0.0)
 {}
 
 void MapUpdater::update()
 {
     updateMovement();
-
-//    int oldX = state.map.cx;
-//    int oldY = state.map.cy;
-//
-//    move();
-//
-//    if (state.map.cx != oldX || state.map.cy != oldY)
-//    {
-//        std::cout << "X = " << state.map.cx << "   Y = " << state.map.cy << std::endl;
-//    }
 }
 
 void MapUpdater::updateMovement()
@@ -28,27 +18,29 @@ void MapUpdater::updateMovement()
         return;
     }
 
-    sf::Vector2i mousePos = sf::Mouse::getPosition(*m_window);
+    if (m_state->shouldStopOnPoint())
+    {
+        if (m_state->x() >= m_state->lastPointX() - DESTINATION_ARRIVAL_RADIUS &&
+                m_state->x() <= m_state->lastPointX() + DESTINATION_ARRIVAL_RADIUS &&
+                m_state->y() >= m_state->lastPointY() - DESTINATION_ARRIVAL_RADIUS &&
+                m_state->y() <= m_state->lastPointY() + DESTINATION_ARRIVAL_RADIUS)
+        {
+            m_state->stopMoving();
+            return;
+        }
+    }
+    else
+    {
+        sf::Vector2i mousePos = sf::Mouse::getPosition(*m_window);
+        int diffX = mousePos.x - Engine::CX;
+        int diffY = mousePos.y - Engine::CY;
+        m_lastAngle = atan2((double)diffY, (double)diffX);
+    }
 
-    int diffX = Engine::CX - mousePos.x;
-    int diffY = Engine::CY - mousePos.y;
-    float ratio = diffX / diffY;
-
-    m_state->setX(m_state->x() + SPEED * ratio); // STOPPED HEREREREERER
-    m_state->setY(m_state->y() + SPEED);
+    m_state->setX(m_state->x() + m_characterStats->moveSpeed() * (float)cos(m_lastAngle));
+    m_state->setY(m_state->y() + m_characterStats->moveSpeed() * (float)sin(m_lastAngle));
 }
 
-//void MapUpdater::move()
-//{
-//    if (!state.character.pauseMovement)
-//    {
-//        moveUp();
-//        moveDown();
-//        moveRight();
-//        moveLeft();
-//    }
-//}
-//
 //void MapUpdater::moveUp()
 //{
 //    if (!state.character.isMovingUp || state.character.isMovingDown)

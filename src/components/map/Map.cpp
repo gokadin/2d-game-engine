@@ -1,11 +1,11 @@
 #include "Map.h"
 
-Map::Map(sf::RenderWindow *window)
+Map::Map(sf::RenderWindow *window, CharacterStats *characterStats)
 {
     m_graphics = new MapGraphics();
     m_state = new MapState();
     m_renderer = new MapRenderer(m_graphics, m_state);
-    m_updater = new MapUpdater(m_graphics, m_state, window);
+    m_updater = new MapUpdater(window, m_graphics, m_state, characterStats);
 }
 
 Map::~Map()
@@ -28,5 +28,10 @@ void Map::draw(sf::RenderWindow *window)
 
 void Map::startMoving()
 {
-    m_state->setIsMoving(true);
+    m_state->startMoving();
+}
+
+void Map::stopMovingOnPoint(int x, int y)
+{
+    m_state->stopOnPoint(x, y);
 }

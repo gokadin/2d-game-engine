@@ -14,5 +14,5 @@ void MapRenderer::draw(sf::RenderWindow *window)
 
 void MapRenderer::updateView()
 {
-    m_graphics->sprite().setTextureRect(sf::IntRect(m_state->x(), m_state->y(), Engine::SCREEN_WIDTH, Engine::SCREEN_HEIGHT));
+    m_graphics->sprite().setTextureRect(sf::IntRect((int)m_state->x(), (int)m_state->y(), Engine::SCREEN_WIDTH, Engine::SCREEN_HEIGHT));
 }

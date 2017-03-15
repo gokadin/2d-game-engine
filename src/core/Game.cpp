@@ -4,8 +4,8 @@ Game::Game(sf::RenderWindow *window):
         m_window(window)
 {
     dataProvider = new DataProvider();
-    map = new Map(window);
     character = new Character();
+    map = new Map(window, character->stats());
     skillManager = new SkillManager();
 
     load();
@@ -49,8 +49,7 @@ void Game::processEvent(sf::Event event)
         case sf::Event::MouseButtonReleased:
             if (event.mouseButton.button == sf::Mouse::Button::Left)
             {
-                map->state()->setIsMoving(false);
-                //map->stopMovingAt(event.mouseButton.x, event.mouseButton.y);
+                map->stopMovingOnPoint(event.mouseButton.x, event.mouseButton.y);
             }
             break;
     }

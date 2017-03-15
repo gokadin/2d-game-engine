@@ -5,20 +5,23 @@
 #include "../Updater.h"
 #include "../../data/definitions/map/MapGraphics.h"
 #include "../../data/definitions/map/MapState.h"
-
-const float SPEED = 0.5; // change this
+#include "../../data/definitions/character/CharacterStats.h"
 
 class MapUpdater : public Updater
 {
 public:
-    MapUpdater(MapGraphics *graphics, MapState *state, sf::RenderWindow *window);
+    MapUpdater(sf::RenderWindow *window, MapGraphics *graphics, MapState *state, CharacterStats *characterStats);
 
     void update();
 
 private:
+    const int DESTINATION_ARRIVAL_RADIUS = 2;
+
+    sf::RenderWindow *m_window;
     MapGraphics *m_graphics;
     MapState *m_state;
-    sf::RenderWindow *m_window;
+    CharacterStats *m_characterStats;
+    double m_lastAngle;
 
     void updateMovement();
 };
