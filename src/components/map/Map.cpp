@@ -4,6 +4,7 @@ Map::Map(sf::RenderWindow *window, CharacterStats *characterStats)
 {
     m_graphics = new MapGraphics();
     m_state = new MapState();
+    m_data = new MapData();
     m_renderer = new MapRenderer(m_graphics, m_state);
     m_updater = new MapUpdater(window, m_graphics, m_state, characterStats);
 }
@@ -12,6 +13,7 @@ Map::~Map()
 {
     delete m_graphics;
     delete m_state;
+    delete m_data;
     delete m_renderer;
     delete m_updater;
 }

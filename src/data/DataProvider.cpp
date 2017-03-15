@@ -1,6 +1,7 @@
 #include "DataProvider.h"
 #include "IO/KeyValueReader.h"
 #include "../core/Engine.h"
+#include "IO/ArrayReader.h"
 
 void DataProvider::loadMap(Map *map)
 {
@@ -14,6 +15,8 @@ void DataProvider::loadMap(Map *map)
 
     map->state()->setX(std::stoi(metadata["INITIAL_CX"]) - Engine::HALF_SCREEN_WIDTH);
     map->state()->setY(std::stoi(metadata["INITIAL_CY"]) - Engine::HALF_SCREEN_HEIGHT);
+
+    map->data()->setBounds(ArrayReader::read2D("../src/storage/game/maps/act1/town/bounds"));
 }
 
 void DataProvider::loadCharacter(Character *character)

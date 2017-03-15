@@ -6,11 +6,13 @@
 #include "../../data/definitions/map/MapGraphics.h"
 #include "../../data/definitions/map/MapState.h"
 #include "../../data/definitions/character/CharacterStats.h"
+#include "../../data/definitions/map/MapData.h"
 
 class MapUpdater : public Updater
 {
 public:
-    MapUpdater(sf::RenderWindow *window, MapGraphics *graphics, MapState *state, CharacterStats *characterStats);
+    MapUpdater(sf::RenderWindow *window, MapGraphics *graphics, MapState *state, MapData *data,
+               CharacterStats *characterStats);
 
     void update();
 
@@ -20,6 +22,7 @@ private:
     sf::RenderWindow *m_window;
     MapGraphics *m_graphics;
     MapState *m_state;
+    MapData *m_data;
     CharacterStats *m_characterStats;
     double m_lastAngle;
 

@@ -2,8 +2,10 @@
 #include "MapUpdater.h"
 #include "../../core/Engine.h"
 
-MapUpdater::MapUpdater(sf::RenderWindow *window, MapGraphics *graphics, MapState *state, CharacterStats *characterStats):
-        m_window(window), m_graphics(graphics), m_state(state), m_characterStats(characterStats), m_lastAngle(0.0)
+MapUpdater::MapUpdater(sf::RenderWindow *window, MapGraphics *graphics, MapState *state, MapData *data,
+                       CharacterStats *characterStats):
+        m_window(window), m_graphics(graphics), m_state(state), m_data(data), m_characterStats(characterStats),
+        m_lastAngle(0.0)
 {}
 
 void MapUpdater::update()
@@ -37,8 +39,18 @@ void MapUpdater::updateMovement()
         m_lastAngle = atan2((double)diffY, (double)diffX);
     }
 
-    m_state->setX(m_state->x() + m_characterStats->moveSpeed() * (float)cos(m_lastAngle));
-    m_state->setY(m_state->y() + m_characterStats->moveSpeed() * (float)sin(m_lastAngle));
+    float newX = m_state->x() + m_characterStats->moveSpeed() * (float)cos(m_lastAngle);
+    float newY = m_state->y() + m_characterStats->moveSpeed() * (float)sin(m_lastAngle);
+
+    if (m_data->bounds()[newX + Engine::CX][m_state->y() + Engine::CY] == 0)
+    {
+        m_state->setX(newX);
+    }
+
+    if (m_data->bounds()[m_state->x() + Engine::CX][newY + Engine::CY] == 0)
+    {
+        m_state->setY(newY);
+    }
 }
 
 //void MapUpdater::moveUp()
