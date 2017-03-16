@@ -7,12 +7,13 @@
 #include "../../data/definitions/map/MapState.h"
 #include "../../data/definitions/character/CharacterStats.h"
 #include "../../data/definitions/map/MapData.h"
+#include "../../data/definitions/character/CharacterGraphics.h"
 
 class MapUpdater : public Updater
 {
 public:
     MapUpdater(sf::RenderWindow *window, MapGraphics *graphics, MapState *state, MapData *data,
-               CharacterStats *characterStats);
+               CharacterStats *characterStats, CharacterGraphics *characterGraphics);
 
     void update();
 
@@ -23,7 +24,9 @@ private:
     MapGraphics *m_graphics;
     MapState *m_state;
     MapData *m_data;
+    std::vector<std::vector<int>> &m_bounds;
     CharacterStats *m_characterStats;
+    CharacterGraphics *m_characterGraphics;
     double m_lastAngle;
 
     void updateMovement();

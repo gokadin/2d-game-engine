@@ -3,9 +3,9 @@
 #include "../../core/Engine.h"
 
 MapUpdater::MapUpdater(sf::RenderWindow *window, MapGraphics *graphics, MapState *state, MapData *data,
-                       CharacterStats *characterStats):
-        m_window(window), m_graphics(graphics), m_state(state), m_data(data), m_characterStats(characterStats),
-        m_lastAngle(0.0)
+                       CharacterStats *characterStats, CharacterGraphics *characterGraphics):
+        m_window(window), m_graphics(graphics), m_state(state), m_data(data), m_bounds(data->bounds()),
+        m_characterStats(characterStats), m_characterGraphics(characterGraphics), m_lastAngle(0.0)
 {}
 
 void MapUpdater::update()
@@ -28,6 +28,7 @@ void MapUpdater::updateMovement()
                 m_state->y() <= m_state->lastPointY() + DESTINATION_ARRIVAL_RADIUS)
         {
             m_state->stopMoving();
+
             return;
         }
     }
@@ -41,14 +42,73 @@ void MapUpdater::updateMovement()
 
     float newX = m_state->x() + m_characterStats->moveSpeed() * (float)cos(m_lastAngle);
     float newY = m_state->y() + m_characterStats->moveSpeed() * (float)sin(m_lastAngle);
+    float newCX = newX + Engine::HALF_SCREEN_WIDTH;
+    float newCY = newY + Engine::HALF_SCREEN_HEIGHT;
 
-    if (m_data->bounds()[newX + Engine::CX][m_state->y() + Engine::CY] == 0)
+    // check direction first of all, then process colision detection
+
+    if (m_bounds[newCY][newCX] == 1)
+    {
+        sf::Vector2i mousePos = sf::Mouse::getPosition(*m_window);
+        int diffX = mousePos.x - Engine::CX;
+        int diffY = mousePos.y - Engine::CY;
+
+        if (diffX > 0 && diffY < 0)
+        {
+            // ^>
+
+            bool top = m_bounds[newCY][newCX - 5] == 0;
+            bool right = m_bounds[newCY + 5][newCX] == 0;
+            std::cout << "^> TOP: " << top << " RIGHT: " << right << std::endl;
+
+            if (top)
+                m_state->setY(m_state->y() - m_characterStats->moveSpeed());
+            else if (right)
+                m_state->setX(m_state->x() + m_characterStats->moveSpeed());
+        }
+        else if (diffX > 0 && diffY > 0)
+        {
+            // v>
+
+            bool bot = m_bounds[newCY][newCX + 5] == 0;
+            bool right = m_bounds[newCY + 5][newCX] == 0;
+            std::cout << "v> BOT: " << bot << " RIGHT: " << right << std::endl;
+
+            if (bot)
+                m_state->setY(m_state->y() + m_characterStats->moveSpeed());
+            else if (right)
+                m_state->setX(m_state->x() + m_characterStats->moveSpeed());
+        }
+        else if (diffX < 0 && diffY > 0)
+        {
+            // <v
+
+            bool bot = m_bounds[newCY][newCX + 5] == 0;
+            bool left = m_bounds[newCY - 5][newCX] == 0;
+            std::cout << "^v BOT: " << bot << " LEFT: " << left << std::endl;
+
+            if (bot)
+                m_state->setY(m_state->y() + m_characterStats->moveSpeed());
+            else if (left)
+                m_state->setX(m_state->x() - m_characterStats->moveSpeed());
+        }
+        else
+        {
+            // <^
+
+            bool top = m_bounds[newCY][newCX - 5] == 0;
+            bool left = m_bounds[newCY - 5][newCX] == 0;
+            std::cout << "<^ TOP: " << top << " LEFT: " << left << std::endl;
+
+            if (top)
+                m_state->setY(m_state->y() - m_characterStats->moveSpeed());
+            else if (left)
+                m_state->setX(m_state->x() - m_characterStats->moveSpeed());
+        }
+    }
+    else
     {
         m_state->setX(newX);
-    }
-
-    if (m_data->bounds()[m_state->x() + Engine::CX][newY + Engine::CY] == 0)
-    {
         m_state->setY(newY);
     }
 }

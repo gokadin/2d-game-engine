@@ -1,12 +1,12 @@
 #include "Map.h"
 
-Map::Map(sf::RenderWindow *window, CharacterStats *characterStats)
+Map::Map(sf::RenderWindow *window, CharacterStats *characterStats, CharacterGraphics *characterGraphics)
 {
     m_graphics = new MapGraphics();
     m_state = new MapState();
     m_data = new MapData();
-    m_renderer = new MapRenderer(m_graphics, m_state);
-    m_updater = new MapUpdater(window, m_graphics, m_state, characterStats);
+    m_renderer = new MapRenderer(m_graphics, m_state, m_data);
+    m_updater = new MapUpdater(window, m_graphics, m_state, m_data , characterStats, characterGraphics);
 }
 
 Map::~Map()

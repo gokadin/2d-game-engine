@@ -12,7 +12,7 @@
 class Map : public GameComponent
 {
 public:
-    Map(sf::RenderWindow *window, CharacterStats *characterStats);
+    Map(sf::RenderWindow *window, CharacterStats *characterStats, CharacterGraphics *characterGraphics);
     ~Map();
 
     void update();

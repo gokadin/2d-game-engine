@@ -7,7 +7,7 @@
 class MapData : public Data
 {
 public:
-    inline std::vector<std::vector<int>> bounds() { return m_bounds; }
+    inline std::vector<std::vector<int>>& bounds() { return m_bounds; }
 
     inline void setBounds(std::vector<std::vector<int>> bounds) { m_bounds = bounds; }
 
