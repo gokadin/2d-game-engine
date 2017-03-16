@@ -4,6 +4,7 @@
 #include <SFML/Graphics/Shape.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
 #include "../../Renderer.h"
 #include "../../../data/definitions/character/CharacterGraphics.h"
 
@@ -16,6 +17,10 @@ public:
 
 private:
     CharacterGraphics *m_graphics;
+
+    // temp and debug
+    sf::RectangleShape m_box;
+    sf::RectangleShape m_point;
 
     void updateSprite();
 };
