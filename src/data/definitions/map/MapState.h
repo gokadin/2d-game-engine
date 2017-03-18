@@ -16,8 +16,10 @@ public:
     inline bool isMoving() { return m_isMoving; }
     inline bool isMovementPaused() { return m_isMovementPaused; }
     inline bool shouldStopOnPoint() { return m_shouldStopOnPoint; }
-    inline int lastPointX() { return m_lastPointX; }
-    inline int lastPointY() { return m_lastPointY; }
+    inline float lastPointX() { return m_lastPointX; }
+    inline float lastPointY() { return m_lastPointY; }
+    inline float cx() { return m_x + Engine::CX; }
+    inline float cy() { return m_y + Engine::CY; }
 
     void startMoving()
     {
@@ -43,8 +45,8 @@ private:
     bool m_isMoving;
     bool m_isMovementPaused;
     bool m_shouldStopOnPoint;
-    int m_lastPointX;
-    int m_lastPointY;
+    float m_lastPointX;
+    float m_lastPointY;
 };
 
 #endif //SFMLDEMO_MAPSTATE_H

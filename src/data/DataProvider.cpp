@@ -10,6 +10,8 @@ void DataProvider::loadMap(Map *map)
     map->graphics()->setSpriteHeight(3200);
     map->graphics()->setSpriteOffsetX(0);
     map->graphics()->setSpriteOffsetY(0);
+    map->graphics()->setTileRadius(16);
+    map->graphics()->setCollisionNoSlideAngleRad(0.4f);
 
     std::map<std::string, std::string> metadata = KeyValueReader::read("../src/storage/game/maps/act1/town/metadata");
 
@@ -26,9 +28,9 @@ void DataProvider::loadCharacter(Character *character)
     character->graphics()->setSpriteOffsetY(0);
     character->graphics()->setSpriteWidth(56);
     character->graphics()->setSpriteHeight(112);
-    character->graphics()->setBoxWidth(32);
-    character->graphics()->setBoxHeight(128);
-    character->graphics()->setLegRoom(10);
+    character->graphics()->setHitBoxWidth(32);
+    character->graphics()->setHitBoxHeight(128);
+    character->graphics()->setCollisionRadius(32);
 }
 
 void DataProvider::loadSkills(SkillManager *skillManager)

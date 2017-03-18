@@ -6,18 +6,18 @@
 class CharacterGraphics : public Graphics
 {
 public:
-    inline int boxWidth() { return m_boxWidth; }
-    inline int boxHeight() { return m_boxHeight; }
-    inline int legRoom() { return m_legRoom; }
+    inline int hitBoxWidth() { return m_hitBoxWidth; }
+    inline int hitBoxHeight() { return m_hitBoxHeight; }
+    inline int collisionRadius() { return m_collisionRadius; }
 
-    inline void setBoxWidth(int width) { m_boxWidth = width; }
-    inline void setBoxHeight(int height) { m_boxHeight = height; }
-    inline void setLegRoom(int legRoom) { m_legRoom = legRoom; }
+    inline void setHitBoxWidth(int width) { m_hitBoxWidth = width; }
+    inline void setHitBoxHeight(int height) { m_hitBoxHeight = height; }
+    inline void setCollisionRadius(int collisionRadius) { m_collisionRadius = collisionRadius; }
 
 private:
-    int m_boxWidth;
-    int m_boxHeight;
-    int m_legRoom;
+    int m_hitBoxWidth;
+    int m_hitBoxHeight;
+    int m_collisionRadius;
 };
 
 #endif //SFMLDEMO_CHARACTERGRAPHICS_H

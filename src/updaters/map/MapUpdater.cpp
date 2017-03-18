@@ -40,183 +40,270 @@ void MapUpdater::updateMovement()
         m_lastAngle = atan2((double)diffY, (double)diffX);
     }
 
-    float newX = m_state->x() + m_characterStats->moveSpeed() * (float)cos(m_lastAngle);
-    float newY = m_state->y() + m_characterStats->moveSpeed() * (float)sin(m_lastAngle);
+    float newX = (m_state->x() + m_characterStats->moveSpeed() * (float)cos(m_lastAngle));
+    float newY = (m_state->y() + m_characterStats->moveSpeed() * (float)sin(m_lastAngle));
     float newCX = newX + Engine::HALF_SCREEN_WIDTH;
     float newCY = newY + Engine::HALF_SCREEN_HEIGHT;
 
-    // check direction first of all, then process colision detection
+    // ****
+    // NEW APPROACH
+    // ****
+    // find quadrant
+    int quadrant = m_lastAngle > 0
+                   ? m_lastAngle > HALF_PI ? 3 : 4
+                   : m_lastAngle > -HALF_PI ? 1 : 2;
 
-    if (m_bounds[newCY][newCX] == 1)
+    // check 3 sides per quadrant
+    // detect if straight or diagonal collision
+    // then you know...
+    // don't forget no slide zone
+
+//    int boundI = (int)((newCX + (m_lastAngle < 0
+//                                 ? -m_characterGraphics->collisionRadius()
+//                                 : m_characterGraphics->collisionRadius()))
+//                       / m_graphics->tileRadius());
+//    int boundJ = (int)((newCY + (m_lastAngle > HALF_PI && m_lastAngle < -HALF_PI
+//                                 ? -m_characterGraphics->collisionRadius()
+//                                 : m_characterGraphics->collisionRadius()))
+//                       / m_graphics->tileRadius());
+
+    switch (quadrant)
     {
-        sf::Vector2i mousePos = sf::Mouse::getPosition(*m_window);
-        int diffX = mousePos.x - Engine::CX;
-        int diffY = mousePos.y - Engine::CY;
-
-        if (diffX > 0 && diffY < 0)
+        case 1:
         {
-            // ^>
+            int sqPerRow = m_characterGraphics->collisionRadius() * 2 / m_graphics->tileRadius();
+            int boundI = (int)((m_state->cx() - m_characterGraphics->collisionRadius()) / m_graphics->tileRadius());
+            int boundJ = (int)((m_state->cy() - m_characterGraphics->collisionRadius()) / m_graphics->tileRadius());
+            bool goRight = false;
+            bool goTop = false;
+            bool goTopRight = false;
+            bool goTopLeft = false;
+            bool goBotRight = false;
 
-            bool top = m_bounds[newCY][newCX - 5] == 0;
-            bool right = m_bounds[newCY + 5][newCX] == 0;
-            std::cout << "^> TOP: " << top << " RIGHT: " << right << std::endl;
+//            std::cout << m_bounds[boundI][boundJ] << m_bounds[boundI + 1][boundJ] << m_bounds[boundI + 2][boundJ] <<
+//                      m_bounds[boundI + 3][boundJ] << std::endl;
+//            std::cout << m_bounds[boundI + 4][boundJ + 1] << std::endl << m_bounds[boundI + 4][boundJ + 2] <<
+//                      std::endl << m_bounds[boundI + 4][boundJ + 3] << std::endl <<
+//                      m_bounds[boundI + 4][boundJ + 4] << std::endl << std::endl;
 
-            if (top)
-                m_state->setY(m_state->y() - m_characterStats->moveSpeed());
-            else if (right)
-                m_state->setX(m_state->x() + m_characterStats->moveSpeed());
+            for (int i = 0; i < sqPerRow; i++)
+            {
+                if (m_bounds[boundI + i][boundJ] == 1)
+                {
+                    goRight = true;
+                }
+                else if (m_bounds[boundI + i][boundJ] == 2)
+                {
+                    if (i == 0 || i == 1)
+                    {
+                        goTopRight = true;
+                    }
+                    else if (i == sqPerRow - 1)
+                    {
+                        if (m_lastAngle < -QUARTER_PI)
+                        {
+                            goTopLeft = true;
+                        }
+                        else
+                        {
+                            goBotRight = true;
+                        }
+                    }
+                    else
+                    {
+                        goRight = true;
+                    }
+                }
+
+                if (m_bounds[boundI + sqPerRow][boundJ + i + 1] == 1)
+                {
+                    goTop = true;
+                }
+                else if (m_bounds[boundI + sqPerRow][boundJ + i + 1] == 2)
+                {
+                    if (i == 0 || i == 1)
+                    {
+                        if (m_lastAngle < -QUARTER_PI)
+                        {
+                            goTopLeft = true;
+                        }
+                        else
+                        {
+                            goBotRight = true;
+                        }
+                    }
+                    else if (i == sqPerRow - 1)
+                    {
+                        goTopRight = true;
+                    }
+                    else
+                    {
+                        goTop = true;
+                    }
+                }
+            }
+
+            if (!goRight && !goTop && !goBotRight && !goTopLeft && !goTopRight)
+            {
+                m_state->setX(newX);
+                m_state->setY(newY);
+            }
+            else if (goBotRight && !goTopRight)
+            {
+                m_state->setX(m_state->x() + m_characterStats->moveSpeed() / 2);
+                m_state->setY(m_state->y() + m_characterStats->moveSpeed() / 2);
+            }
+            else if (goTopLeft && !goTopRight)
+            {
+                m_state->setX(m_state->x() - m_characterStats->moveSpeed() / 2);
+                m_state->setY(m_state->y() - m_characterStats->moveSpeed() / 2);
+            }
+            else if (goTopRight)
+            {
+                if (m_lastAngle > -QUARTER_PI)
+                {
+                    m_state->setX(newX);
+                    m_state->setY(newY);
+                }
+                else
+                {
+                    m_state->setX(m_state->x() + m_characterStats->moveSpeed() / 2);
+                    m_state->setY(m_state->y() - m_characterStats->moveSpeed() / 2);
+                }
+            }
+            else if (goTop && !goRight)
+            {
+                m_state->setY(m_state->y() - m_characterStats->moveSpeed() / 2);
+            }
+            else if (goRight && !goTop)
+            {
+                m_state->setX(m_state->x() + m_characterStats->moveSpeed() / 2);
+            }
         }
-        else if (diffX > 0 && diffY > 0)
+            break;
+        case 2:
         {
-            // v>
+            int sqPerRow = m_characterGraphics->collisionRadius() * 2 / m_graphics->tileRadius();
+            int boundI = (int)((m_state->cx() - m_characterGraphics->collisionRadius()) / m_graphics->tileRadius());
+            int boundJ = (int)((m_state->cy() - m_characterGraphics->collisionRadius()) / m_graphics->tileRadius());
+            bool goRight = false;
+            bool goTop = false;
+            bool goTopRight = false;
+            bool goTopLeft = false;
+            bool goBotRight = false;
 
-            bool bot = m_bounds[newCY][newCX + 5] == 0;
-            bool right = m_bounds[newCY + 5][newCX] == 0;
-            std::cout << "v> BOT: " << bot << " RIGHT: " << right << std::endl;
+//            std::cout << m_bounds[boundI][boundJ] << m_bounds[boundI + 1][boundJ] << m_bounds[boundI + 2][boundJ] <<
+//                      m_bounds[boundI + 3][boundJ] << std::endl;
+//            std::cout << m_bounds[boundI + 4][boundJ + 1] << std::endl << m_bounds[boundI + 4][boundJ + 2] <<
+//                      std::endl << m_bounds[boundI + 4][boundJ + 3] << std::endl <<
+//                      m_bounds[boundI + 4][boundJ + 4] << std::endl << std::endl;
 
-            if (bot)
-                m_state->setY(m_state->y() + m_characterStats->moveSpeed());
-            else if (right)
-                m_state->setX(m_state->x() + m_characterStats->moveSpeed());
+            for (int i = 0; i < sqPerRow; i++)
+            {
+                if (m_bounds[boundI + sqPerRow - i - 1][boundJ] == 1)
+                {
+                    goRight = true;
+                }
+                else if (m_bounds[boundI + sqPerRow - i - 1][boundJ] == 2)
+                {
+                    if (i == 0 || i == 1)
+                    {
+                        goTopRight = true;
+                    }
+                    else if (i == sqPerRow - 1)
+                    {
+                        if (m_lastAngle < -QUARTER_PI - HALF_PI)
+                        {
+                            goTopLeft = true;
+                        }
+                        else
+                        {
+                            goBotRight = true;
+                        }
+                    }
+                    else
+                    {
+                        goRight = true;
+                    }
+                }
+
+                if (m_bounds[boundI + sqPerRow][boundJ + i + 1] == 1)
+                {
+                    goTop = true;
+                }
+                else if (m_bounds[boundI + sqPerRow][boundJ + i + 1] == 2)
+                {
+                    if (i == 0 || i == 1)
+                    {
+                        if (m_lastAngle < -QUARTER_PI - HALF_PI)
+                        {
+                            goTopLeft = true;
+                        }
+                        else
+                        {
+                            goBotRight = true;
+                        }
+                    }
+                    else if (i == sqPerRow - 1)
+                    {
+                        goTopRight = true;
+                    }
+                    else
+                    {
+                        goTop = true;
+                    }
+                }
+            }
+
+            if (!goRight && !goTop && !goBotRight && !goTopLeft && !goTopRight)
+            {
+                m_state->setX(newX);
+                m_state->setY(newY);
+            }
+            else if (goBotRight && !goTopRight)
+            {
+                m_state->setX(m_state->x() + m_characterStats->moveSpeed() / 2);
+                m_state->setY(m_state->y() - m_characterStats->moveSpeed() / 2);
+            }
+            else if (goTopLeft && !goTopRight)
+            {
+                m_state->setX(m_state->x() - m_characterStats->moveSpeed() / 2);
+                m_state->setY(m_state->y() + m_characterStats->moveSpeed() / 2);
+            }
+            else if (goTopRight)
+            {
+                if (m_lastAngle > -QUARTER_PI - HALF_PI)
+                {
+                    m_state->setX(newX);
+                    m_state->setY(newY);
+                }
+                else
+                {
+                    m_state->setX(m_state->x() - m_characterStats->moveSpeed() / 2);
+                    m_state->setY(m_state->y() - m_characterStats->moveSpeed() / 2);
+                }
+            }
+            else if (goTop && !goRight)
+            {
+                m_state->setY(m_state->y() - m_characterStats->moveSpeed() / 2);
+            }
+            else if (goRight && !goTop)
+            {
+                m_state->setX(m_state->x() - m_characterStats->moveSpeed() / 2);
+            }
         }
-        else if (diffX < 0 && diffY > 0)
+            break;
+        case 3:
         {
-            // <v
-
-            bool bot = m_bounds[newCY][newCX + 5] == 0;
-            bool left = m_bounds[newCY - 5][newCX] == 0;
-            std::cout << "^v BOT: " << bot << " LEFT: " << left << std::endl;
-
-            if (bot)
-                m_state->setY(m_state->y() + m_characterStats->moveSpeed());
-            else if (left)
-                m_state->setX(m_state->x() - m_characterStats->moveSpeed());
+            m_state->setX(newX);
+            m_state->setY(newY);
         }
-        else
+            break;
+        case 4:
         {
-            // <^
-
-            bool top = m_bounds[newCY][newCX - 5] == 0;
-            bool left = m_bounds[newCY - 5][newCX] == 0;
-            std::cout << "<^ TOP: " << top << " LEFT: " << left << std::endl;
-
-            if (top)
-                m_state->setY(m_state->y() - m_characterStats->moveSpeed());
-            else if (left)
-                m_state->setX(m_state->x() - m_characterStats->moveSpeed());
+            m_state->setX(newX);
+            m_state->setY(newY);
         }
-    }
-    else
-    {
-        m_state->setX(newX);
-        m_state->setY(newY);
+            break;
     }
 }
-
-//void MapUpdater::moveUp()
-//{
-//    if (!state.character.isMovingUp || state.character.isMovingDown)
-//    {
-//        return;
-//    }
-//
-//    int charTop = state.map.cy - state.character.legRoom - state.character.moveSpeed;
-//    bool leftFree = state.map.bounds[charTop][state.map.cx - state.character.boxWidth / 2] == 0;
-//    bool rightFree = state.map.bounds[charTop][state.map.cx + state.character.boxWidth / 2] == 0;
-//    if (!leftFree && !rightFree)
-//    {
-//        return;
-//    }
-//
-//    if (leftFree && !rightFree)
-//    {
-//        state.map.cx -= state.character.moveSpeed;
-//    }
-//    else if (!leftFree)
-//    {
-//        state.map.cx += state.character.moveSpeed;
-//    }
-//
-//    state.map.cy -= state.character.moveSpeed;
-//}
-//
-//void MapUpdater::moveDown()
-//{
-//    if (!state.character.isMovingDown || state.character.isMovingUp)
-//    {
-//        return;
-//    }
-//
-//    int charBottom = state.map.cy + state.character.moveSpeed;
-//    bool leftFree = state.map.bounds[charBottom][state.map.cx - state.character.boxWidth / 2] == 0;
-//    bool rightFree = state.map.bounds[charBottom][state.map.cx + state.character.boxWidth / 2] == 0;
-//    if (!leftFree && !rightFree)
-//    {
-//        return;
-//    }
-//
-//    if (leftFree && !rightFree)
-//    {
-//        state.map.cx -= state.character.moveSpeed;
-//    }
-//    else if (!leftFree)
-//    {
-//        state.map.cx += state.character.moveSpeed;
-//    }
-//
-//    state.map.cy += state.character.moveSpeed;
-//}
-//
-//void MapUpdater::moveRight()
-//{
-//    if (!state.character.isMovingRight || state.character.isMovingLeft)
-//    {
-//        return;
-//    }
-//
-//    int charRight = state.map.cx + state.character.boxWidth / 2 + state.character.moveSpeed;
-//    bool topFree = state.map.bounds[state.map.cy - state.character.legRoom][charRight] == 0;
-//    bool bottomFree = state.map.bounds[state.map.cy][charRight] == 0;
-//    if (!topFree && !bottomFree)
-//    {
-//        return;
-//    }
-//
-//    if (topFree && !bottomFree)
-//    {
-//        state.map.cy -= state.character.moveSpeed;
-//    }
-//    else if (!topFree)
-//    {
-//        state.map.cy += state.character.moveSpeed;
-//    }
-//
-//    state.map.cx += state.character.moveSpeed;
-//}
-//
-//void MapUpdater::moveLeft()
-//{
-//    if (!state.character.isMovingLeft || state.character.isMovingRight)
-//    {
-//        return;
-//    }
-//
-//    int charLeft = state.map.cx - state.character.boxWidth / 2 - state.character.moveSpeed;
-//    bool topFree = state.map.bounds[state.map.cy - state.character.legRoom][charLeft] == 0;
-//    bool bottomFree = state.map.bounds[state.map.cy][charLeft] == 0;
-//    if (!topFree && !bottomFree)
-//    {
-//        return;
-//    }
-//
-//    if (topFree && !bottomFree)
-//    {
-//        state.map.cy -= state.character.moveSpeed;
-//    }
-//    else if (!topFree)
-//    {
-//        state.map.cy += state.character.moveSpeed;
-//    }
-//
-//    state.map.cx -= state.character.moveSpeed;
-//}

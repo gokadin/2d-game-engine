@@ -9,6 +9,9 @@
 #include "../../data/definitions/map/MapData.h"
 #include "../../data/definitions/character/CharacterGraphics.h"
 
+#define HALF_PI (M_PI / 2)
+#define QUARTER_PI (M_PI / 4)
+
 class MapUpdater : public Updater
 {
 public:
