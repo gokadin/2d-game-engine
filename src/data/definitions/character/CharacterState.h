@@ -8,7 +8,7 @@ class CharacterState : public State
 {
 public:
     CharacterState():
-            m_isMoving(false), m_isCasting(false)
+            m_isMoving(false), m_isCasting(false), m_isMovementPaused(false), m_shouldStopOnPoint(false)
     {}
 
     inline bool isMoving() { return m_isMoving; }

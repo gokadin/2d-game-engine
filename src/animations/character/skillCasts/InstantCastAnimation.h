@@ -5,8 +5,9 @@
 #include "../../../data/definitions/character/CharacterGraphics.h"
 #include "../../../skills/Skill.h"
 #include "../../../data/definitions/character/CharacterState.h"
+#include "../../../utils/Observable.h"
 
-class InstantCastAnimation : public Animation
+class InstantCastAnimation : public Animation, public Observable
 {
 public:
     InstantCastAnimation(CharacterGraphics *graphics, CharacterState *state);

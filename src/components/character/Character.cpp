@@ -9,6 +9,8 @@ Character::Character()
     m_stats = new CharacterStats();
     m_animations = new CharacterAnimations(m_state, m_graphics);
     m_renderer = new CharacterRenderer(m_graphics);
+
+    ((InstantCastAnimation&)(m_animations->get(character_animation_type::CHARACTER_INSTANT_CAST))).subscribe(this);
 }
 
 Character::~Character()
@@ -36,6 +38,10 @@ void Character::notify(Event *event)
     {
         case event_type::SKILL_ACTIVATED:
             castSpell(((SkillActivatedEvent*)event)->skill());
+            delete event;
+            break;
+        case event_type::INSTANT_CAST_ANIMATION_ENDED:
+            m_state->setMovementPaused(false);
             delete event;
             break;
     }

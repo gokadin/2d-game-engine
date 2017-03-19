@@ -3,7 +3,8 @@
 
 enum event_type
 {
-    SKILL_ACTIVATED
+    SKILL_ACTIVATED,
+    INSTANT_CAST_ANIMATION_ENDED
 };
 
 #endif //SFMLDEMO_EVENTTYPE_H

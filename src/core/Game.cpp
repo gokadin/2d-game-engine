@@ -6,7 +6,7 @@ Game::Game(sf::RenderWindow *window):
     dataProvider = new DataProvider();
     character = new Character();
     map = new Map(window, character->stats(), character->graphics(), character->state());
-    skillManager = new SkillManager();
+    skillManager = new SkillManager(map->state(), map->data(), character->graphics());
 
     load();
     subscribeComponents();

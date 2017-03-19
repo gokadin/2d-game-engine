@@ -17,7 +17,7 @@ void MapUpdater::update()
 
 void MapUpdater::updateMovement()
 {
-    if (!m_characterState->isMoving())
+    if (!m_characterState->isMoving() || m_characterState->isMovementPaused())
     {
         return;
     }

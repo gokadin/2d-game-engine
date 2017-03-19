@@ -1,0 +1,12 @@
+#ifndef SFMLDEMO_PROJECTILEPHASE_H
+#define SFMLDEMO_PROJECTILEPHASE_H
+
+enum projectile_phase
+{
+    ACTIVATED,
+    FLYING,
+    HITTING,
+    INACTIVE
+};
+
+#endif //SFMLDEMO_PROJECTILEPHASE_H

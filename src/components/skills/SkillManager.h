@@ -6,11 +6,14 @@
 #include "../../utils/Observable.h"
 #include "../../skills/Skill.h"
 #include "../../enums/SkillNames.h"
+#include "../../data/definitions/map/MapState.h"
+#include "../../data/definitions/map/MapData.h"
+#include "../../data/definitions/character/CharacterGraphics.h"
 
 class SkillManager : public GameComponent, public Observable
 {
 public:
-    SkillManager();
+    SkillManager(MapState *mapState, MapData *mapData, CharacterGraphics *characterGraphics);
     ~SkillManager();
 
     void update();
@@ -21,8 +24,11 @@ public:
 private:
     const int NUM_SLOTS = 6;
 
-    std::vector<skill_names> slots;
-    std::map<skill_names, Skill *> skills;
+    std::vector<skill_names> m_slots;
+    std::map<skill_names, Skill *> m_skills;
+    MapState *m_mapState;
+    MapData *m_mapData;
+    CharacterGraphics *m_characterGraphics;
 };
 
 #endif //SFMLDEMO_SKILLMANAGER_H

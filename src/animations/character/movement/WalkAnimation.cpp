@@ -6,7 +6,7 @@ WalkAnimation::WalkAnimation(CharacterGraphics *graphics, CharacterState *state)
 
 void WalkAnimation::update()
 {
-    if (!m_state->isMoving())
+    if (!m_state->isMoving() || m_state->isMovementPaused())
     {
         return;
     }

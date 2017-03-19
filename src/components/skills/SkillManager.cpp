@@ -2,54 +2,66 @@
 #include "../../skills/fireball/Fireball.h"
 #include "../../events/SkillActivatedEvent.h"
 
-SkillManager::SkillManager()
+SkillManager::SkillManager(MapState *mapState, MapData *mapData, CharacterGraphics *characterGraphics):
+        m_mapState(mapState), m_mapData(mapData), m_characterGraphics(characterGraphics)
 {
     for (int i = 0; i < NUM_SLOTS; i++)
     {
-        slots.push_back(skill_names::NONE);
+        m_slots.push_back(skill_names::NONE);
     }
 
-    skills[skill_names::FIREBALL] = new Fireball();
+    m_skills[skill_names::FIREBALL] = new Fireball(mapState);
 }
 
 SkillManager::~SkillManager()
 {
-    for (std::pair<skill_names, Skill *> pair : skills)
+    for (std::pair<skill_names, Skill *> pair : m_skills)
     {
         pair.second = NULL;
         delete pair.second;
     }
-    skills.clear();
+    m_skills.clear();
 }
 
 void SkillManager::update()
 {
-    for (skill_names name : slots)
+    for (skill_names name : m_slots)
     {
-        if (name != skill_names::NONE && skills[name]->isActive())
+        if (name != skill_names::NONE && m_skills[name]->isActive())
         {
-            skills[name]->update();
+            if (m_skills[name]->isProjectile())
+            {
+                for (Projectile *projectile : ((ProjectileSkill*)m_skills[name])->projectiles())
+                {
+                    if (projectile->isFlying())
+                    {
+                        // ...
+                    }
+                }
+            }
+
+            m_skills[name]->update();
         }
     }
 }
 
 void SkillManager::draw(sf::RenderWindow *window)
 {
-    for (skill_names name : slots)
+    for (skill_names name : m_slots)
     {
-        if (name != skill_names::NONE && skills[name]->isActive())
+        if (name != skill_names::NONE && m_skills[name]->isActive())
         {
-            skills[name]->draw(window);
+            m_skills[name]->draw(window);
         }
     }
 }
 
 void SkillManager::activate(int slotIndex, int targetX, int targetY)
 {
-    if (slotIndex < NUM_SLOTS && skills[slots[slotIndex]]->canActivate())
+    if (slotIndex < NUM_SLOTS && m_skills[m_slots[slotIndex]]->canActivate())
     {
-        skills[slots[slotIndex]]->activate();
-        notifyObservers(new SkillActivatedEvent(event_type::SKILL_ACTIVATED, skills[slots[slotIndex]]));
+        m_skills[m_slots[slotIndex]]->activate(targetX, targetY);
+        notifyObservers(new SkillActivatedEvent(event_type::SKILL_ACTIVATED, m_skills[m_slots[slotIndex]]));
     }
 }
 
@@ -57,6 +69,6 @@ void SkillManager::assign(int slotIndex, skill_names name)
 {
     if (slotIndex < NUM_SLOTS)
     {
-        slots[slotIndex] = name;
+        m_slots[slotIndex] = name;
     }
 }

@@ -1,5 +1,6 @@
 #include "InstantCastAnimation.h"
 #include "../../../core/Engine.h"
+#include "../../../events/animationEvents/InstantCastAnimationEnded.h"
 
 InstantCastAnimation::InstantCastAnimation(CharacterGraphics *graphics, CharacterState *state):
         Animation(false), m_graphics(graphics), m_state(state)
@@ -40,4 +41,6 @@ void InstantCastAnimation::start(Skill &skill)
 void InstantCastAnimation::stop()
 {
     m_isActive = false;
+
+    notifyObservers(new InstantCastAnimationEnded(event_type::INSTANT_CAST_ANIMATION_ENDED));
 }
