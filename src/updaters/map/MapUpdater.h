@@ -10,7 +10,8 @@
 #include "../../data/definitions/character/CharacterGraphics.h"
 
 #define HALF_PI (M_PI / 2)
-#define QUARTER_PI (M_PI / 4)
+#define QUARTER_PI (HALF_PI / 2)
+#define THREE_QUARTER_PI (M_PI - QUARTER_PI)
 
 class MapUpdater : public Updater
 {
@@ -31,8 +32,13 @@ private:
     CharacterStats *m_characterStats;
     CharacterGraphics *m_characterGraphics;
     double m_lastAngle;
+    int m_tilesPerCharacterRow;
 
     void updateMovement();
+    bool processFirstQuadrantCollisions();
+    bool processSecondQuadrantCollisions();
+    bool processThirdQuadrantCollisions();
+    bool processFourthQuadrantCollisions();
 };
 
 #endif //SFMLDEMO_MAPUPDATER_H

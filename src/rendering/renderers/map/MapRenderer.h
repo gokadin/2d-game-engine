@@ -18,6 +18,7 @@ private:
     MapState *m_state;
     MapData *m_data;
     sf::RectangleShape square;
+    sf::RectangleShape boundSq;
     bool x;
 
     void updateView();
