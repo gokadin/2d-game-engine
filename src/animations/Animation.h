@@ -9,7 +9,7 @@ public:
     virtual void update() = 0;
     virtual void stop() = 0;
 
-    inline bool isActive() { return m_isActive; }
+    inline bool isActive() { return m_isActive || m_isAlwaysOn; }
     inline bool isAlwaysOn() { return m_isAlwaysOn; }
 
 protected:

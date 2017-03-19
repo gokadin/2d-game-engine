@@ -1,10 +1,12 @@
 #include "CharacterAnimations.h"
 #include "skillCasts/InstantCastAnimation.h"
+#include "movement/WalkAnimation.h"
 
 CharacterAnimations::CharacterAnimations(CharacterState *state, CharacterGraphics *graphics):
         m_state(state), m_graphics(graphics)
 {
-    m_animations[character_animation_type::CHARACTER_INSTANT_CAST] = new InstantCastAnimation(state, graphics);
+    m_animations[character_animation_type::CHARACTER_INSTANT_CAST] = new InstantCastAnimation(graphics, state);
+    m_animations[character_animation_type::CHARACTER_MOVE] = new WalkAnimation(graphics, state);
 }
 
 CharacterAnimations::~CharacterAnimations()

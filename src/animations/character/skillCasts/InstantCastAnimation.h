@@ -9,7 +9,7 @@
 class InstantCastAnimation : public Animation
 {
 public:
-    InstantCastAnimation(CharacterState *state, CharacterGraphics *graphics);
+    InstantCastAnimation(CharacterGraphics *graphics, CharacterState *state);
 
     void update();
     void stop();

@@ -8,17 +8,17 @@
 #include "../../updaters/map/MapUpdater.h"
 #include "../../data/definitions/character/CharacterStats.h"
 #include "../../data/definitions/map/MapData.h"
+#include "../../data/definitions/character/CharacterState.h"
 
 class Map : public GameComponent
 {
 public:
-    Map(sf::RenderWindow *window, CharacterStats *characterStats, CharacterGraphics *characterGraphics);
+    Map(sf::RenderWindow *window, CharacterStats *characterStats, CharacterGraphics *characterGraphics,
+        CharacterState *characterState);
     ~Map();
 
     void update();
     void draw(sf::RenderWindow *window);
-    void startMoving();
-    void stopMovingOnPoint(int x, int y);
 
     inline MapGraphics* graphics() { return m_graphics; }
     inline MapState* state() { return m_state; }

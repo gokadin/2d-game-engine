@@ -8,6 +8,7 @@
 #include "../../data/definitions/character/CharacterStats.h"
 #include "../../data/definitions/map/MapData.h"
 #include "../../data/definitions/character/CharacterGraphics.h"
+#include "../../data/definitions/character/CharacterState.h"
 
 #define HALF_PI (M_PI / 2)
 #define QUARTER_PI (HALF_PI / 2)
@@ -17,7 +18,8 @@ class MapUpdater : public Updater
 {
 public:
     MapUpdater(sf::RenderWindow *window, MapGraphics *graphics, MapState *state, MapData *data,
-               CharacterStats *characterStats, CharacterGraphics *characterGraphics);
+               CharacterStats *characterStats, CharacterGraphics *characterGraphics,
+               CharacterState *characterState);
 
     void update();
 
@@ -31,7 +33,10 @@ private:
     std::vector<std::vector<int>> &m_bounds;
     CharacterStats *m_characterStats;
     CharacterGraphics *m_characterGraphics;
+    CharacterState *m_characterState;
     double m_lastAngle;
+    float m_lastX;
+    float m_lastY;
     int m_tilesPerCharacterRow;
 
     void updateMovement();

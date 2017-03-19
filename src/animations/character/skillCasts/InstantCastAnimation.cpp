@@ -1,8 +1,8 @@
 #include "InstantCastAnimation.h"
 #include "../../../core/Engine.h"
 
-InstantCastAnimation::InstantCastAnimation(CharacterState *state, CharacterGraphics *graphics):
-        Animation(false), m_state(state), m_graphics(graphics)
+InstantCastAnimation::InstantCastAnimation(CharacterGraphics *graphics, CharacterState *state):
+        Animation(false), m_graphics(graphics), m_state(state)
 {}
 
 void InstantCastAnimation::update()

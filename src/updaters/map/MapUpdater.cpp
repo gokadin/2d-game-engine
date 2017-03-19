@@ -3,10 +3,11 @@
 #include "../../core/Engine.h"
 
 MapUpdater::MapUpdater(sf::RenderWindow *window, MapGraphics *graphics, MapState *state, MapData *data,
-                       CharacterStats *characterStats, CharacterGraphics *characterGraphics):
+                       CharacterStats *characterStats, CharacterGraphics *characterGraphics,
+                       CharacterState *characterState):
         m_window(window), m_graphics(graphics), m_state(state), m_data(data), m_bounds(data->bounds()),
-        m_characterStats(characterStats), m_characterGraphics(characterGraphics), m_lastAngle(0.0),
-        m_tilesPerCharacterRow(0)
+        m_characterStats(characterStats), m_characterGraphics(characterGraphics), m_characterState(characterState),
+        m_lastAngle(0.0), m_lastX(0.0f), m_lastY(0.0f), m_tilesPerCharacterRow(0)
 {}
 
 void MapUpdater::update()
@@ -16,21 +17,21 @@ void MapUpdater::update()
 
 void MapUpdater::updateMovement()
 {
-    if (!m_state->isMoving())
+    if (!m_characterState->isMoving())
     {
         return;
     }
 
     m_tilesPerCharacterRow = m_characterGraphics->collisionRadius() * 2 / m_graphics->tileRadius(); //  REMOVE
 
-    if (m_state->shouldStopOnPoint())
+    if (m_characterState->shouldStopOnPoint())
     {
-        if (m_state->x() >= m_state->lastPointX() - DESTINATION_ARRIVAL_RADIUS &&
-                m_state->x() <= m_state->lastPointX() + DESTINATION_ARRIVAL_RADIUS &&
-                m_state->y() >= m_state->lastPointY() - DESTINATION_ARRIVAL_RADIUS &&
-                m_state->y() <= m_state->lastPointY() + DESTINATION_ARRIVAL_RADIUS)
+        if (m_state->x() >= m_lastX - DESTINATION_ARRIVAL_RADIUS &&
+                m_state->x() <= m_lastX + DESTINATION_ARRIVAL_RADIUS &&
+                m_state->y() >= m_lastY - DESTINATION_ARRIVAL_RADIUS &&
+                m_state->y() <= m_lastY + DESTINATION_ARRIVAL_RADIUS)
         {
-            m_state->stopMoving();
+            m_characterState->stopMoving();
 
             return;
         }
@@ -40,6 +41,8 @@ void MapUpdater::updateMovement()
         sf::Vector2i mousePos = sf::Mouse::getPosition(*m_window);
         int lastDiffX = mousePos.x - Engine::CX;
         int lastDiffY = mousePos.y - Engine::CY;
+        m_lastX = m_state->x() + lastDiffX;
+        m_lastY = m_state->y() + lastDiffY;
         m_lastAngle = atan2((double)lastDiffY, (double)lastDiffX);
     }
 

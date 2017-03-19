@@ -5,7 +5,7 @@ Game::Game(sf::RenderWindow *window):
 {
     dataProvider = new DataProvider();
     character = new Character();
-    map = new Map(window, character->stats(), character->graphics());
+    map = new Map(window, character->stats(), character->graphics(), character->state());
     skillManager = new SkillManager();
 
     load();
@@ -43,13 +43,13 @@ void Game::processEvent(sf::Event event)
             }
             else if (event.mouseButton.button == sf::Mouse::Button::Left)
             {
-                map->startMoving();
+                character->state()->startMoving();
             }
             break;
         case sf::Event::MouseButtonReleased:
             if (event.mouseButton.button == sf::Mouse::Button::Left)
             {
-                map->stopMovingOnPoint(event.mouseButton.x, event.mouseButton.y);
+                character->state()->stopOnPoint(event.mouseButton.x, event.mouseButton.y);
             }
             break;
     }
