@@ -1,11 +1,13 @@
 #include "SkillManager.h"
 #include "../../skills/fireball/Fireball.h"
 #include "../../events/SkillActivatedEvent.h"
+#include "../../monsters/Monster.h"
+#include "../monsters/Monsters.h"
 
 SkillManager::SkillManager(MapState *mapState, MapData *mapData, MapGraphics *mapGraphics,
-                           CharacterGraphics *characterGraphics):
+                           CharacterGraphics *characterGraphics, Monsters *monsters):
         m_mapState(mapState), m_mapData(mapData), m_characterGraphics(characterGraphics), m_mapGraphics(mapGraphics),
-        m_bounds(mapData->bounds())
+        m_bounds(mapData->bounds()), m_monsters(monsters)
 {
     for (int i = 0; i < NUM_SLOTS; i++)
     {
@@ -45,6 +47,12 @@ void SkillManager::update()
                         }
                         else if (m_bounds[boundI][boundJ] > 0)
                         {
+                            if (m_bounds[boundI][boundJ] > 1000)
+                            {
+                                Monster *monster = m_monsters->findMonster(m_bounds[boundI][boundJ]);
+                                monster->inflictDamage(60);
+                            }
+
                             projectile->hit();
                         }
                     }

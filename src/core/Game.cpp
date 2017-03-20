@@ -6,7 +6,9 @@ Game::Game(sf::RenderWindow *window):
     dataProvider = new DataProvider();
     character = new Character();
     map = new Map(window, character->stats(), character->graphics(), character->state());
-    skillManager = new SkillManager(map->state(), map->data(), map->graphics(), character->graphics());
+    dataProvider->loadMap(map);
+    monsters = new Monsters(map->state(), &map->data()->bounds());
+    skillManager = new SkillManager(map->state(), map->data(), map->graphics(), character->graphics(), monsters);
 
     load();
     subscribeComponents();
@@ -18,11 +20,11 @@ Game::~Game()
     delete map;
     delete character;
     delete skillManager;
+    delete monsters;
 }
 
 void Game::load()
 {
-    dataProvider->loadMap(map);
     dataProvider->loadCharacter(character);
     dataProvider->loadSkills(skillManager);
 }
@@ -60,6 +62,7 @@ void Game::update()
     map->update();
     character->update();
     skillManager->update();
+    monsters->update();
 }
 
 void Game::draw()
@@ -67,4 +70,5 @@ void Game::draw()
     map->draw(m_window);
     character->draw(m_window);
     skillManager->draw(m_window);
+    monsters->draw(m_window);
 }

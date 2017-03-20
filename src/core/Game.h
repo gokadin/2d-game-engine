@@ -7,6 +7,7 @@
 #include "../components/character/Character.h"
 #include "../components/skills/SkillManager.h"
 #include "../components/map/Map.h"
+#include "../components/monsters/Monsters.h"
 
 class Game
 {
@@ -24,6 +25,7 @@ private:
     Map *map;
     Character *character;
     SkillManager *skillManager;
+    Monsters *monsters;
 
     void load();
     void subscribeComponents();

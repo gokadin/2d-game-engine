@@ -1,0 +1,12 @@
+#ifndef SFMLDEMO_MONSTERPHASE_H
+#define SFMLDEMO_MONSTERPHASE_H
+
+enum monster_phase
+{
+    INACTIVE_2,
+    DEAD,
+    IDLE,
+    ATTACKING
+};
+
+#endif //SFMLDEMO_MONSTERPHASE_H

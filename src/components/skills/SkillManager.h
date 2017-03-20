@@ -10,11 +10,13 @@
 #include "../../data/definitions/map/MapData.h"
 #include "../../data/definitions/character/CharacterGraphics.h"
 #include "../../data/definitions/map/MapGraphics.h"
+#include "../monsters/Monsters.h"
 
 class SkillManager : public GameComponent, public Observable
 {
 public:
-    SkillManager(MapState *mapState, MapData *mapData, MapGraphics *mapGraphics, CharacterGraphics *characterGraphics);
+    SkillManager(MapState *mapState, MapData *mapData, MapGraphics *mapGraphics, CharacterGraphics *characterGraphics,
+                 Monsters *monsters);
     ~SkillManager();
 
     void update();
@@ -31,6 +33,7 @@ private:
     MapData *m_mapData;
     MapGraphics *m_mapGraphics;
     CharacterGraphics *m_characterGraphics;
+    Monsters *m_monsters;
     std::vector<std::vector<int>> &m_bounds;
 };
 
