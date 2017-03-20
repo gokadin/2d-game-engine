@@ -2,8 +2,10 @@
 #include "../../skills/fireball/Fireball.h"
 #include "../../events/SkillActivatedEvent.h"
 
-SkillManager::SkillManager(MapState *mapState, MapData *mapData, CharacterGraphics *characterGraphics):
-        m_mapState(mapState), m_mapData(mapData), m_characterGraphics(characterGraphics)
+SkillManager::SkillManager(MapState *mapState, MapData *mapData, MapGraphics *mapGraphics,
+                           CharacterGraphics *characterGraphics):
+        m_mapState(mapState), m_mapData(mapData), m_characterGraphics(characterGraphics), m_mapGraphics(mapGraphics),
+        m_bounds(mapData->bounds())
 {
     for (int i = 0; i < NUM_SLOTS; i++)
     {
@@ -34,6 +36,20 @@ void SkillManager::update()
                 for (Projectile *projectile : ((ProjectileSkill*)m_skills[name])->projectiles())
                 {
                     if (projectile->isFlying())
+                    {
+                        int boundI = (int)(projectile->x() / m_mapGraphics->tileRadius());
+                        int boundJ = (int)(projectile->y() / m_mapGraphics->tileRadius());
+                        if (boundI > m_bounds.size() - 1 || boundJ > m_bounds[boundI].size() - 1)
+                        {
+                            projectile->cancel();
+                        }
+                        else if (m_bounds[boundI][boundJ] > 0)
+                        {
+                            projectile->hit();
+                        }
+                    }
+
+                    if (projectile->isHitting())
                     {
                         // ...
                     }

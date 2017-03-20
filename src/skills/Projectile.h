@@ -14,9 +14,14 @@ public:
 
     virtual void update() = 0;
     virtual void draw(sf::RenderWindow *window) = 0;
+    virtual void hit() = 0;
+    virtual void cancel();
 
     inline bool isActive() { return m_phase != projectile_phase::INACTIVE; }
     inline bool isFlying() { return m_phase == projectile_phase::FLYING; }
+    inline bool isHitting() { return m_phase == projectile_phase::HITTING; }
+    inline float x() { return m_x; }
+    inline float y() { return m_y; }
 
 protected:
     projectile_phase m_phase;
@@ -30,6 +35,7 @@ protected:
     float m_targetX;
     float m_targetY;
     int m_spriteOffsetX;
+    int m_spriteOffsetY;
     float m_flyingSpeedX;
     float m_flyingSpeedY;
 };

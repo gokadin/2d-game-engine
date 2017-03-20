@@ -22,6 +22,7 @@ void ProjectileSkill::update()
     {
         if (!m_projectiles[i]->isActive())
         {
+            m_projectiles[i] = NULL;
             delete m_projectiles[i];
             m_projectiles.erase(m_projectiles.begin() + i);
 

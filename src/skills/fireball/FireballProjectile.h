@@ -11,13 +11,17 @@ public:
 
     void update();
     void draw(sf::RenderWindow *window);
+    void hit();
 
 private:
     const int SPRITE_WIDTH = 32;
     const int SPRITE_HEIGHT = 32;
-    const int SPRITE_OFFSET_Y = 0;
     const int HIT_RADIUS = 30;
     const int FLY_SPEED = 3;
+    const int EXPL_COUNT = 4;
+    const int EXPL_FRAMES_BETWEEN = 10;
+
+    int m_explFrameCounter;
 
     void updateSprite();
 };
