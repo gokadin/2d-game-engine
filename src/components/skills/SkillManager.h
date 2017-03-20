@@ -11,6 +11,7 @@
 #include "../../data/definitions/character/CharacterGraphics.h"
 #include "../../data/definitions/map/MapGraphics.h"
 #include "../monsters/Monsters.h"
+#include "../../updaters/skills/SkillManagerUpdater.h"
 
 class SkillManager : public GameComponent, public Observable
 {
@@ -35,6 +36,7 @@ private:
     CharacterGraphics *m_characterGraphics;
     Monsters *m_monsters;
     std::vector<std::vector<int>> &m_bounds;
+    SkillManagerUpdater *m_updater;
 };
 
 #endif //SFMLDEMO_SKILLMANAGER_H

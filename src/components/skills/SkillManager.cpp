@@ -15,6 +15,8 @@ SkillManager::SkillManager(MapState *mapState, MapData *mapData, MapGraphics *ma
     }
 
     m_skills[skill_names::FIREBALL] = new Fireball(mapState);
+
+    m_updater = new SkillManagerUpdater(monsters, mapData, mapGraphics, m_slots, m_skills);
 }
 
 SkillManager::~SkillManager()
@@ -25,48 +27,13 @@ SkillManager::~SkillManager()
         delete pair.second;
     }
     m_skills.clear();
+
+    delete m_updater;
 }
 
 void SkillManager::update()
 {
-    for (skill_names name : m_slots)
-    {
-        if (name != skill_names::NONE && m_skills[name]->isActive())
-        {
-            if (m_skills[name]->isProjectile())
-            {
-                for (Projectile *projectile : ((ProjectileSkill*)m_skills[name])->projectiles())
-                {
-                    if (projectile->isFlying())
-                    {
-                        int boundI = (int)(projectile->x() / m_mapGraphics->tileRadius());
-                        int boundJ = (int)(projectile->y() / m_mapGraphics->tileRadius());
-                        if (boundI > m_bounds.size() - 1 || boundJ > m_bounds[boundI].size() - 1)
-                        {
-                            projectile->cancel();
-                        }
-                        else if (m_bounds[boundI][boundJ] > 0)
-                        {
-                            if (m_bounds[boundI][boundJ] > 1000)
-                            {
-                                Monster *monster = m_monsters->findMonster(m_bounds[boundI][boundJ]);
-                                monster->inflictDamage(60);
-                            }
-
-                            projectile->hit();
-                        }
-                    }
-
-                    if (projectile->isHitting())
-                    {
-                        // ...
-                    }
-                }
-            }
-
-            m_skills[name]->update();
-        }
-    }
+    m_updater->update();
 }
 
 void SkillManager::draw(sf::RenderWindow *window)
