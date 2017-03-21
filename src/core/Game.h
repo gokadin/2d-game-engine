@@ -8,6 +8,7 @@
 #include "../components/skills/SkillManager.h"
 #include "../components/map/Map.h"
 #include "../components/monsters/Monsters.h"
+#include "../components/UI/UserInterface.h"
 
 class Game
 {
@@ -21,11 +22,14 @@ public:
 
 private:
     sf::RenderWindow *m_window;
-    DataProvider *dataProvider;
-    Map *map;
-    Character *character;
-    SkillManager *skillManager;
-    Monsters *monsters;
+    DataProvider *m_dataProvider;
+    Map *m_map;
+    Character *m_character;
+    SkillManager *m_skillManager;
+    Monsters *m_monsters;
+    UserInterface *m_userInterface;
+
+    bool m_mousePressWasOnUI;
 
     void load();
     void subscribeComponents();

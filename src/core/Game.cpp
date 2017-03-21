@@ -1,14 +1,15 @@
 #include "Game.h"
 
 Game::Game(sf::RenderWindow *window):
-        m_window(window)
+        m_window(window), m_mousePressWasOnUI(false)
 {
-    dataProvider = new DataProvider();
-    character = new Character();
-    map = new Map(window, character->stats(), character->graphics(), character->state());
-    dataProvider->loadMap(map);
-    monsters = new Monsters(map->state(), map->bounds());
-    skillManager = new SkillManager(map->state(), map->bounds(), map->graphics(), character->graphics(), monsters);
+    m_dataProvider = new DataProvider();
+    m_character = new Character();
+    m_map = new Map(window, m_character->stats(), m_character->graphics(), m_character->state());
+    m_dataProvider->loadMap(m_map);
+    m_monsters = new Monsters(m_map->state(), m_map->bounds());
+    m_skillManager = new SkillManager(m_map->state(), m_map->bounds(), m_map->graphics(), m_character->graphics(), m_monsters);
+    m_userInterface = new UserInterface();
 
     load();
     subscribeComponents();
@@ -16,22 +17,23 @@ Game::Game(sf::RenderWindow *window):
 
 Game::~Game()
 {
-    delete dataProvider;
-    delete map;
-    delete character;
-    delete skillManager;
-    delete monsters;
+    delete m_dataProvider;
+    delete m_map;
+    delete m_character;
+    delete m_skillManager;
+    delete m_monsters;
+    delete m_userInterface;
 }
 
 void Game::load()
 {
-    dataProvider->loadCharacter(character);
-    dataProvider->loadSkills(skillManager);
+    m_dataProvider->loadCharacter(m_character);
+    m_dataProvider->loadSkills(m_skillManager);
 }
 
 void Game::subscribeComponents()
 {
-    skillManager->subscribe(character);
+    m_skillManager->subscribe(m_character);
 }
 
 void Game::processEvent(sf::Event event)
@@ -39,36 +41,50 @@ void Game::processEvent(sf::Event event)
     switch (event.type)
     {
         case sf::Event::MouseButtonPressed:
-            if (event.mouseButton.button == sf::Mouse::Button::Right)
+            if (m_userInterface->isMouseOnUI(event.mouseButton.x, event.mouseButton.y))
             {
-                skillManager->activate(0, event.mouseButton.x, event.mouseButton.y);
+                m_mousePressWasOnUI = true;
+
+                // ...
+            }
+            else if (event.mouseButton.button == sf::Mouse::Button::Right)
+            {
+                m_skillManager->activate(0, event.mouseButton.x, event.mouseButton.y);
             }
             else if (event.mouseButton.button == sf::Mouse::Button::Left)
             {
-                character->state()->startMoving();
+                m_character->state()->startMoving();
             }
             break;
         case sf::Event::MouseButtonReleased:
-            if (event.mouseButton.button == sf::Mouse::Button::Left)
+            if (m_userInterface->isMouseOnUI(event.mouseButton.x, event.mouseButton.y) || m_mousePressWasOnUI)
             {
-                character->state()->stopOnPoint(event.mouseButton.x, event.mouseButton.y);
+                // ...
             }
+            else if (event.mouseButton.button == sf::Mouse::Button::Left)
+            {
+                m_character->state()->stopOnPoint(event.mouseButton.x, event.mouseButton.y);
+            }
+
+            m_mousePressWasOnUI = false;
             break;
     }
 }
 
 void Game::update()
 {
-    map->update();
-    character->update();
-    skillManager->update();
-    monsters->update();
+    m_map->update();
+    m_character->update();
+    m_skillManager->update();
+    m_monsters->update();
+    m_userInterface->update();
 }
 
 void Game::draw()
 {
-    map->draw(m_window);
-    character->draw(m_window);
-    skillManager->draw(m_window);
-    monsters->draw(m_window);
+    m_map->draw(m_window);
+    m_character->draw(m_window);
+    m_skillManager->draw(m_window);
+    m_monsters->draw(m_window);
+    m_userInterface->draw(m_window);
 }
