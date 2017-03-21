@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_EVENTTYPE_H
 #define SFMLDEMO_EVENTTYPE_H
 
-enum event_type
+enum class event_type
 {
     SKILL_ACTIVATED,
     INSTANT_CAST_ANIMATION_ENDED

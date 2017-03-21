@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_PROJECTILEPHASE_H
 #define SFMLDEMO_PROJECTILEPHASE_H
 
-enum projectile_phase
+enum class projectile_phase
 {
     ACTIVATED,
     FLYING,

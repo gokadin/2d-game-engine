@@ -6,7 +6,7 @@
 class ZombieManager : public MonsterManager
 {
 public:
-    ZombieManager(MapState *mapState, std::vector<std::vector<int>> *bounds);
+    ZombieManager(MapState *mapState, MapBounds *bounds);
 };
 
 #endif //SFMLDEMO_ZOMBIEMANAGER_H

@@ -6,7 +6,7 @@
 #include "../../data/definitions/map/MapGraphics.h"
 #include "../../data/definitions/map/MapState.h"
 #include "../../data/definitions/character/CharacterStats.h"
-#include "../../data/definitions/map/MapData.h"
+#include "../../data/definitions/map/MapBounds.h"
 #include "../../data/definitions/character/CharacterGraphics.h"
 #include "../../data/definitions/character/CharacterState.h"
 
@@ -17,7 +17,7 @@
 class MapUpdater : public Updater
 {
 public:
-    MapUpdater(sf::RenderWindow *window, MapGraphics *graphics, MapState *state, MapData *data,
+    MapUpdater(sf::RenderWindow *window, MapGraphics *graphics, MapState *state, MapBounds *bounds,
                CharacterStats *characterStats, CharacterGraphics *characterGraphics,
                CharacterState *characterState);
 
@@ -29,8 +29,7 @@ private:
     sf::RenderWindow *m_window;
     MapGraphics *m_graphics;
     MapState *m_state;
-    MapData *m_data;
-    std::vector<std::vector<int>> &m_bounds;
+    MapBounds *m_bounds;
     CharacterStats *m_characterStats;
     CharacterGraphics *m_characterGraphics;
     CharacterState *m_characterState;

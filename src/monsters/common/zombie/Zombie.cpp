@@ -1,7 +1,7 @@
 #include "Zombie.h"
 
-Zombie::Zombie(sf::Texture *texture, MapState *mapState, float x, float y):
-        Monster(texture, mapState, x, y)
+Zombie::Zombie(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds):
+        Monster(id, texture, mapState, mapBounds)
 {}
 
 void Zombie::update()
@@ -11,7 +11,7 @@ void Zombie::update()
 
 void Zombie::draw(sf::RenderWindow *window)
 {
-    if (m_phase == monster_phase::INACTIVE_2)
+    if (m_phase == monster_phase::DEAD)
     {
         return;
     }

@@ -5,6 +5,7 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include "../enums/ProjectilePhase.h"
 #include "../data/definitions/map/MapState.h"
+#include "../monsters/Monster.h"
 
 class Projectile
 {
@@ -22,6 +23,12 @@ public:
     inline bool isHitting() { return m_phase == projectile_phase::HITTING; }
     inline float x() { return m_x; }
     inline float y() { return m_y; }
+    inline int damage() { return m_damage; }
+
+    inline void hitMonster(Monster *monster)
+    {
+        monster->inflictDamage(m_damage);
+    }
 
 protected:
     projectile_phase m_phase;
@@ -38,6 +45,7 @@ protected:
     int m_spriteOffsetY;
     float m_flyingSpeedX;
     float m_flyingSpeedY;
+    int m_damage;
 };
 
 #endif //SFMLDEMO_PROJECTILE_H

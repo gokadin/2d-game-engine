@@ -7,7 +7,7 @@
 #include "../../rendering/renderers/map/MapRenderer.h"
 #include "../../updaters/map/MapUpdater.h"
 #include "../../data/definitions/character/CharacterStats.h"
-#include "../../data/definitions/map/MapData.h"
+#include "../../data/definitions/map/MapBounds.h"
 #include "../../data/definitions/character/CharacterState.h"
 
 class Map : public GameComponent
@@ -22,12 +22,12 @@ public:
 
     inline MapGraphics* graphics() { return m_graphics; }
     inline MapState* state() { return m_state; }
-    inline MapData* data() { return m_data; }
+    inline MapBounds* bounds() { return m_bounds; }
 
 private:
     MapGraphics *m_graphics;
     MapState *m_state;
-    MapData *m_data;
+    MapBounds *m_bounds;
     MapRenderer *m_renderer;
     MapUpdater *m_updater;
 };

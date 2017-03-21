@@ -10,7 +10,6 @@ void DataProvider::loadMap(Map *map)
     map->graphics()->setSpriteHeight(3200);
     map->graphics()->setSpriteOffsetX(0);
     map->graphics()->setSpriteOffsetY(0);
-    map->graphics()->setTileRadius(16);
     map->graphics()->setCollisionNoSlideAngleRad(0.4f);
 
     std::map<std::string, std::string> metadata = KeyValueReader::read("../src/storage/game/maps/act1/town/metadata");
@@ -18,7 +17,8 @@ void DataProvider::loadMap(Map *map)
     map->state()->setX(std::stoi(metadata["INITIAL_CX"]) - Engine::HALF_SCREEN_WIDTH);
     map->state()->setY(std::stoi(metadata["INITIAL_CY"]) - Engine::HALF_SCREEN_HEIGHT);
 
-    map->data()->setBounds(ArrayReader::read2D("../src/storage/game/maps/act1/town/bounds"));
+    map->bounds()->setBounds(ArrayReader::read2D("../src/storage/game/maps/act1/town/bounds"));
+    map->bounds()->setTileWidth(std::stoi(metadata["TILE_WIDTH"]));
 }
 
 void DataProvider::loadCharacter(Character *character)

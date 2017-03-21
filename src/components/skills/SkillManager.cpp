@@ -1,13 +1,11 @@
 #include "SkillManager.h"
 #include "../../skills/fireball/Fireball.h"
 #include "../../events/SkillActivatedEvent.h"
-#include "../../monsters/Monster.h"
-#include "../monsters/Monsters.h"
 
-SkillManager::SkillManager(MapState *mapState, MapData *mapData, MapGraphics *mapGraphics,
+SkillManager::SkillManager(MapState *mapState, MapBounds *mapBounds, MapGraphics *mapGraphics,
                            CharacterGraphics *characterGraphics, Monsters *monsters):
-        m_mapState(mapState), m_mapData(mapData), m_characterGraphics(characterGraphics), m_mapGraphics(mapGraphics),
-        m_bounds(mapData->bounds()), m_monsters(monsters)
+        m_mapState(mapState), m_characterGraphics(characterGraphics), m_mapGraphics(mapGraphics),
+        m_mapBounds(mapBounds), m_monsters(monsters)
 {
     for (int i = 0; i < NUM_SLOTS; i++)
     {
@@ -16,7 +14,7 @@ SkillManager::SkillManager(MapState *mapState, MapData *mapData, MapGraphics *ma
 
     m_skills[skill_names::FIREBALL] = new Fireball(mapState);
 
-    m_updater = new SkillManagerUpdater(monsters, mapData, mapGraphics, m_slots, m_skills);
+    m_updater = new SkillManagerUpdater(monsters, mapBounds, mapGraphics, m_slots, m_skills);
 }
 
 SkillManager::~SkillManager()

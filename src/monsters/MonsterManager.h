@@ -4,11 +4,12 @@
 #include <SFML/Graphics/Texture.hpp>
 #include "Monster.h"
 #include "../data/definitions/map/MapState.h"
+#include "../data/definitions/map/MapBounds.h"
 
 class MonsterManager
 {
 public:
-    MonsterManager(MapState *mapState, std::vector<std::vector<int>> *bounds);
+    MonsterManager(int nextId, MapState *mapState, MapBounds *bounds);
     virtual ~MonsterManager();
 
     virtual void update();
@@ -19,8 +20,9 @@ public:
 protected:
     sf::Texture m_texture;
     MapState *m_mapState;
-    std::vector<std::vector<int>> *m_bounds;
+    MapBounds *m_bounds;
 
+    int nextId();
     void addMonster(Monster *monster);
 
 private:

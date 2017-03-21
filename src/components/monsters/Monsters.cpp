@@ -1,7 +1,7 @@
 #include "Monsters.h"
 #include "../../monsters/common/zombie/ZombieManager.h"
 
-Monsters::Monsters(MapState *mapState, std::vector<std::vector<int>> *bounds):
+Monsters::Monsters(MapState *mapState, MapBounds *bounds):
         m_mapState(mapState), m_bounds(bounds)
 {
     m_monsterManagers.push_back(new ZombieManager(mapState, m_bounds));

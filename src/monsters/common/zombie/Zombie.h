@@ -6,7 +6,7 @@
 class Zombie : public Monster
 {
 public:
-    Zombie(sf::Texture *texture, MapState *mapState, float x, float y);
+    Zombie(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds);
 
     void update();
     void draw(sf::RenderWindow *window);

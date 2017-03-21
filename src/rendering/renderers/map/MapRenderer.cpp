@@ -1,7 +1,7 @@
 #include "MapRenderer.h"
 #include "../../../core/Engine.h"
 
-MapRenderer::MapRenderer(MapGraphics *graphics, MapState *state, MapData *data):
+MapRenderer::MapRenderer(MapGraphics *graphics, MapState *state, MapBounds *data):
         m_graphics(graphics), m_state(state), m_data(data), x(false), square(sf::Vector2f(16, 16)),
         boundSq(sf::Vector2f(16, 16))
 {

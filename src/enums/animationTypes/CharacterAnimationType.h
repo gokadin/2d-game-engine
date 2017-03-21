@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_CHARACTERANIMATIONTYPES_H
 #define SFMLDEMO_CHARACTERANIMATIONTYPES_H
 
-enum character_animation_type
+enum class character_animation_type
 {
     CHARACTER_MOVE,
     CHARACTER_IDLE,

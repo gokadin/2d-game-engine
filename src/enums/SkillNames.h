@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_SKILLTYPES_H
 #define SFMLDEMO_SKILLTYPES_H
 
-enum skill_names
+enum class skill_names
 {
     NONE,
     FIREBALL

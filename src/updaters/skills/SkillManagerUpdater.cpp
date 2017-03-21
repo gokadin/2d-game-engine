@@ -2,9 +2,9 @@
 #include "../../skills/Projectile.h"
 #include "../../skills/ProjectileSkill.h"
 
-SkillManagerUpdater::SkillManagerUpdater(Monsters *monsters, MapData *mapData, MapGraphics *mapGraphics,
+SkillManagerUpdater::SkillManagerUpdater(Monsters *monsters, MapBounds *m_bounds, MapGraphics *mapGraphics,
                                          std::vector<skill_names> &slots, std::map<skill_names, Skill *> &skills):
-        m_monsters(monsters), m_mapData(mapData), m_bounds(mapData->bounds()), m_mapGraphics(mapGraphics),
+        m_monsters(monsters), m_bounds(m_bounds), m_mapGraphics(mapGraphics),
         m_slots(slots), m_skills(skills)
 {}
 
@@ -12,42 +12,71 @@ void SkillManagerUpdater::update()
 {
     for (skill_names name : m_slots)
     {
-        if (name != skill_names::NONE && m_skills[name]->isActive())
+        if (name == skill_names::NONE || !m_skills[name]->isActive())
         {
-            if (m_skills[name]->isProjectile())
-            {
-                for (Projectile *projectile : ((ProjectileSkill*)m_skills[name])->projectiles())
-                {
-                    if (projectile->isFlying())
-                    {
-                        int boundI = (int)(projectile->x() / m_mapGraphics->tileRadius());
-                        int boundJ = (int)(projectile->y() / m_mapGraphics->tileRadius());
-                        if (boundI > m_bounds.size() - 1 || boundJ > m_bounds[boundI].size() - 1)
-                        {
-                            projectile->cancel();
-                        }
-                        else if (m_bounds[boundI][boundJ] > 0)
-                        {
-                            if (m_bounds[boundI][boundJ] > 1000)
-                            {
-                                Monster *monster = m_monsters->findMonster(m_bounds[boundI][boundJ]);
-                                monster->inflictDamage(60);
-                            }
+            continue;
+        }
 
-                            projectile->hit();
-                        }
-                    }
+        if (m_skills[name]->isProjectile())
+        {
+            updateProjectiles((ProjectileSkill*)m_skills[name]);
+        }
 
-                    if (projectile->isHitting())
-                    {
-                        // ...
-                    }
-                }
-            }
+        m_skills[name]->update();
+    }
+}
 
-            m_skills[name]->update();
+void SkillManagerUpdater::updateProjectiles(ProjectileSkill *skill)
+{
+    for (Projectile *projectile : skill->projectiles())
+    {
+        if (projectile->isFlying())
+        {
+            updateFlyingProjectile(projectile);
+        }
+
+        if (projectile->isHitting())
+        {
+            updateHittingProjectile(projectile);
         }
     }
 }
 
+void SkillManagerUpdater::updateFlyingProjectile(Projectile *projectile)
+{
+    int boundI = m_bounds->indexFromPosition(projectile->x());
+    int boundJ = m_bounds->indexFromPosition(projectile->y());
+    if (m_bounds->areIndexesOutOfBounds(boundI, boundJ))
+    {
+        projectile->cancel();
+        return;
+    }
 
+    detectCollision(projectile, boundI, boundJ);
+}
+
+void SkillManagerUpdater::updateHittingProjectile(Projectile *projectile)
+{
+    // ...
+    // monster damage should be here?
+}
+
+void SkillManagerUpdater::detectCollision(Projectile *projectile, int boundI, int boundJ)
+{
+    int boundValue = m_bounds->get(boundI, boundJ);
+
+    if (boundValue > 0)
+    {
+        projectile->hit();
+    }
+
+    if (boundValue > 1000)
+    {
+        processMonsterCollision(projectile, boundI, boundJ, boundValue);
+    }
+}
+
+void SkillManagerUpdater::processMonsterCollision(Projectile *projectile, int boundI, int boundJ, int boundValue)
+{
+    projectile->hitMonster(m_monsters->findMonster(boundValue));
+}

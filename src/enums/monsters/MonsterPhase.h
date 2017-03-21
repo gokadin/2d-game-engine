@@ -1,9 +1,9 @@
 #ifndef SFMLDEMO_MONSTERPHASE_H
 #define SFMLDEMO_MONSTERPHASE_H
 
-enum monster_phase
+enum class monster_phase
 {
-    INACTIVE_2,
+    INACTIVE,
     DEAD,
     IDLE,
     ATTACKING

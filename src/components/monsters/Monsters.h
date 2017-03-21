@@ -4,11 +4,12 @@
 #include "../../core/GameComponent.h"
 #include "../../monsters/MonsterManager.h"
 #include "../../data/definitions/map/MapState.h"
+#include "../../data/definitions/map/MapBounds.h"
 
 class Monsters : public GameComponent
 {
 public:
-    Monsters(MapState *mapState, std::vector<std::vector<int>> *bounds);
+    Monsters(MapState *mapState, MapBounds *bounds);
     ~Monsters();
 
     void update();
@@ -18,7 +19,7 @@ public:
 private:
     std::vector<MonsterManager *> m_monsterManagers;
     MapState *m_mapState;
-    std::vector<std::vector<int>> *m_bounds;
+    MapBounds *m_bounds;
 };
 
 #endif //SFMLDEMO_MONSTERS_H

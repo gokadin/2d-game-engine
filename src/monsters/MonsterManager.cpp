@@ -1,7 +1,7 @@
 #include "MonsterManager.h"
 
-MonsterManager::MonsterManager(MapState *mapState, std::vector<std::vector<int>> *bounds):
-        m_mapState(mapState), m_bounds(bounds), m_nextId(1000)
+MonsterManager::MonsterManager(int nextId, MapState *mapState, MapBounds *bounds):
+        m_mapState(mapState), m_bounds(bounds), m_nextId(nextId)
 {}
 
 MonsterManager::~MonsterManager()
@@ -16,9 +16,16 @@ MonsterManager::~MonsterManager()
 
 void MonsterManager::update()
 {
-    for (std::pair<int, Monster *> pair : m_monsters)
+    for (auto it = m_monsters.cbegin(); it != m_monsters.cend();)
     {
-        pair.second->update();
+        if ((*it).second->isInactive())
+        {
+            it = m_monsters.erase(it);
+            continue;
+        }
+
+        (*it).second->update();
+        ++it;
     }
 }
 
@@ -32,13 +39,11 @@ void MonsterManager::draw(sf::RenderWindow *window)
 
 void MonsterManager::addMonster(Monster *monster)
 {
-    m_nextId++;
+    m_monsters[monster->id()] = monster;
+    monster->addToMap();
+}
 
-    m_monsters[m_nextId] = monster;
-    int boundI = 1100 / 16;
-    int boundJ = 650 / 16;
-    (*m_bounds)[boundI][boundJ] = m_nextId;
-    (*m_bounds)[boundI + 1][boundJ] = m_nextId;
-    (*m_bounds)[boundI + 1][boundJ + 1] = m_nextId;
-    (*m_bounds)[boundI][boundJ + 1] = m_nextId;
+int MonsterManager::nextId()
+{
+    return m_nextId + 1;
 }
