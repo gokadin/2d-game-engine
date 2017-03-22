@@ -12,7 +12,7 @@ public:
 
     void update();
     void draw(sf::RenderWindow *window);
-    void bool isMouseOnUI(int x, int y);
+    bool isMouseOnUI(int x, int y);
 
 private:
     SkillBar *m_skillBar;
