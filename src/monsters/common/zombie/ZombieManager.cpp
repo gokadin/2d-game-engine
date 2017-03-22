@@ -13,6 +13,9 @@ ZombieManager::ZombieManager(MapState *mapState, MapBounds *bounds, CharacterGra
     Zombie *zombie = new Zombie(nextId(), &m_texture, mapState, bounds);
     zombie->setPosition(1100.0f, 650.0f);
     zombie->setHitBox(64, 112);
+    zombie->setIdleMoveSpeed(1.5);
+    zombie->setAggroMoveSpeed(2.5);
+    zombie->setAggroRange(100);
     addMonster(zombie);
 
     m_updater = new ZombieUpdater(m_bounds, m_characterGraphics, m_monsters);

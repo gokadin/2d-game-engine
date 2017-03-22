@@ -9,7 +9,18 @@ void ZombieUpdater::update()
     std::cout << m_monsters.size() << std::endl;
     for (std::pair<int, Monster *> pair : m_monsters)
     {
-        pair.second->move(m_mul, m_mul);
+        if ((pair.second->x() < Engine::CX + pair.second->aggroRange() || pair.second->x() > Engine::CX - pair.second->aggroRange()) &&
+                (pair.second->y() < Engine::CY + pair.second->aggroRange() || pair.second->y() > Engine::CY - pair.second->aggroRange())) {
+            double angle = atan2(Engine::CY, Engine::CX);
+            float moveSpeedX = pair.second->aggroMoveSpeed() * (float)cos(angle);
+            float moveSpeedY = pair.second->aggroMoveSpeed() * (float)sin(angle);
+
+            pair.second->move(moveSpeedX, moveSpeedY);
+        }
+        else
+        {
+            pair.second->move(m_mul, m_mul);
+        }
     }
 
     m_counter++;

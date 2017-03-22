@@ -12,6 +12,8 @@ public:
     MonsterManagerUpdater(MapBounds *mapBounds, CharacterGraphics *characterGraphics,
                           std::map<int, Monster *> monsters);
 
+    virtual void update();
+
 protected:
     MapBounds *m_mapBounds;
     CharacterGraphics *m_characterGraphics;

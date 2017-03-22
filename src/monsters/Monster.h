@@ -24,9 +24,15 @@ public:
     inline bool isAlive() { return m_phase != monster_phase::DEAD && m_phase != monster_phase::INACTIVE; }
     inline bool isInactive() { return m_phase == monster_phase::INACTIVE; }
     inline bool isDead() { return m_phase == monster_phase::DEAD; }
+    inline float idleMoveSpeed() { return m_idleMoveSpeed; }
+    inline float aggroMoveSpeed() { return m_aggroMoveSpeed; }
+    inline int aggroRange() { return m_aggroRange; }
 
     inline void setPosition(float x, float y) { m_x = x; m_y = y; }
     inline void setHitBox(int width, int height) { m_hitBoxWidth = width; m_hitBoxHeight = height; }
+    inline void setIdleMoveSpeed(float idleMoveSpeed) { m_idleMoveSpeed = idleMoveSpeed; }
+    inline void setAggroMoveSpeed(float aggroMoveSpeed) { m_aggroMoveSpeed = aggroMoveSpeed; }
+    inline void setAggroRange(int aggroRange) { m_aggroRange = aggroRange; }
     inline void move(float diffX, float diffY)
     {
         m_mapBounds->removeBounds(m_x - m_hitBoxWidth / 2, m_y - m_hitBoxHeight, m_hitBoxWidth, m_hitBoxHeight, m_id);
@@ -52,6 +58,9 @@ protected:
     monster_phase m_phase;
     int m_hitBoxWidth;
     int m_hitBoxHeight;
+    float m_idleMoveSpeed;
+    float m_aggroMoveSpeed;
+    int m_aggroRange;
 };
 
 #endif //SFMLDEMO_MONSTER_H
