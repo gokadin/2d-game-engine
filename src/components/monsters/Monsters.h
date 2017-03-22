@@ -9,7 +9,7 @@
 class Monsters : public GameComponent
 {
 public:
-    Monsters(MapState *mapState, MapBounds *bounds);
+    Monsters(MapState *mapState, MapBounds *bounds, CharacterGraphics *characterGraphics);
     ~Monsters();
 
     void update();
@@ -20,6 +20,7 @@ private:
     std::vector<MonsterManager *> m_monsterManagers;
     MapState *m_mapState;
     MapBounds *m_bounds;
+    CharacterGraphics *m_characterGraphics;
 };
 
 #endif //SFMLDEMO_MONSTERS_H

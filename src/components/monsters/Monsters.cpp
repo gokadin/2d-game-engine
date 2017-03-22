@@ -1,10 +1,10 @@
 #include "Monsters.h"
 #include "../../monsters/common/zombie/ZombieManager.h"
 
-Monsters::Monsters(MapState *mapState, MapBounds *bounds):
-        m_mapState(mapState), m_bounds(bounds)
+Monsters::Monsters(MapState *mapState, MapBounds *bounds, CharacterGraphics *characterGraphics):
+        m_mapState(mapState), m_bounds(bounds), m_characterGraphics(characterGraphics)
 {
-    m_monsterManagers.push_back(new ZombieManager(mapState, m_bounds));
+    m_monsterManagers.push_back(new ZombieManager(mapState, m_bounds, m_characterGraphics));
 }
 
 Monsters::~Monsters()

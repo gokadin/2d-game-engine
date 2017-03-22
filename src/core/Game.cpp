@@ -7,7 +7,7 @@ Game::Game(sf::RenderWindow *window):
     m_character = new Character();
     m_map = new Map(window, m_character->stats(), m_character->graphics(), m_character->state());
     m_dataProvider->loadMap(m_map);
-    m_monsters = new Monsters(m_map->state(), m_map->bounds());
+    m_monsters = new Monsters(m_map->state(), m_map->bounds(), m_character->graphics());
     m_skillManager = new SkillManager(m_map->state(), m_map->bounds(), m_map->graphics(), m_character->graphics(), m_monsters);
     m_userInterface = new UserInterface();
 

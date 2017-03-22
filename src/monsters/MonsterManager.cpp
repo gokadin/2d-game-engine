@@ -1,7 +1,7 @@
 #include "MonsterManager.h"
 
-MonsterManager::MonsterManager(int nextId, MapState *mapState, MapBounds *bounds):
-        m_mapState(mapState), m_bounds(bounds), m_nextId(nextId)
+MonsterManager::MonsterManager(int nextId, MapState *mapState, MapBounds *bounds, CharacterGraphics *characterGraphics):
+        m_mapState(mapState), m_bounds(bounds), m_nextId(nextId), m_characterGraphics(characterGraphics)
 {}
 
 MonsterManager::~MonsterManager()

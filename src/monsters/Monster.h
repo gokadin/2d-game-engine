@@ -27,6 +27,15 @@ public:
 
     inline void setPosition(float x, float y) { m_x = x; m_y = y; }
     inline void setHitBox(int width, int height) { m_hitBoxWidth = width; m_hitBoxHeight = height; }
+    inline void move(float diffX, float diffY)
+    {
+        m_mapBounds->removeBounds(m_x - m_hitBoxWidth / 2, m_y - m_hitBoxHeight, m_hitBoxWidth, m_hitBoxHeight, m_id);
+        m_x += diffX;
+        m_y += diffY;
+        m_mapBounds->addBounds(m_x - m_hitBoxWidth / 2, m_y - m_hitBoxHeight, m_hitBoxWidth, m_hitBoxHeight, m_id);
+
+        // clean this up
+    }
 
     virtual void inflictDamage(int damage);
     void addToMap();
