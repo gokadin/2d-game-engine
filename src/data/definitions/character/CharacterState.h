@@ -11,6 +11,7 @@ public:
             m_isMoving(false), m_isCasting(false), m_isMovementPaused(false), m_shouldStopOnPoint(false)
     {}
 
+    inline bool isIdle() { return !m_isMoving && !m_isCasting; }
     inline bool isMoving() { return m_isMoving; }
     inline bool isCasting() { return m_isCasting; }
     inline bool isMovementPaused() { return m_isMovementPaused; }

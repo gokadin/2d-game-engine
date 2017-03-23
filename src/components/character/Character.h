@@ -9,6 +9,7 @@
 #include "../../animations/character/CharacterAnimations.h"
 #include "../../skills/Skill.h"
 #include "../../rendering/renderers/character/CharacterRenderer.h"
+#include "equipment/EquipmentManager.h"
 
 class Character : public GameComponent, public Observer
 {
@@ -27,6 +28,7 @@ public:
 private:
     CharacterStats *m_stats;
     CharacterState *m_state;
+    EquipmentManager *m_equipmentManager;
     CharacterGraphics *m_graphics;
     CharacterAnimations *m_animations;
     CharacterRenderer *m_renderer;

@@ -7,11 +7,12 @@
 #include "../Animation.h"
 #include "../../data/definitions/character/CharacterGraphics.h"
 #include "../../data/definitions/character/CharacterState.h"
+#include "../../components/character/equipment/EquipmentManager.h"
 
 class CharacterAnimations
 {
 public:
-    CharacterAnimations(CharacterState *state, CharacterGraphics *graphics);
+    CharacterAnimations(CharacterState *state, CharacterGraphics *graphics, EquipmentManager *equipmentManager);
     ~CharacterAnimations();
 
     void update();
@@ -21,6 +22,7 @@ private:
     std::map<character_animation_type, Animation *> m_animations;
     CharacterState *m_state;
     CharacterGraphics *m_graphics;
+    EquipmentManager *m_equipmentManager;
 };
 
 #endif //SFMLDEMO_CHARACTERANIMATIONS_H

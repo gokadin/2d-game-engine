@@ -3,9 +3,9 @@
 
 enum class character_animation_type
 {
-    CHARACTER_MOVE,
-    CHARACTER_IDLE,
-    CHARACTER_INSTANT_CAST
+    MOVE,
+    IDLE,
+    INSTANT_CAST
 };
 
 #endif //SFMLDEMO_CHARACTERANIMATIONTYPES_H

@@ -1,12 +1,15 @@
 #include "CharacterAnimations.h"
 #include "skillCasts/InstantCastAnimation.h"
 #include "movement/WalkAnimation.h"
+#include "movement/StandAnimation.h"
 
-CharacterAnimations::CharacterAnimations(CharacterState *state, CharacterGraphics *graphics):
-        m_state(state), m_graphics(graphics)
+CharacterAnimations::CharacterAnimations(CharacterState *state, CharacterGraphics *graphics,
+                                         EquipmentManager *equipmentManager):
+        m_state(state), m_graphics(graphics), m_equipmentManager(equipmentManager)
 {
-    m_animations[character_animation_type::CHARACTER_INSTANT_CAST] = new InstantCastAnimation(graphics, state);
-    m_animations[character_animation_type::CHARACTER_MOVE] = new WalkAnimation(graphics, state);
+    m_animations[character_animation_type::INSTANT_CAST] = new InstantCastAnimation(graphics, state);
+    m_animations[character_animation_type::MOVE] = new WalkAnimation(graphics, state, equipmentManager);
+    m_animations[character_animation_type::IDLE] = new StandAnimation(graphics, state);
 }
 
 CharacterAnimations::~CharacterAnimations()
