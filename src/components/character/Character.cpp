@@ -7,7 +7,8 @@ Character::Character()
     m_graphics = new CharacterGraphics();
     m_state = new CharacterState();
     m_stats = new CharacterStats();
-    m_equipmentManager = new EquipmentManager();
+    m_equipmentManager = new EquipmentManager(m_stats);
+    m_equipmentManager->equipMainHand(new ThousandTruths());
     m_animations = new CharacterAnimations(m_state, m_graphics, m_equipmentManager);
     m_renderer = new CharacterRenderer(m_graphics);
 

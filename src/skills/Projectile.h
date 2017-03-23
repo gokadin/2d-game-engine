@@ -10,7 +10,8 @@
 class Projectile
 {
 public:
-    Projectile(sf::Texture *texture, MapState *mapState, float initialX, float initialY, int targetX, int targetY);
+    Projectile(sf::Texture *texture, MapState *mapState, float initialX, float initialY, int targetX, int targetY,
+               int damage);
     virtual ~Projectile();
 
     virtual void update() = 0;

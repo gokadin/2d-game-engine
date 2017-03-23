@@ -4,7 +4,7 @@
 Skill::Skill(int castTime, int castAnimationTime, bool isProjectile):
         m_castTime(castTime), m_castAnimationTime(castAnimationTime), m_isActive(false), m_isProjectile(isProjectile), 
         m_isCastingAnimationFinished(true), m_castAnimationTimeCounter(0),
-        m_castAnimationUpdates(castAnimationTime * Engine::UPS / 1000)
+        m_castAnimationUpdates(castAnimationTime * Engine::UPS / 1000), m_damage(0)
 {}
 
 void Skill::countCastAnimationTime()

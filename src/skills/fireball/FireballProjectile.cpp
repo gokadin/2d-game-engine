@@ -1,7 +1,8 @@
 #include "FireballProjectile.h"
 
-FireballProjectile::FireballProjectile(sf::Texture *texture, MapState *mapState, int targetX, int targetY):
-        Projectile(texture, mapState, Engine::CX + mapState->x(), Engine::CY + mapState->y(), targetX, targetY), m_explFrameCounter(0)
+FireballProjectile::FireballProjectile(sf::Texture *texture, MapState *mapState, int targetX, int targetY, int damage):
+        Projectile(texture, mapState, Engine::CX + mapState->x(), Engine::CY + mapState->y(), targetX, targetY, damage),
+        m_explFrameCounter(0)
 {}
 
 void FireballProjectile::update()

@@ -2,7 +2,7 @@
 #include "ProjectileSkill.h"
 
 ProjectileSkill::ProjectileSkill(int castTime, int castAnimationTime):
-        Skill(castTime, castAnimationTime, true)
+        Skill(castTime, castAnimationTime, true), m_projectileDamage(0)
 {}
 
 ProjectileSkill::~ProjectileSkill()

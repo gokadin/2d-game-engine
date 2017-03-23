@@ -2,8 +2,7 @@
 #include "ThousandTruths.h"
 #include "../../../../core/Engine.h"
 
-ThousandTruths::ThousandTruths():
-        m_phase(0)
+ThousandTruths::ThousandTruths()
 {
     if (!m_texture.loadFromFile("../src/storage/game/items/weapons/swords/1h/thousandTruths/texture.png"))
     {
@@ -11,6 +10,8 @@ ThousandTruths::ThousandTruths():
     }
 
     m_sprite.setTexture(m_texture);
+
+    m_spellPower = 100;
 }
 
 void ThousandTruths::draw(sf::RenderWindow *window)

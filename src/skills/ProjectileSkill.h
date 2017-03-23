@@ -17,6 +17,7 @@ public:
 
 protected:
     std::vector<Projectile *> m_projectiles;
+    int m_projectileDamage;
 
     void addProjectile(Projectile *projectile);
 };

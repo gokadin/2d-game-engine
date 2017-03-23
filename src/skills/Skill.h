@@ -25,6 +25,7 @@ protected:
     int m_castTime;
     int m_castAnimationTime;
     bool m_isCastingAnimationFinished;
+    int m_damage;
 
     void countCastAnimationTime();
 

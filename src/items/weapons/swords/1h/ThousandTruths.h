@@ -13,12 +13,9 @@ public:
 
     void draw(sf::RenderWindow *window);
 
-    void setPhase(int phase) { m_phase = phase; }
-
 private:
     sf::Texture m_texture;
     sf::Sprite m_sprite;
-    int m_phase;
 };
 
 #endif //SFMLDEMO_THOUSANDTHRUTS_H

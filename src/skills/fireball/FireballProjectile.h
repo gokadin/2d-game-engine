@@ -7,7 +7,7 @@
 class FireballProjectile : public Projectile
 {
 public:
-    FireballProjectile(sf::Texture *texture, MapState *mapState, int targetX, int targetY);
+    FireballProjectile(sf::Texture *texture, MapState *mapState, int targetX, int targetY, int damage);
 
     void update();
     void draw(sf::RenderWindow *window);
