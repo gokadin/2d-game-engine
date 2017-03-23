@@ -1,11 +1,11 @@
 #include "SkillManager.h"
 #include "../../skills/fireball/Fireball.h"
-#include "../../events/SkillActivatedEvent.h"
+#include "../../events/skillEvents/SkillActivatedEvent.h"
 
 SkillManager::SkillManager(MapState *mapState, MapBounds *mapBounds, MapGraphics *mapGraphics,
-                           CharacterGraphics *characterGraphics, Monsters *monsters):
-        m_mapState(mapState), m_characterGraphics(characterGraphics), m_mapGraphics(mapGraphics),
-        m_mapBounds(mapBounds), m_monsters(monsters)
+                           CharacterGraphics *characterGraphics, CharacterStats *characterStats, Monsters *monsters):
+        m_mapState(mapState), m_characterGraphics(characterGraphics), m_characterStats(characterStats),
+        m_mapGraphics(mapGraphics), m_mapBounds(mapBounds), m_monsters(monsters)
 {
     for (int i = 0; i < NUM_SLOTS; i++)
     {
@@ -59,5 +59,24 @@ void SkillManager::assign(int slotIndex, skill_names name)
     if (slotIndex < NUM_SLOTS)
     {
         m_slots[slotIndex] = name;
+    }
+}
+
+void SkillManager::notify(Event *event)
+{
+    switch (event->type())
+    {
+        case event_type::CHARACTER_STATS_CHANGED:
+            handleCharacterStatsChanged();
+            delete event;
+            break;
+    }
+}
+
+void SkillManager::handleCharacterStatsChanged()
+{
+    for (std::pair<skill_names, Skill *> pair : m_skills)
+    {
+        pair.second->handleCharacterStatsChanged(m_characterStats);
     }
 }

@@ -10,8 +10,8 @@ Fireball::Fireball(MapState *mapState):
         std::cout << "ERROR WITH TEXTURE" << std::endl;
     }
 
-    m_damage = 60;
-    m_projectileDamage = 60;
+    m_baseDamage = 60;
+    m_baseProjectileDamage = 60;
 }
 
 void Fireball::update()
@@ -38,5 +38,12 @@ void Fireball::activate(int targetX, int targetY)
 {
     m_isActive = true;
     m_isCastingAnimationFinished = false;
-    addProjectile(new FireballProjectile(&m_projectileTexture, m_mapState, targetX, targetY, m_projectileDamage));
+    addProjectile(new FireballProjectile(&m_projectileTexture, m_mapState, targetX, targetY,
+                                         m_calculatedProjectileDamage));
+}
+
+void Fireball::handleCharacterStatsChanged(CharacterStats *characterStats)
+{
+    m_calculatedDamage = m_baseDamage + characterStats->spellPower();
+    m_calculatedProjectileDamage = m_baseProjectileDamage + characterStats->spellPower();
 }

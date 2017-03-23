@@ -1,5 +1,5 @@
 #include "Character.h"
-#include "../../events/SkillActivatedEvent.h"
+#include "../../events/skillEvents/SkillActivatedEvent.h"
 #include "../../animations/character/skillCasts/InstantCastAnimation.h"
 
 Character::Character()

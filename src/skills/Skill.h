@@ -2,6 +2,7 @@
 #define SFMLDEMO_SKILL_H
 
 #include <SFML/Graphics/RenderWindow.hpp>
+#include "../data/definitions/character/CharacterStats.h"
 
 class Skill
 {
@@ -12,6 +13,7 @@ public:
     virtual void activate(int targetX, int targetY) = 0;
     virtual void update() = 0;
     virtual void draw(sf::RenderWindow *window) = 0;
+    virtual void handleCharacterStatsChanged(CharacterStats *characterStats) = 0;
 
     inline bool isActive() { return m_isActive; }
     inline int castTime() { return m_castTime; }
@@ -25,7 +27,8 @@ protected:
     int m_castTime;
     int m_castAnimationTime;
     bool m_isCastingAnimationFinished;
-    int m_damage;
+    int m_baseDamage;
+    int m_calculatedDamage;
 
     void countCastAnimationTime();
 

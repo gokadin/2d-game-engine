@@ -8,6 +8,11 @@ void ZombieUpdater::update()
 {
     for (std::pair<int, Monster *> pair : m_monsters)
     {
+        if (!pair.second->isAlive())
+        {
+            continue;
+        }
+
 //        if ((pair.second->x() < Engine::CX + pair.second->aggroRange() || pair.second->x() > Engine::CX - pair.second->aggroRange()) &&
 //            (pair.second->y() < Engine::CY + pair.second->aggroRange() || pair.second->y() > Engine::CY - pair.second->aggroRange()))
 //        {

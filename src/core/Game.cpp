@@ -8,7 +8,8 @@ Game::Game(sf::RenderWindow *window):
     m_map = new Map(window, m_character->stats(), m_character->graphics(), m_character->state());
     m_dataProvider->loadMap(m_map);
     m_monsters = new Monsters(m_map->state(), m_map->bounds(), m_character->graphics());
-    m_skillManager = new SkillManager(m_map->state(), m_map->bounds(), m_map->graphics(), m_character->graphics(), m_monsters);
+    m_skillManager = new SkillManager(m_map->state(), m_map->bounds(), m_map->graphics(), m_character->graphics(),
+                                      m_character->stats(), m_monsters);
     m_userInterface = new UserInterface();
 
     load();
@@ -34,6 +35,9 @@ void Game::load()
 void Game::subscribeComponents()
 {
     m_skillManager->subscribe(m_character);
+    m_character->stats()->subscribe(m_skillManager);
+
+    m_character->stats()->addSpellPower(0); // temp
 }
 
 void Game::processEvent(sf::Event event)

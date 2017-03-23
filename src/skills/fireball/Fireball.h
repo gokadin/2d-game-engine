@@ -14,6 +14,7 @@ public:
     void draw(sf::RenderWindow *window);
     bool canActivate();
     void activate(int targetX, int targetY);
+    void handleCharacterStatsChanged(CharacterStats *characterStats);
 
 private:
     MapState *m_mapState;
