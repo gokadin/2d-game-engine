@@ -48,10 +48,10 @@ void Engine::run()
                     window->close();
                     break;
                 case sf::Event::KeyPressed:
-                    if (event.key.code == sf::Keyboard::Escape)
-                    {
-                        window->close();
-                    }
+//                    if (event.key.code == sf::Keyboard::Escape)
+//                    {
+//                        window->close();
+//                    }
                     break;
             }
 

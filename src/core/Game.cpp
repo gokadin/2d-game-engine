@@ -72,6 +72,17 @@ void Game::processEvent(sf::Event event)
 
             m_mousePressWasOnUI = false;
             break;
+        case sf::Event::KeyPressed:
+            switch (event.key.code)
+            {
+                case sf::Keyboard::Escape:
+                    m_userInterface->closeOpenWindows();
+                    break;
+                case sf::Keyboard::I:
+                    m_userInterface->toggleInventory();
+                    break;
+            }
+            break;
     }
 }
 
