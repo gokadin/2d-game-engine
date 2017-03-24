@@ -16,7 +16,7 @@ public:
     Game(sf::RenderWindow *window);
     ~Game();
 
-    void processEvent(sf::Event event);
+    void processEvent(sf::Event &event);
     void update();
     void draw();
 

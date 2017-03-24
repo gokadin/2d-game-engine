@@ -40,7 +40,7 @@ void Game::subscribeComponents()
     m_character->stats()->addSpellPower(0); // temp
 }
 
-void Game::processEvent(sf::Event event)
+void Game::processEvent(sf::Event &event)
 {
     switch (event.type)
     {
@@ -49,7 +49,7 @@ void Game::processEvent(sf::Event event)
             {
                 m_mousePressWasOnUI = true;
 
-                // ...
+                m_userInterface->processEvent(event);
             }
             else if (event.mouseButton.button == sf::Mouse::Button::Right)
             {
@@ -63,7 +63,7 @@ void Game::processEvent(sf::Event event)
         case sf::Event::MouseButtonReleased:
             if (m_userInterface->isMouseOnUI(event.mouseButton.x, event.mouseButton.y) || m_mousePressWasOnUI)
             {
-                // ...
+                m_userInterface->processEvent(event);
             }
             else if (event.mouseButton.button == sf::Mouse::Button::Left)
             {

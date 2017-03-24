@@ -34,3 +34,8 @@ void InventorySideBar::draw(sf::RenderWindow *window)
         window->draw(m_sprite);
     }
 }
+
+bool InventorySideBar::isMouseOnUI(int x, int y)
+{
+    return m_isOpen && x >= m_x;
+}

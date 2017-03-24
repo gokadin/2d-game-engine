@@ -30,3 +30,8 @@ void SkillBar::draw(sf::RenderWindow *window)
 {
     window->draw(m_sprite);
 }
+
+bool SkillBar::isMouseOnUI(int x, int y)
+{
+    return false;
+}

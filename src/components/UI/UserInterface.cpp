@@ -1,3 +1,4 @@
+#include <SFML/Window/Event.hpp>
 #include "UserInterface.h"
 
 UserInterface::UserInterface()
@@ -10,6 +11,19 @@ UserInterface::~UserInterface()
 {
     delete m_skillBar;
     delete m_inventorySideBar;
+}
+
+void UserInterface::processEvent(sf::Event &event)
+{
+    switch (event.type)
+    {
+        case sf::Event::MouseButtonPressed:
+
+            break;
+        case sf::Event::MouseButtonReleased:
+
+            break;
+    }
 }
 
 void UserInterface::update()
@@ -26,6 +40,11 @@ void UserInterface::draw(sf::RenderWindow *window)
 
 bool UserInterface::isMouseOnUI(int x, int y)
 {
+    if (m_inventorySideBar->isMouseOnUI(x, y))
+    {
+        return true;
+    }
+
     return false;
 }
 

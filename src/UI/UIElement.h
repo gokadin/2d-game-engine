@@ -12,6 +12,7 @@ public:
 
     virtual void update() = 0;
     virtual void draw(sf::RenderWindow *window) = 0;
+    virtual bool isMouseOnUI(int x, int y) = 0;
 
     void open();
     void close();

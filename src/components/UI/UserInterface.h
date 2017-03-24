@@ -11,6 +11,7 @@ public:
     UserInterface();
     ~UserInterface();
 
+    void processEvent(sf::Event &event);
     void update();
     void draw(sf::RenderWindow *window);
     bool isMouseOnUI(int x, int y);
