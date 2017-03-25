@@ -1,0 +1,9 @@
+#ifndef SFMLDEMO_EQUIPMENTTYPE_H
+#define SFMLDEMO_EQUIPMENTTYPE_H
+
+enum equipment_type
+{
+    MAIN_HAND
+};
+
+#endif //SFMLDEMO_EQUIPMENTTYPE_H

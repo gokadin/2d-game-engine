@@ -6,8 +6,8 @@
 class Weapon : public EquipableItem
 {
 public:
-    Weapon():
-            m_phase(0)
+    Weapon(std::string iconFilename):
+            EquipableItem(iconFilename, equipment_type::MAIN_HAND), m_phase(0)
     {}
 
     void setPhase(int phase) { m_phase = phase; }

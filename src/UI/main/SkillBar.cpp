@@ -21,6 +21,19 @@ SkillBar::SkillBar()
     m_sprite.setPosition(m_x, 948); // what??????
 }
 
+void SkillBar::processEvent(sf::Event &event)
+{
+    switch (event.type)
+    {
+        case sf::Event::MouseButtonPressed:
+
+            break;
+        case sf::Event::MouseButtonReleased:
+
+            break;
+    }
+}
+
 void SkillBar::update()
 {
 

@@ -2,7 +2,8 @@
 #include "ThousandTruths.h"
 #include "../../../../core/Engine.h"
 
-ThousandTruths::ThousandTruths()
+ThousandTruths::ThousandTruths():
+        Weapon("../src/storage/game/items/weapons/swords/1h/thousandTruths/icon.png")
 {
     if (!m_texture.loadFromFile("../src/storage/game/items/weapons/swords/1h/thousandTruths/texture.png"))
     {

@@ -21,6 +21,7 @@ public:
 private:
     SkillBar *m_skillBar;
     InventorySideBar *m_inventorySideBar;
+    UIElement *m_currentMouseOverElement;
 };
 
 #endif //SFMLDEMO_UICOMPONENT_H

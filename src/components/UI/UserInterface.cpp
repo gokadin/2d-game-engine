@@ -1,7 +1,8 @@
 #include <SFML/Window/Event.hpp>
 #include "UserInterface.h"
 
-UserInterface::UserInterface()
+UserInterface::UserInterface():
+        m_currentMouseOverElement(NULL)
 {
     m_skillBar = new SkillBar();
     m_inventorySideBar = new InventorySideBar();
@@ -15,14 +16,11 @@ UserInterface::~UserInterface()
 
 void UserInterface::processEvent(sf::Event &event)
 {
-    switch (event.type)
+    m_currentMouseOverElement->processEvent(event);
+
+    if (event.type == sf::Event::MouseButtonReleased)
     {
-        case sf::Event::MouseButtonPressed:
-
-            break;
-        case sf::Event::MouseButtonReleased:
-
-            break;
+        m_currentMouseOverElement = NULL;
     }
 }
 
@@ -34,14 +32,15 @@ void UserInterface::update()
 
 void UserInterface::draw(sf::RenderWindow *window)
 {
-    m_inventorySideBar->draw(window);
     m_skillBar->draw(window);
+    m_inventorySideBar->draw(window);
 }
 
 bool UserInterface::isMouseOnUI(int x, int y)
 {
     if (m_inventorySideBar->isMouseOnUI(x, y))
     {
+        m_currentMouseOverElement = m_inventorySideBar;
         return true;
     }
 
