@@ -4,7 +4,8 @@
 #include "../../data/IO/KeyValueReader.h"
 #include "../../core/Engine.h"
 
-InventorySideBar::InventorySideBar()
+InventorySideBar::InventorySideBar():
+        m_grabbedItem(NULL)
 {
     if (!m_texture.loadFromFile("../src/storage/game/userInterface/inventory/texture.png"))
     {
@@ -134,6 +135,14 @@ void InventorySideBar::drawSlotItems(sf::RenderWindow *window)
             m_slots[i][j]->icon().setPosition(m_slotPositionsX[i][j], m_slotPositionsY[i][j]);
             window->draw(m_slots[i][j]->icon());
         }
+    }
+
+    // maybe should move this out, along with many other things in this class
+    if (m_grabbedItem != NULL)
+    {
+        sf::Vector2i mousePosition = sf::Mouse::getPosition(*((sf::Window*)window));
+        m_grabbedItem->icon().setPosition(mousePosition.x - 25, mousePosition.y - 51); // temp values
+        window->draw(m_grabbedItem->icon());
     }
 }
 
