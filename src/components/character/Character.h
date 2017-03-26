@@ -24,6 +24,7 @@ public:
     inline CharacterStats *stats() { return m_stats; }
     inline CharacterState *state() { return m_state; }
     inline CharacterGraphics *graphics() { return m_graphics; }
+    inline EquipmentManager *equipmentManager() { return m_equipmentManager; }
 
 private:
     CharacterStats *m_stats;

@@ -1,11 +1,11 @@
 #include <SFML/Window/Event.hpp>
 #include "UserInterface.h"
 
-UserInterface::UserInterface():
+UserInterface::UserInterface(EquipmentManager *equipmentManager):
         m_currentMouseOverElement(NULL)
 {
     m_skillBar = new SkillBar();
-    m_inventorySideBar = new InventorySideBar();
+    m_inventorySideBar = new InventorySideBar(equipmentManager);
 }
 
 UserInterface::~UserInterface()
@@ -55,4 +55,9 @@ void UserInterface::toggleInventory()
 void UserInterface::closeOpenWindows()
 {
     m_inventorySideBar->close();
+}
+
+bool UserInterface::hasOpenWindows()
+{
+    return m_inventorySideBar->isOpen();
 }

@@ -8,7 +8,7 @@
 class UserInterface : public GameComponent
 {
 public:
-    UserInterface();
+    UserInterface(EquipmentManager *equipmentManager);
     ~UserInterface();
 
     void processEvent(sf::Event &event);
@@ -17,6 +17,7 @@ public:
     bool isMouseOnUI(int x, int y);
     void toggleInventory();
     void closeOpenWindows();
+    bool hasOpenWindows();
 
 private:
     SkillBar *m_skillBar;

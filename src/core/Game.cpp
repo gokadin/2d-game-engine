@@ -10,7 +10,7 @@ Game::Game(sf::RenderWindow *window):
     m_monsters = new Monsters(m_map->state(), m_map->bounds(), m_character->graphics());
     m_skillManager = new SkillManager(m_map->state(), m_map->bounds(), m_map->graphics(), m_character->graphics(),
                                       m_character->stats(), m_monsters);
-    m_userInterface = new UserInterface();
+    m_userInterface = new UserInterface(m_character->equipmentManager());
 
     load();
     subscribeComponents();
@@ -76,7 +76,14 @@ void Game::processEvent(sf::Event &event)
             switch (event.key.code)
             {
                 case sf::Keyboard::Escape:
-                    m_userInterface->closeOpenWindows();
+                    if (m_userInterface->hasOpenWindows())
+                    {
+                        m_userInterface->closeOpenWindows();
+                    }
+                    else
+                    {
+                        m_window->close();
+                    }
                     break;
                 case sf::Keyboard::I:
                     m_userInterface->toggleInventory();

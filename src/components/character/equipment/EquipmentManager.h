@@ -9,11 +9,11 @@ class EquipmentManager
 {
 public:
     EquipmentManager(CharacterStats *characterStats);
-    ~EquipmentManager();
 
     void draw(sf::RenderWindow *window);
-    void setStage(int stage) { m_mainHand->setPhase(stage); }
+    void setStage(int stage) { if (m_mainHand != NULL) { m_mainHand->setPhase(stage); } }
     void equipMainHand(Weapon *weapon);
+    void unequipMainHand(Weapon *weapon);
 
 private:
     CharacterStats *m_characterStats;
@@ -21,6 +21,7 @@ private:
     Weapon *m_mainHand;
 
     void addStats(EquipableItem *item);
+    void removeStats(EquipableItem *item);
 };
 
 #endif //SFMLDEMO_EQUIPMENTMANAGER_H

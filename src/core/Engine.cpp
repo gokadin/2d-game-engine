@@ -42,17 +42,9 @@ void Engine::run()
         sf::Event event;
         while (window->pollEvent(event))
         {
-            switch (event.type)
+            if (event.type == sf::Event::Closed)
             {
-                case sf::Event::Closed:
-                    window->close();
-                    break;
-                case sf::Event::KeyPressed:
-//                    if (event.key.code == sf::Keyboard::Escape)
-//                    {
-//                        window->close();
-//                    }
-                    break;
+                window->close();
             }
 
             game->processEvent(event);

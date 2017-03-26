@@ -1,7 +1,8 @@
 #include <iostream>
 #include "Item.h"
 
-Item::Item(std::string iconFilename)
+Item::Item(std::string iconFilename, bool isEquipable):
+        m_isEquipable(isEquipable)
 {
     if (!m_icon.loadFromFile(iconFilename))
     {
