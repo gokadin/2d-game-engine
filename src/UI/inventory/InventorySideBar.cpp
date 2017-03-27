@@ -5,7 +5,8 @@
 #include "../../core/Engine.h"
 
 InventorySideBar::InventorySideBar(EquipmentManager *equipmentManager):
-        m_equipmentManager(equipmentManager), m_grabbedItem(NULL)
+        m_equipmentManager(equipmentManager), m_grabbedItem(NULL), m_lastMousePressPosition(0, 0),
+        m_readyToGrab(false), m_readyToDrop(false)
 {
     if (!m_texture.loadFromFile("../src/storage/game/userInterface/inventory/texture.png"))
     {
@@ -42,7 +43,6 @@ InventorySideBar::InventorySideBar(EquipmentManager *equipmentManager):
             slot.column = i;
             slot.item = NULL;
             slot.isLastRow = i == numSlotsPerColumn - 1;
-            slot.isFirstRow = i == 0;
             slot.isItemMainSlot = false;
             slotRow.push_back(slot);
         }
@@ -80,14 +80,63 @@ void InventorySideBar::processEvent(sf::Event &event)
         case sf::Event::MouseButtonReleased:
             processMouseButtonReleased(event);
             break;
+        case sf::Event::MouseMoved:
+            processMouseMoved(event);
+            break;
     }
 }
 
 void InventorySideBar::processMouseButtonPressed(sf::Event &event)
 {
-    if (event.mouseButton.x < m_inventorySlotsBeginPosition.x || event.mouseButton.y < m_inventorySlotsBeginPosition.y)
+    if (m_grabbedItem == NULL)
     {
-        InventorySlot *slot = mouseOverEquipmentSlot(event.mouseButton.x, event.mouseButton.y);
+        m_lastMousePressPosition.x = event.mouseButton.x;
+        m_lastMousePressPosition.y = event.mouseButton.y;
+        m_readyToGrab = true;
+
+        return;
+    }
+
+    m_readyToDrop = true;
+}
+
+void InventorySideBar::processMouseButtonReleased(sf::Event &event)
+{
+    if (m_readyToGrab)
+    {
+        grabItem(m_lastMousePressPosition.x, m_lastMousePressPosition.y);
+        m_readyToGrab = false;
+    }
+
+    if (m_readyToDrop)
+    {
+        dropItem(event.mouseButton.x, event.mouseButton.y);
+        m_readyToDrop = false;
+    }
+}
+
+void InventorySideBar::processMouseMoved(sf::Event &event)
+{
+    if (!m_readyToGrab)
+    {
+        return;
+    }
+
+    int diffX = abs(m_lastMousePressPosition.x - event.mouseMove.x);
+    int diffY = abs(m_lastMousePressPosition.y - event.mouseMove.y);
+    if (diffX >= MOUSE_DRAG_MIN_DISTANCE_PX || diffY >= MOUSE_DRAG_MIN_DISTANCE_PX)
+    {
+        grabItem(m_lastMousePressPosition.x, m_lastMousePressPosition.y);
+        m_readyToGrab = false;
+        m_readyToDrop = true;
+    }
+}
+
+void InventorySideBar::grabItem(int mouseX, int mouseY)
+{
+    if (mouseX < m_inventorySlotsBeginPosition.x || mouseY < m_inventorySlotsBeginPosition.y)
+    {
+        InventorySlot *slot = mouseOverEquipmentSlot(mouseX, mouseY);
         if (slot == NULL || slot->item == NULL)
         {
             return;
@@ -100,7 +149,7 @@ void InventorySideBar::processMouseButtonPressed(sf::Event &event)
         return;
     }
 
-    InventorySlot *slot = mouseOverInventorySlot(event.mouseButton.x, event.mouseButton.y);
+    InventorySlot *slot = mouseOverInventorySlot(mouseX, mouseY);
     if (slot == NULL || slot->item == NULL)
     {
         return;
@@ -119,16 +168,16 @@ void InventorySideBar::processMouseButtonPressed(sf::Event &event)
     slot->isItemMainSlot = false;
 }
 
-void InventorySideBar::processMouseButtonReleased(sf::Event &event)
+void InventorySideBar::dropItem(int mouseX, int mouseY)
 {
     if (m_grabbedItem == NULL)
     {
         return;
     }
 
-    if (event.mouseButton.x >= m_inventorySlotsBeginPosition.x && event.mouseButton.y >= m_inventorySlotsBeginPosition.y)
+    if (mouseX >= m_inventorySlotsBeginPosition.x && mouseY >= m_inventorySlotsBeginPosition.y)
     {
-        InventorySlot *slot = mouseOverInventorySlot(event.mouseButton.x, event.mouseButton.y);
+        InventorySlot *slot = mouseOverInventorySlot(mouseX, mouseY);
         if (slot == NULL || (m_grabbedItem->slotSize() == 2 && slot->isLastRow))
         {
             return;
@@ -150,7 +199,7 @@ void InventorySideBar::processMouseButtonReleased(sf::Event &event)
         return;
     }
 
-    InventorySlot *slot = mouseOverEquipmentSlot(event.mouseButton.x, event.mouseButton.y);
+    InventorySlot *slot = mouseOverEquipmentSlot(mouseX, mouseY);
     if (slot == NULL)
     {
         return;

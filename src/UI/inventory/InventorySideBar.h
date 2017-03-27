@@ -18,7 +18,6 @@ struct InventorySlot
     int column;
     Item *item;
     bool isLastRow;
-    bool isFirstRow;
     bool isItemMainSlot;
 };
 
@@ -34,10 +33,15 @@ public:
     bool isMouseOnUI(int x, int y);
 
 private:
+    const int MOUSE_DRAG_MIN_DISTANCE_PX = 15;
+
     EquipmentManager *m_equipmentManager;
     int m_slotsMargin;
     int m_slotSize;
     sf::Vector2i m_inventorySlotsBeginPosition;
+    sf::Vector2i m_lastMousePressPosition;
+    bool m_readyToGrab;
+    bool m_readyToDrop;
     std::vector<std::vector<InventorySlot>> m_slots;
     std::map<equipment_type, InventorySlot> m_equipmentSlots;
     Item *m_grabbedItem;
@@ -48,6 +52,9 @@ private:
 
     void processMouseButtonPressed(sf::Event &event);
     void processMouseButtonReleased(sf::Event &event);
+    void processMouseMoved(sf::Event &event);
+    void grabItem(int mouseX, int mouseY);
+    void dropItem(int mouseX, int mouseY);
     void drawSlotItems(sf::RenderWindow *window);
     void drawSlotBackgrounds(sf::RenderWindow *window);
     void drawSlotHighlights(sf::RenderWindow *window);

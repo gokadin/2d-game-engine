@@ -72,6 +72,12 @@ void Game::processEvent(sf::Event &event)
 
             m_mousePressWasOnUI = false;
             break;
+        case sf::Event::MouseMoved:
+            if (m_userInterface->isMouseOnUI(event.mouseMove.x, event.mouseMove.y))
+            {
+                m_userInterface->processEvent(event);
+            }
+            break;
         case sf::Event::KeyPressed:
             switch (event.key.code)
             {
