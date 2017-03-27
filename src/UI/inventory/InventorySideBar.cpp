@@ -34,8 +34,16 @@ InventorySideBar::InventorySideBar(EquipmentManager *equipmentManager):
         for (int j = 0; j < numSlotsPerRow; j++)
         {
             InventorySlot slot;
-            slot.x = m_x + m_inventorySlotsBeginPosition.x + (m_slotsMargin + i * (m_slotSize + m_slotsMargin));
-            slot.y = m_inventorySlotsBeginPosition.y + (m_slotsMargin + j * (m_slotSize + m_slotsMargin));
+            slot.x = m_x + m_inventorySlotsBeginPosition.x + (m_slotsMargin + j * (m_slotSize + m_slotsMargin));
+            slot.y = m_inventorySlotsBeginPosition.y + (m_slotsMargin + i * (m_slotSize + m_slotsMargin));
+            slot.width = m_slotSize;
+            slot.height = m_slotSize;
+            slot.row = j;
+            slot.column = i;
+            slot.item = NULL;
+            slot.isLastRow = i == numSlotsPerColumn - 1;
+            slot.isFirstRow = i == 0;
+            slot.isItemMainSlot = false;
             slotRow.push_back(slot);
         }
         m_slots.push_back(slotRow);
@@ -47,8 +55,14 @@ InventorySideBar::InventorySideBar(EquipmentManager *equipmentManager):
     m_equipmentSlots[equipment_type::MAIN_HAND].height = std::stoi(metadata["MAIN_HAND_SLOT_HEIGHT"]);
     m_equipmentSlots[equipment_type::MAIN_HAND].item = NULL;
 
+    m_slotHighlight.setOutlineThickness(1);
+    m_slotHighlight.setOutlineColor(sf::Color(240, 240, 240, 150));
+    m_slotHighlight.setFillColor(sf::Color::Transparent);
+
     tempS = new ThousandTruths();
     m_slots[2][2].item = tempS;
+    m_slots[2][2].isItemMainSlot = true;
+    m_slots[3][2].item = tempS;
 }
 
 InventorySideBar::~InventorySideBar()
@@ -73,15 +87,15 @@ void InventorySideBar::processMouseButtonPressed(sf::Event &event)
 {
     if (event.mouseButton.x < m_inventorySlotsBeginPosition.x || event.mouseButton.y < m_inventorySlotsBeginPosition.y)
     {
-        EquipmentSlot *slot = mouseOverEquipmentSlot(event.mouseButton.x, event.mouseButton.y);
+        InventorySlot *slot = mouseOverEquipmentSlot(event.mouseButton.x, event.mouseButton.y);
         if (slot == NULL || slot->item == NULL)
         {
             return;
         }
 
         m_grabbedItem = slot->item;
-        m_equipmentManager->unequipMainHand((Weapon*)m_grabbedItem);
         slot->item = NULL;
+        m_equipmentManager->unequipMainHand();
 
         return;
     }
@@ -93,7 +107,16 @@ void InventorySideBar::processMouseButtonPressed(sf::Event &event)
     }
 
     m_grabbedItem = slot->item;
+
+    if (slot->item->slotSize() == 2)
+    {
+        int extensionSlotColumn = slot->isItemMainSlot ? slot->column + 1 : slot->column - 1;
+        m_slots[extensionSlotColumn][slot->row].item = NULL;
+        m_slots[extensionSlotColumn][slot->row].isItemMainSlot = false;
+    }
+
     slot->item = NULL;
+    slot->isItemMainSlot = false;
 }
 
 void InventorySideBar::processMouseButtonReleased(sf::Event &event)
@@ -106,12 +129,17 @@ void InventorySideBar::processMouseButtonReleased(sf::Event &event)
     if (event.mouseButton.x >= m_inventorySlotsBeginPosition.x && event.mouseButton.y >= m_inventorySlotsBeginPosition.y)
     {
         InventorySlot *slot = mouseOverInventorySlot(event.mouseButton.x, event.mouseButton.y);
-        if (slot == NULL)
+        if (slot == NULL || (m_grabbedItem->slotSize() == 2 && slot->isLastRow))
         {
             return;
         }
 
         slot->item = m_grabbedItem;
+        slot->isItemMainSlot = true;
+        if (m_grabbedItem->slotSize() == 2)
+        {
+            m_slots[slot->column + 1][slot->row].item = m_grabbedItem;
+        }
         m_grabbedItem = NULL;
 
         return;
@@ -122,7 +150,7 @@ void InventorySideBar::processMouseButtonReleased(sf::Event &event)
         return;
     }
 
-    EquipmentSlot *slot = mouseOverEquipmentSlot(event.mouseButton.x, event.mouseButton.y);
+    InventorySlot *slot = mouseOverEquipmentSlot(event.mouseButton.x, event.mouseButton.y);
     if (slot == NULL)
     {
         return;
@@ -147,6 +175,10 @@ void InventorySideBar::draw(sf::RenderWindow *window)
 
     window->draw(m_sprite);
 
+    drawSlotBackgrounds(window);
+
+    drawSlotHighlights(window);
+
     drawSlotItems(window);
 }
 
@@ -156,7 +188,7 @@ void InventorySideBar::drawSlotItems(sf::RenderWindow *window)
     {
         for (int j = 0; j < m_slots[i].size(); j++)
         {
-            if (m_slots[i][j].item == NULL)
+            if (!m_slots[i][j].isItemMainSlot || m_slots[i][j].item == NULL)
             {
                 continue;
             }
@@ -166,7 +198,7 @@ void InventorySideBar::drawSlotItems(sf::RenderWindow *window)
         }
     }
 
-    for (std::pair<equipment_type, EquipmentSlot> pair : m_equipmentSlots)
+    for (std::pair<equipment_type, InventorySlot> pair : m_equipmentSlots)
     {
         if (pair.second.item == NULL)
         {
@@ -174,8 +206,8 @@ void InventorySideBar::drawSlotItems(sf::RenderWindow *window)
         }
 
         EquipableItem *equipableItem = (EquipableItem*)pair.second.item;
-        equipableItem->equippedIcon().setPosition(pair.second.x, pair.second.y);
-        window->draw(equipableItem->equippedIcon());
+        equipableItem->icon().setPosition(pair.second.x, pair.second.y);
+        window->draw(equipableItem->icon());
     }
 
     // maybe should move this out, along with many other things in this class
@@ -185,6 +217,65 @@ void InventorySideBar::drawSlotItems(sf::RenderWindow *window)
         m_grabbedItem->icon().setPosition(mousePosition.x - 25, mousePosition.y - 51); // temp values
         window->draw(m_grabbedItem->icon());
     }
+}
+
+void InventorySideBar::drawSlotBackgrounds(sf::RenderWindow *window)
+{
+    for (int i = 0; i < m_slots.size(); i++)
+    {
+        for (int j = 0; j < m_slots[i].size(); j++)
+        {
+            if (!m_slots[i][j].isItemMainSlot || m_slots[i][j].item == NULL)
+            {
+                continue;
+            }
+
+            configureSlotBackground(m_slots[i][j]);
+            window->draw(m_slotBackground);
+        }
+    }
+
+    for (std::pair<equipment_type, InventorySlot> pair : m_equipmentSlots)
+    {
+        if (pair.second.item == NULL)
+        {
+            continue;
+        }
+
+        configureSlotBackground(pair.second);
+        window->draw(m_slotBackground);
+    }
+}
+
+void InventorySideBar::drawSlotHighlights(sf::RenderWindow *window)
+{
+    if (m_grabbedItem == NULL)
+    {
+        return;
+    }
+
+    sf::Vector2i mousePosition = sf::Mouse::getPosition(*((sf::Window*)window));
+    if (mousePosition.x >= m_inventorySlotsBeginPosition.x && mousePosition.y >= m_inventorySlotsBeginPosition.y)
+    {
+        InventorySlot *slot = mouseOverInventorySlot(mousePosition.x, mousePosition.y);
+        if (slot == NULL || (m_grabbedItem->slotSize() == 2 && slot->isLastRow))
+        {
+            return;
+        }
+
+        m_slotHighlight.setPosition(slot->x, slot->y);
+        m_slotHighlight.setSize(sf::Vector2f(m_slotSize, m_grabbedItem->slotSize() == 1 ? m_slotSize : m_slotSize * 2 + 1));
+        window->draw(m_slotHighlight);
+
+        return;
+    }
+}
+
+void InventorySideBar::configureSlotBackground(InventorySlot &slot)
+{
+    m_slotBackground.setPosition(slot.x, slot.y);
+    m_slotBackground.setFillColor(sf::Color(50, 25, 255, 75));
+    m_slotBackground.setSize(sf::Vector2f(m_slotSize, slot.item->slotSize() == 1 ? m_slotSize : m_slotSize * 2 + 1));
 }
 
 bool InventorySideBar::isMouseOnUI(int x, int y)
@@ -211,9 +302,9 @@ InventorySlot* InventorySideBar::mouseOverInventorySlot(int mouseX, int mouseY)
     return NULL;
 }
 
-EquipmentSlot *InventorySideBar::mouseOverEquipmentSlot(int mouseX, int mouseY)
+InventorySlot *InventorySideBar::mouseOverEquipmentSlot(int mouseX, int mouseY)
 {
-    for (std::pair<equipment_type, EquipmentSlot> pair : m_equipmentSlots)
+    for (std::pair<equipment_type, InventorySlot> pair : m_equipmentSlots)
     {
         if (mouseX >= pair.second.x && mouseX <= pair.second.x + pair.second.width &&
                 mouseY >= pair.second.y && mouseY <= pair.second.y + pair.second.height)

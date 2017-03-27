@@ -8,20 +8,18 @@
 #include "../../components/character/equipment/EquipmentManager.h"
 #include <map>
 
-struct EquipmentSlot
+struct InventorySlot
 {
     int x;
     int y;
     int width;
     int height;
+    int row;
+    int column;
     Item *item;
-};
-
-struct InventorySlot
-{
-    int x;
-    int y;
-    Item *item;
+    bool isLastRow;
+    bool isFirstRow;
+    bool isItemMainSlot;
 };
 
 class InventorySideBar : public UIElement
@@ -41,16 +39,21 @@ private:
     int m_slotSize;
     sf::Vector2i m_inventorySlotsBeginPosition;
     std::vector<std::vector<InventorySlot>> m_slots;
-    std::map<equipment_type, EquipmentSlot> m_equipmentSlots;
+    std::map<equipment_type, InventorySlot> m_equipmentSlots;
     Item *m_grabbedItem;
+    sf::RectangleShape m_slotBackground;
+    sf::RectangleShape m_slotHighlight;
 
     ThousandTruths *tempS;
 
     void processMouseButtonPressed(sf::Event &event);
     void processMouseButtonReleased(sf::Event &event);
     void drawSlotItems(sf::RenderWindow *window);
+    void drawSlotBackgrounds(sf::RenderWindow *window);
+    void drawSlotHighlights(sf::RenderWindow *window);
+    void configureSlotBackground(InventorySlot &slot);
     InventorySlot* mouseOverInventorySlot(int mouseX, int mouseY);
-    EquipmentSlot* mouseOverEquipmentSlot(int mouseX, int mouseY);
+    InventorySlot* mouseOverEquipmentSlot(int mouseX, int mouseY);
 };
 
 #endif //SFMLDEMO_INVENTORYSIDEBAR_H

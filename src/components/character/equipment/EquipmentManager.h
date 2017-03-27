@@ -13,7 +13,7 @@ public:
     void draw(sf::RenderWindow *window);
     void setStage(int stage) { if (m_mainHand != NULL) { m_mainHand->setPhase(stage); } }
     void equipMainHand(Weapon *weapon);
-    void unequipMainHand(Weapon *weapon);
+    void unequipMainHand();
 
 private:
     CharacterStats *m_characterStats;

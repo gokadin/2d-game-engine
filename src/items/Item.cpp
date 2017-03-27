@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Item.h"
 
-Item::Item(std::string iconFilename, bool isEquipable):
-        m_isEquipable(isEquipable)
+Item::Item(std::string iconFilename, bool isEquipable, int slotSize):
+        m_isEquipable(isEquipable), m_slotSize(slotSize)
 {
     if (!m_icon.loadFromFile(iconFilename))
     {

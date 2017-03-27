@@ -1,7 +1,7 @@
 #include "EquipmentManager.h"
 
 EquipmentManager::EquipmentManager(CharacterStats *characterStats):
-        m_characterStats(characterStats)
+        m_characterStats(characterStats), m_mainHand(NULL)
 {}
 
 void EquipmentManager::draw(sf::RenderWindow *window)
@@ -19,11 +19,14 @@ void EquipmentManager::equipMainHand(Weapon *weapon)
     addStats(weapon);
 }
 
-void EquipmentManager::unequipMainHand(Weapon *weapon)
+void EquipmentManager::unequipMainHand()
 {
-    m_mainHand = NULL;
+    if (m_mainHand != NULL)
+    {
+        removeStats(m_mainHand);
+    }
 
-    removeStats(weapon);
+    m_mainHand = NULL;
 }
 
 void EquipmentManager::addStats(EquipableItem *item)
