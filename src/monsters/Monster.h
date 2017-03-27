@@ -20,6 +20,8 @@ public:
     inline int hitBoxHeight() { return m_hitBoxHeight; }
     inline float x() { return m_x; }
     inline float y() { return m_y; }
+    inline float relX() { return m_relX; }
+    inline float relY() { return m_relY; }
     inline int id() { return m_id; }
     inline bool isAlive() { return m_phase != monster_phase::DEAD && m_phase != monster_phase::INACTIVE; }
     inline bool isInactive() { return m_phase == monster_phase::INACTIVE; }
@@ -27,6 +29,8 @@ public:
     inline float idleMoveSpeed() { return m_idleMoveSpeed; }
     inline float aggroMoveSpeed() { return m_aggroMoveSpeed; }
     inline int aggroRange() { return m_aggroRange; }
+    inline int maxLife() { return m_maxLife; }
+    inline int currentLife() { return m_currentLife; }
 
     inline void setPosition(float x, float y) { m_x = x; m_y = y; }
     inline void setHitBox(int width, int height) { m_hitBoxWidth = width; m_hitBoxHeight = height; }
@@ -54,7 +58,10 @@ protected:
     MapBounds *m_mapBounds;
     float m_x;
     float m_y;
-    int m_life;
+    float m_relX;
+    float m_relY;
+    int m_maxLife;
+    int m_currentLife;
     monster_phase m_phase;
     int m_hitBoxWidth;
     int m_hitBoxHeight;
