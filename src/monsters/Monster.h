@@ -7,13 +7,11 @@
 #include "../enums/monsters/MonsterPhase.h"
 #include "../data/definitions/map/MapBounds.h"
 
-
 class Monster
 {
 public:
     Monster(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds);
 
-    virtual void update() = 0;
     virtual void draw(sf::RenderWindow *window) = 0;
     virtual void resurect();
 

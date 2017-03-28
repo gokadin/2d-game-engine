@@ -33,7 +33,6 @@ void MonsterManager::update()
             continue;
         }
 
-        (*it).second->update();
         ++it;
     }
 }

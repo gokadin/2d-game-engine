@@ -5,6 +5,7 @@
 #include "../../data/definitions/character/CharacterGraphics.h"
 #include "../../data/definitions/map/MapBounds.h"
 #include "../../monsters/Monster.h"
+#include "AggroUpdater.h"
 
 class MonsterManagerUpdater : Updater
 {
@@ -12,12 +13,15 @@ public:
     MonsterManagerUpdater(MapBounds *mapBounds, CharacterGraphics *characterGraphics,
                           std::map<int, Monster *> monsters);
 
-    virtual void update();
-
 protected:
     MapBounds *m_mapBounds;
     CharacterGraphics *m_characterGraphics;
     std::map<int, Monster *> m_monsters;
+
+    virtual void aggro();
+
+private:
+    AggroUpdater m_aggroUpdater;
 };
 
 #endif //SFMLDEMO_MONSTERMANAGERUPDATER_H

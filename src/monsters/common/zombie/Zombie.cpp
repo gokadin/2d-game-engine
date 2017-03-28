@@ -6,11 +6,6 @@ Zombie::Zombie(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapB
     m_sprite.setTextureRect(sf::IntRect(0, 0, 56, 112));
 }
 
-void Zombie::update()
-{
-
-}
-
 void Zombie::draw(sf::RenderWindow *window)
 {
     if (m_phase == monster_phase::DEAD)

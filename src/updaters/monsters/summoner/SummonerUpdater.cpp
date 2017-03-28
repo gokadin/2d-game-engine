@@ -8,13 +8,14 @@ SummonerUpdater::SummonerUpdater(MapBounds *mapBounds, CharacterGraphics *charac
 
 void SummonerUpdater::update()
 {
-    MonsterManagerUpdater::update();
-
     resurectDeadMinions();
 }
 
 void SummonerUpdater::resurectDeadMinions()
 {
+    // need to change all this...
+    // should depend on each summoner's availability and position
+
     Summoner *summoner = NULL;
     for (std::pair<int, Monster *> pair : m_monsters)
     {

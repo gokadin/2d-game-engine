@@ -7,5 +7,5 @@ MinionUpdater::MinionUpdater(MapBounds *mapBounds, CharacterGraphics *characterG
 
 void MinionUpdater::update()
 {
-    MonsterManagerUpdater::update();
+    aggro();
 }

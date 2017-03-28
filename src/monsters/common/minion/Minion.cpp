@@ -4,11 +4,10 @@ Minion::Minion(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapB
         Monster(id, texture, mapState, mapBounds)
 {
     m_sprite.setTextureRect(sf::IntRect(0, 0, 64, 128));
-}
 
-void Minion::update()
-{
-
+    setIdleMoveSpeed(1.0f);
+    setAggroMoveSpeed(1.5f);
+    setAggroRange(50);
 }
 
 void Minion::draw(sf::RenderWindow *window)

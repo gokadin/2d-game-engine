@@ -8,7 +8,6 @@ class Minion : public Monster
 public:
     Minion(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds);
 
-    void update();
     void draw(sf::RenderWindow *window);
 };
 

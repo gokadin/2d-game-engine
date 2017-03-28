@@ -5,7 +5,13 @@ MonsterManagerUpdater::MonsterManagerUpdater(MapBounds *mapBounds, CharacterGrap
         m_mapBounds(mapBounds), m_characterGraphics(characterGraphics), m_monsters(monsters)
 {}
 
-void MonsterManagerUpdater::update()
+void MonsterManagerUpdater::aggro()
 {
-    // put generic logic here
+    for (auto pair : m_monsters)
+    {
+        if (pair.second->isAlive())
+        {
+            m_aggroUpdater.update(pair.second);
+        }
+    }
 }
