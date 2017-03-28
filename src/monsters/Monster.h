@@ -15,6 +15,7 @@ public:
 
     virtual void update() = 0;
     virtual void draw(sf::RenderWindow *window) = 0;
+    virtual void resurect();
 
     inline int hitBoxWidth() { return m_hitBoxWidth; }
     inline int hitBoxHeight() { return m_hitBoxHeight; }

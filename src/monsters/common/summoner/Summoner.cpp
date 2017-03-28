@@ -1,17 +1,17 @@
-#include "Zombie.h"
+#include "Summoner.h"
 
-Zombie::Zombie(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds):
+Summoner::Summoner(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds):
         Monster(id, texture, mapState, mapBounds)
 {
-    m_sprite.setTextureRect(sf::IntRect(0, 0, 56, 112));
+    m_sprite.setTextureRect(sf::IntRect(0, 0, 64, 128));
 }
 
-void Zombie::update()
+void Summoner::update()
 {
 
 }
 
-void Zombie::draw(sf::RenderWindow *window)
+void Summoner::draw(sf::RenderWindow *window)
 {
     if (m_phase == monster_phase::DEAD)
     {
@@ -23,4 +23,9 @@ void Zombie::draw(sf::RenderWindow *window)
     m_sprite.setPosition(sf::Vector2f(m_relX - m_hitBoxWidth / 2, m_relY - m_hitBoxHeight));
 
     window->draw(m_sprite);
+}
+
+void Summoner::resurectMinion(Monster *minion)
+{
+    minion->resurect();
 }

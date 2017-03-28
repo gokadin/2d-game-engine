@@ -17,6 +17,10 @@ public:
     virtual void draw(sf::RenderWindow *window);
 
     inline Monster* findMonster(int id) { return m_monsters[id]; }
+    inline int totalMonsters() { return m_totalMonsters; }
+
+    int totalAliveMonsters();
+    Monster* findAnyDeadMonster();
 
 protected:
     const int HEALTH_BAR_BOTTOM_MARGIN = 10;
@@ -36,6 +40,7 @@ protected:
 
 private:
     int m_nextId;
+    int m_totalMonsters;
 
     void drawHealthBar(sf::RenderWindow *window, Monster *monster);
 };

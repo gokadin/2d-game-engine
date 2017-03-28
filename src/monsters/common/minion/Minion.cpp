@@ -1,17 +1,17 @@
-#include "Zombie.h"
+#include "Minion.h"
 
-Zombie::Zombie(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds):
+Minion::Minion(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds):
         Monster(id, texture, mapState, mapBounds)
 {
-    m_sprite.setTextureRect(sf::IntRect(0, 0, 56, 112));
+    m_sprite.setTextureRect(sf::IntRect(0, 0, 64, 128));
 }
 
-void Zombie::update()
+void Minion::update()
 {
 
 }
 
-void Zombie::draw(sf::RenderWindow *window)
+void Minion::draw(sf::RenderWindow *window)
 {
     if (m_phase == monster_phase::DEAD)
     {

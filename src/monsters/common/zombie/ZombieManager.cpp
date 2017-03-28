@@ -2,8 +2,8 @@
 #include "ZombieManager.h"
 #include "Zombie.h"
 
-ZombieManager::ZombieManager(MapState *mapState, MapBounds *bounds, CharacterGraphics *characterGraphics):
-        MonsterManager(1000, mapState, bounds, characterGraphics)
+ZombieManager::ZombieManager(int baseId, MapState *mapState, MapBounds *bounds, CharacterGraphics *characterGraphics):
+        MonsterManager(baseId, mapState, bounds, characterGraphics)
 {
     if (!m_texture.loadFromFile("../src/storage/game/monsters/common/zombie/texture.png"))
     {

@@ -1,6 +1,4 @@
 #include "SkillManagerUpdater.h"
-#include "../../skills/Projectile.h"
-#include "../../skills/ProjectileSkill.h"
 
 SkillManagerUpdater::SkillManagerUpdater(Monsters *monsters, MapBounds *m_bounds, MapGraphics *mapGraphics,
                                          std::vector<skill_names> &slots, std::map<skill_names, Skill *> &skills):

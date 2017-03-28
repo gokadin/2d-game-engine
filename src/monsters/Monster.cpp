@@ -27,3 +27,15 @@ void Monster::addToMap()
 {
     m_mapBounds->addBounds(m_x - m_hitBoxWidth / 2, m_y - m_hitBoxHeight, m_hitBoxWidth, m_hitBoxHeight, m_id);
 }
+
+void Monster::resurect()
+{
+    if (m_phase != monster_phase::DEAD)
+    {
+        return;
+    }
+
+    m_phase = monster_phase::IDLE;
+    m_currentLife = m_maxLife;
+    addToMap();
+}

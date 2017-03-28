@@ -7,7 +7,7 @@
 class ZombieManager : public MonsterManager
 {
 public:
-    ZombieManager(MapState *mapState, MapBounds *bounds, CharacterGraphics *characterGraphics);
+    ZombieManager(int baseId, MapState *mapState, MapBounds *bounds, CharacterGraphics *characterGraphics);
     ~ZombieManager();
 
     void update();
