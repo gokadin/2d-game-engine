@@ -26,10 +26,7 @@ public:
     inline float y() { return m_y; }
     inline int damage() { return m_damage; }
 
-    inline void hitMonster(Monster *monster)
-    {
-        monster->inflictDamage(m_damage);
-    }
+    virtual void hitMonster(Monster *monster);
 
 protected:
     projectile_phase m_phase;

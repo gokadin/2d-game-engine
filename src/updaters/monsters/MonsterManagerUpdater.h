@@ -10,11 +10,12 @@
 class MonsterManagerUpdater : Updater
 {
 public:
-    MonsterManagerUpdater(MapBounds *mapBounds, CharacterGraphics *characterGraphics,
+    MonsterManagerUpdater(MapBounds *mapBounds, MapState *mapState, CharacterGraphics *characterGraphics,
                           std::map<int, Monster *> monsters);
 
 protected:
     MapBounds *m_mapBounds;
+    MapState *m_mapState;
     CharacterGraphics *m_characterGraphics;
     std::map<int, Monster *> m_monsters;
 

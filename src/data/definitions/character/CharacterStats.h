@@ -9,10 +9,9 @@ class CharacterStats : public Stats, public Observable
 {
 public:
     CharacterStats():
-            m_life(100), m_moveModifier(1.0f)
+            m_moveModifier(1.0f)
     {}
 
-    inline int life() { return m_life; }
     inline float moveSpeed() { return BASE_MOVE_SPEED * m_moveModifier; }
     inline int spellPower() { return m_spellPower; }
 
@@ -32,7 +31,6 @@ public:
 private:
     const int BASE_MOVE_SPEED = 2;
 
-    int m_life;
     float m_moveModifier;
     int m_spellPower;
 };

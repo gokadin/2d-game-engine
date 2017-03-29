@@ -7,7 +7,7 @@
 class SummonerUpdater : public MonsterManagerUpdater
 {
 public:
-    SummonerUpdater(MapBounds *mapBounds, CharacterGraphics *characterGraphics,
+    SummonerUpdater(MapBounds *mapBounds, MapState *mapState, CharacterGraphics *characterGraphics,
                     const std::map<int, Monster *> &monsters, MonsterManager *minionManager);
 
     void update();

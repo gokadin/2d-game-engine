@@ -18,3 +18,8 @@ void Projectile::cancel()
 {
     m_phase = projectile_phase::INACTIVE;
 }
+
+void Projectile::hitMonster(Monster *monster)
+{
+    monster->inflictDamage(m_damage);
+}

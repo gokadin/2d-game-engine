@@ -94,6 +94,10 @@ void Game::processEvent(sf::Event &event)
                 case sf::Keyboard::I:
                     m_userInterface->toggleInventory();
                     break;
+                case sf::Keyboard::Num1:
+                    auto mousePosition = sf::Mouse::getPosition(*(sf::Window*)m_window);
+                    m_skillManager->activate(1, mousePosition.x, mousePosition.y);
+                    break;
             }
             break;
     }

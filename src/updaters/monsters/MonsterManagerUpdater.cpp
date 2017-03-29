@@ -1,8 +1,9 @@
 #include "MonsterManagerUpdater.h"
 
-MonsterManagerUpdater::MonsterManagerUpdater(MapBounds *mapBounds, CharacterGraphics *characterGraphics,
+MonsterManagerUpdater::MonsterManagerUpdater(MapBounds *mapBounds, MapState *mapState, CharacterGraphics *characterGraphics,
                                              std::map<int, Monster *> monsters):
-        m_mapBounds(mapBounds), m_characterGraphics(characterGraphics), m_monsters(monsters)
+        m_mapBounds(mapBounds), m_mapState(mapState), m_characterGraphics(characterGraphics), m_monsters(monsters),
+        m_aggroUpdater(mapState)
 {}
 
 void MonsterManagerUpdater::aggro()

@@ -1,6 +1,7 @@
 #include "SkillManager.h"
 #include "../../skills/fireball/Fireball.h"
 #include "../../events/skillEvents/SkillActivatedEvent.h"
+#include "../../skills/poisonNova/PoisonNova.h"
 
 SkillManager::SkillManager(MapState *mapState, MapBounds *mapBounds, MapGraphics *mapGraphics,
                            CharacterGraphics *characterGraphics, CharacterStats *characterStats, Monsters *monsters):
@@ -13,6 +14,7 @@ SkillManager::SkillManager(MapState *mapState, MapBounds *mapBounds, MapGraphics
     }
 
     m_skills[skill_names::FIREBALL] = new Fireball(mapState);
+    m_skills[skill_names::POISON_NOVA] = new PoisonNova(mapState);
 
     m_updater = new SkillManagerUpdater(monsters, mapBounds, mapGraphics, m_slots, m_skills);
 }

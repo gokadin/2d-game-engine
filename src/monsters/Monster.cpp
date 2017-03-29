@@ -1,10 +1,15 @@
 #include "Monster.h"
 
 Monster::Monster(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds):
-        m_id(id), m_texture(texture), m_mapState(mapState), m_mapBounds(mapBounds), m_x(0), m_y(0), m_maxLife(100),
-        m_currentLife(100), m_phase(monster_phase::IDLE), m_hitBoxWidth(0), m_hitBoxHeight(0)
+        m_id(id), m_texture(texture), m_mapState(mapState), m_mapBounds(mapBounds), m_x(0), m_y(0),
+        m_phase(monster_phase::IDLE), m_hitBoxWidth(0), m_hitBoxHeight(0)
 {
     m_sprite.setTexture(*texture);
+}
+
+void Monster::update()
+{
+    m_effectManager.update();
 }
 
 void Monster::inflictDamage(int damage)

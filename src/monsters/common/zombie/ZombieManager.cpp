@@ -16,9 +16,11 @@ ZombieManager::ZombieManager(int baseId, MapState *mapState, MapBounds *bounds, 
     zombie->setIdleMoveSpeed(1.5);
     zombie->setAggroMoveSpeed(2.5);
     zombie->setAggroRange(100);
+    zombie->setMaxLife(100);
+    zombie->setCurrentLife(100);
     addMonster(zombie);
 
-    m_updater = new ZombieUpdater(m_bounds, m_characterGraphics, m_monsters);
+    m_updater = new ZombieUpdater(m_bounds, m_mapState, m_characterGraphics, m_monsters);
 }
 
 ZombieManager::~ZombieManager()

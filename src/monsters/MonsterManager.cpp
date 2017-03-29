@@ -27,12 +27,13 @@ void MonsterManager::update()
 {
     for (auto it = m_monsters.cbegin(); it != m_monsters.cend();)
     {
-        if ((*it).second->isInactive())
+        if ((*it).second->phase() == monster_phase::INACTIVE)
         {
             it = m_monsters.erase(it);
             continue;
         }
 
+        (*it).second->update();
         ++it;
     }
 }

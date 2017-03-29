@@ -1,8 +1,8 @@
 #include "MinionUpdater.h"
 
-MinionUpdater::MinionUpdater(MapBounds *mapBounds, CharacterGraphics *characterGraphics,
+MinionUpdater::MinionUpdater(MapBounds *mapBounds, MapState *mapState, CharacterGraphics *characterGraphics,
                              const std::map<int, Monster *> &monsters):
-        MonsterManagerUpdater(mapBounds, characterGraphics, monsters)
+        MonsterManagerUpdater(mapBounds, mapState, characterGraphics, monsters)
 {}
 
 void MinionUpdater::update()

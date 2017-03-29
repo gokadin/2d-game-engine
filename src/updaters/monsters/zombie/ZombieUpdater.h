@@ -6,7 +6,7 @@
 class ZombieUpdater : public MonsterManagerUpdater
 {
 public:
-    ZombieUpdater(MapBounds *mapBounds, CharacterGraphics *characterGraphics, std::map<int, Monster *> monsters);
+    ZombieUpdater(MapBounds *mapBounds, MapState *mapState, CharacterGraphics *characterGraphics, std::map<int, Monster *> monsters);
 
     void update();
 

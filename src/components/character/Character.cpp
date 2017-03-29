@@ -62,3 +62,12 @@ void Character::castSpell(Skill *skill)
         ((InstantCastAnimation&)(m_animations->get(character_animation_type::INSTANT_CAST))).start(*skill);
     }
 }
+
+void Character::inflictDamage(int damage)
+{
+    m_currentLife -= damage;
+    if (m_currentLife <= 0)
+    {
+        // ...
+    }
+}

@@ -1,7 +1,7 @@
 #include "ZombieUpdater.h"
 
-ZombieUpdater::ZombieUpdater(MapBounds *mapBounds, CharacterGraphics *characterGraphics, std::map<int, Monster *> monsters):
-        MonsterManagerUpdater(mapBounds, characterGraphics, monsters), m_counter(0), m_mul(0.5f)
+ZombieUpdater::ZombieUpdater(MapBounds *mapBounds, MapState *mapState, CharacterGraphics *characterGraphics, std::map<int, Monster *> monsters):
+        MonsterManagerUpdater(mapBounds, mapState, characterGraphics, monsters), m_counter(0), m_mul(0.5f)
 {}
 
 void ZombieUpdater::update()

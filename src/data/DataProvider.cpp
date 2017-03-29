@@ -36,4 +36,5 @@ void DataProvider::loadCharacter(Character *character)
 void DataProvider::loadSkills(SkillManager *skillManager)
 {
     skillManager->assign(0, skill_names::FIREBALL);
+    skillManager->assign(1, skill_names::POISON_NOVA);
 }

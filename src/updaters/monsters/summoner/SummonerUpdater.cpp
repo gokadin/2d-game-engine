@@ -1,9 +1,9 @@
 #include "SummonerUpdater.h"
 #include "../../../monsters/common/summoner/Summoner.h"
 
-SummonerUpdater::SummonerUpdater(MapBounds *mapBounds, CharacterGraphics *characterGraphics,
+SummonerUpdater::SummonerUpdater(MapBounds *mapBounds, MapState *mapState, CharacterGraphics *characterGraphics,
                                  const std::map<int, Monster *> &monsters, MonsterManager *minions):
-        MonsterManagerUpdater(mapBounds, characterGraphics, monsters), m_minionManager(minions)
+        MonsterManagerUpdater(mapBounds, mapState, characterGraphics, monsters), m_minionManager(minions)
 {}
 
 void SummonerUpdater::update()

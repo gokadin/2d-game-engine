@@ -4,7 +4,8 @@
 enum class skill_names
 {
     NONE,
-    FIREBALL
+    FIREBALL,
+    POISON_NOVA
 };
 
 #endif //SFMLDEMO_SKILLTYPES_H

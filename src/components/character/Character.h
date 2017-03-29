@@ -10,8 +10,9 @@
 #include "../../skills/Skill.h"
 #include "../../rendering/renderers/character/CharacterRenderer.h"
 #include "equipment/EquipmentManager.h"
+#include "../../common/MortalEntity.h"
 
-class Character : public GameComponent, public Observer
+class Character : public GameComponent, public MortalEntity, public Observer
 {
 public:
     Character();
@@ -25,6 +26,8 @@ public:
     inline CharacterState *state() { return m_state; }
     inline CharacterGraphics *graphics() { return m_graphics; }
     inline EquipmentManager *equipmentManager() { return m_equipmentManager; }
+
+    void inflictDamage(int damage);
 
 private:
     CharacterStats *m_stats;

@@ -16,9 +16,11 @@ SummonerManager::SummonerManager(int baseId, MapState *mapState, MapBounds *boun
     summoner->setIdleMoveSpeed(1.5);
     summoner->setAggroMoveSpeed(2.5);
     summoner->setAggroRange(100);
+    summoner->setMaxLife(100);
+    summoner->setCurrentLife(100);
     addMonster(summoner);
 
-    m_updater = new SummonerUpdater(m_bounds, m_characterGraphics, m_monsters, m_minionManager);
+    m_updater = new SummonerUpdater(m_bounds, m_mapState, m_characterGraphics, m_monsters, m_minionManager);
 }
 
 SummonerManager::~SummonerManager()

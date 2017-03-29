@@ -6,36 +6,36 @@
 #include "../data/definitions/map/MapState.h"
 #include "../enums/monsters/MonsterPhase.h"
 #include "../data/definitions/map/MapBounds.h"
+#include "../effects/EffectManager.h"
+#include "../common/MortalEntity.h"
 
-class Monster
+class Monster : public MortalEntity
 {
 public:
     Monster(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds);
 
     virtual void draw(sf::RenderWindow *window) = 0;
+    virtual void update();
     virtual void resurect();
 
     inline int hitBoxWidth() { return m_hitBoxWidth; }
     inline int hitBoxHeight() { return m_hitBoxHeight; }
     inline float x() { return m_x; }
     inline float y() { return m_y; }
-    inline float relX() { return m_relX; }
-    inline float relY() { return m_relY; }
     inline int id() { return m_id; }
     inline bool isAlive() { return m_phase != monster_phase::DEAD && m_phase != monster_phase::INACTIVE; }
-    inline bool isInactive() { return m_phase == monster_phase::INACTIVE; }
-    inline bool isDead() { return m_phase == monster_phase::DEAD; }
+    inline monster_phase phase() { return m_phase; }
     inline float idleMoveSpeed() { return m_idleMoveSpeed; }
     inline float aggroMoveSpeed() { return m_aggroMoveSpeed; }
     inline int aggroRange() { return m_aggroRange; }
-    inline int maxLife() { return m_maxLife; }
-    inline int currentLife() { return m_currentLife; }
+    inline EffectManager& effectManager() { return m_effectManager; }
 
     inline void setPosition(float x, float y) { m_x = x; m_y = y; }
     inline void setHitBox(int width, int height) { m_hitBoxWidth = width; m_hitBoxHeight = height; }
     inline void setIdleMoveSpeed(float idleMoveSpeed) { m_idleMoveSpeed = idleMoveSpeed; }
     inline void setAggroMoveSpeed(float aggroMoveSpeed) { m_aggroMoveSpeed = aggroMoveSpeed; }
     inline void setAggroRange(int aggroRange) { m_aggroRange = aggroRange; }
+    inline void setPhase(monster_phase phase) { m_phase = phase; }
     inline void move(float diffX, float diffY)
     {
         m_mapBounds->removeBounds(m_x - m_hitBoxWidth / 2, m_y - m_hitBoxHeight, m_hitBoxWidth, m_hitBoxHeight, m_id);
@@ -55,12 +55,9 @@ protected:
     sf::Sprite m_sprite;
     MapState *m_mapState;
     MapBounds *m_mapBounds;
+    EffectManager m_effectManager;
     float m_x;
     float m_y;
-    float m_relX;
-    float m_relY;
-    int m_maxLife;
-    int m_currentLife;
     monster_phase m_phase;
     int m_hitBoxWidth;
     int m_hitBoxHeight;

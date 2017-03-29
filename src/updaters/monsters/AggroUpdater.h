@@ -6,7 +6,12 @@
 class AggroUpdater
 {
 public:
+    AggroUpdater(MapState *mapState);
+
     void update(Monster *monster);
+
+private:
+    MapState *m_mapState;
 };
 
 #endif //SFMLDEMO_AGGROUPDATER_H
