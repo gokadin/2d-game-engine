@@ -9,6 +9,7 @@
 #include "../components/map/Map.h"
 #include "../components/monsters/Monsters.h"
 #include "../components/UI/UserInterface.h"
+#include "../components/mapObjects/MapObjects.h"
 
 class Game
 {
@@ -28,6 +29,7 @@ private:
     SkillManager *m_skillManager;
     Monsters *m_monsters;
     UserInterface *m_userInterface;
+    MapObjects *m_mapObjects;
 
     bool m_mousePressWasOnUI;
 

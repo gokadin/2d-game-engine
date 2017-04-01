@@ -77,7 +77,7 @@ void MapUpdater::updateMovement()
 bool MapUpdater::processFirstQuadrantCollisions()
 {
     int boundI = (int)((m_state->cx() + m_characterGraphics->collisionRadius()) / m_bounds->tileWidth()) + 1;
-    int boundJ = (int)((m_state->cy() - m_characterGraphics->collisionRadius()) / m_bounds->tileWidth()) - 1;
+    int boundJ = (int)((m_state->cy() - m_characterGraphics->collisionRadius()) / m_bounds->tileHeight()) - 1;
 
     // diagonal
     if (m_bounds->get(boundI - 1, boundJ) == 2 && m_bounds->get(boundI, boundJ + 1) == 2)
@@ -147,7 +147,7 @@ bool MapUpdater::processFirstQuadrantCollisions()
 bool MapUpdater::processSecondQuadrantCollisions()
 {
     int boundI = (int)((m_state->cx() - m_characterGraphics->collisionRadius()) / m_bounds->tileWidth()) - 1;
-    int boundJ = (int)((m_state->cy() - m_characterGraphics->collisionRadius()) / m_bounds->tileWidth()) - 1;
+    int boundJ = (int)((m_state->cy() - m_characterGraphics->collisionRadius()) / m_bounds->tileHeight()) - 1;
 
     // diagonal
     if (m_bounds->get(boundI + 1, boundJ) == 2 && m_bounds->get(boundI, boundJ + 1) == 2)
@@ -217,7 +217,7 @@ bool MapUpdater::processSecondQuadrantCollisions()
 bool MapUpdater::processThirdQuadrantCollisions()
 {
     int boundI = (int)((m_state->cx() - m_characterGraphics->collisionRadius()) / m_bounds->tileWidth()) - 1;
-    int boundJ = (int)((m_state->cy() + m_characterGraphics->collisionRadius()) / m_bounds->tileWidth()) + 1;
+    int boundJ = (int)((m_state->cy() + m_characterGraphics->collisionRadius()) / m_bounds->tileHeight()) + 1;
 
     // diagonal
     if (m_bounds->get(boundI + 1, boundJ) == 2 && m_bounds->get(boundI, boundJ - 1) == 2)
@@ -287,7 +287,7 @@ bool MapUpdater::processThirdQuadrantCollisions()
 bool MapUpdater::processFourthQuadrantCollisions()
 {
     int boundI = (int)((m_state->cx() + m_characterGraphics->collisionRadius()) / m_bounds->tileWidth()) + 1;
-    int boundJ = (int)((m_state->cy() + m_characterGraphics->collisionRadius()) / m_bounds->tileWidth()) + 1;
+    int boundJ = (int)((m_state->cy() + m_characterGraphics->collisionRadius()) / m_bounds->tileHeight()) + 1;
 
     // diagonal
     if (m_bounds->get(boundI - 1, boundJ) == 2 && m_bounds->get(boundI, boundJ - 1) == 2)

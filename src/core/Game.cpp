@@ -11,6 +11,7 @@ Game::Game(sf::RenderWindow *window):
     m_skillManager = new SkillManager(m_map->state(), m_map->bounds(), m_map->graphics(), m_character->graphics(),
                                       m_character->stats(), m_monsters);
     m_userInterface = new UserInterface(m_character->equipmentManager());
+    m_mapObjects = new MapObjects(m_map->state());
 
     load();
     subscribeComponents();
@@ -24,6 +25,7 @@ Game::~Game()
     delete m_skillManager;
     delete m_monsters;
     delete m_userInterface;
+    delete m_mapObjects;
 }
 
 void Game::load()
@@ -110,6 +112,7 @@ void Game::update()
     m_skillManager->update();
     m_monsters->update();
     m_userInterface->update();
+    m_mapObjects->update();
 }
 
 void Game::draw()
@@ -119,4 +122,5 @@ void Game::draw()
     m_skillManager->draw(m_window);
     m_monsters->draw(m_window);
     m_userInterface->draw(m_window);
+    m_mapObjects->draw(m_window);
 }
