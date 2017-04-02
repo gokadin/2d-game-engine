@@ -25,7 +25,8 @@ public:
     void removeBounds(float x, float y, int width, int height, int value);
     bool isPositionOutOfBounds(float x, float y);
     bool areIndexesOutOfBounds(int boundI, int boundJ);
-    int indexFromPosition(float xOry);
+    inline int indexOfX(float x) { return (int)(x / m_tileWidth); }
+    inline int indexOfY(float y) { return (int)(y / m_tileHeight); }
 
 private:
     std::vector<std::vector<int>> m_bounds;

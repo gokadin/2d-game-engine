@@ -24,7 +24,7 @@ public:
 
 private:
     const int MENU_ROW_HEIGHT = 30;
-    const int MENU_ROW_PADDING_Y = 10;
+    const int MENU_ROW_PADDING_Y = 5;
     const int MENU_MIN_WIDTH = 10;
     const int MENU_TOP_MARGIN = 100;
     const int MENU_PADDING = 20;

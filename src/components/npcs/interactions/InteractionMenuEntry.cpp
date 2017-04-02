@@ -4,7 +4,7 @@ InteractionMenuEntry::InteractionMenuEntry(Interaction *interaction, GameFonts *
         m_interaction(interaction)
 {
     m_text.setFont(fonts->getDefault());
-    m_text.setCharacterSize(14);
+    m_text.setCharacterSize(16);
     m_text.setColor(sf::Color::White);
     m_text.setString(m_interaction->title());
 }

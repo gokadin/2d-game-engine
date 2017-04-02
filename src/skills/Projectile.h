@@ -22,8 +22,8 @@ public:
     inline bool isActive() { return m_phase != projectile_phase::INACTIVE; }
     inline bool isFlying() { return m_phase == projectile_phase::FLYING; }
     inline bool isHitting() { return m_phase == projectile_phase::HITTING; }
-    inline float x() { return m_x; }
-    inline float y() { return m_y; }
+    inline float ax() { return m_x; }
+    inline float ay() { return m_y; }
     inline int damage() { return m_damage; }
 
     virtual void hitMonster(Monster *monster);

@@ -13,24 +13,27 @@ void MapBounds::setBounds(std::vector<std::vector<int>> bounds)
 
 void MapBounds::addBounds(float x, float y, int width, int height, int value)
 {
-    int boundI = indexFromPosition(x);
-    int boundJ = indexFromPosition(y);
+    int boundI = indexOfX(x);
+    int boundJ = indexOfY(y);
     for (int i = 0; i < width / m_tileWidth; i++)
     {
-        for (int j = 0; j < height / m_tileWidth; j++)
+        for (int j = 0; j < height / m_tileHeight; j++)
         {
-            m_bounds[boundI + i][boundJ + j] = value;
+            if (m_bounds[boundI + i][boundJ + j] == 0)
+            {
+                m_bounds[boundI + i][boundJ + j] = value;
+            }
         }
     }
 }
 
 void MapBounds::removeBounds(float x, float y, int width, int height, int value)
 {
-    int boundI = indexFromPosition(x);
-    int boundJ = indexFromPosition(y);
-    for (int i = -1; i < width / m_tileWidth + 1; i++)
+    int boundI = indexOfX(x);
+    int boundJ = indexOfY(y);
+    for (int i = 0; i < width / m_tileWidth + 1; i++)
     {
-        for (int j = -1; j < height / m_tileWidth + 1; j++)
+        for (int j = 0; j < height / m_tileHeight + 1; j++)
         {
             if (m_bounds[boundI + i][boundJ + j] == value)
             {
@@ -42,15 +45,10 @@ void MapBounds::removeBounds(float x, float y, int width, int height, int value)
 
 bool MapBounds::isPositionOutOfBounds(float x, float y)
 {
-    return areIndexesOutOfBounds(indexFromPosition(x), indexFromPosition(y));
+    return areIndexesOutOfBounds(indexOfX(x), indexOfY(y));
 }
 
 bool MapBounds::areIndexesOutOfBounds(int boundI, int boundJ)
 {
     return boundI < 0 || boundJ < 0 || boundI >= m_width - 1 || boundJ >= m_height - 1;
-}
-
-int MapBounds::indexFromPosition(float xOry)
-{
-    return (int)(xOry / m_tileWidth);
 }

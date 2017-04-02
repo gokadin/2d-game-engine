@@ -2,8 +2,8 @@
 #include "../../../core/Engine.h"
 
 MapRenderer::MapRenderer(MapGraphics *graphics, MapState *state, MapBounds *data):
-        m_graphics(graphics), m_state(state), m_data(data), x(false), square(sf::Vector2f(16, 16)),
-        boundSq(sf::Vector2f(16, 16))
+        m_graphics(graphics), m_state(state), m_data(data), x(false), square(sf::Vector2f(32, 16)),
+        boundSq(sf::Vector2f(32, 16))
 {
     square.setFillColor(sf::Color(255, 0, 0, 100));
 }
@@ -14,87 +14,97 @@ void MapRenderer::draw(sf::RenderWindow *window)
 
     window->draw(m_graphics->sprite());
 
-//    for (int i = 0; i < m_data->bounds().size(); i++)
+//    for (int i = 0; i < m_data->width(); i++)
 //    {
-//        for (int j = 0; j < m_data->bounds()[i].size(); j++)
+//        for (int j = 0; j < m_data->height(); j++)
 //        {
-//            if (m_data->bounds()[i][j] > 0)
-//            {
-//                square.setPosition(i * 16 - m_state->x(), j * 16 - m_state->y());
+//            float posX = i * m_data->tileWidth() - m_state->x();
+//            float posY = j * m_data->tileHeight() - m_state->y();
 //
+//            switch (m_data->get(i, j))
+//            {
+//                case 2:
+//                {
+//                    sf::VertexArray triangleR(sf::Triangles, 3);
+//
+//                    triangleR[0].position = sf::Vector2f(posX, posY);
+//                    triangleR[1].position = sf::Vector2f(posX + m_data->tileWidth(), posY);
+//                    triangleR[2].position = sf::Vector2f(posX, posY + m_data->tileHeight());
+//
+//                    triangleR[0].color = sf::Color(0, 0, 0, 200);
+//                    triangleR[1].color = sf::Color(0, 0, 0, 200);
+//                    triangleR[2].color = sf::Color(0, 0, 0, 200);
+//
+//                    window->draw(triangleR);
+//                    break;
+//                }
+//                case 3:
+//                {
+//                    sf::VertexArray triangleT(sf::Triangles, 3);
+//
+//                    triangleT[0].position = sf::Vector2f(posX, posY);
+//                    triangleT[1].position = sf::Vector2f(posX + m_data->tileWidth(),
+//                                                         posY);
+//                    triangleT[2].position = sf::Vector2f(posX + m_data->tileWidth(),
+//                                                         posY + m_data->tileHeight());
+//
+//                    triangleT[0].color = sf::Color(0, 0, 0, 200);
+//                    triangleT[1].color = sf::Color(0, 0, 0, 200);
+//                    triangleT[2].color = sf::Color(0, 0, 0, 200);
+//
+//                    window->draw(triangleT);
+//                    break;
+//                }
+//                case 4:
+//                {
+//                    sf::VertexArray triangleF(sf::Triangles, 3);
+//
+//                    triangleF[0].position = sf::Vector2f(posX, posY);
+//                    triangleF[1].position = sf::Vector2f(posX + m_data->tileWidth(),
+//                                                         posY + m_data->tileHeight());
+//                    triangleF[2].position = sf::Vector2f(posX,
+//                                                         posY + m_data->tileHeight());
+//
+//                    triangleF[0].color = sf::Color(0, 0, 0, 200);
+//                    triangleF[1].color = sf::Color(0, 0, 0, 200);
+//                    triangleF[2].color = sf::Color(0, 0, 0, 200);
+//
+//                    window->draw(triangleF);
+//                    break;
+//                }
+//                case 5:
+//                {
+//                    sf::VertexArray triangleG(sf::Triangles, 3);
+//
+//                    triangleG[0].position = sf::Vector2f(posX + m_data->tileWidth(), posY);
+//                    triangleG[1].position = sf::Vector2f(posX + m_data->tileWidth(),
+//                                                         posY + m_data->tileHeight());
+//                    triangleG[2].position = sf::Vector2f(posX,
+//                                                         posY + m_data->tileHeight());
+//
+//                    triangleG[0].color = sf::Color(0, 0, 0, 200);
+//                    triangleG[1].color = sf::Color(0, 0, 0, 200);
+//                    triangleG[2].color = sf::Color(0, 0, 0, 200);
+//
+//                    window->draw(triangleG);
+//                    break;
+//                }
+//                case 1:
+//                {
+//                    square.setFillColor(sf::Color(255, 0, 0, 100));
+//                    square.setPosition(i * m_data->tileWidth() - m_state->x(), j * m_data->tileHeight() - m_state->y());
+//                    window->draw(square);
+//                    break;
+//                }
+//            }
+//
+//            if (m_data->get(i, j) >= 1000)
+//            {
+//                square.setFillColor(sf::Color(0, 255, 0, 100));
+//                square.setPosition(i * m_data->tileWidth() - m_state->x(), j * m_data->tileHeight() - m_state->y());
 //                window->draw(square);
 //            }
 //        }
-//    }
-
-//    int boundI = (int)((m_state->cx() - 32) / m_graphics->tileRadius()) - 1;
-//    int boundJ = (int)((m_state->cy() + 32) / m_graphics->tileRadius());
-//
-//    boundSq.setFillColor(sf::Color(255, 255, 255, 100));
-//    if (m_data->bounds()[boundI][boundJ] > 0)
-//    {
-//        boundSq.setFillColor(sf::Color(0, 255, 0, 150));
-//    }
-//    boundSq.setPosition(Engine::CX - 32 - 16, Engine::CY + 32);
-//    window->draw(boundSq);
-//
-//    for (int i = 0; i < 4; i++)
-//    {
-//        // top
-//        if (m_data->bounds()[boundI + i][boundJ - 1] == 0)
-//        {
-//            boundSq.setFillColor(sf::Color(255, 255, 255, 100));
-//        }
-//        else if (m_data->bounds()[boundI + i][boundJ - 1] > 0)
-//        {
-//            boundSq.setFillColor(sf::Color(0, 0, 0, 100));
-//        }
-//
-//        boundSq.setPosition(Engine::CX - 32 + i * 16, Engine::CY - 32 - 16);
-//
-//        window->draw(boundSq);
-//
-//        // left
-//        if (m_data->bounds()[boundI - 1][boundJ + i] == 0)
-//        {
-//            boundSq.setFillColor(sf::Color(255, 255, 255, 100));
-//        }
-//        else if (m_data->bounds()[boundI - 1][boundJ + i] > 0)
-//        {
-//            boundSq.setFillColor(sf::Color(0, 0, 0, 100));
-//        }
-//
-//        boundSq.setPosition(Engine::CX - 32 - 16, Engine::CY - 32 + i * 16);
-//
-//        window->draw(boundSq);
-//
-//        // right
-//        if (m_data->bounds()[boundI + 5][boundJ + i + 1] == 0)
-//        {
-//            boundSq.setFillColor(sf::Color(255, 255, 255, 100));
-//        }
-//        else if (m_data->bounds()[boundI + 5][boundJ + i] > 0)
-//        {
-//            boundSq.setFillColor(sf::Color(0, 0, 0, 100));
-//        }
-//
-//        boundSq.setPosition(Engine::CX - 32 + 16 * 4, Engine::CY - 32 + i * 16);
-//
-//        window->draw(boundSq);
-//
-//        // bottom
-//        if (m_data->bounds()[boundI + i][boundJ + 5] == 0)
-//        {
-//            boundSq.setFillColor(sf::Color(255, 255, 255, 100));
-//        }
-//        else if (m_data->bounds()[boundI + i][boundJ + 5] > 0)
-//        {
-//            boundSq.setFillColor(sf::Color(0, 0, 0, 100));
-//        }
-//
-//        boundSq.setPosition(Engine::CX - 32 + 16 * i, Engine::CY - 32 + 4 * 16);
-//
-//        window->draw(boundSq);
 //    }
 }
 
