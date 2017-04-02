@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Engine.h"
 #include "Game.h"
+#include "../utils/font/GameFonts.h"
 
 Engine::Engine() {}
 
@@ -10,26 +11,22 @@ void Engine::run()
 {
     sf::RenderWindow *window = new sf::RenderWindow(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Chrono");
 
-    sf::Font font;
-    if (!font.loadFromFile("../assets/fonts/Roboto-Regular.ttf"))
-    {
-        std::cout << "Could not load font." << std::endl;
-    }
+    auto gameFonts = new GameFonts();
 
     sf::Text fpsText;
-    fpsText.setFont(font);
+    fpsText.setFont(gameFonts->getDefault());
     fpsText.setCharacterSize(18);
     fpsText.setColor(sf::Color::Red);
     fpsText.setPosition(sf::Vector2f(5.0f, 5.0f));
     fpsText.setString("FPS --");
     sf::Text updateText;
-    updateText.setFont(font);
+    updateText.setFont(gameFonts->getDefault());
     updateText.setCharacterSize(18);
     updateText.setColor(sf::Color::Red);
     updateText.setPosition(sf::Vector2f(5.0f, 25.0f));
     updateText.setString("UPS --");
 
-    Game *game = new Game(window);
+    Game *game = new Game(window, gameFonts);
 
     long elapsedMu = 0;
     int updateAcc = 0;
@@ -86,4 +83,5 @@ void Engine::run()
 
     delete game;
     delete window;
+    delete gameFonts;
 }

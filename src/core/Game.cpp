@@ -1,7 +1,7 @@
 #include "Game.h"
 
-Game::Game(sf::RenderWindow *window):
-        m_window(window), m_mousePressWasOnUI(false)
+Game::Game(sf::RenderWindow *window, GameFonts *fonts):
+        m_window(window), m_fonts(fonts), m_mousePressWasOnUI(false)
 {
     m_dataProvider = new DataProvider();
     m_character = new Character();
@@ -12,6 +12,8 @@ Game::Game(sf::RenderWindow *window):
                                       m_character->stats(), m_monsters);
     m_userInterface = new UserInterface(m_character->equipmentManager());
     m_mapObjects = new MapObjects(m_map->state());
+    m_npcs = new NPCs(m_map->state(), m_fonts);
+    m_quests = new Quests();
 
     load();
     subscribeComponents();
@@ -26,6 +28,8 @@ Game::~Game()
     delete m_monsters;
     delete m_userInterface;
     delete m_mapObjects;
+    delete m_npcs;
+    delete m_quests;
 }
 
 void Game::load()
@@ -60,6 +64,7 @@ void Game::processEvent(sf::Event &event)
             else if (event.mouseButton.button == sf::Mouse::Button::Left)
             {
                 m_character->state()->startMoving();
+                m_npcs->processMouseButtonPressed(event);
             }
             break;
         case sf::Event::MouseButtonReleased:
@@ -113,6 +118,8 @@ void Game::update()
     m_monsters->update();
     m_userInterface->update();
     m_mapObjects->update();
+    m_npcs->update();
+    m_quests->update();
 }
 
 void Game::draw()
@@ -123,4 +130,6 @@ void Game::draw()
     m_monsters->draw(m_window);
     m_userInterface->draw(m_window);
     m_mapObjects->draw(m_window);
+    m_npcs->draw(m_window);
+    m_quests->draw(m_window);
 }
