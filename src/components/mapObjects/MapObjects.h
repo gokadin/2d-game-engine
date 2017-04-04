@@ -5,11 +5,12 @@
 #include "../../core/GameComponent.h"
 #include "objects/MapObject.h"
 #include "../../data/definitions/map/MapState.h"
+#include "../../rendering/SortedRenderer.h"
 
 class MapObjects : public GameComponent
 {
 public:
-    MapObjects(MapState *mapState);
+    MapObjects(SortedRenderer *sortedRenderer, MapState *mapState);
     ~MapObjects();
 
     void update();

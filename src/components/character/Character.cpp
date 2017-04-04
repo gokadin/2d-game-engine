@@ -2,14 +2,14 @@
 #include "../../events/skillEvents/SkillActivatedEvent.h"
 #include "../../animations/character/skillCasts/InstantCastAnimation.h"
 
-Character::Character()
+Character::Character(SortedRenderer *sortedRenderer)
 {
     m_graphics = new CharacterGraphics();
     m_state = new CharacterState();
     m_stats = new CharacterStats();
     m_equipmentManager = new EquipmentManager(m_stats);
     m_animations = new CharacterAnimations(m_state, m_graphics, m_equipmentManager);
-    m_renderer = new CharacterRenderer(m_graphics);
+    m_renderer = new CharacterRenderer(m_graphics, sortedRenderer);
 
     ((InstantCastAnimation&)(m_animations->get(character_animation_type::INSTANT_CAST))).subscribe(this);
 }

@@ -11,11 +11,12 @@
 #include "../../rendering/renderers/character/CharacterRenderer.h"
 #include "equipment/EquipmentManager.h"
 #include "../../common/MortalEntity.h"
+#include "../../rendering/SortedRenderer.h"
 
 class Character : public GameComponent, public MortalEntity, public Observer
 {
 public:
-    Character();
+    Character(SortedRenderer *sortedRenderer);
     ~Character();
 
     void update();

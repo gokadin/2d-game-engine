@@ -1,5 +1,5 @@
 #include "StandingTorch.h"
 
-StandingTorch::StandingTorch(MapState *mapState):
-        AnimatedMapObject("standingTorch", mapState)
+StandingTorch::StandingTorch(SortedRenderer *sortedRenderer, MapState *mapState):
+        AnimatedMapObject("standingTorch", sortedRenderer, mapState)
 {}

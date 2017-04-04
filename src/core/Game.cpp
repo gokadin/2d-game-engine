@@ -3,15 +3,17 @@
 Game::Game(sf::RenderWindow *window, GameFonts *fonts):
         m_window(window), m_fonts(fonts), m_mousePressWasOnUI(false)
 {
+    m_sortedRenderer = new SortedRenderer();
+
     m_dataProvider = new DataProvider();
-    m_character = new Character();
+    m_character = new Character(m_sortedRenderer);
     m_map = new Map(window, m_character->stats(), m_character->graphics(), m_character->state());
     m_dataProvider->loadMap(m_map);
     m_monsters = new Monsters(m_map->state(), m_map->bounds(), m_character->graphics());
     m_skillManager = new SkillManager(m_map->state(), m_map->bounds(), m_map->graphics(), m_character->graphics(),
                                       m_character->stats(), m_monsters);
     m_userInterface = new UserInterface(m_character->equipmentManager());
-    m_mapObjects = new MapObjects(m_map->state());
+    m_mapObjects = new MapObjects(m_sortedRenderer, m_map->state());
     m_npcs = new NPCs(m_map->state(), m_fonts);
     m_quests = new Quests();
 
@@ -21,6 +23,7 @@ Game::Game(sf::RenderWindow *window, GameFonts *fonts):
 
 Game::~Game()
 {
+    delete m_sortedRenderer;
     delete m_dataProvider;
     delete m_map;
     delete m_character;
@@ -120,6 +123,8 @@ void Game::update()
     m_mapObjects->update();
     m_npcs->update();
     m_quests->update();
+
+    m_sortedRenderer->update();
 }
 
 void Game::draw()
@@ -132,4 +137,6 @@ void Game::draw()
     m_mapObjects->draw(m_window);
     m_npcs->draw(m_window);
     m_quests->draw(m_window);
+
+    m_sortedRenderer->draw(m_window);
 }

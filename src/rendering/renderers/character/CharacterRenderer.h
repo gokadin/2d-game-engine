@@ -7,16 +7,18 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include "../../Renderer.h"
 #include "../../../data/definitions/character/CharacterGraphics.h"
+#include "../../SortedRenderer.h"
 
 class CharacterRenderer : public Renderer
 {
 public:
-    CharacterRenderer(CharacterGraphics *graphics);
+    CharacterRenderer(CharacterGraphics *graphics, SortedRenderer *sortedRenderer);
 
     void draw(sf::RenderWindow *window);
 
 private:
     CharacterGraphics *m_graphics;
+    SortedRenderer *m_sortedRenderer;
 
     // temp and debug
     sf::RectangleShape m_box;

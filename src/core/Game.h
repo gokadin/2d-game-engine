@@ -13,6 +13,7 @@
 #include "../components/npcs/NPCs.h"
 #include "../components/quests/Quests.h"
 #include "../utils/font/GameFonts.h"
+#include "../rendering/SortedRenderer.h"
 
 class Game
 {
@@ -27,6 +28,7 @@ public:
 private:
     sf::RenderWindow *m_window;
     GameFonts *m_fonts;
+    SortedRenderer *m_sortedRenderer;
     DataProvider *m_dataProvider;
     Map *m_map;
     Character *m_character;

@@ -1,10 +1,10 @@
 #include "MapObjects.h"
 #include "objects/standingTorch/StandingTorch.h"
 
-MapObjects::MapObjects(MapState *mapState):
+MapObjects::MapObjects(SortedRenderer *sortedRenderer, MapState *mapState):
         m_mapState(mapState)
 {
-    m_objects.push_back(new StandingTorch(mapState));
+    m_objects.push_back(new StandingTorch(sortedRenderer, mapState));
 }
 
 MapObjects::~MapObjects()
