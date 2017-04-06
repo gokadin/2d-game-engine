@@ -17,7 +17,11 @@ public:
     virtual void update();
     virtual void draw(sf::RenderWindow *window);
 
+    bool isMouseOnInteraction(int x, int y);
     void processMouseButtonPressed(sf::Event &event);
+    void processInteractionEvent(sf::Event& event);
+
+    inline bool isActive() { return m_isActive; }
 
 protected:
     MapState *m_mapState;

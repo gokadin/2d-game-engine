@@ -2,7 +2,7 @@
 #include "UserInterface.h"
 
 UserInterface::UserInterface(EquipmentManager *equipmentManager):
-        m_currentMouseOverElement(NULL)
+        m_currentMouseOverElement(nullptr)
 {
     m_skillBar = new SkillBar();
     m_inventorySideBar = new InventorySideBar(equipmentManager);
@@ -10,6 +10,8 @@ UserInterface::UserInterface(EquipmentManager *equipmentManager):
 
 UserInterface::~UserInterface()
 {
+    m_currentMouseOverElement = nullptr;
+
     delete m_skillBar;
     delete m_inventorySideBar;
 }
@@ -17,11 +19,6 @@ UserInterface::~UserInterface()
 void UserInterface::processEvent(sf::Event &event)
 {
     m_currentMouseOverElement->processEvent(event);
-
-    if (event.type == sf::Event::MouseButtonReleased)
-    {
-        m_currentMouseOverElement = NULL;
-    }
 }
 
 void UserInterface::update()

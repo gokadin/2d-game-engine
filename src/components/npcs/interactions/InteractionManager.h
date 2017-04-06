@@ -16,18 +16,19 @@ public:
     InteractionManager(GameFonts *fonts);
     ~InteractionManager();
 
+    void processEvent(sf::Event& event);
     void update();
     void draw(sf::RenderWindow *window);
+    bool isMouseOnInteraction(int x, int y);
     void addStoryDialogue(Dialogue *dialogue);
     void open();
     void close();
 
+    inline bool isOpen() { return m_isOpen; }
+
 private:
-    const int MENU_ROW_HEIGHT = 30;
-    const int MENU_ROW_PADDING_Y = 5;
     const int MENU_MIN_WIDTH = 10;
     const int MENU_TOP_MARGIN = 100;
-    const int MENU_PADDING = 20;
 
     GameFonts *m_fonts;
     bool m_isOpen;
@@ -35,8 +36,9 @@ private:
     std::vector<InteractionMenuEntry *> m_storyDialogues;
 
     void buildMenu();
-    float buildStoryDialoguesSection();
-    void centerMenu(float longestWidth);
+    float findLongestEntry();
+    void buildStoryDialoguesSection();
+    void handleMouseClick(sf::Event& event);
 };
 
 #endif //SFMLDEMO_INTERACTIONMANAGER_H

@@ -13,13 +13,16 @@ public:
     ~NPCs();
 
     void processMouseButtonPressed(sf::Event& event);
+    void processInteractionEvent(sf::Event& event);
     void update();
     void draw(sf::RenderWindow *window);
+    bool isMouseOnInteraction(int x, int y);
 
 private:
     MapState *m_mapState;
     GameFonts *m_fonts;
     std::vector<NPC *> m_npcs;
+    NPC *m_currentMouseOverNPCInteraction;
 };
 
 #endif //SFMLDEMO_NPCS_H

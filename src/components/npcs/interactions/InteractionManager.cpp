@@ -60,49 +60,61 @@ void InteractionManager::close()
 
 void InteractionManager::buildMenu()
 {
-    m_mainBox.setPosition(Engine::CX, MENU_TOP_MARGIN);
+    float longestWidth = findLongestEntry();
+    m_mainBox.setPosition(Engine::CX - longestWidth / 2, MENU_TOP_MARGIN);
+    m_mainBox.setSize(sf::Vector2f(longestWidth, 0.0f));
 
-    float longuestWidth = 0.0f;
-    float width = buildStoryDialoguesSection();
-    if (width > longuestWidth)
-    {
-        longuestWidth = width;
-    }
-
-    centerMenu(longuestWidth);
+    buildStoryDialoguesSection();
 }
 
-float InteractionManager::buildStoryDialoguesSection()
+float InteractionManager::findLongestEntry()
 {
-    if (m_storyDialogues.size() == 0)
-    {
-        return 0.0f;
-    }
-
-    float longuestWidth = 0.0f;
+    float longestWidth = 0.0f;
     for (auto *dialogueEntry : m_storyDialogues)
     {
-        m_mainBox.setSize(sf::Vector2f(m_mainBox.getSize().x, m_mainBox.getSize().y + MENU_ROW_HEIGHT));
-        dialogueEntry->setPosition(m_mainBox.getPosition().x + MENU_PADDING,
-                                   m_mainBox.getPosition().y + m_mainBox.getSize().y - MENU_ROW_HEIGHT + MENU_ROW_PADDING_Y);
-        if (dialogueEntry->entryWidth() > longuestWidth)
+        if (dialogueEntry->textWidthWithPadding() > longestWidth)
         {
-            longuestWidth = dialogueEntry->entryWidth();
+            longestWidth = dialogueEntry->textWidthWithPadding();
         }
     }
 
-    return longuestWidth;
+    return longestWidth;
 }
 
-void InteractionManager::centerMenu(float longuestWidth)
+void InteractionManager::buildStoryDialoguesSection()
 {
-    float mainBoxWidth = longuestWidth + MENU_PADDING * 2;
-    m_mainBox.setPosition(Engine::CX - mainBoxWidth / 2, m_mainBox.getPosition().y);
-    m_mainBox.setSize(sf::Vector2f(mainBoxWidth, m_mainBox.getSize().y));
-
     for (auto *dialogueEntry : m_storyDialogues)
     {
-        dialogueEntry->setPosition(m_mainBox.getPosition().x + (mainBoxWidth - dialogueEntry->entryWidth()) / 2,
-                                   dialogueEntry->y());
+        dialogueEntry->setWidth(m_mainBox.getSize().x);
+        dialogueEntry->setPosition(m_mainBox.getPosition().x, m_mainBox.getPosition().y);
+
+        m_mainBox.setSize(sf::Vector2f(m_mainBox.getSize().x, m_mainBox.getSize().y + dialogueEntry->height()));
+    }
+}
+
+bool InteractionManager::isMouseOnInteraction(int x, int y)
+{
+    return x >= m_mainBox.getPosition().x && x <= m_mainBox.getPosition().x + m_mainBox.getSize().x &&
+           y >= m_mainBox.getPosition().y && y <= m_mainBox.getPosition().y + m_mainBox.getSize().y;
+}
+
+void InteractionManager::processEvent(sf::Event &event)
+{
+    switch (event.type)
+    {
+        case sf::Event::MouseButtonPressed:
+            handleMouseClick(event);
+            break;
+    }
+}
+
+void InteractionManager::handleMouseClick(sf::Event &event)
+{
+    for (auto *dialogueEntry : m_storyDialogues)
+    {
+        if (dialogueEntry->processEvent(event))
+        {
+            return;
+        }
     }
 }

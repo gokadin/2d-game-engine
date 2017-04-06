@@ -104,3 +104,18 @@ void NPC::deactivate()
     m_isActive = false;
     m_interactionManager.close();
 }
+
+bool NPC::isMouseOnInteraction(int x, int y)
+{
+    if (!m_interactionManager.isOpen())
+    {
+        return false;
+    }
+
+    return m_interactionManager.isMouseOnInteraction(x, y);
+}
+
+void NPC::processInteractionEvent(sf::Event &event)
+{
+    m_interactionManager.processEvent(event);
+}

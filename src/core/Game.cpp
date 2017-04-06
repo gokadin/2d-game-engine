@@ -1,7 +1,7 @@
 #include "Game.h"
 
 Game::Game(sf::RenderWindow *window, GameFonts *fonts):
-        m_window(window), m_fonts(fonts), m_mousePressWasOnUI(false)
+        m_window(window), m_fonts(fonts), m_mousePressWasOnUI(false), m_mousePressWasOnInteraction(false)
 {
     m_dataProvider = new DataProvider();
     m_character = new Character();
@@ -54,8 +54,12 @@ void Game::processEvent(sf::Event &event)
             if (m_userInterface->isMouseOnUI(event.mouseButton.x, event.mouseButton.y))
             {
                 m_mousePressWasOnUI = true;
-
                 m_userInterface->processEvent(event);
+            }
+            else if (m_npcs->isMouseOnInteraction(event.mouseButton.x, event.mouseButton.y))
+            {
+                m_mousePressWasOnInteraction = true;
+                m_npcs->processInteractionEvent(event);
             }
             else if (event.mouseButton.button == sf::Mouse::Button::Right)
             {
@@ -70,14 +74,18 @@ void Game::processEvent(sf::Event &event)
         case sf::Event::MouseButtonReleased:
             if (m_userInterface->isMouseOnUI(event.mouseButton.x, event.mouseButton.y) || m_mousePressWasOnUI)
             {
+                m_mousePressWasOnUI = false;
                 m_userInterface->processEvent(event);
+            }
+            else if (m_npcs->isMouseOnInteraction(event.mouseButton.x, event.mouseButton.y) || m_mousePressWasOnInteraction)
+            {
+                m_mousePressWasOnInteraction = false;
+                m_npcs->processInteractionEvent(event);
             }
             else if (event.mouseButton.button == sf::Mouse::Button::Left)
             {
                 m_character->state()->stopOnPoint(event.mouseButton.x, event.mouseButton.y);
             }
-
-            m_mousePressWasOnUI = false;
             break;
         case sf::Event::MouseMoved:
             if (m_userInterface->isMouseOnUI(event.mouseMove.x, event.mouseMove.y))

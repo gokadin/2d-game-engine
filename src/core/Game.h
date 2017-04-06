@@ -38,6 +38,7 @@ private:
     Quests *m_quests;
 
     bool m_mousePressWasOnUI;
+    bool m_mousePressWasOnInteraction;
 
     void load();
     void subscribeComponents();
