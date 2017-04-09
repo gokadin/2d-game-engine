@@ -36,18 +36,16 @@ void Character::draw(sf::RenderWindow *window)
     m_equipmentManager->draw(window);
 }
 
-void Character::notify(Event *event)
+void Character::notify(std::shared_ptr<Event> event)
 {
     switch (event->type())
     {
         case event_type::SKILL_ACTIVATED:
-            castSpell(((SkillActivatedEvent*)event)->skill());
-            delete event;
+            castSpell((std::static_pointer_cast<SkillActivatedEvent>(event)->skill()));
             break;
         case event_type::INSTANT_CAST_ANIMATION_ENDED:
             m_state->setMovementPaused(false);
             m_state->setIsCasting(false);
-            delete event;
             break;
     }
 }

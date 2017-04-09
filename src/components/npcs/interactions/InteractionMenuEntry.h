@@ -6,16 +6,14 @@
 #include "Interaction.h"
 #include "../../../utils/font/GameFonts.h"
 
-class InteractionMenuEntry
+class InteractionMenuEntry : public Observable
 {
 public:
-    InteractionMenuEntry(Interaction *interaction, GameFonts *fonts);
-    ~InteractionMenuEntry();
+    InteractionMenuEntry(int id, std::string title, GameFonts *fonts);
 
     bool processEvent(sf::Event &event);
     void draw(sf::RenderWindow *window);
 
-    Interaction* interaction();
     inline float textWidthWithPadding() { return m_text.getLocalBounds().width + PADDING_X * 2; }
     inline float width() { return m_width; }
     inline int height() { return HEIGHT; }
@@ -30,7 +28,8 @@ private:
     const int PADDING_Y = 5;
     const int PADDING_X = 20;
 
-    Interaction *m_interaction;
+    int m_id;
+    std::string m_title;
     float m_x;
     float m_y;
     float m_width;

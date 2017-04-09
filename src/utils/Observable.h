@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include <memory>
 #include "Observer.h"
 
 class Observable
@@ -24,7 +25,7 @@ public:
 protected:
     std::vector<Observer *> observers;
 
-    virtual void notifyObservers(Event *event)
+    virtual void notifyObservers(std::shared_ptr<Event> event)
     {
         for (int i = 0; i < observers.size(); i++)
         {

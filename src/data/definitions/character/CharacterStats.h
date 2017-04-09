@@ -20,12 +20,12 @@ public:
     inline void addSpellPower(int spellPower)
     {
         m_spellPower += spellPower;
-        notifyObservers(new CharacterStatsChanged(event_type::CHARACTER_STATS_CHANGED));
+        notifyObservers(std::make_shared<CharacterStatsChanged>(event_type::CHARACTER_STATS_CHANGED));
     }
     inline void removeSpellPower(int spellPower)
     {
         m_spellPower -= spellPower;
-        notifyObservers(new CharacterStatsChanged(event_type::CHARACTER_STATS_CHANGED));
+        notifyObservers(std::make_shared<CharacterStatsChanged>(event_type::CHARACTER_STATS_CHANGED));
     }
 
 private:

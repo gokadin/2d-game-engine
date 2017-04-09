@@ -25,7 +25,7 @@ public:
     void draw(sf::RenderWindow *window);
     void activate(int slotIndex, int targetX, int targetY);
     void assign(int slotIndex, skill_names name);
-    void notify(Event *event);
+    void notify(std::shared_ptr<Event> event);
 
 private:
     const int NUM_SLOTS = 6;

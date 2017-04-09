@@ -6,11 +6,10 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include "dialogues/Dialogue.h"
 #include "InteractionMenuEntry.h"
+#include "../../../enums/npcs/InteractionType.h"
+#include "InteractionMenu.h"
 
-#define BORDER_COLOR sf::Color(183, 167, 102)
-#define BACKGROUND_COLOR sf::Color(0, 0, 0, 200)
-
-class InteractionManager
+class InteractionManager : public Observer
 {
 public:
     InteractionManager(GameFonts *fonts);
@@ -19,26 +18,18 @@ public:
     void processEvent(sf::Event& event);
     void update();
     void draw(sf::RenderWindow *window);
+    void notify(std::shared_ptr<Event> event);
     bool isMouseOnInteraction(int x, int y);
     void addStoryDialogue(Dialogue *dialogue);
-    void open();
-    void close();
-
-    inline bool isOpen() { return m_isOpen; }
+    void reset();
 
 private:
-    const int MENU_MIN_WIDTH = 10;
-    const int MENU_TOP_MARGIN = 100;
-
     GameFonts *m_fonts;
-    bool m_isOpen;
-    sf::RectangleShape m_mainBox;
-    std::vector<InteractionMenuEntry *> m_storyDialogues;
+    std::vector<Interaction *> m_interactions;
+    InteractionMenu m_menu;
+    Interaction *m_interactionInProgress;
 
-    void buildMenu();
-    float findLongestEntry();
-    void buildStoryDialoguesSection();
-    void handleMouseClick(sf::Event& event);
+    void handleInteractionMenuEntryClicked(int id);
 };
 
 #endif //SFMLDEMO_INTERACTIONMANAGER_H

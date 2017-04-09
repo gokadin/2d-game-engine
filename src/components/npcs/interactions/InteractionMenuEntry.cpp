@@ -1,18 +1,14 @@
 #include <SFML/Window/Event.hpp>
 #include "InteractionMenuEntry.h"
+#include "../../../events/npcEvents/InteractionMenuEntryClickedEvent.h"
 
-InteractionMenuEntry::InteractionMenuEntry(Interaction *interaction, GameFonts *fonts):
-        m_interaction(interaction)
+InteractionMenuEntry::InteractionMenuEntry(int id, std::string title, GameFonts *fonts):
+        m_id(id), m_title(title)
 {
     m_text.setFont(fonts->getDefault());
     m_text.setCharacterSize(16);
     m_text.setColor(sf::Color::White);
-    m_text.setString(m_interaction->title());
-}
-
-InteractionMenuEntry::~InteractionMenuEntry()
-{
-    delete m_interaction;
+    m_text.setString(title);
 }
 
 bool InteractionMenuEntry::processEvent(sf::Event &event)
@@ -39,18 +35,12 @@ bool InteractionMenuEntry::isMouseOnEntry(sf::Event &event)
 
 void InteractionMenuEntry::handleMouseClick(sf::Event &event)
 {
-    // ...
-    // maybe use interaction() getter and handle this logic in the interaction manager
+    notifyObservers(std::make_shared<InteractionMenuEntryClickedEvent>(event_type::INTERACTION_MENU_ENTRY_CLICKED, m_id));
 }
 
 void InteractionMenuEntry::draw(sf::RenderWindow *window)
 {
     window->draw(m_text);
-}
-
-Interaction *InteractionMenuEntry::interaction()
-{
-    return m_interaction;
 }
 
 void InteractionMenuEntry::setPosition(float x, float y)

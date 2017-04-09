@@ -20,7 +20,7 @@ public:
 
     void update();
     void draw(sf::RenderWindow *window);
-    void notify(Event *event);
+    void notify(std::shared_ptr<Event> event);
 
     inline CharacterStats *stats() { return m_stats; }
     inline CharacterState *state() { return m_state; }

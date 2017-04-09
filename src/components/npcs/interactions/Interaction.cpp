@@ -1,5 +1,5 @@
 #include "Interaction.h"
 
-Interaction::Interaction(std::string title):
-        m_title(title)
+Interaction::Interaction(interaction_type type, std::string title):
+        m_type(type), m_title(title)
 {}

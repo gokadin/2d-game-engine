@@ -1,0 +1,9 @@
+#ifndef SFMLDEMO_INTERACTIONTYPE_H
+#define SFMLDEMO_INTERACTIONTYPE_H
+
+enum class interaction_type
+{
+    DIALOGUE
+};
+
+#endif //SFMLDEMO_INTERACTIONTYPE_H

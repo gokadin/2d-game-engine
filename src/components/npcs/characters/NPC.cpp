@@ -69,6 +69,11 @@ void NPC::processMouseButtonPressed(sf::Event &event)
 
 void NPC::draw(sf::RenderWindow *window)
 {
+    if (!m_isActive)
+    {
+        return;
+    }
+
     m_interactionManager.draw(window);
 }
 
@@ -96,23 +101,17 @@ void NPC::activate()
 {
     m_shouldActivate = false;
     m_isActive = true;
-    m_interactionManager.open();
 }
 
 void NPC::deactivate()
 {
     m_isActive = false;
-    m_interactionManager.close();
+    m_interactionManager.reset();
 }
 
 bool NPC::isMouseOnInteraction(int x, int y)
 {
-    if (!m_interactionManager.isOpen())
-    {
-        return false;
-    }
-
-    return m_interactionManager.isMouseOnInteraction(x, y);
+    return m_isActive && m_interactionManager.isMouseOnInteraction(x, y);
 }
 
 void NPC::processInteractionEvent(sf::Event &event)

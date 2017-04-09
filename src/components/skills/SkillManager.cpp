@@ -52,7 +52,7 @@ void SkillManager::activate(int slotIndex, int targetX, int targetY)
     if (slotIndex < NUM_SLOTS && m_skills[m_slots[slotIndex]]->canActivate())
     {
         m_skills[m_slots[slotIndex]]->activate(targetX, targetY);
-        notifyObservers(new SkillActivatedEvent(event_type::SKILL_ACTIVATED, m_skills[m_slots[slotIndex]]));
+        notifyObservers(std::make_shared<SkillActivatedEvent>(event_type::SKILL_ACTIVATED, m_skills[m_slots[slotIndex]]));
     }
 }
 
@@ -64,13 +64,12 @@ void SkillManager::assign(int slotIndex, skill_names name)
     }
 }
 
-void SkillManager::notify(Event *event)
+void SkillManager::notify(std::shared_ptr<Event> event)
 {
     switch (event->type())
     {
         case event_type::CHARACTER_STATS_CHANGED:
             handleCharacterStatsChanged();
-            delete event;
             break;
     }
 }

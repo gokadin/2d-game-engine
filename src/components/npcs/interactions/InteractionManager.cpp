@@ -1,120 +1,90 @@
 #include "InteractionManager.h"
 #include "../../../core/Engine.h"
+#include "../../../events/npcEvents/InteractionMenuEntryClickedEvent.h"
 
 InteractionManager::InteractionManager(GameFonts *fonts):
-        m_fonts(fonts), m_mainBox(sf::Vector2f(MENU_MIN_WIDTH, 0))
+        m_fonts(fonts), m_menu(fonts), m_interactionInProgress(nullptr)
 {
-    m_mainBox.setOutlineThickness(3);
-    m_mainBox.setOutlineColor(BORDER_COLOR);
-    m_mainBox.setFillColor(BACKGROUND_COLOR);
+    m_menu.subscribe(this);
 }
 
 InteractionManager::~InteractionManager()
 {
-    for (auto *interaction : m_storyDialogues)
+    m_interactionInProgress = nullptr;
+
+    for (auto *interaction : m_interactions)
     {
         delete interaction;
     }
-    m_storyDialogues.clear();
+    m_interactions.clear();
+}
+
+void InteractionManager::processEvent(sf::Event &event)
+{
+    if (m_interactionInProgress == nullptr)
+    {
+        m_menu.processEvent(event);
+        return;
+    }
+
+    m_interactionInProgress->processEvent(event);
 }
 
 void InteractionManager::update()
 {
-    if (!m_isOpen)
+    if (m_interactionInProgress == nullptr)
     {
+        m_menu.update();
         return;
     }
 
-    // hover logic
+    m_interactionInProgress->update();
 }
 
 void InteractionManager::draw(sf::RenderWindow *window)
 {
-    if (!m_isOpen)
+    if (m_interactionInProgress == nullptr)
     {
+        m_menu.draw(window);
         return;
     }
 
-    window->draw(m_mainBox);
-    for (auto *dialogues : m_storyDialogues)
+    m_interactionInProgress->draw(window);
+}
+
+void InteractionManager::notify(std::shared_ptr<Event> event)
+{
+    switch (event->type())
     {
-        dialogues->draw(window);
+        case event_type::INTERACTION_MENU_ENTRY_CLICKED:
+            handleInteractionMenuEntryClicked(std::static_pointer_cast<InteractionMenuEntryClickedEvent>(event)->id());
+            break;
     }
 }
 
 void InteractionManager::addStoryDialogue(Dialogue *dialogue)
 {
-    m_storyDialogues.push_back(new InteractionMenuEntry(dialogue, m_fonts));
-    buildMenu();
-}
-
-void InteractionManager::open()
-{
-    m_isOpen = true;
-}
-
-void InteractionManager::close()
-{
-    m_isOpen = false;
-}
-
-void InteractionManager::buildMenu()
-{
-    float longestWidth = findLongestEntry();
-    m_mainBox.setPosition(Engine::CX - longestWidth / 2, MENU_TOP_MARGIN);
-    m_mainBox.setSize(sf::Vector2f(longestWidth, 0.0f));
-
-    buildStoryDialoguesSection();
-}
-
-float InteractionManager::findLongestEntry()
-{
-    float longestWidth = 0.0f;
-    for (auto *dialogueEntry : m_storyDialogues)
-    {
-        if (dialogueEntry->textWidthWithPadding() > longestWidth)
-        {
-            longestWidth = dialogueEntry->textWidthWithPadding();
-        }
-    }
-
-    return longestWidth;
-}
-
-void InteractionManager::buildStoryDialoguesSection()
-{
-    for (auto *dialogueEntry : m_storyDialogues)
-    {
-        dialogueEntry->setWidth(m_mainBox.getSize().x);
-        dialogueEntry->setPosition(m_mainBox.getPosition().x, m_mainBox.getPosition().y);
-
-        m_mainBox.setSize(sf::Vector2f(m_mainBox.getSize().x, m_mainBox.getSize().y + dialogueEntry->height()));
-    }
+    m_menu.addStoryDialogue((int)m_interactions.size(), dialogue->title());
+    m_interactions.push_back((Interaction *&&)dialogue);
 }
 
 bool InteractionManager::isMouseOnInteraction(int x, int y)
 {
-    return x >= m_mainBox.getPosition().x && x <= m_mainBox.getPosition().x + m_mainBox.getSize().x &&
-           y >= m_mainBox.getPosition().y && y <= m_mainBox.getPosition().y + m_mainBox.getSize().y;
+    if (m_interactionInProgress == nullptr)
+    {
+        return m_menu.isMouseOnMenu(x, y);
+    }
+
+    return m_interactionInProgress->isMouseOnInteraction(x, y);
 }
 
-void InteractionManager::processEvent(sf::Event &event)
+void InteractionManager::reset()
 {
-    switch (event.type)
-    {
-        case sf::Event::MouseButtonPressed:
-            handleMouseClick(event);
-            break;
-    }
+    m_interactionInProgress = nullptr;
 }
 
-void InteractionManager::handleMouseClick(sf::Event &event)
+void InteractionManager::handleInteractionMenuEntryClicked(int id)
 {
-    for (auto *dialogueEntry : m_storyDialogues)
-    {
-        if (dialogueEntry->processEvent(event))
-        {
-            return;
-        }
-    }
+    m_interactionInProgress = m_interactions[id];
+    m_interactions[id]->activate();
 }
