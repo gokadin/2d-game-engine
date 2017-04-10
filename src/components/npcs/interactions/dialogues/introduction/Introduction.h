@@ -6,7 +6,7 @@
 class Introduction : public Dialogue
 {
 public:
-    Introduction();
+    Introduction(GameFonts *fonts);
 };
 
 #endif //SFMLDEMO_INTRODUCTION_H

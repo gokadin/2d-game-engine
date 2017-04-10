@@ -30,6 +30,8 @@ private:
     Interaction *m_interactionInProgress;
 
     void handleInteractionMenuEntryClicked(int id);
+    void handleInteractionCancelled();
+    void handleQuestAccepted();
 };
 
 #endif //SFMLDEMO_INTERACTIONMANAGER_H

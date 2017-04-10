@@ -59,11 +59,18 @@ void InteractionManager::notify(std::shared_ptr<Event> event)
         case event_type::INTERACTION_MENU_ENTRY_CLICKED:
             handleInteractionMenuEntryClicked(std::static_pointer_cast<InteractionMenuEntryClickedEvent>(event)->id());
             break;
+        case event_type::INTERACTION_CANCELLED:
+            handleInteractionCancelled();
+            break;
+        case event_type::QUEST_ACCEPTED:
+            handleQuestAccepted();
+            break;
     }
 }
 
 void InteractionManager::addStoryDialogue(Dialogue *dialogue)
 {
+    dialogue->subscribe(this);
     m_menu.addStoryDialogue((int)m_interactions.size(), dialogue->title());
     m_interactions.push_back((Interaction *&&)dialogue);
 }
@@ -87,4 +94,14 @@ void InteractionManager::handleInteractionMenuEntryClicked(int id)
 {
     m_interactionInProgress = m_interactions[id];
     m_interactions[id]->activate();
+}
+
+void InteractionManager::handleInteractionCancelled()
+{
+    reset();
+}
+
+void InteractionManager::handleQuestAccepted()
+{
+    reset();
 }

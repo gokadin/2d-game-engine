@@ -13,7 +13,7 @@ Game::Game(sf::RenderWindow *window, GameFonts *fonts):
     m_userInterface = new UserInterface(m_character->equipmentManager());
     m_mapObjects = new MapObjects(m_map->state());
     m_npcs = new NPCs(m_map->state(), m_fonts);
-    m_quests = new Quests();
+    m_quests = new Quests(m_fonts);
 
     load();
     subscribeComponents();

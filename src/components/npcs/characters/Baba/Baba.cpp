@@ -10,7 +10,7 @@ Baba::Baba(MapState *mapState, GameFonts *fonts):
 
 void Baba::buildInteractions()
 {
-    m_interactionManager.addStoryDialogue(new Introduction());
+    m_interactionManager.addStoryDialogue(new Introduction(m_fonts));
 }
 
 void Baba::update()
