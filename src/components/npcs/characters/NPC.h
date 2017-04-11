@@ -8,7 +8,7 @@
 #include "../../../utils/font/GameFonts.h"
 #include "../interactions/InteractionManager.h"
 
-class NPC
+class NPC : public Observable, public Observer
 {
 public:
     NPC(std::string id, MapState *mapState, GameFonts *fonts);
@@ -20,6 +20,7 @@ public:
     bool isMouseOnInteraction(int x, int y);
     void processMouseButtonPressed(sf::Event &event);
     void processInteractionEvent(sf::Event& event);
+    void notify(std::shared_ptr<Event> event);
 
     inline bool isActive() { return m_isActive; }
 

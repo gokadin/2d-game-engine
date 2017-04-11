@@ -7,8 +7,8 @@
 class QuestAcceptedEvent : public Event
 {
 public:
-    QuestAcceptedEvent(event_type type, quest_name questName)
-            : Event(type), m_questName(questName)
+    QuestAcceptedEvent(quest_name questName)
+            : Event(event_type::QUEST_ACCEPTED), m_questName(questName)
     {}
 
     inline quest_name questName() { return m_questName; }

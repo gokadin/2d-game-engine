@@ -35,7 +35,7 @@ bool InteractionMenuEntry::isMouseOnEntry(sf::Event &event)
 
 void InteractionMenuEntry::handleMouseClick(sf::Event &event)
 {
-    notifyObservers(std::make_shared<InteractionMenuEntryClickedEvent>(event_type::INTERACTION_MENU_ENTRY_CLICKED, m_id));
+    notifyObservers(std::make_shared<InteractionMenuEntryClickedEvent>(m_id));
 }
 
 void InteractionMenuEntry::draw(sf::RenderWindow *window)

@@ -6,8 +6,8 @@
 class CharacterStatsChanged : public Event
 {
 public:
-    CharacterStatsChanged(event_type type):
-            Event(type)
+    CharacterStatsChanged():
+            Event(event_type::CHARACTER_STATS_CHANGED)
     {}
 };
 

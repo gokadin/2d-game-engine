@@ -6,7 +6,7 @@
 #include "characters/NPC.h"
 #include "../../utils/font/GameFonts.h"
 
-class NPCs : GameComponent
+class NPCs : public GameComponent, public Observable, public Observer
 {
 public:
     NPCs(MapState *mapState, GameFonts *fonts);
@@ -17,6 +17,7 @@ public:
     void update();
     void draw(sf::RenderWindow *window);
     bool isMouseOnInteraction(int x, int y);
+    void notify(std::shared_ptr<Event> event);
 
 private:
     MapState *m_mapState;

@@ -5,6 +5,7 @@ NPCs::NPCs(MapState *mapState, GameFonts *fonts):
         m_mapState(mapState), m_fonts(fonts), m_currentMouseOverNPCInteraction(nullptr)
 {
     m_npcs.push_back(new Baba(m_mapState, m_fonts));
+    m_npcs[0]->subscribe(this);
 }
 
 NPCs::~NPCs()
@@ -59,4 +60,14 @@ bool NPCs::isMouseOnInteraction(int x, int y)
     }
 
     return false;
+}
+
+void NPCs::notify(std::shared_ptr<Event> event)
+{
+    switch (event->type())
+    {
+        case event_type::QUEST_ACCEPTED:
+            notifyObservers(event);
+            break;
+    }
 }

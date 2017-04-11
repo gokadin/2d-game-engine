@@ -6,7 +6,8 @@
 class InstantCastAnimationEnded : public Event
 {
 public:
-    InstantCastAnimationEnded(event_type type) : Event(type)
+    InstantCastAnimationEnded()
+            : Event(event_type::INSTANT_CAST_ANIMATION_ENDED)
     {}
 };
 

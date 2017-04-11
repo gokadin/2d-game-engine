@@ -9,7 +9,7 @@
 #include "../../../enums/npcs/InteractionType.h"
 #include "InteractionMenu.h"
 
-class InteractionManager : public Observer
+class InteractionManager : public Observer, public Observable
 {
 public:
     InteractionManager(GameFonts *fonts);

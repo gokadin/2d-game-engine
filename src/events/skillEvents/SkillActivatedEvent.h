@@ -7,8 +7,8 @@
 class SkillActivatedEvent : public Event
 {
 public:
-    SkillActivatedEvent(event_type type, Skill *skill):
-            Event(type), m_skill(skill)
+    SkillActivatedEvent(Skill *skill):
+            Event(event_type::SKILL_ACTIVATED), m_skill(skill)
     {}
 
     inline Skill* skill() { return m_skill; }

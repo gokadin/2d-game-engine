@@ -79,11 +79,11 @@ void Dialogue::handleMouseButtonPressed(int mouseX, int mouseY)
 {
     if (m_buttonCancel.isMouseOnButton(mouseX, mouseY))
     {
-        notifyObservers(std::make_shared<InteractionCancelledEvent>(event_type::INTERACTION_CANCELLED));
+        notifyObservers(std::make_shared<InteractionCancelledEvent>());
     }
 
     if (m_questName != quest_name::NONE && m_buttonAccept.isMouseOnButton(mouseX, mouseY))
     {
-        notifyObservers(std::make_shared<QuestAcceptedEvent>(event_type::QUEST_ACCEPTED, m_questName));
+        notifyObservers(std::make_shared<QuestAcceptedEvent>(m_questName));
     }
 }

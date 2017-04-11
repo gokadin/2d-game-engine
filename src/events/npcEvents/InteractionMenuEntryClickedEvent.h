@@ -6,8 +6,8 @@
 class InteractionMenuEntryClickedEvent : public Event
 {
 public:
-    InteractionMenuEntryClickedEvent(event_type type, int id)
-            : Event(type),
+    InteractionMenuEntryClickedEvent(int id)
+            : Event(event_type::INTERACTION_MENU_ENTRY_CLICKED),
               m_id(id)
     {}
 

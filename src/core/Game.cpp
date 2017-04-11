@@ -10,10 +10,10 @@ Game::Game(sf::RenderWindow *window, GameFonts *fonts):
     m_monsters = new Monsters(m_map->state(), m_map->bounds(), m_character->graphics());
     m_skillManager = new SkillManager(m_map->state(), m_map->bounds(), m_map->graphics(), m_character->graphics(),
                                       m_character->stats(), m_monsters);
-    m_userInterface = new UserInterface(m_character->equipmentManager());
     m_mapObjects = new MapObjects(m_map->state());
     m_npcs = new NPCs(m_map->state(), m_fonts);
-    m_quests = new Quests(m_fonts);
+    m_quests = new Quests();
+    m_userInterface = new UserInterface(fonts, m_character->equipmentManager(), m_quests->tracker());
 
     load();
     subscribeComponents();
@@ -26,10 +26,10 @@ Game::~Game()
     delete m_character;
     delete m_skillManager;
     delete m_monsters;
-    delete m_userInterface;
     delete m_mapObjects;
     delete m_npcs;
     delete m_quests;
+    delete m_userInterface;
 }
 
 void Game::load()
@@ -42,6 +42,7 @@ void Game::subscribeComponents()
 {
     m_skillManager->subscribe(m_character);
     m_character->stats()->subscribe(m_skillManager);
+    m_npcs->subscribe(m_quests);
 
     m_character->stats()->addSpellPower(0); // temp
 }

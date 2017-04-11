@@ -64,6 +64,7 @@ void InteractionManager::notify(std::shared_ptr<Event> event)
             break;
         case event_type::QUEST_ACCEPTED:
             handleQuestAccepted();
+            notifyObservers(event);
             break;
     }
 }

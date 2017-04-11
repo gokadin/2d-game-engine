@@ -6,7 +6,8 @@
 class InteractionCancelledEvent : public Event
 {
 public:
-    InteractionCancelledEvent(event_type type) : Event(type)
+    InteractionCancelledEvent()
+            : Event(event_type::INTERACTION_CANCELLED)
     {}
 };
 

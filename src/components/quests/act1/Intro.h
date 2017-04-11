@@ -5,7 +5,8 @@
 
 class Intro : public Quest
 {
-
+public:
+    Intro();
 };
 
 #endif //SFMLDEMO_INTRO_H

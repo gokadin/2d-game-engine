@@ -4,18 +4,22 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "../../../utils/font/GameFonts.h"
+#include "../../../enums/quests/QuestName.h"
+#include "../Quest.h"
+#include "../../../utils/Observable.h"
 
-class QuestTracker
+class QuestTracker : public Observable
 {
 public:
-    QuestTracker(GameFonts *fonts);
+    QuestTracker();
+    ~QuestTracker();
 
-    void processEvent(sf::Event &event);
-    void draw(sf::RenderWindow *window);
     void update();
+    void acceptQuest(Quest *quest);
 
 private:
-    GameFonts *m_fonts;
+    std::map<quest_name, Quest *> m_quests;
+    Quest *m_activeQuest;
 };
 
 #endif //SFMLDEMO_QUESTTRACKER_H

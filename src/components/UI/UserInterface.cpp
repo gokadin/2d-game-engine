@@ -1,11 +1,12 @@
 #include <SFML/Window/Event.hpp>
 #include "UserInterface.h"
 
-UserInterface::UserInterface(EquipmentManager *equipmentManager):
+UserInterface::UserInterface(GameFonts *fonts, EquipmentManager *equipmentManager, QuestTracker &questTracker):
         m_currentMouseOverElement(nullptr)
 {
     m_skillBar = new SkillBar();
     m_inventorySideBar = new InventorySideBar(equipmentManager);
+    m_questTrackerUI = new QuestTrackerUI(fonts, questTracker);
 }
 
 UserInterface::~UserInterface()
@@ -14,6 +15,7 @@ UserInterface::~UserInterface()
 
     delete m_skillBar;
     delete m_inventorySideBar;
+    delete m_questTrackerUI;
 }
 
 void UserInterface::processEvent(sf::Event &event)
@@ -25,12 +27,14 @@ void UserInterface::update()
 {
     m_skillBar->update();
     m_inventorySideBar->update();
+    m_questTrackerUI->update();
 }
 
 void UserInterface::draw(sf::RenderWindow *window)
 {
     m_skillBar->draw(window);
     m_inventorySideBar->draw(window);
+    m_questTrackerUI->draw(window);
 }
 
 bool UserInterface::isMouseOnUI(int x, int y)
@@ -38,6 +42,12 @@ bool UserInterface::isMouseOnUI(int x, int y)
     if (m_inventorySideBar->isMouseOnUI(x, y))
     {
         m_currentMouseOverElement = m_inventorySideBar;
+        return true;
+    }
+
+    if (m_questTrackerUI->isMouseOnUI(x, y))
+    {
+        m_currentMouseOverElement = m_questTrackerUI;
         return true;
     }
 

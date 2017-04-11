@@ -9,6 +9,8 @@ NPC::NPC(std::string id, MapState *mapState, GameFonts *fonts):
     loadTexture(npcDirectory + TEXTURE_FILENAME);
     loadMetadata(KeyValueReader::read(npcDirectory + METADATA_FILENAME));
     setUpText();
+
+    m_interactionManager.subscribe(this);
 }
 
 std::string NPC::getNPCDirectory(std::string id)
@@ -117,4 +119,14 @@ bool NPC::isMouseOnInteraction(int x, int y)
 void NPC::processInteractionEvent(sf::Event &event)
 {
     m_interactionManager.processEvent(event);
+}
+
+void NPC::notify(std::shared_ptr<Event> event)
+{
+    switch (event->type())
+    {
+        case event_type::QUEST_ACCEPTED:
+            notifyObservers(event);
+            break;
+    }
 }

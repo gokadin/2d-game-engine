@@ -42,5 +42,5 @@ void InstantCastAnimation::stop()
 {
     m_isActive = false;
 
-    notifyObservers(std::make_shared<InstantCastAnimationEnded>(event_type::INSTANT_CAST_ANIMATION_ENDED));
+    notifyObservers(std::make_shared<InstantCastAnimationEnded>());
 }
