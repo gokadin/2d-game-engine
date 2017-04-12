@@ -1,7 +1,7 @@
 #include <SFML/Window/Event.hpp>
 #include "UserInterface.h"
 
-UserInterface::UserInterface(GameFonts *fonts, EquipmentManager *equipmentManager, QuestTracker &questTracker):
+UserInterface::UserInterface(GameFonts *fonts, EquipmentManager *equipmentManager, QuestTracker *questTracker):
         m_currentMouseOverElement(nullptr)
 {
     m_skillBar = new SkillBar();

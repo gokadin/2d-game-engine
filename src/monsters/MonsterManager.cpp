@@ -55,6 +55,7 @@ void MonsterManager::addMonster(Monster *monster)
 {
     m_monsters[monster->id()] = monster;
     monster->addToMap();
+    monster->subscribe(this);
     m_totalMonsters++;
 }
 
@@ -99,4 +100,14 @@ Monster *MonsterManager::findAnyDeadMonster()
     }
 
     return NULL;
+}
+
+void MonsterManager::notify(std::shared_ptr<Event> event)
+{
+    switch (event->type())
+    {
+        case event_type::MONSTER_DIED:
+            notifyObservers(event);
+            break;
+    }
 }

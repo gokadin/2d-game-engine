@@ -6,7 +6,7 @@
 #include "../../data/definitions/map/MapState.h"
 #include "../../data/definitions/map/MapBounds.h"
 
-class Monsters : public GameComponent
+class Monsters : public GameComponent, public Observer, public Observable
 {
 public:
     Monsters(MapState *mapState, MapBounds *bounds, CharacterGraphics *characterGraphics);
@@ -15,6 +15,7 @@ public:
     void update();
     void draw(sf::RenderWindow *window);
     Monster* findMonster(int id);
+    void notify(std::shared_ptr<Event> event);
 
 private:
     std::vector<MonsterManager *> m_monsterManagers;

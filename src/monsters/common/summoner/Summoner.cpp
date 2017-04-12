@@ -1,7 +1,7 @@
 #include "Summoner.h"
 
 Summoner::Summoner(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds):
-        Monster(id, texture, mapState, mapBounds)
+        Monster(id, monster_type::SUMMONER, texture, mapState, mapBounds)
 {
     m_sprite.setTextureRect(sf::IntRect(0, 0, 64, 128));
 }
@@ -20,5 +20,5 @@ void Summoner::draw(sf::RenderWindow *window)
 
 void Summoner::resurectMinion(Monster *minion)
 {
-    minion->resurect();
+    minion->resurrect();
 }

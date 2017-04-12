@@ -15,10 +15,10 @@ public:
     void draw(sf::RenderWindow *window);
     void notify(std::shared_ptr<Event> event);
 
-    inline QuestTracker& tracker() { return m_tracker; }
+    inline QuestTracker* tracker() { return m_tracker; }
 
 private:
-    QuestTracker m_tracker;
+    QuestTracker *m_tracker;
 
     Quest* createQuest(quest_name name);
 };

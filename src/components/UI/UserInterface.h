@@ -10,7 +10,7 @@
 class UserInterface : public GameComponent
 {
 public:
-    UserInterface(GameFonts *fonts, EquipmentManager *equipmentManager, QuestTracker &questTracker);
+    UserInterface(GameFonts *fonts, EquipmentManager *equipmentManager, QuestTracker *questTracker);
     ~UserInterface();
 
     void processEvent(sf::Event &event);

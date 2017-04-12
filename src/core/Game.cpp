@@ -43,6 +43,7 @@ void Game::subscribeComponents()
     m_skillManager->subscribe(m_character);
     m_character->stats()->subscribe(m_skillManager);
     m_npcs->subscribe(m_quests);
+    m_monsters->subscribe(m_quests);
 
     m_character->stats()->addSpellPower(0); // temp
 }

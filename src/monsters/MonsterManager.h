@@ -7,7 +7,7 @@
 #include "../data/definitions/map/MapBounds.h"
 #include "../data/definitions/character/CharacterGraphics.h"
 
-class MonsterManager
+class MonsterManager : public Observable, public Observer
 {
 public:
     MonsterManager(int nextId, MapState *mapState, MapBounds *bounds, CharacterGraphics *characterGraphics);
@@ -15,12 +15,12 @@ public:
 
     virtual void update();
     virtual void draw(sf::RenderWindow *window);
+    int totalAliveMonsters();
+    Monster* findAnyDeadMonster();
+    void notify(std::shared_ptr<Event> event);
 
     inline Monster* findMonster(int id) { return m_monsters[id]; }
     inline int totalMonsters() { return m_totalMonsters; }
-
-    int totalAliveMonsters();
-    Monster* findAnyDeadMonster();
 
 protected:
     const int HEALTH_BAR_BOTTOM_MARGIN = 10;

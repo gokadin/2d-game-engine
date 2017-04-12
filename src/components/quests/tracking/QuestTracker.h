@@ -8,7 +8,7 @@
 #include "../Quest.h"
 #include "../../../utils/Observable.h"
 
-class QuestTracker : public Observable
+class QuestTracker : public Observable, public Observer
 {
 public:
     QuestTracker();
@@ -16,10 +16,11 @@ public:
 
     void update();
     void acceptQuest(Quest *quest);
+    Quest *quest() { return m_quest; }
+    void notify(std::shared_ptr<Event> event);
 
 private:
-    std::map<quest_name, Quest *> m_quests;
-    Quest *m_activeQuest;
+    Quest *m_quest;
 };
 
 #endif //SFMLDEMO_QUESTTRACKER_H

@@ -1,17 +1,16 @@
 #include "QuestTracker.h"
-#include "../../../events/quests/ActiveQuestChangedEvent.h"
+#include "../../../events/quests/QuestAdded.h"
 
 QuestTracker::QuestTracker()
-        : m_activeQuest(nullptr)
+        : m_quest(nullptr)
 {}
 
 QuestTracker::~QuestTracker()
 {
-    for (auto pair : m_quests)
+    if (m_quest != nullptr)
     {
-        delete pair.second;
+        delete m_quest;
     }
-    m_quests.clear();
 }
 
 void QuestTracker::update()
@@ -21,7 +20,21 @@ void QuestTracker::update()
 
 void QuestTracker::acceptQuest(Quest *quest)
 {
-    m_quests[quest->name()] = quest;
-    m_activeQuest = quest;
-    notifyObservers(std::make_shared<ActiveQuestChangedEvent>(m_activeQuest));
+    if (m_quest != nullptr)
+    {
+        return;
+    }
+
+    m_quest = quest;
+    notifyObservers(std::make_shared<QuestAddedEvent>(m_quest));
+}
+
+void QuestTracker::notify(std::shared_ptr<Event> event)
+{
+    switch (event->type())
+    {
+        default:
+            m_quest->notify(event);
+            break;
+    }
 }

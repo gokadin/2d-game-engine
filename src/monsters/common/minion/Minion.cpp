@@ -1,7 +1,7 @@
 #include "Minion.h"
 
 Minion::Minion(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds):
-        Monster(id, texture, mapState, mapBounds)
+        Monster(id, monster_type::MINION, texture, mapState, mapBounds)
 {
     m_sprite.setTextureRect(sf::IntRect(0, 0, 64, 128));
 }

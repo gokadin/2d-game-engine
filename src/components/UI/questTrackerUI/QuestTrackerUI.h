@@ -10,7 +10,7 @@
 class QuestTrackerUI : public UIElement, public Observer
 {
 public:
-    QuestTrackerUI(GameFonts *fonts, QuestTracker &questTracker);
+    QuestTrackerUI(GameFonts *fonts, QuestTracker *questTracker);
 
     void processEvent(sf::Event &event);
     void update();
@@ -27,10 +27,11 @@ private:
     const sf::Color MAIN_TITLE_COLOR = sf::Color::Cyan;
 
     GameFonts *m_fonts;
-    QuestTracker &m_tracker;
+    QuestTracker *m_tracker;
     sf::Text m_mainTitle;
+    sf::Text m_questTitle;
 
-    void handleActiveQuestChanged(Quest *activeQuest);
+    void handleQuestAdded(Quest *quest);
 };
 
 #endif //SFMLDEMO_QUESTTRACKERUI_H
