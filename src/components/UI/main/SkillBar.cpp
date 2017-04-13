@@ -3,9 +3,9 @@
 #include "../../../data/IO/KeyValueReader.h"
 #include "../../../core/Engine.h"
 
-SkillBar::SkillBar()
+SkillBar::SkillBar(GameFonts *fonts)
         : UIElement((Engine::SCREEN_WIDTH - 1400) / 2, Engine::SCREEN_HEIGHT - 80, 1400, 80),
-          m_expBar(m_x, m_y, m_width)
+          m_expBar(fonts, m_x, m_y, m_width)
 {
     if (!m_texture.loadFromFile("../src/storage/game/userInterface/main/skillBar/texture.png"))
     {
@@ -46,4 +46,9 @@ void SkillBar::notify(std::shared_ptr<Event> event)
     {
 
     }
+}
+
+void SkillBar::handleCharacterExperienceGained()
+{
+    m_expBar.handleCharacterExperienceGained();
 }

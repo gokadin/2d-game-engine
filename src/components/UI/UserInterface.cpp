@@ -4,7 +4,7 @@
 UserInterface::UserInterface(GameFonts *fonts, EquipmentManager *equipmentManager, QuestTracker *questTracker):
         m_currentMouseOverElement(nullptr)
 {
-    m_skillBar = new SkillBar();
+    m_skillBar = new SkillBar(fonts);
     m_inventorySideBar = new InventorySideBar(equipmentManager);
     m_questTrackerUI = new QuestTrackerUI(fonts, questTracker);
 }
@@ -67,4 +67,18 @@ void UserInterface::closeOpenWindows()
 bool UserInterface::hasOpenWindows()
 {
     return m_inventorySideBar->isOpen();
+}
+
+void UserInterface::notify(std::shared_ptr<Event> event)
+{
+    switch (event->type()) {
+        case event_type::CHARACTER_EXPERIENCE_GAINED:
+
+            break;
+    }
+}
+
+void UserInterface::handleCharacterExperienceGained()
+{
+    m_skillBar->handleCharacterExperienceGained();
 }

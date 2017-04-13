@@ -1,6 +1,7 @@
 #include "Character.h"
 #include "../../events/skillEvents/SkillActivatedEvent.h"
 #include "../../animations/character/skillCasts/InstantCastAnimation.h"
+#include "../../events/monsters/MonsterDiedEvent.h"
 
 Character::Character()
 {
@@ -47,6 +48,12 @@ void Character::notify(std::shared_ptr<Event> event)
             m_state->setMovementPaused(false);
             m_state->setIsCasting(false);
             break;
+        case event_type::MONSTER_DIED:
+            handleMonsterDied((std::static_pointer_cast<MonsterDiedEvent>(event))->monster());
+            break;
+        case event_type::CHARACTER_EXPERIENCE_GAINED: // ugly to have outgoing and ingoing at same place
+            notifyObservers(event);
+            break;
     }
 }
 
@@ -68,4 +75,8 @@ void Character::inflictDamage(int damage)
     {
         // ...
     }
+}
+
+void Character::handleMonsterDied(Monster *monster) {
+    m_stats->handleMonsterDied(monster);
 }

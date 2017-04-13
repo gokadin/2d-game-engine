@@ -1,7 +1,8 @@
 #include "ExpBar.h"
 
-ExpBar::ExpBar(int skillBarX, int skillBarY, int skillBarWidth)
-        : UIElement(skillBarX, skillBarY - HEIGHT, skillBarWidth, HEIGHT)
+ExpBar::ExpBar(GameFonts *fonts, int skillBarX, int skillBarY, int skillBarWidth)
+        : UIElement(skillBarX, skillBarY - HEIGHT, skillBarWidth, HEIGHT),
+          m_fonts(fonts)
 {
     m_expBar.setSize(sf::Vector2f(m_width, HEIGHT));
     m_expBar.setFillColor(sf::Color(0, 0, 0, 100));
@@ -30,4 +31,9 @@ void ExpBar::draw(sf::RenderWindow *window)
 {
     window->draw(m_expBar);
     window->draw(m_expBarProgress);
+}
+
+void ExpBar::handleCharacterExperienceGained()
+{
+    m_expBarProgress.setSize(sf::Vector2f(m_expBarProgress.getSize().x + 100, m_expBarProgress.getSize().y));
 }

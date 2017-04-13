@@ -12,7 +12,7 @@
 #include "equipment/EquipmentManager.h"
 #include "../../common/MortalEntity.h"
 
-class Character : public GameComponent, public MortalEntity, public Observer
+class Character : public GameComponent, public MortalEntity, public Observer, public Observable
 {
 public:
     Character();
@@ -39,6 +39,7 @@ private:
     // updater
 
     void castSpell(Skill *skill);
+    void handleMonsterDied(Monster *monster);
 };
 
 #endif //SFMLDEMO_CHARACTER_H

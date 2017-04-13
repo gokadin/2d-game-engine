@@ -10,12 +10,13 @@
 class SkillBar : public UIElement, public Observer
 {
 public:
-    SkillBar();
+    SkillBar(GameFonts *fonts);
 
     void processEvent(sf::Event &event);
     void update();
     void draw(sf::RenderWindow *window);
     void notify(std::shared_ptr<Event> event);
+    void handleCharacterExperienceGained();
 
 private:
     sf::Texture m_texture;

@@ -7,7 +7,7 @@
 #include "inventory/InventorySideBar.h"
 #include "questTrackerUI/QuestTrackerUI.h"
 
-class UserInterface : public GameComponent
+class UserInterface : public GameComponent, public Observer
 {
 public:
     UserInterface(GameFonts *fonts, EquipmentManager *equipmentManager, QuestTracker *questTracker);
@@ -17,6 +17,7 @@ public:
     void update();
     void draw(sf::RenderWindow *window);
     bool isMouseOnUI(int x, int y);
+    void notify(std::shared_ptr<Event> event);
     void toggleInventory();
     void closeOpenWindows();
     bool hasOpenWindows();
@@ -26,6 +27,8 @@ private:
     InventorySideBar *m_inventorySideBar;
     QuestTrackerUI *m_questTrackerUI;
     UIElement *m_currentMouseOverElement;
+
+    void handleCharacterExperienceGained();
 };
 
 #endif //SFMLDEMO_UICOMPONENT_H
