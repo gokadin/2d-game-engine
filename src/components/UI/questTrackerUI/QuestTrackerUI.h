@@ -30,8 +30,12 @@ private:
     QuestTracker *m_tracker;
     sf::Text m_mainTitle;
     sf::Text m_questTitle;
+    sf::Text m_objectiveCounterText;
+    sf::Text m_objectiveDescriptionText;
 
     void handleQuestAdded(Quest *quest);
+    void handleObjectiveUpdated();
+    void updateObjectives();
 };
 
 #endif //SFMLDEMO_QUESTTRACKERUI_H

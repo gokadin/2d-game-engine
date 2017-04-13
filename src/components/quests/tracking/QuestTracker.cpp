@@ -26,7 +26,7 @@ void QuestTracker::acceptQuest(Quest *quest)
     }
 
     m_quest = quest;
-    notifyObservers(std::make_shared<QuestAddedEvent>(m_quest));
+    notifyObservers(std::make_shared<QuestAddedEvent>(quest));
 }
 
 void QuestTracker::notify(std::shared_ptr<Event> event)
@@ -34,7 +34,10 @@ void QuestTracker::notify(std::shared_ptr<Event> event)
     switch (event->type())
     {
         default:
-            m_quest->notify(event);
+            if (m_quest != nullptr)
+            {
+                m_quest->notify(event);
+            }
             break;
     }
 }

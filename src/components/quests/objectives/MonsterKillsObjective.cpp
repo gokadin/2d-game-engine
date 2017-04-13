@@ -1,5 +1,6 @@
 #include "MonsterKillsObjective.h"
 #include "../../../events/monsters/MonsterDiedEvent.h"
+#include "../../../events/quests/ObjectiveUpdatedEvent.h"
 
 MonsterKillsObjective::MonsterKillsObjective(std::string description, int totalCount, monster_type monsterType)
         : Objective(description, totalCount),
@@ -8,7 +9,10 @@ MonsterKillsObjective::MonsterKillsObjective(std::string description, int totalC
 
 void MonsterKillsObjective::notify(std::shared_ptr<Event> event)
 {
-    Objective::notify(event);
+    if (m_isCompleted)
+    {
+        return;
+    }
 
     switch (event->type())
     {
@@ -26,6 +30,7 @@ void MonsterKillsObjective::handleMonsterDied(Monster *monster)
     }
 
     m_currentCount++;
+    notifyObservers(std::make_shared<ObjectiveUpdatedEvent>());
     if (m_currentCount == m_totalCount)
     {
         complete();

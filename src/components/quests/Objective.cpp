@@ -8,14 +8,6 @@ Objective::Objective(std::string description, int totalCount)
           m_currentCount(0)
 {}
 
-void Objective::notify(std::shared_ptr<Event> event)
-{
-    if (m_isCompleted)
-    {
-        return;
-    }
-}
-
 void Objective::complete()
 {
     m_isCompleted = true;

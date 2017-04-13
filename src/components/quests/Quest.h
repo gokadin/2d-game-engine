@@ -9,13 +9,14 @@
 class Quest : public Observer
 {
 public:
-    Quest(quest_name name, std::string displayName);
+    Quest(quest_name name, const std::string &displayName);
     ~Quest();
 
     void notify(std::shared_ptr<Event> event);
 
     inline quest_name name() { return m_name; }
-    inline std::string displayName() { return m_displayName; }
+    inline const std::string &displayName() { return m_displayName; }
+    inline std::vector<Objective *>& objectives() { return m_objectives; }
 
 protected:
     void addObjective(Objective *objective);

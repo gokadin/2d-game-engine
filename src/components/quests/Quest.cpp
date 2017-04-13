@@ -1,6 +1,6 @@
 #include "Quest.h"
 
-Quest::Quest(quest_name name, std::string displayName)
+Quest::Quest(quest_name name, const std::string &displayName)
         : m_name(name),
           m_displayName(displayName)
 {}

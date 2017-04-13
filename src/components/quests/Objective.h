@@ -15,7 +15,7 @@ public:
     inline int totalCount() { return m_totalCount; }
     inline int currentCount() { return m_currentCount; }
 
-    virtual void notify(std::shared_ptr<Event> event);
+    virtual void notify(std::shared_ptr<Event> event) = 0;
 
 protected:
     bool m_isCompleted;
