@@ -4,6 +4,8 @@
 #include "../../../core/Engine.h"
 
 SkillBar::SkillBar()
+        : UIElement((Engine::SCREEN_WIDTH - 1400) / 2, Engine::SCREEN_HEIGHT - 80, 1400, 80),
+          m_expBar(m_x, m_y, m_width)
 {
     if (!m_texture.loadFromFile("../src/storage/game/userInterface/main/skillBar/texture.png"))
     {
@@ -11,13 +13,6 @@ SkillBar::SkillBar()
     }
 
     m_sprite.setTexture(m_texture);
-
-    std::map<std::string, std::string> metadata = KeyValueReader::read("../src/storage/game/userInterface/main/skillBar/metadata");
-
-    m_width = std::stoi(metadata["WIDTH"]);
-    m_height = std::stoi(metadata["HEIGHT"]);
-    m_x = (Engine::SCREEN_WIDTH - m_width) / 2;
-    m_y = Engine::SCREEN_HEIGHT - m_height;
     m_sprite.setPosition(m_x, 948); // what??????
 }
 
@@ -42,9 +37,13 @@ void SkillBar::update()
 void SkillBar::draw(sf::RenderWindow *window)
 {
     window->draw(m_sprite);
+    m_expBar.draw(window);
 }
 
-bool SkillBar::isMouseOnUI(int x, int y)
+void SkillBar::notify(std::shared_ptr<Event> event)
 {
-    return false;
+    switch (event->type())
+    {
+
+    }
 }

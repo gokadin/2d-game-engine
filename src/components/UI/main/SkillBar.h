@@ -4,8 +4,10 @@
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include "../UIElement.h"
+#include "../../../utils/Observer.h"
+#include "ExpBar.h"
 
-class SkillBar : public UIElement
+class SkillBar : public UIElement, public Observer
 {
 public:
     SkillBar();
@@ -13,11 +15,12 @@ public:
     void processEvent(sf::Event &event);
     void update();
     void draw(sf::RenderWindow *window);
-    bool isMouseOnUI(int x, int y);
+    void notify(std::shared_ptr<Event> event);
 
 private:
     sf::Texture m_texture;
     sf::Sprite m_sprite;
+    ExpBar m_expBar;
 };
 
 #endif //SFMLDEMO_SKILLBAR_H

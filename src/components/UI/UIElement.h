@@ -7,11 +7,12 @@ class UIElement
 {
 public:
     UIElement();
+    UIElement(int x, int y, int width, int height);
 
     virtual void processEvent(sf::Event &event) = 0;
     virtual void update() = 0;
     virtual void draw(sf::RenderWindow *window) = 0;
-    virtual bool isMouseOnUI(int x, int y) = 0;
+    virtual bool isMouseOnUI(int x, int y);
 
     void open();
     void close();
