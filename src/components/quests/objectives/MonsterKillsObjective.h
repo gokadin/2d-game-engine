@@ -9,7 +9,7 @@ class MonsterKillsObjective : public Objective
 public:
     MonsterKillsObjective(std::string description, int totalCount, monster_type monsterType);
 
-    void notify(std::shared_ptr<Event> event);
+    void handleEvent(std::shared_ptr<Event> event);
 
 private:
     monster_type m_monsterType;

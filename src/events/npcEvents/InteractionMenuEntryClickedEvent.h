@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_INTERACTIONMENUENTRYCLICKEDEVENT_H
 #define SFMLDEMO_INTERACTIONMENUENTRYCLICKEDEVENT_H
 
-#include "../../utils/Event.h"
+#include "../../utils/observable/Event.h"
 
 class InteractionMenuEntryClickedEvent : public Event
 {

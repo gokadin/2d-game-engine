@@ -7,7 +7,7 @@
 class Observer
 {
 public:
-    virtual void notify(std::shared_ptr<Event> event) = 0;
+    virtual void handleEvent(std::shared_ptr<Event> event) = 0;
 };
 
 #endif //SFMLDEMO_OBSERVER_H

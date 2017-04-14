@@ -2,8 +2,8 @@
 #define SFMLDEMO_OBJECTIVE_H
 
 #include <string>
-#include "../../utils/Observer.h"
-#include "../../utils/Observable.h"
+#include "../../utils/observable/Observer.h"
+#include "../../utils/observable/Observable.h"
 
 class Objective : public Observer, public Observable
 {
@@ -15,7 +15,7 @@ public:
     inline int totalCount() { return m_totalCount; }
     inline int currentCount() { return m_currentCount; }
 
-    virtual void notify(std::shared_ptr<Event> event) = 0;
+    virtual void handleEvent(std::shared_ptr<Event> event) = 0;
 
 protected:
     bool m_isCompleted;

@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_INSTANTCASTANIMATIONENDED_H
 #define SFMLDEMO_INSTANTCASTANIMATIONENDED_H
 
-#include "../../utils/Event.h"
+#include "../../utils/observable/Event.h"
 
 class InstantCastAnimationEnded : public Event
 {

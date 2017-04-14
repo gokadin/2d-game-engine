@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_OBJECTIVEUPDATEDEVENT_H
 #define SFMLDEMO_OBJECTIVEUPDATEDEVENT_H
 
-#include "../../utils/Event.h"
+#include "../../utils/observable/Event.h"
 
 class ObjectiveUpdatedEvent : public Event
 {

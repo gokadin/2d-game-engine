@@ -17,7 +17,7 @@ public:
     void update();
     void draw(sf::RenderWindow *window);
     bool isMouseOnInteraction(int x, int y);
-    void notify(std::shared_ptr<Event> event);
+    void handleEvent(std::shared_ptr<Event> event);
 
 private:
     MapState *m_mapState;

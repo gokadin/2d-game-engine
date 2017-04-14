@@ -7,7 +7,7 @@ MonsterKillsObjective::MonsterKillsObjective(std::string description, int totalC
           m_monsterType(monsterType)
 {}
 
-void MonsterKillsObjective::notify(std::shared_ptr<Event> event)
+void MonsterKillsObjective::handleEvent(std::shared_ptr<Event> event)
 {
     if (m_isCompleted)
     {

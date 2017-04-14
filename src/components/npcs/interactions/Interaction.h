@@ -3,7 +3,7 @@
 
 #include <string>
 #include <SFML/Graphics/RenderWindow.hpp>
-#include "../../../utils/Observable.h"
+#include "../../../utils/observable/Observable.h"
 #include "../../../enums/npcs/InteractionType.h"
 #include "../../../utils/font/GameFonts.h"
 

@@ -5,7 +5,7 @@
 #include "../UIElement.h"
 #include "../../quests/tracking/QuestTracker.h"
 #include "../../../core/Engine.h"
-#include "../../../utils/Observer.h"
+#include "../../../utils/observable/Observer.h"
 
 class QuestTrackerUI : public UIElement, public Observer
 {
@@ -16,7 +16,7 @@ public:
     void update();
     void draw(sf::RenderWindow *window);
     bool isMouseOnUI(int x, int y);
-    void notify(std::shared_ptr<Event> event);
+    void handleEvent(std::shared_ptr<Event> event);
 
 private:
     const int WIDTH = 200;

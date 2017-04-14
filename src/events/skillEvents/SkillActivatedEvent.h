@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_SKILLACTIVATEDEVENT_H
 #define SFMLDEMO_SKILLACTIVATEDEVENT_H
 
-#include "../../utils/Event.h"
+#include "../../utils/observable/Event.h"
 #include "../../skills/Skill.h"
 
 class SkillActivatedEvent : public Event

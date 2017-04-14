@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_OBJECTIVECOMPLETED_H
 #define SFMLDEMO_OBJECTIVECOMPLETED_H
 
-#include "../../utils/Event.h"
+#include "../../utils/observable/Event.h"
 
 class ObjectiveCompletedEvent : public Event
 {

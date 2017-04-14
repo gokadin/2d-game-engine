@@ -41,9 +41,12 @@ void Game::load()
 void Game::subscribeComponents()
 {
     m_skillManager->subscribe(m_character);
-    m_character->stats()->subscribe(m_skillManager);
+
+    m_character->subscribe(m_skillManager);
     m_character->subscribe(m_userInterface);
+
     m_npcs->subscribe(m_quests);
+
     m_monsters->subscribe(m_quests);
     m_monsters->subscribe(m_character);
 

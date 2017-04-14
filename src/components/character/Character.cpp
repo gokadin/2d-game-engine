@@ -8,6 +8,7 @@ Character::Character()
     m_graphics = new CharacterGraphics();
     m_state = new CharacterState();
     m_stats = new CharacterStats();
+    m_stats->subscribeParent(this);
     m_equipmentManager = new EquipmentManager(m_stats);
     m_animations = new CharacterAnimations(m_state, m_graphics, m_equipmentManager);
     m_renderer = new CharacterRenderer(m_graphics);
@@ -37,7 +38,12 @@ void Character::draw(sf::RenderWindow *window)
     m_equipmentManager->draw(window);
 }
 
-void Character::notify(std::shared_ptr<Event> event)
+void Character::handleChildEvent(std::shared_ptr<Event> event)
+{
+    notifyObservers(event);
+}
+
+void Character::handleEvent(std::shared_ptr<Event> event)
 {
     switch (event->type())
     {
@@ -50,9 +56,6 @@ void Character::notify(std::shared_ptr<Event> event)
             break;
         case event_type::MONSTER_DIED:
             handleMonsterDied((std::static_pointer_cast<MonsterDiedEvent>(event))->monster());
-            break;
-        case event_type::CHARACTER_EXPERIENCE_GAINED: // ugly to have outgoing and ingoing at same place
-            notifyObservers(event);
             break;
     }
 }

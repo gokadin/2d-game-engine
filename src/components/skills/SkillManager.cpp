@@ -64,7 +64,7 @@ void SkillManager::assign(int slotIndex, skill_names name)
     }
 }
 
-void SkillManager::notify(std::shared_ptr<Event> event)
+void SkillManager::handleEvent(std::shared_ptr<Event> event)
 {
     switch (event->type())
     {

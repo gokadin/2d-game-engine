@@ -18,7 +18,7 @@ public:
     void processEvent(sf::Event& event);
     void update();
     void draw(sf::RenderWindow *window);
-    void notify(std::shared_ptr<Event> event);
+    void handleEvent(std::shared_ptr<Event> event);
     bool isMouseOnInteraction(int x, int y);
     void addStoryDialogue(Dialogue *dialogue);
     void reset();

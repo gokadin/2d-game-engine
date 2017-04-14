@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_MONSTERDIEDEVENT_H
 #define SFMLDEMO_MONSTERDIEDEVENT_H
 
-#include "../../utils/Event.h"
+#include "../../utils/observable/Event.h"
 #include "../../monsters/Monster.h"
 
 class MonsterDiedEvent : public Event

@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_QUESTACCEPTEDEVENT_H
 #define SFMLDEMO_QUESTACCEPTEDEVENT_H
 
-#include "../../utils/Event.h"
+#include "../../utils/observable/Event.h"
 #include "../../enums/quests/QuestName.h"
 
 class QuestAcceptedEvent : public Event

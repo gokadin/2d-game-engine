@@ -3,7 +3,7 @@
 
 #include <map>
 #include "../../core/GameComponent.h"
-#include "../../utils/Observable.h"
+#include "../../utils/observable/Observable.h"
 #include "../../skills/Skill.h"
 #include "../../enums/SkillNames.h"
 #include "../../data/definitions/map/MapState.h"
@@ -25,7 +25,7 @@ public:
     void draw(sf::RenderWindow *window);
     void activate(int slotIndex, int targetX, int targetY);
     void assign(int slotIndex, skill_names name);
-    void notify(std::shared_ptr<Event> event);
+    void handleEvent(std::shared_ptr<Event> event);
 
 private:
     const int NUM_SLOTS = 6;

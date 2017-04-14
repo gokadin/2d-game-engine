@@ -5,7 +5,7 @@
 #include "../../../data/definitions/character/CharacterGraphics.h"
 #include "../../../skills/Skill.h"
 #include "../../../data/definitions/character/CharacterState.h"
-#include "../../../utils/Observable.h"
+#include "../../../utils/observable/Observable.h"
 
 class InstantCastAnimation : public Animation, public Observable
 {

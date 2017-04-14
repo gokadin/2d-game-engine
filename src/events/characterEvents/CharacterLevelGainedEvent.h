@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_CHARACTERLEVELGAINEDEVENT_H
 #define SFMLDEMO_CHARACTERLEVELGAINEDEVENT_H
 
-#include "../../utils/Event.h"
+#include "../../utils/observable/Event.h"
 
 class CharacterLevelGainedEvent : public Event
 {

@@ -22,7 +22,7 @@ void Quests::draw(sf::RenderWindow *window)
 
 }
 
-void Quests::notify(std::shared_ptr<Event> event)
+void Quests::handleEvent(std::shared_ptr<Event> event)
 {
     switch (event->type())
     {
@@ -30,7 +30,7 @@ void Quests::notify(std::shared_ptr<Event> event)
             m_tracker->acceptQuest(createQuest((std::static_pointer_cast<QuestAcceptedEvent>(event))->questName()));
             break;
         default:
-            m_tracker->notify(event);
+            m_tracker->handleEvent(event);
             break;
     }
 }

@@ -69,16 +69,16 @@ bool UserInterface::hasOpenWindows()
     return m_inventorySideBar->isOpen();
 }
 
-void UserInterface::notify(std::shared_ptr<Event> event)
+void UserInterface::handleEvent(std::shared_ptr<Event> event)
 {
     switch (event->type()) {
         case event_type::CHARACTER_EXPERIENCE_GAINED:
-
+            handleCharacterExperienceGained(std::static_pointer_cast<CharacterExperienceGainedEvent>(event));
             break;
     }
 }
 
-void UserInterface::handleCharacterExperienceGained()
+void UserInterface::handleCharacterExperienceGained(std::shared_ptr<CharacterExperienceGainedEvent> event)
 {
-    m_skillBar->handleCharacterExperienceGained();
+    m_skillBar->handleCharacterExperienceGained(event);
 }

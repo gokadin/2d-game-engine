@@ -3,7 +3,7 @@
 
 #include "../../core/GameComponent.h"
 #include "tracking/QuestTracker.h"
-#include "../../utils/Observer.h"
+#include "../../utils/observable/Observer.h"
 
 class Quests : public GameComponent, public Observer
 {
@@ -13,7 +13,7 @@ public:
 
     void update();
     void draw(sf::RenderWindow *window);
-    void notify(std::shared_ptr<Event> event);
+    void handleEvent(std::shared_ptr<Event> event);
 
     inline QuestTracker* tracker() { return m_tracker; }
 

@@ -15,7 +15,7 @@ public:
     void update();
     void draw(sf::RenderWindow *window);
     Monster* findMonster(int id);
-    void notify(std::shared_ptr<Event> event);
+    void handleEvent(std::shared_ptr<Event> event);
 
 private:
     std::vector<MonsterManager *> m_monsterManagers;

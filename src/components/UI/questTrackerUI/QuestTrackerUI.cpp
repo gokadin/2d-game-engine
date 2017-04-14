@@ -51,7 +51,7 @@ bool QuestTrackerUI::isMouseOnUI(int x, int y)
     return false;
 }
 
-void QuestTrackerUI::notify(std::shared_ptr<Event> event)
+void QuestTrackerUI::handleEvent(std::shared_ptr<Event> event)
 {
     switch (event->type())
     {

@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_INTERACTIONCANCELLEDEVENT_H
 #define SFMLDEMO_INTERACTIONCANCELLEDEVENT_H
 
-#include "../../utils/Event.h"
+#include "../../utils/observable/Event.h"
 
 class InteractionCancelledEvent : public Event
 {

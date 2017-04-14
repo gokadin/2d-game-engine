@@ -17,7 +17,7 @@ public:
     virtual void draw(sf::RenderWindow *window);
     int totalAliveMonsters();
     Monster* findAnyDeadMonster();
-    void notify(std::shared_ptr<Event> event);
+    void handleEvent(std::shared_ptr<Event> event);
 
     inline Monster* findMonster(int id) { return m_monsters[id]; }
     inline int totalMonsters() { return m_totalMonsters; }

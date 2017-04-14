@@ -59,7 +59,7 @@ void InteractionMenu::addStoryDialogue(int id, std::string title)
     buildMenu();
 }
 
-void InteractionMenu::notify(std::shared_ptr<Event> event)
+void InteractionMenu::handleEvent(std::shared_ptr<Event> event)
 {
     switch (event->type())
     {

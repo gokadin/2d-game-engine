@@ -102,7 +102,7 @@ Monster *MonsterManager::findAnyDeadMonster()
     return NULL;
 }
 
-void MonsterManager::notify(std::shared_ptr<Event> event)
+void MonsterManager::handleEvent(std::shared_ptr<Event> event)
 {
     switch (event->type())
     {

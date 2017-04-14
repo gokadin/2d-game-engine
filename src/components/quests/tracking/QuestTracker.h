@@ -6,7 +6,7 @@
 #include "../../../utils/font/GameFonts.h"
 #include "../../../enums/quests/QuestName.h"
 #include "../Quest.h"
-#include "../../../utils/Observable.h"
+#include "../../../utils/observable/Observable.h"
 
 class QuestTracker : public Observable, public Observer
 {
@@ -17,7 +17,7 @@ public:
     void update();
     void acceptQuest(Quest *quest);
     Quest *quest() { return m_quest; }
-    void notify(std::shared_ptr<Event> event);
+    void handleEvent(std::shared_ptr<Event> event);
 
 private:
     Quest *m_quest;

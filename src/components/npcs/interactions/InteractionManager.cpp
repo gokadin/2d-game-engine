@@ -52,7 +52,7 @@ void InteractionManager::draw(sf::RenderWindow *window)
     m_interactionInProgress->draw(window);
 }
 
-void InteractionManager::notify(std::shared_ptr<Event> event)
+void InteractionManager::handleEvent(std::shared_ptr<Event> event)
 {
     switch (event->type())
     {

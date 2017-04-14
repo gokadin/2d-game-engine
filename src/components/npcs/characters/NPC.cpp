@@ -121,7 +121,7 @@ void NPC::processInteractionEvent(sf::Event &event)
     m_interactionManager.processEvent(event);
 }
 
-void NPC::notify(std::shared_ptr<Event> event)
+void NPC::handleEvent(std::shared_ptr<Event> event)
 {
     switch (event->type())
     {

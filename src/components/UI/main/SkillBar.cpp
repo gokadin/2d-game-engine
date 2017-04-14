@@ -5,7 +5,7 @@
 
 SkillBar::SkillBar(GameFonts *fonts)
         : UIElement((Engine::SCREEN_WIDTH - 1400) / 2, Engine::SCREEN_HEIGHT - 80, 1400, 80),
-          m_expBar(fonts, m_x, m_y, m_width)
+          m_expBar(fonts, m_x, 948, m_width)
 {
     if (!m_texture.loadFromFile("../src/storage/game/userInterface/main/skillBar/texture.png"))
     {
@@ -40,7 +40,7 @@ void SkillBar::draw(sf::RenderWindow *window)
     m_expBar.draw(window);
 }
 
-void SkillBar::notify(std::shared_ptr<Event> event)
+void SkillBar::handleEvent(std::shared_ptr<Event> event)
 {
     switch (event->type())
     {
@@ -48,7 +48,7 @@ void SkillBar::notify(std::shared_ptr<Event> event)
     }
 }
 
-void SkillBar::handleCharacterExperienceGained()
+void SkillBar::handleCharacterExperienceGained(std::shared_ptr<CharacterExperienceGainedEvent> event)
 {
-    m_expBar.handleCharacterExperienceGained();
+    m_expBar.handleCharacterExperienceGained(event);
 }

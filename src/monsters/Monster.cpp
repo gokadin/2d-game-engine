@@ -1,9 +1,11 @@
 #include "Monster.h"
 #include "../events/monsters/MonsterDiedEvent.h"
 
-Monster::Monster(int id, monster_type type, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds)
+Monster::Monster(int id, monster_type type, uint16_t experienceWorth, sf::Texture *texture, MapState *mapState,
+                 MapBounds *mapBounds)
         : m_id(id),
           m_type(type),
+          m_experienceWorth(experienceWorth),
           m_texture(texture),
           m_mapState(mapState),
           m_mapBounds(mapBounds),

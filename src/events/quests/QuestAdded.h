@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_QUESTADDED_H
 #define SFMLDEMO_QUESTADDED_H
 
-#include "../../utils/Event.h"
+#include "../../utils/observable/Event.h"
 #include "../../components/quests/Quest.h"
 
 class QuestAddedEvent : public Event

@@ -1,7 +1,7 @@
 #include "Zombie.h"
 
 Zombie::Zombie(int id, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds):
-        Monster(id, monster_type::ZOMBIE, texture, mapState, mapBounds)
+        Monster(id, monster_type::ZOMBIE, 100, texture, mapState, mapBounds)
 {
     m_sprite.setTextureRect(sf::IntRect(0, 0, 56, 112));
 }

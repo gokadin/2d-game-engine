@@ -20,7 +20,7 @@ public:
     bool isMouseOnInteraction(int x, int y);
     void processMouseButtonPressed(sf::Event &event);
     void processInteractionEvent(sf::Event& event);
-    void notify(std::shared_ptr<Event> event);
+    void handleEvent(std::shared_ptr<Event> event);
 
     inline bool isActive() { return m_isActive; }
 

@@ -4,6 +4,8 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include "../UIElement.h"
 #include "../../../utils/font/GameFonts.h"
+#include <memory>
+#include "../../../events/characterEvents/CharacterExperienceGainedEvent.h"
 
 class ExpBar : public UIElement
 {
@@ -13,7 +15,7 @@ public:
     void processEvent(sf::Event &event);
     void update();
     void draw(sf::RenderWindow *window);
-    void handleCharacterExperienceGained();
+    void handleCharacterExperienceGained(std::shared_ptr<CharacterExperienceGainedEvent> event);
 
 private:
     const int HEIGHT = 10;

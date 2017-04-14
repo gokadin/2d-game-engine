@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_EVENT_H
 #define SFMLDEMO_EVENT_H
 
-#include "../enums/EventType.h"
+#include "../../enums/EventType.h"
 
 class Event
 {

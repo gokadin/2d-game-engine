@@ -11,5 +11,5 @@ Objective::Objective(std::string description, int totalCount)
 void Objective::complete()
 {
     m_isCompleted = true;
-    notify(std::make_shared<ObjectiveCompletedEvent>());
+    handleEvent(std::make_shared<ObjectiveCompletedEvent>());
 }

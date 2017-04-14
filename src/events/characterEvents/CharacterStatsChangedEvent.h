@@ -1,7 +1,7 @@
 #ifndef SFMLDEMO_CHARACTERSTATSCHANGEDEVENT_H
 #define SFMLDEMO_CHARACTERSTATSCHANGEDEVENT_H
 
-#include "../../utils/Event.h"
+#include "../../utils/observable/Event.h"
 
 class CharacterStatsChanged : public Event
 {

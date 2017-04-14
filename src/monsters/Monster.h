@@ -8,19 +8,21 @@
 #include "../data/definitions/map/MapBounds.h"
 #include "../effects/EffectManager.h"
 #include "../common/MortalEntity.h"
-#include "../utils/Observable.h"
+#include "../utils/observable/Observable.h"
 #include "../enums/monsters/MonsterType.h"
 
 class Monster : public MortalEntity, public Observable
 {
 public:
-    Monster(int id, monster_type type, sf::Texture *texture, MapState *mapState, MapBounds *mapBounds);
+    Monster(int id, monster_type type, uint16_t experienceWorth, sf::Texture *texture, MapState *mapState,
+            MapBounds *mapBounds);
 
     virtual void draw(sf::RenderWindow *window) = 0;
     virtual void update();
     virtual void resurrect();
 
     inline monster_type type() { return m_type; }
+    inline uint16_t experienceWorth() { return m_experienceWorth; }
     inline int hitBoxWidth() { return m_hitBoxWidth; }
     inline int hitBoxHeight() { return m_hitBoxHeight; }
     inline float x() { return m_x; }
@@ -72,6 +74,7 @@ protected:
 
 private:
     monster_type m_type;
+    uint16_t m_experienceWorth;
 };
 
 #endif //SFMLDEMO_MONSTER_H

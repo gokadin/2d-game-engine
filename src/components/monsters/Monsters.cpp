@@ -46,7 +46,7 @@ Monster *Monsters::findMonster(int id)
     return m_monsterManagers[id / 1000 - 1]->findMonster(id);
 }
 
-void Monsters::notify(std::shared_ptr<Event> event)
+void Monsters::handleEvent(std::shared_ptr<Event> event)
 {
     switch (event->type())
     {

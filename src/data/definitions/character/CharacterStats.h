@@ -2,58 +2,36 @@
 #define SFMLDEMO_CHARACTERSTATS_H
 
 #include "../Stats.h"
-#include "../../../utils/Observable.h"
 #include "../../../events/characterEvents/CharacterStatsChangedEvent.h"
 #include "../../../monsters/Monster.h"
 #include "../../../events/characterEvents/CharacterExperienceGainedEvent.h"
 #include "../../../events/characterEvents/CharacterLevelGainedEvent.h"
+#include "../../../utils/observable/ObservableChild.h"
 
-class CharacterStats : public Stats, public Observable
+class CharacterStats : public Stats, public ObservableChild
 {
 public:
-    CharacterStats()
-            : m_moveModifier(1.0f),
-              m_spellPower(0),
-              m_experience(0),
-              m_level(1)
-    {}
+    CharacterStats();
 
     inline float moveSpeed() { return BASE_MOVE_SPEED * m_moveModifier; }
     inline int spellPower() { return m_spellPower; }
 
-    inline void setMoveModifier(float moveModifier) { m_moveModifier = moveModifier; }
-
-    inline void addSpellPower(int spellPower)
-    {
-        m_spellPower += spellPower;
-        notifyObservers(std::make_shared<CharacterStatsChanged>());
-    }
-
-    inline void removeSpellPower(int spellPower)
-    {
-        m_spellPower -= spellPower;
-        notifyObservers(std::make_shared<CharacterStatsChanged>());
-    }
-
-    void handleMonsterDied(Monster *monster)
-    {
-        m_experience += 100;
-        notifyObservers(std::make_shared<CharacterExperienceGainedEvent>());
-    }
+    void addSpellPower(int spellPower);
+    void removeSpellPower(int spellPower);
+    void handleMonsterDied(Monster *monster);
 
 private:
     const int BASE_MOVE_SPEED = 2;
+    const int BASE_EXPERIENCE = 1000;
 
     float m_moveModifier;
     int m_spellPower;
-    int m_experience;
-    int m_level;
+    uint32_t m_currentExperience;
+    uint32_t m_levelExperience;
+    uint32_t m_previousLevelExperience;
+    uint8_t m_level;
 
-    void levelUp()
-    {
-        m_level++;
-        notifyObservers(std::make_shared<CharacterLevelGainedEvent>());
-    }
+    void levelUp();
 };
 
 #endif //SFMLDEMO_CHARACTERSTATS_H

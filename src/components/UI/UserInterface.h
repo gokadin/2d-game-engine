@@ -17,7 +17,7 @@ public:
     void update();
     void draw(sf::RenderWindow *window);
     bool isMouseOnUI(int x, int y);
-    void notify(std::shared_ptr<Event> event);
+    void handleEvent(std::shared_ptr<Event> event);
     void toggleInventory();
     void closeOpenWindows();
     bool hasOpenWindows();
@@ -28,7 +28,7 @@ private:
     QuestTrackerUI *m_questTrackerUI;
     UIElement *m_currentMouseOverElement;
 
-    void handleCharacterExperienceGained();
+    void handleCharacterExperienceGained(std::shared_ptr<CharacterExperienceGainedEvent> event);
 };
 
 #endif //SFMLDEMO_UICOMPONENT_H

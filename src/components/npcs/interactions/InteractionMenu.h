@@ -21,7 +21,7 @@ public:
     void update();
     bool isMouseOnMenu(int x, int y);
     void addStoryDialogue(int id, std::string title);
-    void notify(std::shared_ptr<Event> event);
+    void handleEvent(std::shared_ptr<Event> event);
 
 private:
     const int MENU_MIN_WIDTH = 10;

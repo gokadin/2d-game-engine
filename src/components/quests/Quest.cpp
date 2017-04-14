@@ -32,10 +32,10 @@ bool Quest::isCompleted()
     return true;
 }
 
-void Quest::notify(std::shared_ptr<Event> event)
+void Quest::handleEvent(std::shared_ptr<Event> event)
 {
     for (auto *objective : m_objectives)
     {
-        objective->notify(event);
+        objective->handleEvent(event);
     }
 }
