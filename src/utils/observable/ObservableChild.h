@@ -6,7 +6,10 @@
 class ObservableChild
 {
 public:
-    ObservableChild() {}
+    ObservableChild()
+            : m_parent(nullptr)
+    {}
+
     virtual ~ObservableChild()
     {
         m_parent = nullptr;

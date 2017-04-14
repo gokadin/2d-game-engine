@@ -13,9 +13,12 @@ public:
     void update();
 
 private:
+    const int RESURRECT_CHECK_FRAMES_BETWEEN = Engine::UPS / 4;
+
+    int m_resurrectCheckTimer;
     MonsterManager *m_minionManager;
 
-    void resurectDeadMinions();
+    void resurrectDeadMinions();
 };
 
 #endif //SFMLDEMO_SUMMONERUPDATER_H

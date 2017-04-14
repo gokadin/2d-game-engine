@@ -28,7 +28,7 @@ private:
     void updateFlyingProjectile(Projectile *projectile);
     void updateHittingProjectile(Projectile *projectile);
     void detectCollision(Projectile *projectile, int boundI, int boundJ);
-    void processMonsterCollision(Projectile *projectile, int boundI, int boundJ, int boundValue);
+    void processMonsterCollision(Projectile *projectile, int boundValue);
 };
 
 #endif //SFMLDEMO_SKILLMANAGERUPDATER_H

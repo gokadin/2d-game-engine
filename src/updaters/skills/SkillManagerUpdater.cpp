@@ -70,11 +70,11 @@ void SkillManagerUpdater::detectCollision(Projectile *projectile, int boundI, in
 
     if (boundValue > 1000)
     {
-        processMonsterCollision(projectile, boundI, boundJ, boundValue);
+        processMonsterCollision(projectile, boundValue);
     }
 }
 
-void SkillManagerUpdater::processMonsterCollision(Projectile *projectile, int boundI, int boundJ, int boundValue)
+void SkillManagerUpdater::processMonsterCollision(Projectile *projectile, int boundValue)
 {
     projectile->hitMonster(m_monsters->findMonster(boundValue));
 }

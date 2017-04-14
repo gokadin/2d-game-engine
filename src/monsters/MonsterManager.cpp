@@ -61,7 +61,7 @@ void MonsterManager::addMonster(Monster *monster)
 
 int MonsterManager::nextId()
 {
-    return m_nextId + 1;
+    return ++m_nextId;
 }
 
 void MonsterManager::drawHealthBar(sf::RenderWindow *window, Monster *monster)
@@ -99,7 +99,7 @@ Monster *MonsterManager::findAnyDeadMonster()
         }
     }
 
-    return NULL;
+    return nullptr;
 }
 
 void MonsterManager::handleEvent(std::shared_ptr<Event> event)
