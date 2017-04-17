@@ -22,6 +22,7 @@ Map::~Map()
 void Map::update()
 {
     m_updater->update();
+    m_renderer->update();
 }
 
 void Map::draw(sf::RenderWindow *window)

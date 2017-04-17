@@ -10,6 +10,8 @@
 #include "../../data/definitions/map/MapBounds.h"
 #include "../../data/definitions/character/CharacterState.h"
 
+const int NODE_SIZE = 32;
+
 class Map : public GameComponent
 {
 public:

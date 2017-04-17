@@ -14,8 +14,6 @@ public:
     static const int SCREEN_HEIGHT = 1080;
     static const int HALF_SCREEN_WIDTH = SCREEN_WIDTH / 2;
     static const int HALF_SCREEN_HEIGHT = SCREEN_HEIGHT / 2;
-    static const int CX = SCREEN_WIDTH / 2;
-    static const int CY = SCREEN_HEIGHT / 2;
 
     Engine();
     ~Engine();

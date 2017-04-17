@@ -18,7 +18,7 @@ ThousandTruths::ThousandTruths():
 void ThousandTruths::draw(sf::RenderWindow *window)
 {
     m_sprite.setTextureRect(sf::IntRect(m_phase * 64, 0, 64, 64));
-    m_sprite.setPosition(Engine::CX - 75, Engine::CY - 75);
+    m_sprite.setPosition(Engine::HALF_SCREEN_WIDTH - 75, Engine::HALF_SCREEN_HEIGHT - 75);
 
     window->draw(m_sprite);
 }

@@ -24,8 +24,6 @@ public:
     void update();
 
 private:
-    const int DESTINATION_ARRIVAL_RADIUS = 2;
-
     sf::RenderWindow *m_window;
     MapGraphics *m_graphics;
     MapState *m_state;
@@ -36,13 +34,11 @@ private:
     double m_lastAngle;
     float m_lastX;
     float m_lastY;
-    int m_tilesPerCharacterRow;
+    sf::Vector2i m_tileToReach;
 
     void updateMovement();
-    bool processFirstQuadrantCollisions();
-    bool processSecondQuadrantCollisions();
-    bool processThirdQuadrantCollisions();
-    bool processFourthQuadrantCollisions();
+    void updateTileToReach(int mouseIsoX, int mouseIsoY);
+    void updateMoveAngle(int mouseX, int mouseY);
 };
 
 #endif //SFMLDEMO_MAPUPDATER_H

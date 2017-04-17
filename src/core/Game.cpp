@@ -143,8 +143,8 @@ void Game::draw()
     m_character->draw(m_window);
     m_skillManager->draw(m_window);
     m_monsters->draw(m_window);
-    m_userInterface->draw(m_window);
     m_mapObjects->draw(m_window);
     m_npcs->draw(m_window);
     m_quests->draw(m_window);
+    m_userInterface->draw(m_window);
 }

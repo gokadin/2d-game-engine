@@ -72,7 +72,7 @@ void InteractionMenu::handleEvent(std::shared_ptr<Event> event)
 void InteractionMenu::buildMenu()
 {
     float longestWidth = findLongestEntry();
-    m_mainBox.setPosition(Engine::CX - longestWidth / 2, MENU_TOP_MARGIN);
+    m_mainBox.setPosition(Engine::HALF_SCREEN_WIDTH - longestWidth / 2, MENU_TOP_MARGIN);
     m_mainBox.setSize(sf::Vector2f(longestWidth, 0.0f));
 
     buildStoryDialoguesSection();

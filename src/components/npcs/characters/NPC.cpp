@@ -88,8 +88,8 @@ void NPC::update()
         return;
     }
 
-    float diffX = m_x - m_mapState->x() - Engine::CX;
-    float diffY = m_y - m_mapState->y() - Engine::CY;
+    float diffX = m_x - m_mapState->x() - Engine::HALF_SCREEN_WIDTH;
+    float diffY = m_y - m_mapState->y() - Engine::HALF_SCREEN_HEIGHT;
     float distance = std::hypotf(diffX, diffY);
     if (distance > ACTIVATE_RANGE)
     {

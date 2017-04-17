@@ -19,9 +19,13 @@ void SummonerUpdater::update()
 
 void SummonerUpdater::resurrectDeadMinions()
 {
-    // should depend on each summoner's position
-
     if (m_minionManager->totalAliveMonsters() == m_minionManager->totalMonsters())
+    {
+        return;
+    }
+
+    Monster *minion = m_minionManager->findAnyDeadMonster();
+    if (minion == nullptr)
     {
         return;
     }
@@ -30,7 +34,7 @@ void SummonerUpdater::resurrectDeadMinions()
     for (std::pair<int, Monster *> pair : m_monsters)
     {
         auto *summoner = (Summoner*)pair.second;
-        if (summoner->isAlive() && summoner->isReadyToResurrect())
+        if (summoner->isAlive() && summoner->isReadyToResurrect() && summoner->isInResurrectRange(minion))
         {
             availableSummoner = summoner;
             break;
@@ -42,14 +46,5 @@ void SummonerUpdater::resurrectDeadMinions()
         return;
     }
 
-    Monster *minion = m_minionManager->findAnyDeadMonster();
-    if (minion == nullptr)
-    {
-        return;
-    }
-
-    if (availableSummoner->isInResurrectRange(minion))
-    {
-        availableSummoner->resurrectMinion(minion);
-    }
+    availableSummoner->resurrectMinion(minion);
 }

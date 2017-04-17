@@ -29,6 +29,7 @@ Character::~Character()
 void Character::update()
 {
     m_animations->update();
+    m_renderer->update();
 }
 
 void Character::draw(sf::RenderWindow *window)

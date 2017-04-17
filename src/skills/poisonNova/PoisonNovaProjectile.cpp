@@ -2,7 +2,7 @@
 #include "../../effects/general/DamageOverTime.h"
 
 PoisonNovaProjectile::PoisonNovaProjectile(sf::Texture *texture, MapState *mapState, double angle, int damage):
-        Projectile(texture, mapState, Engine::CX + mapState->x(), Engine::CY + mapState->y(), 0, 0, damage),
+        Projectile(texture, mapState, Engine::HALF_SCREEN_WIDTH + mapState->x(), Engine::HALF_SCREEN_HEIGHT + mapState->y(), 0, 0, damage),
         m_angle(angle)
 {}
 

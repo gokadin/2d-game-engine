@@ -7,8 +7,8 @@ AggroUpdater::AggroUpdater(MapState *mapState):
 
 void AggroUpdater::update(Monster *monster)
 {
-    float diffX = monster->x() - m_mapState->x() - Engine::CX;
-    float diffY = monster->y() - m_mapState->y() - Engine::CY;
+    float diffX = monster->x() - m_mapState->x() - Engine::HALF_SCREEN_WIDTH;
+    float diffY = monster->y() - m_mapState->y() - Engine::HALF_SCREEN_HEIGHT;
 
     if (monster->phase() != monster_phase::ATTACKING)
     {

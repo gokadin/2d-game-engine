@@ -13,6 +13,7 @@ class CharacterRenderer : public Renderer
 public:
     CharacterRenderer(CharacterGraphics *graphics);
 
+    void update();
     void draw(sf::RenderWindow *window);
 
 private:
@@ -21,8 +22,6 @@ private:
     // temp and debug
     sf::RectangleShape m_box;
     sf::RectangleShape m_point;
-
-    void updateSprite();
 };
 
 #endif //SFMLDEMO_CHARACTERRENDERER_H

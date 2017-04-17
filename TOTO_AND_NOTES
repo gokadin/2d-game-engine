@@ -1,6 +1,67 @@
 TODO
 ========================================================================================================================
 
+monster death animations
+monster resurrect animations
+monster skills and skill manager
+monster walking animations
+monster idle animations
+monster attack animations
+monster directions
+
+character texture
+character directions
+equipment textures
+equipment directions
+equipment animations
+character lighting in radius
+
+spell textures
+spell directions
+
+quest completion animations
+quest accept animations
+
+sorted rendering
+proper collision detection
+monster aggro with LOS
+
+inventory side bar design
+inventory side bar currency row
+
+loot drops from monsters
+loot pickups
+
+vendor interactions
+vendor selling / buying
+
+map texture for town
+map monster spots
+random map generation
+random monster generation (density, type)
+map static objects merging
+map object interactions (proximity, triggers like chests)
+map object lighting
+weather system
+weather system interactions with animated map objects (trees for example)
+
+npc idle animations
+npc directions
+npc walking animations
+npc AI
+npc dialogues multi-steps
+
+level up animations
+skill manager ui
+skill bar and ui
+talent tree
+
+
+BUGS
+=======================================================================================================================
+
+invalid coordinates at game startup (sometimes)
+skill bar y position has to be manually set or it's too low
 
 
 NOTES

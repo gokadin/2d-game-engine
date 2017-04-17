@@ -1,7 +1,7 @@
 #include "FireballProjectile.h"
 
 FireballProjectile::FireballProjectile(sf::Texture *texture, MapState *mapState, int targetX, int targetY, int damage):
-        Projectile(texture, mapState, Engine::CX + mapState->x(), Engine::CY + mapState->y(), targetX, targetY, damage),
+        Projectile(texture, mapState, Engine::HALF_SCREEN_WIDTH + mapState->x(), Engine::HALF_SCREEN_HEIGHT + mapState->y(), targetX, targetY, damage),
         m_explFrameCounter(0)
 {}
 
@@ -11,7 +11,7 @@ void FireballProjectile::update()
     {
         m_phase = projectile_phase::FLYING;
 
-        double angle = atan2(m_targetY - Engine::CY, m_targetX - Engine::CX);
+        double angle = atan2(m_targetY - Engine::HALF_SCREEN_HEIGHT, m_targetX - Engine::HALF_SCREEN_WIDTH);
         m_flyingSpeedX = FLY_SPEED * (float)cos(angle);
         m_flyingSpeedY = FLY_SPEED * (float)sin(angle);
     }
