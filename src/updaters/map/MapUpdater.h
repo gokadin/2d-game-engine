@@ -9,6 +9,7 @@
 #include "../../data/definitions/map/MapBounds.h"
 #include "../../data/definitions/character/CharacterGraphics.h"
 #include "../../data/definitions/character/CharacterState.h"
+#include "../../physics/collisions/CollisionProcessor.h"
 
 #define HALF_PI (M_PI / 2)
 #define QUARTER_PI (HALF_PI / 2)
@@ -24,6 +25,7 @@ public:
     void update();
 
 private:
+    CollisionProcessor m_collisionProcessor;
     sf::RenderWindow *m_window;
     MapGraphics *m_graphics;
     MapState *m_state;
