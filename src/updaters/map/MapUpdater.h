@@ -14,6 +14,10 @@
 #define HALF_PI (M_PI / 2)
 #define QUARTER_PI (HALF_PI / 2)
 #define THREE_QUARTER_PI (M_PI - QUARTER_PI)
+#define ONE_SIXTH_PI (M_PI / 6)
+#define ONE_THIRD_PI (M_PI / 3)
+#define TWO_THIRDS_PI (ONE_THIRD_PI * 2)
+#define FIVE_SIXTH_PI (ONE_SIXTH_PI * 5)
 
 class MapUpdater : public Updater
 {
@@ -41,6 +45,13 @@ private:
     void updateMovement();
     void updateTileToReach(int mouseIsoX, int mouseIsoY);
     void updateMoveAngle(int mouseX, int mouseY);
+    void updateDirection();
+
+    // temp
+    int bottomRightValue();
+    int bottomLeftValue();
+    int topRightValue();
+    int topLeftValue();
 };
 
 #endif //SFMLDEMO_MAPUPDATER_H
