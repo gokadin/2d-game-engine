@@ -68,3 +68,5 @@ NOTES
 =======================================================================================================================
 
 Basically need to have a predefined table with offsets in sprites for synchronising character and equipment animations.
+
+Would be cool to have multi skill interactions. Example you cast a tornado first and then ignite it with some other fire spell.

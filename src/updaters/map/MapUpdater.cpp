@@ -44,19 +44,33 @@ void MapUpdater::updateMovement()
 
     float newX = (m_state->x() + m_characterStats->moveSpeed() * (float)cos(m_lastAngle));
     float newY = (m_state->y() + m_characterStats->moveSpeed() * (float)sin(m_lastAngle));
-    //sf::Vector2f newPos = Coords::toIsometric(newX, newY, m_graphics->isometricOffsetX(), 0);
-//    int newI = (int)newX / NODE_SIZE;
-//    int newJ = (int)newY / NODE_SIZE;
-//    int newI = (int)newPos.x / NODE_SIZE;
-//    int newJ = (int)newPos.y / NODE_SIZE;
 
-//    sf::Vector2f mapPos(m_state->cx(), m_state->cy());
-//    Coords::fromIsometric(mapPos, -m_graphics->isometricOffsetX(), 0);
+    const double DOWN_RIGHT_ANGLE = atan2(1.0, 2.0);
+    const double DOWN_LEFT_ANGLE = atan2(1.0, -2.0);
+    const double UP_RIGHT_ANGLE = atan2(-1.0, 2.0);
+    const double UP_LEFT_ANGLE = atan2(-1.0, -2.0);
 
     bool temp = true;
-    if (m_lastAngle >= THREE_QUARTER_PI || m_lastAngle <= -THREE_QUARTER_PI)
+    // ********************************************************************************
+    // MAKE ALL THIS GENERIC AND MOVE TO COLLISION CLASS ALONG WITH CONSTS ABOVE
+    // THERE IS AN ISSUE WHERE CHAR IS STICKING WHEN GOING TOP
+    // ********************************************************************************
+    if (m_lastAngle >= THREE_QUARTER_PI || m_lastAngle <= -THREE_QUARTER_PI && (topLeftValue() > 0 || bottomLeftValue() > 0))
     {
-        // left
+        temp = false;
+
+        if (topLeftValue() == 0)
+        {
+            std::cout << "TOP LEFT FREE" << std::endl;
+            m_state->setX(m_state->x() + m_characterStats->moveSpeed() * (float)cos(UP_LEFT_ANGLE));
+            m_state->setY(m_state->y() + m_characterStats->moveSpeed() * (float)sin(UP_LEFT_ANGLE));
+        }
+        else if (bottomLeftValue() == 0)
+        {
+            std::cout << "BOTTOM LEFT FREE" << std::endl;
+            m_state->setX(m_state->x() + m_characterStats->moveSpeed() * (float)cos(DOWN_LEFT_ANGLE));
+            m_state->setY(m_state->y() + m_characterStats->moveSpeed() * (float)sin(DOWN_LEFT_ANGLE));
+        }
     }
     else if (m_lastAngle >= QUARTER_PI && (bottomRightValue() > 0 || bottomLeftValue() > 0))
     {
@@ -65,23 +79,49 @@ void MapUpdater::updateMovement()
         if (bottomRightValue() == 0)
         {
             std::cout << "RIGHT FREE" << std::endl;
-            m_state->setX(m_state->x() + m_characterStats->moveSpeed() / 2); // stopped here...
-            m_state->setY(m_state->y() + m_characterStats->moveSpeed() / 2); // need to find perfect ratio to go smoothly along the wall
+            m_state->setX(m_state->x() + m_characterStats->moveSpeed() * (float)cos(DOWN_RIGHT_ANGLE));
+            m_state->setY(m_state->y() + m_characterStats->moveSpeed() * (float)sin(DOWN_RIGHT_ANGLE));
         }
         else if (bottomLeftValue() == 0)
         {
             std::cout << "LEFT FREE" << std::endl;
-            m_state->setX(m_state->x() - m_characterStats->moveSpeed() * (float)cos(THREE_QUARTER_PI));
-            m_state->setY(m_state->y() + m_characterStats->moveSpeed() * (float)sin(THREE_QUARTER_PI));
+            m_state->setX(m_state->x() + m_characterStats->moveSpeed() * (float)cos(DOWN_LEFT_ANGLE));
+            m_state->setY(m_state->y() + m_characterStats->moveSpeed() * (float)sin(DOWN_LEFT_ANGLE));
         }
     }
-    else if (m_lastAngle <= -QUARTER_PI)
+    else if (m_lastAngle <= -QUARTER_PI && (topLeftValue() > 0 || topRightValue() > 0))
     {
-        // up
+        temp = false;
+
+        if (topLeftValue() == 0)
+        {
+            std::cout << "TOP LEFT FREE" << std::endl;
+            m_state->setX(m_state->x() + m_characterStats->moveSpeed() * (float)cos(UP_LEFT_ANGLE));
+            m_state->setY(m_state->y() + m_characterStats->moveSpeed() * (float)sin(UP_LEFT_ANGLE));
+        }
+        else if (topRightValue() == 0)
+        {
+            std::cout << "BOTTOM LEFT FREE" << std::endl;
+            m_state->setX(m_state->x() + m_characterStats->moveSpeed() * (float)cos(UP_RIGHT_ANGLE));
+            m_state->setY(m_state->y() + m_characterStats->moveSpeed() * (float)sin(UP_RIGHT_ANGLE));
+        }
     }
-    else
+    else if (topRightValue() > 0 || bottomRightValue() > 0)
     {
-        // right
+        temp = false;
+
+        if (bottomRightValue() == 0)
+        {
+            std::cout << "TOP LEFT FREE" << std::endl;
+            m_state->setX(m_state->x() + m_characterStats->moveSpeed() * (float)cos(DOWN_RIGHT_ANGLE));
+            m_state->setY(m_state->y() + m_characterStats->moveSpeed() * (float)sin(DOWN_RIGHT_ANGLE));
+        }
+        else if (topRightValue() == 0)
+        {
+            std::cout << "BOTTOM LEFT FREE" << std::endl;
+            m_state->setX(m_state->x() + m_characterStats->moveSpeed() * (float)cos(UP_RIGHT_ANGLE));
+            m_state->setY(m_state->y() + m_characterStats->moveSpeed() * (float)sin(UP_RIGHT_ANGLE));
+        }
     }
 
     if (!temp)
