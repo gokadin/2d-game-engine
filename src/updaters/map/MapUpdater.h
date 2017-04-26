@@ -11,14 +11,6 @@
 #include "../../data/definitions/character/CharacterState.h"
 #include "../../physics/collisions/CollisionProcessor.h"
 
-#define HALF_PI (M_PI / 2)
-#define QUARTER_PI (HALF_PI / 2)
-#define THREE_QUARTER_PI (M_PI - QUARTER_PI)
-#define ONE_SIXTH_PI (M_PI / 6)
-#define ONE_THIRD_PI (M_PI / 3)
-#define TWO_THIRDS_PI (ONE_THIRD_PI * 2)
-#define FIVE_SIXTH_PI (ONE_SIXTH_PI * 5)
-
 class MapUpdater : public Updater
 {
 public:
@@ -41,6 +33,7 @@ private:
     float m_lastX;
     float m_lastY;
     sf::Vector2i m_tileToReach;
+    sf::Vector2f m_collisionVector;
 
     void updateMovement();
     void updateTileToReach(int mouseIsoX, int mouseIsoY);
