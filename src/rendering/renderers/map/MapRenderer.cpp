@@ -5,13 +5,13 @@
 MapRenderer::MapRenderer(MapGraphics *graphics, MapState *state, MapBounds *bounds)
         : m_graphics(graphics), m_state(state), m_bounds(bounds)
 {
-    if (!m_gridTexture.loadFromFile("../src/storage/game/maps/debug/grid.png"))
+    if (!m_gridTexture.loadFromFile("../src/storage/game/maps/debug/grid_" + std::to_string(NODE_SIZE) + ".png"))
     {
         std::cout << "Could not load debug grid texture." << std::endl;
     }
     m_gridSprite.setTexture(m_gridTexture);
 
-    if (!m_shadedGridTexture.loadFromFile("../src/storage/game/maps/debug/shadedGrid.png"))
+    if (!m_shadedGridTexture.loadFromFile("../src/storage/game/maps/debug/shadedGrid_" + std::to_string(NODE_SIZE) + ".png"))
     {
         std::cout << "Could not load debug grid texture." << std::endl;
     }
@@ -38,12 +38,12 @@ void MapRenderer::draw(sf::RenderWindow *window)
         {
             int x = i * NODE_SIZE;
             int y = j * NODE_SIZE;
-            m_gridSprite.setPosition(Coords::toIsometric(x, y, m_state->x() - m_graphics->isometricOffsetX() + NODE_SIZE * 2, m_state->y()));
+            m_gridSprite.setPosition(Coords::toIsometric(x, y, m_state->x() - m_state->isometricOffsetX() + NODE_SIZE * 2, m_state->y()));
             window->draw(m_gridSprite);
 
             if (m_bounds->get(i, j) > 0)
             {
-                m_shadedGridSprite.setPosition(Coords::toIsometric(x, y, m_state->x() - m_graphics->isometricOffsetX() + NODE_SIZE * 2, m_state->y()));
+                m_shadedGridSprite.setPosition(Coords::toIsometric(x, y, m_state->x() - m_state->isometricOffsetX() + NODE_SIZE * 2, m_state->y()));
                 window->draw(m_shadedGridSprite);
             }
         }

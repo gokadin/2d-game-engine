@@ -8,7 +8,7 @@ CollisionProcessor::CollisionProcessor(MapBounds *bounds, MapState *mapState, Ma
           m_mapGraphics(mapGraphics)
 {}
 
-void CollisionProcessor::process(float cx, float cy, float radius, double angle, sf::Vector2f& collisionVector)
+void CollisionProcessor::processMovingTile(float cx, float cy, float radius, double angle, sf::Vector2f& collisionVector)
 {
     if (angle >= THREE_QUARTER_PI || angle <= -THREE_QUARTER_PI)
     {
@@ -36,6 +36,13 @@ void CollisionProcessor::processLeft(float cx, float cy, float radius, sf::Vecto
     int topLeftValue = getTopLeftValue(cx, cy, radius);
     int bottomLeftValue = getBottomLeftValue(cx, cy, radius);
 
+    if (topLeftValue > 0 && bottomLeftValue > 0)
+    {
+        collisionVector.x = 0;
+        collisionVector.y = 0;
+        return;
+    }
+
     if (topLeftValue == 0 && bottomLeftValue > 0)
     {
         updateCollisionVector(UP_LEFT_ANGLE, collisionVector);
@@ -53,15 +60,22 @@ void CollisionProcessor::processRight(float cx, float cy, float radius, sf::Vect
     int topRightValue = getTopRightValue(cx, cy, radius);
     int bottomRightValue = getBottomRightValue(cx, cy, radius);
 
+    if (bottomRightValue > 0 && topRightValue > 0)
+    {
+        collisionVector.x = 0;
+        collisionVector.y = 0;
+        return;
+    }
+
     if (topRightValue == 0 && bottomRightValue > 0)
     {
-        updateCollisionVector(DOWN_RIGHT_ANGLE, collisionVector);
+        updateCollisionVector(UP_RIGHT_ANGLE, collisionVector);
         return;
     }
 
     if (bottomRightValue == 0 && topRightValue > 0)
     {
-        updateCollisionVector(UP_RIGHT_ANGLE, collisionVector);
+        updateCollisionVector(DOWN_RIGHT_ANGLE, collisionVector);
     }
 }
 
@@ -69,6 +83,13 @@ void CollisionProcessor::processTop(float cx, float cy, float radius, sf::Vector
 {
     int topLeftValue = getTopLeftValue(cx, cy, radius);
     int topRightValue = getTopRightValue(cx, cy, radius);
+
+    if (topLeftValue > 0 && topRightValue > 0)
+    {
+        collisionVector.x = 0;
+        collisionVector.y = 0;
+        return;
+    }
 
     if (topLeftValue == 0 && topRightValue > 0)
     {
@@ -87,15 +108,22 @@ void CollisionProcessor::processBottom(float cx, float cy, float radius, sf::Vec
     int bottomLeftValue = getBottomLeftValue(cx, cy, radius);
     int bottomRightValue = getBottomRightValue(cx, cy, radius);
 
+    if (bottomLeftValue > 0 && bottomRightValue > 0)
+    {
+        collisionVector.x = 0;
+        collisionVector.y = 0;
+        return;
+    }
+
     if (bottomLeftValue == 0 && bottomRightValue > 0)
     {
-        updateCollisionVector(DOWN_RIGHT_ANGLE, collisionVector);
+        updateCollisionVector(DOWN_LEFT_ANGLE, collisionVector);
         return;
     }
 
     if (bottomRightValue == 0 && bottomLeftValue > 0)
     {
-        updateCollisionVector(DOWN_LEFT_ANGLE, collisionVector);
+        updateCollisionVector(DOWN_RIGHT_ANGLE, collisionVector);
     }
 }
 
@@ -135,11 +163,11 @@ int CollisionProcessor::getTopRightValue(float cx, float cy, float radius)
 
 int CollisionProcessor::getTileValue(sf::Vector2i &first, sf::Vector2i &second)
 {
-    Coords::fromIsometric(first, m_mapState->x() - m_mapGraphics->isometricOffsetX(), m_mapState->y());
+    Coords::fromIsometric(first, m_mapState->x() - m_mapState->isometricOffsetX(), m_mapState->y());
     first.x /= NODE_SIZE;
     first.y /= NODE_SIZE;
 
-    Coords::fromIsometric(second, m_mapState->x() - m_mapGraphics->isometricOffsetX(), m_mapState->y());
+    Coords::fromIsometric(second, m_mapState->x() - m_mapState->isometricOffsetX(), m_mapState->y());
     second.x /= NODE_SIZE;
     second.y /= NODE_SIZE;
 

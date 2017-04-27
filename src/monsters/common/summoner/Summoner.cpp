@@ -16,7 +16,7 @@ void Summoner::draw(sf::RenderWindow *window)
         return;
     }
 
-    m_sprite.setPosition(sf::Vector2f(m_x - m_mapState->x() - m_hitBoxWidth / 2, m_y - m_mapState->y() - m_hitBoxHeight));
+    m_sprite.setPosition(sf::Vector2f(m_cx - m_mapState->x() - m_hitBoxWidth / 2, m_cy - m_mapState->y() - m_hitBoxHeight));
 
     window->draw(m_sprite);
 }
@@ -48,7 +48,7 @@ bool Summoner::isReadyToResurrect()
 
 bool Summoner::isInResurrectRange(Monster *minion)
 {
-    return Distances::isInRange(m_x, m_y, minion->x(), minion->y(), RESURRECT_RANGE);
+    return Distances::isInRange(m_cx, m_cy, minion->x(), minion->y(), RESURRECT_RANGE);
 }
 
 void Summoner::resurrectMinion(Monster *minion)

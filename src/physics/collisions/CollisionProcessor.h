@@ -20,7 +20,7 @@ class CollisionProcessor
 public:
     CollisionProcessor(MapBounds *bounds, MapState *mapState, MapGraphics *mapGraphics);
 
-    void process(float cx, float cy, float radius, double angle, sf::Vector2f& collisionVector);
+    void processMovingTile(float cx, float cy, float radius, double angle, sf::Vector2f& collisionVector);
 
 private:
     const double DOWN_RIGHT_ANGLE = atan2(1.0, 2.0);

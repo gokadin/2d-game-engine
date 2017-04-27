@@ -9,8 +9,8 @@ Monster::Monster(int id, monster_type type, uint16_t experienceWorth, sf::Textur
           m_texture(texture),
           m_mapState(mapState),
           m_mapBounds(mapBounds),
-          m_x(0),
-          m_y(0),
+          m_cx(0),
+          m_cy(0),
           m_phase(monster_phase::IDLE),
           m_hitBoxWidth(0),
           m_hitBoxHeight(0)
@@ -40,7 +40,7 @@ void Monster::inflictDamage(int damage)
 
 void Monster::addToMap()
 {
-    m_mapBounds->addBounds(m_x - m_hitBoxWidth / 2, m_y - m_hitBoxHeight, m_hitBoxWidth, m_hitBoxHeight, m_id);
+    m_mapBounds->addBounds(m_cx, m_cy, m_hitBoxWidth, m_id);
 }
 
 void Monster::resurrect()
@@ -58,6 +58,6 @@ void Monster::resurrect()
 void Monster::die()
 {
     m_phase = monster_phase::DEAD;
-    m_mapBounds->removeBounds(m_x - m_hitBoxWidth / 2, m_y - m_hitBoxHeight, m_hitBoxWidth, m_hitBoxHeight, m_id);
+    m_mapBounds->removeBounds(m_cx, m_cy, m_hitBoxWidth, m_id);
     notifyObservers(std::make_shared<MonsterDiedEvent>(this));
 }

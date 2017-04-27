@@ -25,8 +25,8 @@ public:
     inline uint16_t experienceWorth() { return m_experienceWorth; }
     inline int hitBoxWidth() { return m_hitBoxWidth; }
     inline int hitBoxHeight() { return m_hitBoxHeight; }
-    inline float x() { return m_x; }
-    inline float y() { return m_y; }
+    inline float x() { return m_cx; }
+    inline float y() { return m_cy; }
     inline int id() { return m_id; }
     inline bool isAlive() { return m_phase != monster_phase::DEAD && m_phase != monster_phase::INACTIVE; }
     inline monster_phase phase() { return m_phase; }
@@ -35,7 +35,7 @@ public:
     inline int aggroRange() { return m_aggroRange; }
     inline EffectManager& effectManager() { return m_effectManager; }
 
-    inline void setPosition(float x, float y) { m_x = x; m_y = y; }
+    inline void setPosition(float x, float y) { m_cx = x; m_cy = y; }
     inline void setHitBox(int width, int height) { m_hitBoxWidth = width; m_hitBoxHeight = height; }
     inline void setIdleMoveSpeed(float idleMoveSpeed) { m_idleMoveSpeed = idleMoveSpeed; }
     inline void setAggroMoveSpeed(float aggroMoveSpeed) { m_aggroMoveSpeed = aggroMoveSpeed; }
@@ -43,10 +43,10 @@ public:
     inline void setPhase(monster_phase phase) { m_phase = phase; }
     inline void move(float diffX, float diffY)
     {
-        m_mapBounds->removeBounds(m_x - m_hitBoxWidth / 2, m_y - m_hitBoxHeight, m_hitBoxWidth, m_hitBoxHeight, m_id);
-        m_x += diffX;
-        m_y += diffY;
-        m_mapBounds->addBounds(m_x - m_hitBoxWidth / 2, m_y - m_hitBoxHeight, m_hitBoxWidth, m_hitBoxHeight, m_id);
+        m_mapBounds->removeBounds(m_cx, m_cy, m_hitBoxWidth, m_id);
+        m_cx += diffX;
+        m_cy += diffY;
+        m_mapBounds->addBounds(m_cx, m_cy, m_hitBoxWidth, m_id);
 
         // clean this up
     }
@@ -61,8 +61,8 @@ protected:
     MapState *m_mapState;
     MapBounds *m_mapBounds;
     EffectManager m_effectManager;
-    float m_x;
-    float m_y;
+    float m_cx;
+    float m_cy;
     monster_phase m_phase;
     int m_hitBoxWidth;
     int m_hitBoxHeight;

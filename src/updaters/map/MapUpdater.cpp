@@ -28,7 +28,7 @@ void MapUpdater::updateMovement()
     if (m_characterState->shouldStopOnPoint())
     {
         sf::Vector2f mapPos(m_state->cx(), m_state->cy());
-        Coords::fromIsometric(mapPos, -m_graphics->isometricOffsetX(), 0);
+        Coords::fromIsometric(mapPos, -m_state->isometricOffsetX(), 0);
         if ((int)mapPos.x / NODE_SIZE == m_tileToReach.x && (int)mapPos.y / NODE_SIZE == m_tileToReach.y)
         {
             m_characterState->stopMoving();
@@ -40,15 +40,14 @@ void MapUpdater::updateMovement()
         sf::Vector2i mousePos = sf::Mouse::getPosition(*m_window);
         updateMoveAngle(mousePos.x, mousePos.y);
         updateDirection();
-        Coords::fromIsometric(mousePos, m_state->x() - m_graphics->isometricOffsetX(), m_state->y());
+        Coords::fromIsometric(mousePos, m_state->x() - m_state->isometricOffsetX(), m_state->y());
         updateTileToReach(mousePos.x, mousePos.y);
     }
 
     m_collisionVector.x = (float)cos(m_lastAngle);
     m_collisionVector.y = (float)sin(m_lastAngle);
-    m_collisionProcessor.process(Engine::HALF_SCREEN_WIDTH, Engine::HALF_SCREEN_HEIGHT, NODE_SIZE, m_lastAngle,
-                                 m_collisionVector);
-
+    m_collisionProcessor.processMovingTile(Engine::HALF_SCREEN_WIDTH, Engine::HALF_SCREEN_HEIGHT, NODE_SIZE * 4,
+                                           m_lastAngle, m_collisionVector);
     m_state->setX(m_state->x() + m_characterStats->moveSpeed() * m_collisionVector.x);
     m_state->setY(m_state->y() + m_characterStats->moveSpeed() * m_collisionVector.y);
 }

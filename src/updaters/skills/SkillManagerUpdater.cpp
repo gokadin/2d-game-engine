@@ -42,15 +42,15 @@ void SkillManagerUpdater::updateProjectiles(ProjectileSkill *skill)
 
 void SkillManagerUpdater::updateFlyingProjectile(Projectile *projectile)
 {
-    int boundI = m_bounds->indexOfX(projectile->ax());
-    int boundJ = m_bounds->indexOfY(projectile->ay());
-    if (m_bounds->areIndexesOutOfBounds(boundI, boundJ))
-    {
-        projectile->cancel();
-        return;
-    }
-
-    detectCollision(projectile, boundI, boundJ);
+//    int boundI = m_bounds->indexOfX(projectile->ax());
+//    int boundJ = m_bounds->indexOfY(projectile->ay());
+//    if (m_bounds->areIndexesOutOfBounds(boundI, boundJ))
+//    {
+//        projectile->cancel();
+//        return;
+//    }
+//
+//    detectCollision(projectile, boundI, boundJ);
 }
 
 void SkillManagerUpdater::updateHittingProjectile(Projectile *projectile)

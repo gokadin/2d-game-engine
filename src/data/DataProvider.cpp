@@ -13,12 +13,11 @@ void DataProvider::loadMap(Map *map)
 
     map->graphics()->setSpriteWidth(std::stoi(metadata["WIDTH"]));
     map->graphics()->setSpriteHeight(std::stoi(metadata["HEIGHT"]));
-    map->graphics()->setIsometricOffsetX(map->graphics()->spriteWidth() / 2);
+    map->state()->setIsometricOffsetX(map->graphics()->spriteWidth() / 2);
     map->state()->setX(std::stoi(metadata["INITIAL_CX"]) - Engine::HALF_SCREEN_WIDTH);
     map->state()->setY(std::stoi(metadata["INITIAL_CY"]) - Engine::HALF_SCREEN_HEIGHT);
 
     map->bounds()->setBounds(ArrayReader::read2D("../src/storage/game/maps/act1/town/bounds"));
-    map->bounds()->setTileWidth(std::stoi(metadata["TILE_WIDTH"]));
 }
 
 void DataProvider::loadCharacter(Character *character)
