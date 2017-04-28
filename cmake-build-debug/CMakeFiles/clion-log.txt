@@ -1,5 +1,0 @@
-/home/guiviko/Programs/clion-2016.3.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/guiviko/Projects/chrono
--- Found SFML .. in /usr/include
--- Configuring done
--- Generating done
--- Build files have been written to: /home/guiviko/Projects/chrono/cmake-build-debug
